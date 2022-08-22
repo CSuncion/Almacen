@@ -1,0 +1,3174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9AF447F8-C646-4491-8064-18574831870E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Presentacion</RootNamespace>
+    <AssemblyName>Presentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>\\Server-lq\d\COMPARTIDO\SISTEMA_ALMACEN\Sistema\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>ALMACEN</ProductName>
+    <PublisherName>SISTEMAS</PublisherName>
+    <SuiteName>INTEGRADO</SuiteName>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8AA75BF753FC8CC1AB79A31DB1A0722BAAD7444C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Presentacion_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Comun, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Librerias\Librerias(2010)\Comun\bin\Debug\Comun.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Heredados, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Trabajo\Librerias\Librerias(2010)\Heredados\bin\Debug\Heredados.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinControles, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Librerias\Librerias(2010)\WinControles\bin\Debug\WinControles.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Consultas\wMovimientosOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\wMovimientosOrdenCompra.designer.cs">
+      <DependentUpon>wMovimientosOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\wProduccionesSinLiberar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\wProduccionesSinLiberar.designer.cs">
+      <DependentUpon>wProduccionesSinLiberar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\wProduccionesConSaldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\wProduccionesConSaldo.designer.cs">
+      <DependentUpon>wProduccionesConSaldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\wLiberacionesSinMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\wLiberacionesSinMovimientos.designer.cs">
+      <DependentUpon>wLiberacionesSinMovimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\wMovimientosXExistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\wMovimientosXExistencia.designer.cs">
+      <DependentUpon>wMovimientosXExistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\wProduccionesEncajar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\wProduccionesEncajar.designer.cs">
+      <DependentUpon>wProduccionesEncajar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\wMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\wMovimientos.designer.cs">
+      <DependentUpon>wMovimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\wAlertaStockMinimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\wAlertaStockMinimo.designer.cs">
+      <DependentUpon>wAlertaStockMinimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\wProductoTerminado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\wProductoTerminado.designer.cs">
+      <DependentUpon>wProductoTerminado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\wSaldosPorExistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\wSaldosPorExistencia.designer.cs">
+      <DependentUpon>wSaldosPorExistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\wSolicitudPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\wSolicitudPedidos.designer.cs">
+      <DependentUpon>wSolicitudPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desarrollador\wAgregarBotones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desarrollador\wAgregarBotones.designer.cs">
+      <DependentUpon>wAgregarBotones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desarrollador\wBoton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desarrollador\wBoton.designer.cs">
+      <DependentUpon>wBoton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desarrollador\wBotonesVentana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desarrollador\wBotonesVentana.designer.cs">
+      <DependentUpon>wBotonesVentana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desarrollador\wDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desarrollador\wDoctor.Designer.cs">
+      <DependentUpon>wDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desarrollador\wEditBoton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desarrollador\wEditBoton.designer.cs">
+      <DependentUpon>wEditBoton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desarrollador\wEditVentana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desarrollador\wEditVentana.designer.cs">
+      <DependentUpon>wEditVentana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desarrollador\wGenerarSaldoInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desarrollador\wGenerarSaldoInicial.designer.cs">
+      <DependentUpon>wGenerarSaldoInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desarrollador\wValidarExistencias .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desarrollador\wValidarExistencias .designer.cs">
+      <DependentUpon>wValidarExistencias .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desarrollador\wMigrarProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desarrollador\wMigrarProduccion.designer.cs">
+      <DependentUpon>wMigrarProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desarrollador\wMigrarExistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desarrollador\wMigrarExistencias.designer.cs">
+      <DependentUpon>wMigrarExistencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desarrollador\wVentana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desarrollador\wVentana.designer.cs">
+      <DependentUpon>wVentana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuncionesGenericas\Generico.cs" />
+    <Compile Include="Impresiones\CrCompraExistencia.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrCompraExistencia.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Impresiones\CrCompraProveedor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrCompraProveedor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Impresiones\CrIngresoOCCeCoDetalle.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrIngresoOCCeCoDetalle.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Impresiones\CrIngresoOCCeCoResumen.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrIngresoOCCeCoResumen.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Impresiones\CrProdRangoFecha.cs">
+      <DependentUpon>CrProdRangoFecha.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Impresiones\CrDocumentoEmitidoDetalle.cs">
+      <DependentUpon>CrDocumentoEmitidoDetalle.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Impresiones\CrControlMovISDeta.cs">
+      <DependentUpon>CrControlMovISDeta.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Impresiones\CrSalidaCeCoDetalle.cs">
+      <DependentUpon>CrSalidaCeCoDetalle.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Impresiones\CrRecord.cs">
+      <DependentUpon>CrRecord.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Impresiones\CrExistenciaGeneralResumen.cs">
+      <DependentUpon>CrExistenciaGeneralResumen.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Impresiones\CrExistenciaGeneralDetalle.cs">
+      <DependentUpon>CrExistenciaGeneralDetalle.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Impresiones\CrDiferenciaStock.cs">
+      <DependentUpon>CrDiferenciaStock.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Impresiones\CrExistenciaTomaInventario.cs">
+      <DependentUpon>CrExistenciaTomaInventario.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Impresiones\CrExistenciaInventario.cs">
+      <DependentUpon>CrExistenciaInventario.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Impresiones\CrDocumentoEmitidoResumen.cs">
+      <DependentUpon>CrDocumentoEmitidoResumen.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Impresiones\CrResumenTipoExistencia.cs">
+      <DependentUpon>CrResumenTipoExistencia.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Impresiones\CrKardexFisico.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrKardexFisico.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Impresiones\CrKardexValorizado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrKardexValorizado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Impresiones\CrNotaSalida.cs">
+      <DependentUpon>CrNotaSalida.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Impresiones\CrNotaIngreso.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrNotaIngreso.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Impresiones\CrSolicitudPedido.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrSolicitudPedido.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Impresiones\CrStockFisicoProgramado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrStockFisicoProgramado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Impresiones\Impresion.cs">
+      <DependentUpon>Impresion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\Impresion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Impresion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wCostoLoteClaEnc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wCostoLoteClaEnc.designer.cs">
+      <DependentUpon>wCostoLoteClaEnc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wDesmedroPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wDesmedroPT.designer.cs">
+      <DependentUpon>wDesmedroPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpCompraPorExistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpCompraPorExistencia.designer.cs">
+      <DependentUpon>wImpCompraPorExistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpCompraPorProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpCompraPorProveedor.designer.cs">
+      <DependentUpon>wImpCompraPorProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpIngresosOCCeCo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpIngresosOCCeCo.designer.cs">
+      <DependentUpon>wImpIngresosOCCeCo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpSolicitudPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpSolicitudPedido.designer.cs">
+      <DependentUpon>wImpSolicitudPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpStockFisicoProgramado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpStockFisicoProgramado.designer.cs">
+      <DependentUpon>wImpStockFisicoProgramado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wKpiVersus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wKpiVersus.designer.cs">
+      <DependentUpon>wKpiVersus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wKpiDesmedro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wKpiDesmedro.designer.cs">
+      <DependentUpon>wKpiDesmedro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wCostoTotalProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wCostoTotalProduccion.designer.cs">
+      <DependentUpon>wCostoTotalProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wCostoLoteEtaRet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wCostoLoteEtaRet.designer.cs">
+      <DependentUpon>wCostoLoteEtaRet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wCostosAcumuladosPorProceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wCostosAcumuladosPorProceso.designer.cs">
+      <DependentUpon>wCostosAcumuladosPorProceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wCostoLoteEtaEnv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wCostoLoteEtaEnv.designer.cs">
+      <DependentUpon>wCostoLoteEtaEnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wCostoLoteEtaEnc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wCostoLoteEtaEnc.designer.cs">
+      <DependentUpon>wCostoLoteEtaEnc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wPresupuestoVsRealXFechas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wPresupuestoVsRealXFechas.designer.cs">
+      <DependentUpon>wPresupuestoVsRealXFechas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wPresupuestoVsRealXProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wPresupuestoVsRealXProducto.designer.cs">
+      <DependentUpon>wPresupuestoVsRealXProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wCostoUnitarioVariabilidadCosto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wCostoUnitarioVariabilidadCosto.designer.cs">
+      <DependentUpon>wCostoUnitarioVariabilidadCosto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wCostoUnitarioPromedioAcumulado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wCostoUnitarioPromedioAcumulado.designer.cs">
+      <DependentUpon>wCostoUnitarioPromedioAcumulado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wCostoUnitarioPorFechas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wCostoUnitarioPorFechas.designer.cs">
+      <DependentUpon>wCostoUnitarioPorFechas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wPorCumplimientoProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wPorCumplimientoProduccion.designer.cs">
+      <DependentUpon>wPorCumplimientoProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wProduccionRangoFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wProduccionRangoFecha.designer.cs">
+      <DependentUpon>wProduccionRangoFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpDocumentosEmitidosDeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpDocumentosEmitidosDeta.designer.cs">
+      <DependentUpon>wImpDocumentosEmitidosDeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpControlMovISDeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpControlMovISDeta.designer.cs">
+      <DependentUpon>wImpControlMovISDeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpSalidasCeCoDeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpSalidasCeCoDeta.designer.cs">
+      <DependentUpon>wImpSalidasCeCoDeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpRecords.designer.cs">
+      <DependentUpon>wImpRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpDocumentosEmitidosResu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpDocumentosEmitidosResu.designer.cs">
+      <DependentUpon>wImpDocumentosEmitidosResu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpExistenciaGeneralResu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpExistenciaGeneralResu.designer.cs">
+      <DependentUpon>wImpExistenciaGeneralResu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpExistenciaGeneralDeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpExistenciaGeneralDeta.designer.cs">
+      <DependentUpon>wImpExistenciaGeneralDeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpDiferenciaStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpDiferenciaStock.designer.cs">
+      <DependentUpon>wImpDiferenciaStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpExistenciaTomaInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpExistenciaTomaInventario.designer.cs">
+      <DependentUpon>wImpExistenciaTomaInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpExistenciaInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpExistenciaInventario.designer.cs">
+      <DependentUpon>wImpExistenciaInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpResumenTipoExistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpResumenTipoExistencia.designer.cs">
+      <DependentUpon>wImpResumenTipoExistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpNotaSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpNotaSalida.designer.cs">
+      <DependentUpon>wImpNotaSalida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpNotaIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpNotaIngreso.designer.cs">
+      <DependentUpon>wImpNotaIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpKardexFisico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpKardexFisico.designer.cs">
+      <DependentUpon>wImpKardexFisico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpKardexValorizado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpKardexValorizado.designer.cs">
+      <DependentUpon>wImpKardexValorizado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisBco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisBco.designer.cs">
+      <DependentUpon>wLisBco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisCueBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisCueBan.designer.cs">
+      <DependentUpon>wLisCueBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisLic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisLic.designer.cs">
+      <DependentUpon>wLisLic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisItemE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisItemE.designer.cs">
+      <DependentUpon>wLisItemE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisLibProTer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisLibProTer.designer.cs">
+      <DependentUpon>wLisLibProTer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisPer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisPer.designer.cs">
+      <DependentUpon>wLisPer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisPerRec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisPerRec.designer.cs">
+      <DependentUpon>wLisPerRec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisPerAut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisPerAut.designer.cs">
+      <DependentUpon>wLisPerAut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisProTer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisProTer.designer.cs">
+      <DependentUpon>wLisProTer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisSolPro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisSolPro.designer.cs">
+      <DependentUpon>wLisSolPro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisFor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisFor.designer.cs">
+      <DependentUpon>wLisFor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisExi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisExi.designer.cs">
+      <DependentUpon>wLisExi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisCeCo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisCeCo.designer.cs">
+      <DependentUpon>wLisCeCo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisAux.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisAux.designer.cs">
+      <DependentUpon>wLisAux.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisAlm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisAlm.designer.cs">
+      <DependentUpon>wLisAlm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisTipOpe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisTipOpe.designer.cs">
+      <DependentUpon>wLisTipOpe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisItemG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisItemG.designer.cs">
+      <DependentUpon>wLisItemG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisPerEmpExt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisPerEmpExt.designer.cs">
+      <DependentUpon>wLisPerEmpExt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisUsu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisUsu.designer.cs">
+      <DependentUpon>wLisUsu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas\wLisUsuExt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listas\wLisUsuExt.designer.cs">
+      <DependentUpon>wLisUsuExt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wBancos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wBancos.designer.cs">
+      <DependentUpon>wBancos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wCuentaBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wCuentaBanco.designer.cs">
+      <DependentUpon>wCuentaBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wEditBancos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wEditBancos.designer.cs">
+      <DependentUpon>wEditBancos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wEditCuentaBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wEditCuentaBanco.designer.cs">
+      <DependentUpon>wEditCuentaBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wEditExistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wEditExistencia.designer.cs">
+      <DependentUpon>wEditExistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wEditPersonalReciben.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wEditPersonalReciben.designer.cs">
+      <DependentUpon>wEditPersonalReciben.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wEditPersonalAutorizan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wEditPersonalAutorizan.designer.cs">
+      <DependentUpon>wEditPersonalAutorizan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wEditPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wEditPresupuesto.designer.cs">
+      <DependentUpon>wEditPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wEditTablaEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wEditTablaEmpresa.designer.cs">
+      <DependentUpon>wEditTablaEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wEditTipoCambio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wEditTipoCambio.designer.cs">
+      <DependentUpon>wEditTipoCambio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wEliminarExistenciaMasivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wEliminarExistenciaMasivo.designer.cs">
+      <DependentUpon>wEliminarExistenciaMasivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wAdicionarExistenciaMasivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wAdicionarExistenciaMasivo.designer.cs">
+      <DependentUpon>wAdicionarExistenciaMasivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wCentroCosto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wCentroCosto.designer.cs">
+      <DependentUpon>wCentroCosto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wEditCentroCosto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wEditCentroCosto.designer.cs">
+      <DependentUpon>wEditCentroCosto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wEditAuxiliar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wEditAuxiliar.designer.cs">
+      <DependentUpon>wEditAuxiliar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wEditAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wEditAlmacen.designer.cs">
+      <DependentUpon>wEditAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wEditPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wEditPersonal.designer.cs">
+      <DependentUpon>wEditPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wEditTipoOperacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wEditTipoOperacion.designer.cs">
+      <DependentUpon>wEditTipoOperacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wEditTablaGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wEditTablaGeneral.designer.cs">
+      <DependentUpon>wEditTablaGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wAuxiliar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wAuxiliar.designer.cs">
+      <DependentUpon>wAuxiliar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wAlmacen.designer.cs">
+      <DependentUpon>wAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wExistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wExistencia.designer.cs">
+      <DependentUpon>wExistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wPersonalReciben.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wPersonalReciben.designer.cs">
+      <DependentUpon>wPersonalReciben.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wPersonalAutorizan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wPersonalAutorizan.designer.cs">
+      <DependentUpon>wPersonalAutorizan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wPersonal.designer.cs">
+      <DependentUpon>wPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wPresupuesto.designer.cs">
+      <DependentUpon>wPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wTablasEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wTablasEmpresa.designer.cs">
+      <DependentUpon>wTablasEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wTipoCambio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wTipoCambio.designer.cs">
+      <DependentUpon>wTipoCambio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wTipoOperacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wTipoOperacion.designer.cs">
+      <DependentUpon>wTipoOperacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\wTablasGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\wTablasGeneral.designer.cs">
+      <DependentUpon>wTablasGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\wAcceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\wAcceso.designer.cs">
+      <DependentUpon>wAcceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\wBloquearSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\wBloquearSistema.designer.cs">
+      <DependentUpon>wBloquearSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\wMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\wMenu.Designer.cs">
+      <DependentUpon>wMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wDetalleOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wDetalleOrdenCompra.designer.cs">
+      <DependentUpon>wDetalleOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wDetalleOrdenCompraPendiente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wDetalleOrdenCompraPendiente.designer.cs">
+      <DependentUpon>wDetalleOrdenCompraPendiente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wDetalleSolicitudPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wDetalleSolicitudPedido.designer.cs">
+      <DependentUpon>wDetalleSolicitudPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEditLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEditLote.designer.cs">
+      <DependentUpon>wEditLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEditLoteSolPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEditLoteSolPedido.designer.cs">
+      <DependentUpon>wEditLoteSolPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEditOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEditOrdenCompra.designer.cs">
+      <DependentUpon>wEditOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEditPagosUnica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEditPagosUnica.designer.cs">
+      <DependentUpon>wEditPagosUnica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEditSolicitudPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEditSolicitudPedido.designer.cs">
+      <DependentUpon>wEditSolicitudPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEliminarPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEliminarPagos.designer.cs">
+      <DependentUpon>wEliminarPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEnviarOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEnviarOrdenCompra.designer.cs">
+      <DependentUpon>wEnviarOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEnviarSolicitudPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEnviarSolicitudPedido.designer.cs">
+      <DependentUpon>wEnviarSolicitudPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wLote.designer.cs">
+      <DependentUpon>wLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wLoteSolPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wLoteSolPedido.designer.cs">
+      <DependentUpon>wLoteSolPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wModificarPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wModificarPagos.designer.cs">
+      <DependentUpon>wModificarPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wOrdenCompra.designer.cs">
+      <DependentUpon>wOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wOrdenCompraPorMovimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wOrdenCompraPorMovimiento.designer.cs">
+      <DependentUpon>wOrdenCompraPorMovimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wPagos.designer.cs">
+      <DependentUpon>wPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wPagosLetras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wPagosLetras.designer.cs">
+      <DependentUpon>wPagosLetras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wRecalculoPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wRecalculoPresupuesto.designer.cs">
+      <DependentUpon>wRecalculoPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wSelAux.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wSelAux.designer.cs">
+      <DependentUpon>wSelAux.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wSolicitudPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wSolicitudPedido.designer.cs">
+      <DependentUpon>wSolicitudPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wAgregarParteFaseEmpaquetado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wAgregarParteFaseEmpaquetado.designer.cs">
+      <DependentUpon>wAgregarParteFaseEmpaquetado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wCalcularFlete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wCalcularFlete.designer.cs">
+      <DependentUpon>wCalcularFlete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleSalidaEtiquetaSegLib.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleSalidaEtiquetaSegLib.designer.cs">
+      <DependentUpon>wDetalleSalidaEtiquetaSegLib.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEleccionSegundaLiberacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEleccionSegundaLiberacion.designer.cs">
+      <DependentUpon>wEleccionSegundaLiberacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresosOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresosOrdenCompra.designer.cs">
+      <DependentUpon>wIngresosOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoUnidadesSegundaLiberacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoUnidadesSegundaLiberacion.designer.cs">
+      <DependentUpon>wIngresoUnidadesSegundaLiberacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wSalidaEtiquetaSegundaLiberacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wSalidaEtiquetaSegundaLiberacion.designer.cs">
+      <DependentUpon>wSalidaEtiquetaSegundaLiberacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wSegundaLiberacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wSegundaLiberacion.designer.cs">
+      <DependentUpon>wSegundaLiberacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditLiberacionDistCalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditLiberacionDistCalidad.designer.cs">
+      <DependentUpon>wEditLiberacionDistCalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditLiberacionDistProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditLiberacionDistProduccion.designer.cs">
+      <DependentUpon>wEditLiberacionDistProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditSalidaParteFaseEmpaquetado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditSalidaParteFaseEmpaquetado.designer.cs">
+      <DependentUpon>wEditSalidaParteFaseEmpaquetado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoSemElaMuestraProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoSemElaMuestraProduccion.designer.cs">
+      <DependentUpon>wIngresoSemElaMuestraProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wTransferenciaPackingAnaBloq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wTransferenciaPackingAnaBloq.designer.cs">
+      <DependentUpon>wTransferenciaPackingAnaBloq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wTransferenciaReprocesoAnaBloq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wTransferenciaReprocesoAnaBloq.designer.cs">
+      <DependentUpon>wTransferenciaReprocesoAnaBloq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wProTerFaseEmpaquetado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wProTerFaseEmpaquetado.designer.cs">
+      <DependentUpon>wProTerFaseEmpaquetado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wCantidadDevolver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wCantidadDevolver.designer.cs">
+      <DependentUpon>wCantidadDevolver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wAgregarMotivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wAgregarMotivo.designer.cs">
+      <DependentUpon>wAgregarMotivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wCantidadAdicionalEncajado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wCantidadAdicionalEncajado.designer.cs">
+      <DependentUpon>wCantidadAdicionalEncajado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleIngresoDevolucionEncajado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleIngresoDevolucionEncajado.designer.cs">
+      <DependentUpon>wDetalleIngresoDevolucionEncajado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleIngresoMercaderiaRE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleIngresoMercaderiaRE.designer.cs">
+      <DependentUpon>wDetalleIngresoMercaderiaRE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleMotivoPreLiberacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleMotivoPreLiberacion.designer.cs">
+      <DependentUpon>wDetalleMotivoPreLiberacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleMotivoPrimeraLiberacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleMotivoPrimeraLiberacion.designer.cs">
+      <DependentUpon>wDetalleMotivoPrimeraLiberacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleMotivoSincerado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleMotivoSincerado.designer.cs">
+      <DependentUpon>wDetalleMotivoSincerado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleMotivoDesmedro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleMotivoDesmedro.designer.cs">
+      <DependentUpon>wDetalleMotivoDesmedro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleMotivoLiberacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleMotivoLiberacion.designer.cs">
+      <DependentUpon>wDetalleMotivoLiberacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleDesmedroEnvasado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleDesmedroEnvasado.designer.cs">
+      <DependentUpon>wDetalleDesmedroEnvasado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleSalidaAdicionalEncajado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleSalidaAdicionalEncajado.designer.cs">
+      <DependentUpon>wDetalleSalidaAdicionalEncajado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditIngresoDevolucionEncajado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditIngresoDevolucionEncajado.designer.cs">
+      <DependentUpon>wEditIngresoDevolucionEncajado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditLiberacionDist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditLiberacionDist.designer.cs">
+      <DependentUpon>wEditLiberacionDist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditLote.designer.cs">
+      <DependentUpon>wEditLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditLoteRetiquetado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditLoteRetiquetado.designer.cs">
+      <DependentUpon>wEditLoteRetiquetado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleRetiquetado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleRetiquetado.designer.cs">
+      <DependentUpon>wDetalleRetiquetado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditSalidaAdicionalEncajado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditSalidaAdicionalEncajado.designer.cs">
+      <DependentUpon>wEditSalidaAdicionalEncajado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoDesechoQali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoDesechoQali.designer.cs">
+      <DependentUpon>wIngresoDesechoQali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoMuestraQali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoMuestraQali.designer.cs">
+      <DependentUpon>wIngresoMuestraQali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoReprocesoQali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoReprocesoQali.designer.cs">
+      <DependentUpon>wIngresoReprocesoQali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoDesecho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoDesecho.designer.cs">
+      <DependentUpon>wIngresoDesecho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoDonaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoDonaciones.designer.cs">
+      <DependentUpon>wIngresoDonaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoMuestras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoMuestras.designer.cs">
+      <DependentUpon>wIngresoMuestras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresosDevolucionEncajado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresosDevolucionEncajado.designer.cs">
+      <DependentUpon>wIngresosDevolucionEncajado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoSemElaContraMuestra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoSemElaContraMuestra.designer.cs">
+      <DependentUpon>wIngresoSemElaContraMuestra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoCuarentenaQali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoCuarentenaQali.designer.cs">
+      <DependentUpon>wIngresoCuarentenaQali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresosSaldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresosSaldos.designer.cs">
+      <DependentUpon>wIngresosSaldos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoObservados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoObservados.designer.cs">
+      <DependentUpon>wIngresoObservados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoSemElaObservadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoSemElaObservadas.designer.cs">
+      <DependentUpon>wIngresoSemElaObservadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wInsumosFaltantesTransferir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wInsumosFaltantesTransferir.designer.cs">
+      <DependentUpon>wInsumosFaltantesTransferir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wInsumosMasaEnvasado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wInsumosMasaEnvasado.designer.cs">
+      <DependentUpon>wInsumosMasaEnvasado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wLoteRetiquetado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wLoteRetiquetado.Designer.cs">
+      <DependentUpon>wLoteRetiquetado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditRetiquetado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditRetiquetado.Designer.cs">
+      <DependentUpon>wEditRetiquetado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoMercaderiasRE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoMercaderiasRE.designer.cs">
+      <DependentUpon>wIngresoMercaderiasRE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wInsumosFaltantesRetiquetado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wInsumosFaltantesRetiquetado.designer.cs">
+      <DependentUpon>wInsumosFaltantesRetiquetado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wMotivoPreLiberacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wMotivoPreLiberacion.designer.cs">
+      <DependentUpon>wMotivoPreLiberacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wMotivoPrimeraLiberacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wMotivoPrimeraLiberacion.designer.cs">
+      <DependentUpon>wMotivoPrimeraLiberacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wPrimeraLiberacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wPrimeraLiberacion.designer.cs">
+      <DependentUpon>wPrimeraLiberacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wMotivoSinceradoParTra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wMotivoSinceradoParTra.designer.cs">
+      <DependentUpon>wMotivoSinceradoParTra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wMotivoSincerado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wMotivoSincerado.designer.cs">
+      <DependentUpon>wMotivoSincerado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wMotivoDesmedro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wMotivoDesmedro.designer.cs">
+      <DependentUpon>wMotivoDesmedro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wMotivoLiberacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wMotivoLiberacion.designer.cs">
+      <DependentUpon>wMotivoLiberacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wCambiarFcLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wCambiarFcLote.designer.cs">
+      <DependentUpon>wCambiarFcLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleEncajado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleEncajado.designer.cs">
+      <DependentUpon>wDetalleEncajado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditEncajado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditEncajado.designer.cs">
+      <DependentUpon>wEditEncajado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditCantidadReal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditCantidadReal.designer.cs">
+      <DependentUpon>wEditCantidadReal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditLiberacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditLiberacion.designer.cs">
+      <DependentUpon>wEditLiberacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wElegirParaTransferir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wElegirParaTransferir.designer.cs">
+      <DependentUpon>wElegirParaTransferir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wAgregarSolicitudes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wAgregarSolicitudes.designer.cs">
+      <DependentUpon>wAgregarSolicitudes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wAprobarSolicitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wAprobarSolicitud.designer.cs">
+      <DependentUpon>wAprobarSolicitud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleIngresoDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleIngresoDevolucion.designer.cs">
+      <DependentUpon>wDetalleIngresoDevolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleSalidaAdicional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleSalidaAdicional.designer.cs">
+      <DependentUpon>wDetalleSalidaAdicional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDistribucionEmpaquetado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDistribucionEmpaquetado.designer.cs">
+      <DependentUpon>wDistribucionEmpaquetado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditIngresoDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditIngresoDevolucion.designer.cs">
+      <DependentUpon>wEditIngresoDevolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditSalidaAdicional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditSalidaAdicional.designer.cs">
+      <DependentUpon>wEditSalidaAdicional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wImportarMovimientosSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wImportarMovimientosSalidas.designer.cs">
+      <DependentUpon>wImportarMovimientosSalidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wImportarMovimientosIngresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wImportarMovimientosIngresos.designer.cs">
+      <DependentUpon>wImportarMovimientosIngresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wTransferenciaDonacionAnaBloq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wTransferenciaDonacionAnaBloq.designer.cs">
+      <DependentUpon>wTransferenciaDonacionAnaBloq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoMuestra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoMuestra.designer.cs">
+      <DependentUpon>wIngresoMuestra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wTransferenciaDesechasAnaBloq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wTransferenciaDesechasAnaBloq.designer.cs">
+      <DependentUpon>wTransferenciaDesechasAnaBloq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wInsumosFaltantesEncajado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wInsumosFaltantesEncajado.designer.cs">
+      <DependentUpon>wInsumosFaltantesEncajado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wInsumosFaltantesCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wInsumosFaltantesCompra.designer.cs">
+      <DependentUpon>wInsumosFaltantesCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wCantidadReal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wCantidadReal.designer.cs">
+      <DependentUpon>wCantidadReal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wMasaPerdida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wMasaPerdida.designer.cs">
+      <DependentUpon>wMasaPerdida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wRetiquetado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wRetiquetado.designer.cs">
+      <DependentUpon>wRetiquetado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wPlanEncajado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wPlanEncajado.designer.cs">
+      <DependentUpon>wPlanEncajado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wRecalculoProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wRecalculoProduccion.designer.cs">
+      <DependentUpon>wRecalculoProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wRecalculoManoObra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wRecalculoManoObra.designer.cs">
+      <DependentUpon>wRecalculoManoObra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wSalidaFaseEmpaquetadoRE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wSalidaFaseEmpaquetadoRE.designer.cs">
+      <DependentUpon>wSalidaFaseEmpaquetadoRE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wSalidaFaseEmpaquetado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wSalidaFaseEmpaquetado.designer.cs">
+      <DependentUpon>wSalidaFaseEmpaquetado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoDesmedroEnvasado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoDesmedroEnvasado.designer.cs">
+      <DependentUpon>wIngresoDesmedroEnvasado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoReproceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoReproceso.designer.cs">
+      <DependentUpon>wIngresoReproceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wSalidaProduccionAnteriorCua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wSalidaProduccionAnteriorCua.designer.cs">
+      <DependentUpon>wSalidaProduccionAnteriorCua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wSalidaProduccionAnteriorObs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wSalidaProduccionAnteriorObs.designer.cs">
+      <DependentUpon>wSalidaProduccionAnteriorObs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wSalidasParteFaseEmpaquetado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wSalidasParteFaseEmpaquetado.designer.cs">
+      <DependentUpon>wSalidasParteFaseEmpaquetado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wSalidasAdicionalesEncajado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wSalidasAdicionalesEncajado.designer.cs">
+      <DependentUpon>wSalidasAdicionalesEncajado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wSalidaUnidadesEmpacarRE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wSalidaUnidadesEmpacarRE.designer.cs">
+      <DependentUpon>wSalidaUnidadesEmpacarRE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wSalidaProduccionAnterior.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wSalidaProduccionAnterior.designer.cs">
+      <DependentUpon>wSalidaProduccionAnterior.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresosDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresosDevolucion.designer.cs">
+      <DependentUpon>wIngresosDevolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wUnidadesDesechan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wUnidadesDesechan.designer.cs">
+      <DependentUpon>wUnidadesDesechan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleIngresoMercaderia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleIngresoMercaderia.designer.cs">
+      <DependentUpon>wDetalleIngresoMercaderia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleTransferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleTransferencia.designer.cs">
+      <DependentUpon>wDetalleTransferencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleSalida.designer.cs">
+      <DependentUpon>wDetalleSalida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wDetalleIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wDetalleIngreso.designer.cs">
+      <DependentUpon>wDetalleIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wLote.designer.cs">
+      <DependentUpon>wLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditInventario.designer.cs">
+      <DependentUpon>wEditInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditParteTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditParteTrabajo.designer.cs">
+      <DependentUpon>wEditParteTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditLicitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditLicitacion.designer.cs">
+      <DependentUpon>wEditLicitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditProduccion.designer.cs">
+      <DependentUpon>wEditProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wActualizarTomaInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wActualizarTomaInventario.designer.cs">
+      <DependentUpon>wActualizarTomaInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wInsumosFaltantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wInsumosFaltantes.designer.cs">
+      <DependentUpon>wInsumosFaltantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresoMercaderias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresoMercaderias.designer.cs">
+      <DependentUpon>wIngresoMercaderias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wInventario.designer.cs">
+      <DependentUpon>wInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wAjusteInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wAjusteInventario.designer.cs">
+      <DependentUpon>wAjusteInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wCierreAnual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wCierreAnual.designer.cs">
+      <DependentUpon>wCierreAnual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditTransferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditTransferencia.designer.cs">
+      <DependentUpon>wEditTransferencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wRecalculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wRecalculo.designer.cs">
+      <DependentUpon>wRecalculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditSalida.designer.cs">
+      <DependentUpon>wEditSalida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wEditIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wEditIngreso.designer.cs">
+      <DependentUpon>wEditIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wTransferencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wTransferencias.designer.cs">
+      <DependentUpon>wTransferencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wSalidas.designer.cs">
+      <DependentUpon>wSalidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\wIngresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\wIngresos.designer.cs">
+      <DependentUpon>wIngresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Sistema\wAsignarEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\wAsignarEmpresas.designer.cs">
+      <DependentUpon>wAsignarEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\wAsignarPermisosPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\wAsignarPermisosPerfil.designer.cs">
+      <DependentUpon>wAsignarPermisosPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\wAsignarPermisosUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\wAsignarPermisosUsuario.designer.cs">
+      <DependentUpon>wAsignarPermisosUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\wAsignarAlmacenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\wAsignarAlmacenes.designer.cs">
+      <DependentUpon>wAsignarAlmacenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\wCambiarClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\wCambiarClave.designer.cs">
+      <DependentUpon>wCambiarClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\wCopiarPermiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\wCopiarPermiso.designer.cs">
+      <DependentUpon>wCopiarPermiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\wEditEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\wEditEmpresa.designer.cs">
+      <DependentUpon>wEditEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\wEditPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\wEditPerfil.designer.cs">
+      <DependentUpon>wEditPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\wEditPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\wEditPeriodo.designer.cs">
+      <DependentUpon>wEditPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\wEditUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\wEditUsuario.designer.cs">
+      <DependentUpon>wEditUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\wEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\wEmpresa.designer.cs">
+      <DependentUpon>wEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\wParametroEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\wParametroEmpresa.designer.cs">
+      <DependentUpon>wParametroEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\wPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\wPerfil.designer.cs">
+      <DependentUpon>wPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\wPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\wPeriodo.designer.cs">
+      <DependentUpon>wPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\wUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\wUsuario.designer.cs">
+      <DependentUpon>wUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Varios\wCopiaSeguridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Varios\wCopiaSeguridad.designer.cs">
+      <DependentUpon>wCopiaSeguridad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Varios\wEnviarRecibos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Varios\wEnviarRecibos.designer.cs">
+      <DependentUpon>wEnviarRecibos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Varios\wParametrosGenerales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Varios\wParametrosGenerales.designer.cs">
+      <DependentUpon>wParametrosGenerales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Varios\wImportarContabilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Varios\wImportarContabilidad.designer.cs">
+      <DependentUpon>wImportarContabilidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasComunes\wFiltraEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasComunes\wFiltraEstado.designer.cs">
+      <DependentUpon>wFiltraEstado.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Consultas\wMovimientosOrdenCompra.resx">
+      <DependentUpon>wMovimientosOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\wProduccionesSinLiberar.resx">
+      <DependentUpon>wProduccionesSinLiberar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\wProduccionesConSaldo.resx">
+      <DependentUpon>wProduccionesConSaldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\wLiberacionesSinMovimientos.resx">
+      <DependentUpon>wLiberacionesSinMovimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\wMovimientosXExistencia.resx">
+      <DependentUpon>wMovimientosXExistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\wProduccionesEncajar.resx">
+      <DependentUpon>wProduccionesEncajar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\wMovimientos.resx">
+      <DependentUpon>wMovimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\wAlertaStockMinimo.resx">
+      <DependentUpon>wAlertaStockMinimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\wProductoTerminado.resx">
+      <DependentUpon>wProductoTerminado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\wSaldosPorExistencia.resx">
+      <DependentUpon>wSaldosPorExistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\wSolicitudPedidos.resx">
+      <DependentUpon>wSolicitudPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desarrollador\wAgregarBotones.resx">
+      <DependentUpon>wAgregarBotones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desarrollador\wBoton.resx">
+      <DependentUpon>wBoton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desarrollador\wBotonesVentana.resx">
+      <DependentUpon>wBotonesVentana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desarrollador\wDoctor.resx">
+      <DependentUpon>wDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desarrollador\wEditBoton.resx">
+      <DependentUpon>wEditBoton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desarrollador\wEditVentana.resx">
+      <DependentUpon>wEditVentana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desarrollador\wGenerarSaldoInicial.resx">
+      <DependentUpon>wGenerarSaldoInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desarrollador\wValidarExistencias .resx">
+      <DependentUpon>wValidarExistencias .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desarrollador\wMigrarProduccion.resx">
+      <DependentUpon>wMigrarProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desarrollador\wMigrarExistencias.resx">
+      <DependentUpon>wMigrarExistencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desarrollador\wVentana.resx">
+      <DependentUpon>wVentana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrCompraExistencia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrCompraExistencia.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrCompraProveedor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrCompraProveedor.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrIngresoOCCeCoDetalle.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrIngresoOCCeCoDetalle.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrIngresoOCCeCoResumen.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrIngresoOCCeCoResumen.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrProdRangoFecha.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrProdRangoFecha.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrDocumentoEmitidoDetalle.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrDocumentoEmitidoDetalle.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrControlMovISDeta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrControlMovISDeta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrSalidaCeCoDetalle.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrSalidaCeCoDetalle.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrRecord.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrRecord.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrExistenciaGeneralResumen.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrExistenciaGeneralResumen.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrExistenciaGeneralDetalle.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrExistenciaGeneralDetalle.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrDiferenciaStock.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrDiferenciaStock.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrExistenciaTomaInventario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrExistenciaTomaInventario.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrExistenciaInventario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrExistenciaInventario.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrDocumentoEmitidoResumen.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrDocumentoEmitidoResumen.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrResumenTipoExistencia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrResumenTipoExistencia.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrKardexFisico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrKardexFisico.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrKardexValorizado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrKardexValorizado.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrNotaSalida.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrNotaSalida.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrNotaIngreso.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrNotaIngreso.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrSolicitudPedido.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrSolicitudPedido.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrStockFisicoProgramado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrStockFisicoProgramado.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wCostoLoteClaEnc.resx">
+      <DependentUpon>wCostoLoteClaEnc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wDesmedroPT.resx">
+      <DependentUpon>wDesmedroPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpCompraPorExistencia.resx">
+      <DependentUpon>wImpCompraPorExistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpCompraPorProveedor.resx">
+      <DependentUpon>wImpCompraPorProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpIngresosOCCeCo.resx">
+      <DependentUpon>wImpIngresosOCCeCo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpSolicitudPedido.resx">
+      <DependentUpon>wImpSolicitudPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpStockFisicoProgramado.resx">
+      <DependentUpon>wImpStockFisicoProgramado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wKpiVersus.resx">
+      <DependentUpon>wKpiVersus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wKpiDesmedro.resx">
+      <DependentUpon>wKpiDesmedro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wCostoTotalProduccion.resx">
+      <DependentUpon>wCostoTotalProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wCostoLoteEtaRet.resx">
+      <DependentUpon>wCostoLoteEtaRet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wCostosAcumuladosPorProceso.resx">
+      <DependentUpon>wCostosAcumuladosPorProceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wCostoLoteEtaEnv.resx">
+      <DependentUpon>wCostoLoteEtaEnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wCostoLoteEtaEnc.resx">
+      <DependentUpon>wCostoLoteEtaEnc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wPresupuestoVsRealXFechas.resx">
+      <DependentUpon>wPresupuestoVsRealXFechas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wPresupuestoVsRealXProducto.resx">
+      <DependentUpon>wPresupuestoVsRealXProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wCostoUnitarioVariabilidadCosto.resx">
+      <DependentUpon>wCostoUnitarioVariabilidadCosto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wCostoUnitarioPromedioAcumulado.resx">
+      <DependentUpon>wCostoUnitarioPromedioAcumulado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wCostoUnitarioPorFechas.resx">
+      <DependentUpon>wCostoUnitarioPorFechas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wPorCumplimientoProduccion.resx">
+      <DependentUpon>wPorCumplimientoProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wProduccionRangoFecha.resx">
+      <DependentUpon>wProduccionRangoFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpDocumentosEmitidosDeta.resx">
+      <DependentUpon>wImpDocumentosEmitidosDeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpControlMovISDeta.resx">
+      <DependentUpon>wImpControlMovISDeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpSalidasCeCoDeta.resx">
+      <DependentUpon>wImpSalidasCeCoDeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpRecords.resx">
+      <DependentUpon>wImpRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpDocumentosEmitidosResu.resx">
+      <DependentUpon>wImpDocumentosEmitidosResu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpExistenciaGeneralResu.resx">
+      <DependentUpon>wImpExistenciaGeneralResu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpExistenciaGeneralDeta.resx">
+      <DependentUpon>wImpExistenciaGeneralDeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpDiferenciaStock.resx">
+      <DependentUpon>wImpDiferenciaStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpExistenciaTomaInventario.resx">
+      <DependentUpon>wImpExistenciaTomaInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpExistenciaInventario.resx">
+      <DependentUpon>wImpExistenciaInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpResumenTipoExistencia.resx">
+      <DependentUpon>wImpResumenTipoExistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpNotaSalida.resx">
+      <DependentUpon>wImpNotaSalida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpNotaIngreso.resx">
+      <DependentUpon>wImpNotaIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpKardexFisico.resx">
+      <DependentUpon>wImpKardexFisico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpKardexValorizado.resx">
+      <DependentUpon>wImpKardexValorizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisBco.resx">
+      <DependentUpon>wLisBco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisCueBan.resx">
+      <DependentUpon>wLisCueBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisLic.resx">
+      <DependentUpon>wLisLic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisItemE.resx">
+      <DependentUpon>wLisItemE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisLibProTer.resx">
+      <DependentUpon>wLisLibProTer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisPer.resx">
+      <DependentUpon>wLisPer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisPerRec.resx">
+      <DependentUpon>wLisPerRec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisPerAut.resx">
+      <DependentUpon>wLisPerAut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisProTer.resx">
+      <DependentUpon>wLisProTer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisSolPro.resx">
+      <DependentUpon>wLisSolPro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisFor.resx">
+      <DependentUpon>wLisFor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisExi.resx">
+      <DependentUpon>wLisExi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisCeCo.resx">
+      <DependentUpon>wLisCeCo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisAux.resx">
+      <DependentUpon>wLisAux.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisAlm.resx">
+      <DependentUpon>wLisAlm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisTipOpe.resx">
+      <DependentUpon>wLisTipOpe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisItemG.resx">
+      <DependentUpon>wLisItemG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisPerEmpExt.resx">
+      <DependentUpon>wLisPerEmpExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisUsu.resx">
+      <DependentUpon>wLisUsu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listas\wLisUsuExt.resx">
+      <DependentUpon>wLisUsuExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wBancos.resx">
+      <DependentUpon>wBancos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wCuentaBanco.resx">
+      <DependentUpon>wCuentaBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wEditBancos.resx">
+      <DependentUpon>wEditBancos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wEditCuentaBanco.resx">
+      <DependentUpon>wEditCuentaBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wEditExistencia.resx">
+      <DependentUpon>wEditExistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wEditPersonalReciben.resx">
+      <DependentUpon>wEditPersonalReciben.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wEditPersonalAutorizan.resx">
+      <DependentUpon>wEditPersonalAutorizan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wEditPresupuesto.resx">
+      <DependentUpon>wEditPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wEditTablaEmpresa.resx">
+      <DependentUpon>wEditTablaEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wEditTipoCambio.resx">
+      <DependentUpon>wEditTipoCambio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wEliminarExistenciaMasivo.resx">
+      <DependentUpon>wEliminarExistenciaMasivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wAdicionarExistenciaMasivo.resx">
+      <DependentUpon>wAdicionarExistenciaMasivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wCentroCosto.resx">
+      <DependentUpon>wCentroCosto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wEditCentroCosto.resx">
+      <DependentUpon>wEditCentroCosto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wEditAuxiliar.resx">
+      <DependentUpon>wEditAuxiliar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wEditAlmacen.resx">
+      <DependentUpon>wEditAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wEditPersonal.resx">
+      <DependentUpon>wEditPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wEditTipoOperacion.resx">
+      <DependentUpon>wEditTipoOperacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wEditTablaGeneral.resx">
+      <DependentUpon>wEditTablaGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wAuxiliar.resx">
+      <DependentUpon>wAuxiliar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wAlmacen.resx">
+      <DependentUpon>wAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wExistencia.resx">
+      <DependentUpon>wExistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wPersonalReciben.resx">
+      <DependentUpon>wPersonalReciben.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wPersonalAutorizan.resx">
+      <DependentUpon>wPersonalAutorizan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wPersonal.resx">
+      <DependentUpon>wPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wPresupuesto.resx">
+      <DependentUpon>wPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wTablasEmpresa.resx">
+      <DependentUpon>wTablasEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wTipoCambio.resx">
+      <DependentUpon>wTipoCambio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wTipoOperacion.resx">
+      <DependentUpon>wTipoOperacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\wTablasGeneral.resx">
+      <DependentUpon>wTablasGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\wAcceso.resx">
+      <DependentUpon>wAcceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\wBloquearSistema.resx">
+      <DependentUpon>wBloquearSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\wMenu.resx">
+      <DependentUpon>wMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wDetalleOrdenCompra.resx">
+      <DependentUpon>wDetalleOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wDetalleOrdenCompraPendiente.resx">
+      <DependentUpon>wDetalleOrdenCompraPendiente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wDetalleSolicitudPedido.resx">
+      <DependentUpon>wDetalleSolicitudPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wEditLote.resx">
+      <DependentUpon>wEditLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wEditLoteSolPedido.resx">
+      <DependentUpon>wEditLoteSolPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wEditOrdenCompra.resx">
+      <DependentUpon>wEditOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wEditPagosUnica.resx">
+      <DependentUpon>wEditPagosUnica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wEditSolicitudPedido.resx">
+      <DependentUpon>wEditSolicitudPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wEliminarPagos.resx">
+      <DependentUpon>wEliminarPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wEnviarOrdenCompra.resx">
+      <DependentUpon>wEnviarOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wEnviarSolicitudPedido.resx">
+      <DependentUpon>wEnviarSolicitudPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wLote.resx">
+      <DependentUpon>wLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wLoteSolPedido.resx">
+      <DependentUpon>wLoteSolPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wModificarPagos.resx">
+      <DependentUpon>wModificarPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wOrdenCompra.resx">
+      <DependentUpon>wOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wOrdenCompraPorMovimiento.resx">
+      <DependentUpon>wOrdenCompraPorMovimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wPagos.resx">
+      <DependentUpon>wPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wPagosLetras.resx">
+      <DependentUpon>wPagosLetras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wRecalculoPresupuesto.resx">
+      <DependentUpon>wRecalculoPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wSelAux.resx">
+      <DependentUpon>wSelAux.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wSolicitudPedido.resx">
+      <DependentUpon>wSolicitudPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wAgregarParteFaseEmpaquetado.resx">
+      <DependentUpon>wAgregarParteFaseEmpaquetado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wCalcularFlete.resx">
+      <DependentUpon>wCalcularFlete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleSalidaEtiquetaSegLib.resx">
+      <DependentUpon>wDetalleSalidaEtiquetaSegLib.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEleccionSegundaLiberacion.resx">
+      <DependentUpon>wEleccionSegundaLiberacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresosOrdenCompra.resx">
+      <DependentUpon>wIngresosOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoUnidadesSegundaLiberacion.resx">
+      <DependentUpon>wIngresoUnidadesSegundaLiberacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wSalidaEtiquetaSegundaLiberacion.resx">
+      <DependentUpon>wSalidaEtiquetaSegundaLiberacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wSegundaLiberacion.resx">
+      <DependentUpon>wSegundaLiberacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditLiberacionDistCalidad.resx">
+      <DependentUpon>wEditLiberacionDistCalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditLiberacionDistProduccion.resx">
+      <DependentUpon>wEditLiberacionDistProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditSalidaParteFaseEmpaquetado.resx">
+      <DependentUpon>wEditSalidaParteFaseEmpaquetado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoSemElaMuestraProduccion.resx">
+      <DependentUpon>wIngresoSemElaMuestraProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wTransferenciaPackingAnaBloq.resx">
+      <DependentUpon>wTransferenciaPackingAnaBloq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wTransferenciaReprocesoAnaBloq.resx">
+      <DependentUpon>wTransferenciaReprocesoAnaBloq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wProTerFaseEmpaquetado.resx">
+      <DependentUpon>wProTerFaseEmpaquetado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wCantidadDevolver.resx">
+      <DependentUpon>wCantidadDevolver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wAgregarMotivo.resx">
+      <DependentUpon>wAgregarMotivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wCantidadAdicionalEncajado.resx">
+      <DependentUpon>wCantidadAdicionalEncajado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleIngresoDevolucionEncajado.resx">
+      <DependentUpon>wDetalleIngresoDevolucionEncajado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleIngresoMercaderiaRE.resx">
+      <DependentUpon>wDetalleIngresoMercaderiaRE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleMotivoPreLiberacion.resx">
+      <DependentUpon>wDetalleMotivoPreLiberacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleMotivoPrimeraLiberacion.resx">
+      <DependentUpon>wDetalleMotivoPrimeraLiberacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleMotivoSincerado.resx">
+      <DependentUpon>wDetalleMotivoSincerado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleMotivoDesmedro.resx">
+      <DependentUpon>wDetalleMotivoDesmedro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleMotivoLiberacion.resx">
+      <DependentUpon>wDetalleMotivoLiberacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleDesmedroEnvasado.resx">
+      <DependentUpon>wDetalleDesmedroEnvasado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleSalidaAdicionalEncajado.resx">
+      <DependentUpon>wDetalleSalidaAdicionalEncajado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditIngresoDevolucionEncajado.resx">
+      <DependentUpon>wEditIngresoDevolucionEncajado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditLiberacionDist.resx">
+      <DependentUpon>wEditLiberacionDist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditLote.resx">
+      <DependentUpon>wEditLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditLoteRetiquetado.resx">
+      <DependentUpon>wEditLoteRetiquetado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleRetiquetado.resx">
+      <DependentUpon>wDetalleRetiquetado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditSalidaAdicionalEncajado.resx">
+      <DependentUpon>wEditSalidaAdicionalEncajado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoDesechoQali.resx">
+      <DependentUpon>wIngresoDesechoQali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoMuestraQali.resx">
+      <DependentUpon>wIngresoMuestraQali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoReprocesoQali.resx">
+      <DependentUpon>wIngresoReprocesoQali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoDesecho.resx">
+      <DependentUpon>wIngresoDesecho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoDonaciones.resx">
+      <DependentUpon>wIngresoDonaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoMuestras.resx">
+      <DependentUpon>wIngresoMuestras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresosDevolucionEncajado.resx">
+      <DependentUpon>wIngresosDevolucionEncajado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoSemElaContraMuestra.resx">
+      <DependentUpon>wIngresoSemElaContraMuestra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoCuarentenaQali.resx">
+      <DependentUpon>wIngresoCuarentenaQali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresosSaldos.resx">
+      <DependentUpon>wIngresosSaldos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoObservados.resx">
+      <DependentUpon>wIngresoObservados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoSemElaObservadas.resx">
+      <DependentUpon>wIngresoSemElaObservadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wInsumosFaltantesTransferir.resx">
+      <DependentUpon>wInsumosFaltantesTransferir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wInsumosMasaEnvasado.resx">
+      <DependentUpon>wInsumosMasaEnvasado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wLoteRetiquetado.resx">
+      <DependentUpon>wLoteRetiquetado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditRetiquetado.resx">
+      <DependentUpon>wEditRetiquetado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoMercaderiasRE.resx">
+      <DependentUpon>wIngresoMercaderiasRE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wInsumosFaltantesRetiquetado.resx">
+      <DependentUpon>wInsumosFaltantesRetiquetado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wMotivoPreLiberacion.resx">
+      <DependentUpon>wMotivoPreLiberacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wMotivoPrimeraLiberacion.resx">
+      <DependentUpon>wMotivoPrimeraLiberacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wPrimeraLiberacion.resx">
+      <DependentUpon>wPrimeraLiberacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wMotivoSinceradoParTra.resx">
+      <DependentUpon>wMotivoSinceradoParTra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wMotivoSincerado.resx">
+      <DependentUpon>wMotivoSincerado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wMotivoDesmedro.resx">
+      <DependentUpon>wMotivoDesmedro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wMotivoLiberacion.resx">
+      <DependentUpon>wMotivoLiberacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wCambiarFcLote.resx">
+      <DependentUpon>wCambiarFcLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleEncajado.resx">
+      <DependentUpon>wDetalleEncajado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditEncajado.resx">
+      <DependentUpon>wEditEncajado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditCantidadReal.resx">
+      <DependentUpon>wEditCantidadReal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditLiberacion.resx">
+      <DependentUpon>wEditLiberacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wElegirParaTransferir.resx">
+      <DependentUpon>wElegirParaTransferir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wAgregarSolicitudes.resx">
+      <DependentUpon>wAgregarSolicitudes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wAprobarSolicitud.resx">
+      <DependentUpon>wAprobarSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleIngresoDevolucion.resx">
+      <DependentUpon>wDetalleIngresoDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleSalidaAdicional.resx">
+      <DependentUpon>wDetalleSalidaAdicional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDistribucionEmpaquetado.resx">
+      <DependentUpon>wDistribucionEmpaquetado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditIngresoDevolucion.resx">
+      <DependentUpon>wEditIngresoDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditSalidaAdicional.resx">
+      <DependentUpon>wEditSalidaAdicional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wImportarMovimientosSalidas.resx">
+      <DependentUpon>wImportarMovimientosSalidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wImportarMovimientosIngresos.resx">
+      <DependentUpon>wImportarMovimientosIngresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wTransferenciaDonacionAnaBloq.resx">
+      <DependentUpon>wTransferenciaDonacionAnaBloq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoMuestra.resx">
+      <DependentUpon>wIngresoMuestra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wTransferenciaDesechasAnaBloq.resx">
+      <DependentUpon>wTransferenciaDesechasAnaBloq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wInsumosFaltantesEncajado.resx">
+      <DependentUpon>wInsumosFaltantesEncajado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wInsumosFaltantesCompra.resx">
+      <DependentUpon>wInsumosFaltantesCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wCantidadReal.resx">
+      <DependentUpon>wCantidadReal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wMasaPerdida.resx">
+      <DependentUpon>wMasaPerdida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wRetiquetado.resx">
+      <DependentUpon>wRetiquetado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wPlanEncajado.resx">
+      <DependentUpon>wPlanEncajado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wRecalculoProduccion.resx">
+      <DependentUpon>wRecalculoProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wRecalculoManoObra.resx">
+      <DependentUpon>wRecalculoManoObra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wSalidaFaseEmpaquetadoRE.resx">
+      <DependentUpon>wSalidaFaseEmpaquetadoRE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wSalidaFaseEmpaquetado.resx">
+      <DependentUpon>wSalidaFaseEmpaquetado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoDesmedroEnvasado.resx">
+      <DependentUpon>wIngresoDesmedroEnvasado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoReproceso.resx">
+      <DependentUpon>wIngresoReproceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wSalidaProduccionAnteriorCua.resx">
+      <DependentUpon>wSalidaProduccionAnteriorCua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wSalidaProduccionAnteriorObs.resx">
+      <DependentUpon>wSalidaProduccionAnteriorObs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wSalidasParteFaseEmpaquetado.resx">
+      <DependentUpon>wSalidasParteFaseEmpaquetado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wSalidasAdicionalesEncajado.resx">
+      <DependentUpon>wSalidasAdicionalesEncajado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wSalidaUnidadesEmpacarRE.resx">
+      <DependentUpon>wSalidaUnidadesEmpacarRE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wSalidaProduccionAnterior.resx">
+      <DependentUpon>wSalidaProduccionAnterior.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresosDevolucion.resx">
+      <DependentUpon>wIngresosDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wUnidadesDesechan.resx">
+      <DependentUpon>wUnidadesDesechan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleIngresoMercaderia.resx">
+      <DependentUpon>wDetalleIngresoMercaderia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleTransferencia.resx">
+      <DependentUpon>wDetalleTransferencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleSalida.resx">
+      <DependentUpon>wDetalleSalida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wDetalleIngreso.resx">
+      <DependentUpon>wDetalleIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wLote.resx">
+      <DependentUpon>wLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditInventario.resx">
+      <DependentUpon>wEditInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditParteTrabajo.resx">
+      <DependentUpon>wEditParteTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditLicitacion.resx">
+      <DependentUpon>wEditLicitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditProduccion.resx">
+      <DependentUpon>wEditProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wActualizarTomaInventario.resx">
+      <DependentUpon>wActualizarTomaInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wInsumosFaltantes.resx">
+      <DependentUpon>wInsumosFaltantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresoMercaderias.resx">
+      <DependentUpon>wIngresoMercaderias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wInventario.resx">
+      <DependentUpon>wInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wAjusteInventario.resx">
+      <DependentUpon>wAjusteInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wCierreAnual.resx">
+      <DependentUpon>wCierreAnual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditTransferencia.resx">
+      <DependentUpon>wEditTransferencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wRecalculo.resx">
+      <DependentUpon>wRecalculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditSalida.resx">
+      <DependentUpon>wEditSalida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wEditIngreso.resx">
+      <DependentUpon>wEditIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wTransferencias.resx">
+      <DependentUpon>wTransferencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wSalidas.resx">
+      <DependentUpon>wSalidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\wIngresos.resx">
+      <DependentUpon>wIngresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Sistema\wAsignarEmpresas.resx">
+      <DependentUpon>wAsignarEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\wAsignarPermisosPerfil.resx">
+      <DependentUpon>wAsignarPermisosPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\wAsignarPermisosUsuario.resx">
+      <DependentUpon>wAsignarPermisosUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\wAsignarAlmacenes.resx">
+      <DependentUpon>wAsignarAlmacenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\wCambiarClave.resx">
+      <DependentUpon>wCambiarClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\wCopiarPermiso.resx">
+      <DependentUpon>wCopiarPermiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\wEditEmpresa.resx">
+      <DependentUpon>wEditEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\wEditPerfil.resx">
+      <DependentUpon>wEditPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\wEditPeriodo.resx">
+      <DependentUpon>wEditPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\wEditUsuario.resx">
+      <DependentUpon>wEditUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\wEmpresa.resx">
+      <DependentUpon>wEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\wParametroEmpresa.resx">
+      <DependentUpon>wParametroEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\wPerfil.resx">
+      <DependentUpon>wPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\wPeriodo.resx">
+      <DependentUpon>wPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\wUsuario.resx">
+      <DependentUpon>wUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Varios\wCopiaSeguridad.resx">
+      <DependentUpon>wCopiaSeguridad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Varios\wEnviarRecibos.resx">
+      <DependentUpon>wEnviarRecibos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Varios\wParametrosGenerales.resx">
+      <DependentUpon>wParametrosGenerales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Varios\wImportarContabilidad.resx">
+      <DependentUpon>wImportarContabilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasComunes\wFiltraEstado.resx">
+      <DependentUpon>wFiltraEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Impresiones\Impresion.xsc">
+      <DependentUpon>Impresion.xsd</DependentUpon>
+    </None>
+    <None Include="Impresiones\Impresion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Impresion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Impresiones\Impresion.xss">
+      <DependentUpon>Impresion.xsd</DependentUpon>
+    </None>
+    <None Include="Plantilla\FORMATO ORDEN DE COMPRA.xlsx" />
+    <None Include="Plantilla\FORMATO REQUERIMIENTO DE COMPRA.xlsx" />
+    <None Include="Presentacion_ClaveTemporal.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{f709414d-38df-4398-adb6-868954045a27}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{7f3ecd31-c0d0-48cb-8afa-bde5fd070f6d}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01 Excel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2leftarrow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Acrobat%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Borders%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Calendar 2%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Card file%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Card update%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Db next%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Edit-3%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Filter%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Hand point%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Lock on%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Lock on%291.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Mail%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Paste%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Pencil tool%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Plus%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Print%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Refresh%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Refuse%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Undo%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Users%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Window next%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Window previous%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\17.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\106.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acceso6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_form_edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blog-post-delete_24x24-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_folder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bundle-32x32x8b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\C&amp;M 07_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-date_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contact_16x16-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP 28_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP 45_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editdelete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\encrypted.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File 79_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder 086_16x16-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder 086_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder Blue Documents_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-next_16x16-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-previous_16x16-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo_Acceso.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Game 11_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gnome-home.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_brown16_h.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_green16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id_card_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image-edit_16x16-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\korganizer_todo_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-next_16x16-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Media 12_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notes-edit_16x16-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_red.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_white_text_width.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste_clipboard16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shared-badge_24x24-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taskbar_24x24-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User 04_24x24-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User 04_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User Info_16x16-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_suit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door_in.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door_out.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_refresh1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_pie_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Calculator%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag_green.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Box open%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel1">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sent Message.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

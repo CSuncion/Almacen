@@ -1,0 +1,1806 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="msMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>14, 11</value>
+  </metadata>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="msMenu.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="IteEmpresas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="IteEmpresas.Text" xml:space="preserve">
+    <value>Empresas</value>
+  </data>
+  <data name="IteUsuarios.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="IteUsuarios.Text" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
+  <data name="ItePerfiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="ItePerfiles.Text" xml:space="preserve">
+    <value>Perfiles</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 6</value>
+  </data>
+  <data name="ItecambioDeClave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="ItecambioDeClave.Text" xml:space="preserve">
+    <value>Cambio de Clave</value>
+  </data>
+  <data name="IteBloquearSistema.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="IteBloquearSistema.Text" xml:space="preserve">
+    <value>Bloquear Sistema</value>
+  </data>
+  <data name="IteCambiarAcceso.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="IteCambiarAcceso.Text" xml:space="preserve">
+    <value>Cambiar Acceso</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 6</value>
+  </data>
+  <data name="IteSalir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="IteSalir.Text" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="sistemaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 18</value>
+  </data>
+  <data name="sistemaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sistema</value>
+  </data>
+  <data name="IteTablasGenerales.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
+  </data>
+  <data name="IteTablasGenerales.Text" xml:space="preserve">
+    <value>Generales</value>
+  </data>
+  <data name="IteTablasEmpresa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
+  </data>
+  <data name="IteTablasEmpresa.Text" xml:space="preserve">
+    <value>Por Empresa</value>
+  </data>
+  <data name="IteTablas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="IteTablas.Text" xml:space="preserve">
+    <value>Tablas</value>
+  </data>
+  <data name="ItePeriodos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="ItePeriodos.Text" xml:space="preserve">
+    <value>Periodos</value>
+  </data>
+  <data name="IteTiposOperacion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="IteTiposOperacion.Text" xml:space="preserve">
+    <value>Tipos De Operacion</value>
+  </data>
+  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 6</value>
+  </data>
+  <data name="ItePersonalAlmacen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 22</value>
+  </data>
+  <data name="ItePersonalAlmacen.Text" xml:space="preserve">
+    <value>De Almacen</value>
+  </data>
+  <data name="ItePersonalAutorizan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 22</value>
+  </data>
+  <data name="ItePersonalAutorizan.Text" xml:space="preserve">
+    <value>Autorizan</value>
+  </data>
+  <data name="ItePersonalReciben.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 22</value>
+  </data>
+  <data name="ItePersonalReciben.Text" xml:space="preserve">
+    <value>Reciben</value>
+  </data>
+  <data name="ItePersonal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="ItePersonal.Text" xml:space="preserve">
+    <value>Personal</value>
+  </data>
+  <data name="IteAuxiliares.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="IteAuxiliares.Text" xml:space="preserve">
+    <value>Auxiliares</value>
+  </data>
+  <data name="IteAuxiliares.ToolTipText" xml:space="preserve">
+    <value>Clientes y Proveedores</value>
+  </data>
+  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 6</value>
+  </data>
+  <data name="IteAlmacenes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="IteAlmacenes.Text" xml:space="preserve">
+    <value>Almacenes</value>
+  </data>
+  <data name="IteExistencias.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="IteExistencias.Text" xml:space="preserve">
+    <value>Existencias</value>
+  </data>
+  <data name="itePresupuestos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="itePresupuestos.Text" xml:space="preserve">
+    <value>Presupuestos</value>
+  </data>
+  <data name="iteTipoCambio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="iteTipoCambio.Text" xml:space="preserve">
+    <value>Tipo de Cambio</value>
+  </data>
+  <data name="IteBancos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="IteBancos.Text" xml:space="preserve">
+    <value>Bancos</value>
+  </data>
+  <data name="IteCuentaBancos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="IteCuentaBancos.Text" xml:space="preserve">
+    <value>Cuentas Bancarias</value>
+  </data>
+  <data name="maestrosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 18</value>
+  </data>
+  <data name="maestrosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Maestros</value>
+  </data>
+  <data name="IteIngresos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="IteIngresos.Text" xml:space="preserve">
+    <value>Ingresos</value>
+  </data>
+  <data name="IteIngresosOrdenCompra.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="IteIngresosOrdenCompra.Text" xml:space="preserve">
+    <value>Ingreso x Orden Compra</value>
+  </data>
+  <data name="IteSalidas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="IteSalidas.Text" xml:space="preserve">
+    <value>Salidas</value>
+  </data>
+  <data name="IteTransferencias.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="IteTransferencias.Text" xml:space="preserve">
+    <value>Transferencias</value>
+  </data>
+  <data name="iteSolicitudPedido.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="iteSolicitudPedido.Text" xml:space="preserve">
+    <value>Solicitud de Pedidos</value>
+  </data>
+  <data name="iteOrdenCompra.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="iteOrdenCompra.Text" xml:space="preserve">
+    <value>Orden de Compra</value>
+  </data>
+  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 6</value>
+  </data>
+  <data name="itePagosPorOrdenCompra.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="itePagosPorOrdenCompra.Text" xml:space="preserve">
+    <value>Pagos</value>
+  </data>
+  <data name="IteRecalculoSaldos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
+  <data name="IteRecalculoSaldos.Text" xml:space="preserve">
+    <value>Saldos</value>
+  </data>
+  <data name="IteRecalculoProduccion.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IteRecalculoProduccion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
+  <data name="IteRecalculoProduccion.Text" xml:space="preserve">
+    <value>Producciones</value>
+  </data>
+  <data name="IteRecalculoProduccion.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="iteRecalculoPresupuesto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
+  <data name="iteRecalculoPresupuesto.Text" xml:space="preserve">
+    <value>Presupuestos</value>
+  </data>
+  <data name="IteRecalculo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="IteRecalculo.Text" xml:space="preserve">
+    <value>Recalculo</value>
+  </data>
+  <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 6</value>
+  </data>
+  <data name="IteCierreAnual.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="IteCierreAnual.Text" xml:space="preserve">
+    <value>Cierre Anual</value>
+  </data>
+  <data name="IteInventarios.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="IteInventarios.Text" xml:space="preserve">
+    <value>Inventarios</value>
+  </data>
+  <data name="procesosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 18</value>
+  </data>
+  <data name="procesosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Procesos</value>
+  </data>
+  <data name="IteSaldosPorExistencia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 22</value>
+  </data>
+  <data name="IteSaldosPorExistencia.Text" xml:space="preserve">
+    <value>Saldos Por Existencia</value>
+  </data>
+  <data name="IteMovimientos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 22</value>
+  </data>
+  <data name="IteMovimientos.Text" xml:space="preserve">
+    <value>Movimientos</value>
+  </data>
+  <data name="IteAlertaStockMinimo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 22</value>
+  </data>
+  <data name="IteAlertaStockMinimo.Text" xml:space="preserve">
+    <value>Alerta Stock Minimo</value>
+  </data>
+  <data name="IteLiberacionesSinMovimientos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 22</value>
+  </data>
+  <data name="IteLiberacionesSinMovimientos.Text" xml:space="preserve">
+    <value>Liberaciones Pendientes Por Terminar</value>
+  </data>
+  <data name="IteLiberacionesSinMovimientos.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IteConsultaProductoTerminado.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 22</value>
+  </data>
+  <data name="IteConsultaProductoTerminado.Text" xml:space="preserve">
+    <value>Producto Terminado</value>
+  </data>
+  <data name="IteConsultaProductoTerminado.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IteProduccionConSaldo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 22</value>
+  </data>
+  <data name="IteProduccionConSaldo.Text" xml:space="preserve">
+    <value>Producciones con Saldo</value>
+  </data>
+  <data name="IteProduccionConSaldo.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IteControlCalidad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 22</value>
+  </data>
+  <data name="IteControlCalidad.Text" xml:space="preserve">
+    <value>Producciones Sin Liberar (Calidad)</value>
+  </data>
+  <data name="IteControlCalidad.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IteSolicitudPedidos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 22</value>
+  </data>
+  <data name="IteSolicitudPedidos.Text" xml:space="preserve">
+    <value>Solicitud de Pedido</value>
+  </data>
+  <data name="IteConsultaOrdenCompra.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 22</value>
+  </data>
+  <data name="IteConsultaOrdenCompra.Text" xml:space="preserve">
+    <value>Orden de Compra</value>
+  </data>
+  <data name="consultasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 18</value>
+  </data>
+  <data name="consultasToolStripMenuItem.Text" xml:space="preserve">
+    <value>Consultas</value>
+  </data>
+  <data name="IteKardexValorizado.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 22</value>
+  </data>
+  <data name="IteKardexValorizado.Text" xml:space="preserve">
+    <value>Valorizado</value>
+  </data>
+  <data name="IteKardexFisico.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 22</value>
+  </data>
+  <data name="IteKardexFisico.Text" xml:space="preserve">
+    <value>Fisico</value>
+  </data>
+  <data name="IteKardex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="IteKardex.Text" xml:space="preserve">
+    <value>Kardex</value>
+  </data>
+  <data name="IteExiGenDetalle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="IteExiGenDetalle.Text" xml:space="preserve">
+    <value>Detalle</value>
+  </data>
+  <data name="IteExiGenResumen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="IteExiGenResumen.Text" xml:space="preserve">
+    <value>Resumen</value>
+  </data>
+  <data name="IteExistenciasGenerales.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="IteExistenciasGenerales.Text" xml:space="preserve">
+    <value>Existencias Generales</value>
+  </data>
+  <data name="IteResumenTipoExistencia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="IteResumenTipoExistencia.Text" xml:space="preserve">
+    <value>Resumen Tipo Existencia</value>
+  </data>
+  <data name="IteDocEmiDetalle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="IteDocEmiDetalle.Text" xml:space="preserve">
+    <value>Detalle</value>
+  </data>
+  <data name="IteDocEmiResumen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="IteDocEmiResumen.Text" xml:space="preserve">
+    <value>Resumen</value>
+  </data>
+  <data name="IteDocumentosEmitidos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="IteDocumentosEmitidos.Text" xml:space="preserve">
+    <value>Documentos Emitidos</value>
+  </data>
+  <data name="IteRepSalRecord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 22</value>
+  </data>
+  <data name="IteRepSalRecord.Text" xml:space="preserve">
+    <value>Records</value>
+  </data>
+  <data name="IteRepSalCeCoDeta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 22</value>
+  </data>
+  <data name="IteRepSalCeCoDeta.Text" xml:space="preserve">
+    <value>Detalle</value>
+  </data>
+  <data name="IteRepSalCeCo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 22</value>
+  </data>
+  <data name="IteRepSalCeCo.Text" xml:space="preserve">
+    <value>Centro Costo</value>
+  </data>
+  <data name="IteReporteSalidas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="IteReporteSalidas.Text" xml:space="preserve">
+    <value>Salidas</value>
+  </data>
+  <data name="IteConMovISDetalle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 22</value>
+  </data>
+  <data name="IteConMovISDetalle.Text" xml:space="preserve">
+    <value>Detalle</value>
+  </data>
+  <data name="IteControlMovimientosIS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="IteControlMovimientosIS.Text" xml:space="preserve">
+    <value>Control Movimientos ( I / S )</value>
+  </data>
+  <data name="IteFormatoEnvasado.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="IteFormatoEnvasado.Text" xml:space="preserve">
+    <value>Formato Envasado</value>
+  </data>
+  <data name="IteCosUniPorProducto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 22</value>
+  </data>
+  <data name="IteCosUniPorProducto.Text" xml:space="preserve">
+    <value>Costos Unitarios Por Producto</value>
+  </data>
+  <data name="IteCosUniPromediosAcumulados.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 22</value>
+  </data>
+  <data name="IteCosUniPromediosAcumulados.Text" xml:space="preserve">
+    <value>Costos Unitarios Promedio Acumulados</value>
+  </data>
+  <data name="IteCosUniVarCostos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 22</value>
+  </data>
+  <data name="IteCosUniVarCostos.Text" xml:space="preserve">
+    <value>Costo Unitarios Por Variabilidad Costos</value>
+  </data>
+  <data name="IteCosPreVsReaXPro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 22</value>
+  </data>
+  <data name="IteCosPreVsReaXPro.Text" xml:space="preserve">
+    <value>Costo Presupuestados vs Reales Por Producto</value>
+  </data>
+  <data name="IteCosPreVsReaXFec.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 22</value>
+  </data>
+  <data name="IteCosPreVsReaXFec.Text" xml:space="preserve">
+    <value>Costos Presupuestados vs Reales Por Fechas</value>
+  </data>
+  <data name="IteCosAcuPorProcesos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 22</value>
+  </data>
+  <data name="IteCosAcuPorProcesos.Text" xml:space="preserve">
+    <value>Costos Acumulado Por Procesos</value>
+  </data>
+  <data name="IteProductosTerminados.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="IteProductosTerminados.Text" xml:space="preserve">
+    <value>Productos Terminados</value>
+  </data>
+  <data name="IteCosLotEtaEnv.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 22</value>
+  </data>
+  <data name="IteCosLotEtaEnv.Text" xml:space="preserve">
+    <value>Etapa Envasado</value>
+  </data>
+  <data name="IteCosLotClaEnc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 22</value>
+  </data>
+  <data name="IteCosLotClaEnc.Text" xml:space="preserve">
+    <value>Clasificacion Encajado</value>
+  </data>
+  <data name="IteCosLotEtaEnc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 22</value>
+  </data>
+  <data name="IteCosLotEtaEnc.Text" xml:space="preserve">
+    <value>Etapa Encajado</value>
+  </data>
+  <data name="IteCosLotEtaRet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 22</value>
+  </data>
+  <data name="IteCosLotEtaRet.Text" xml:space="preserve">
+    <value>Etapa Reetiquetado</value>
+  </data>
+  <data name="IteCosLotTotPro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 22</value>
+  </data>
+  <data name="IteCosLotTotPro.Text" xml:space="preserve">
+    <value>Totales Produccion</value>
+  </data>
+  <data name="costosPorLoteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="costosPorLoteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Costos Por Lote</value>
+  </data>
+  <data name="ItePorCumProd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="ItePorCumProd.Text" xml:space="preserve">
+    <value>% Cumplimiento Produccion</value>
+  </data>
+  <data name="IteKpiDesmedro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>299, 22</value>
+  </data>
+  <data name="IteKpiDesmedro.Text" xml:space="preserve">
+    <value>Desmedro</value>
+  </data>
+  <data name="IteKpiVersus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>299, 22</value>
+  </data>
+  <data name="IteKpiVersus.Text" xml:space="preserve">
+    <value>Unidades Planificadas vs Reales Por Fechas</value>
+  </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+    <value>KPI</value>
+  </data>
+  <data name="IteDesPT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="IteDesPT.Text" xml:space="preserve">
+    <value>Desmedro PT</value>
+  </data>
+  <data name="IteProduccion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="IteProduccion.Text" xml:space="preserve">
+    <value>Produccion</value>
+  </data>
+  <data name="IteProduccion.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="IteRepIngOCCeCo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="IteRepIngOCCeCo.Text" xml:space="preserve">
+    <value>Centro Costo</value>
+  </data>
+  <data name="iteStockFisicoProgramado.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="iteStockFisicoProgramado.Text" xml:space="preserve">
+    <value>Stock Fisico y Programado</value>
+  </data>
+  <data name="iteCompraProveedor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="iteCompraProveedor.Text" xml:space="preserve">
+    <value>Compra por Proveedor</value>
+  </data>
+  <data name="iteCompraExistencia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="iteCompraExistencia.Text" xml:space="preserve">
+    <value>Compra por Existencia</value>
+  </data>
+  <data name="IteReporteIngresosOC.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="IteReporteIngresosOC.Text" xml:space="preserve">
+    <value>Ingresos x Orden de Compra</value>
+  </data>
+  <data name="reportesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 18</value>
+  </data>
+  <data name="reportesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reportes</value>
+  </data>
+  <data name="IteParametros.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="IteParametros.Text" xml:space="preserve">
+    <value>Parametros Generales</value>
+  </data>
+  <data name="IteCopiaSeguridadBD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="IteCopiaSeguridadBD.Text" xml:space="preserve">
+    <value>Copia De Seguridad</value>
+  </data>
+  <data name="baseDeDatosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="baseDeDatosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Base De Datos</value>
+  </data>
+  <data name="IteImpContabilidad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 22</value>
+  </data>
+  <data name="IteImpContabilidad.Text" xml:space="preserve">
+    <value>Contabilidad</value>
+  </data>
+  <data name="IteImportaciones.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="IteImportaciones.Text" xml:space="preserve">
+    <value>Importaciones</value>
+  </data>
+  <data name="IteEnviarRecibo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="IteEnviarRecibo.Text" xml:space="preserve">
+    <value>Enviar a Correo</value>
+  </data>
+  <data name="recibosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="recibosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Recibos</value>
+  </data>
+  <data name="variosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 18</value>
+  </data>
+  <data name="variosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Varios</value>
+  </data>
+  <data name="IteBotones.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 22</value>
+  </data>
+  <data name="IteBotones.Text" xml:space="preserve">
+    <value>Botones</value>
+  </data>
+  <data name="IteVentanas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 22</value>
+  </data>
+  <data name="IteVentanas.Text" xml:space="preserve">
+    <value>Ventanas</value>
+  </data>
+  <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 6</value>
+  </data>
+  <data name="IteMigracionExistencias.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 22</value>
+  </data>
+  <data name="IteMigracionExistencias.Text" xml:space="preserve">
+    <value>Existencias</value>
+  </data>
+  <data name="IteMigrarProduccion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 22</value>
+  </data>
+  <data name="IteMigrarProduccion.Text" xml:space="preserve">
+    <value>Produccion</value>
+  </data>
+  <data name="IteValidarExistencia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 22</value>
+  </data>
+  <data name="IteValidarExistencia.Text" xml:space="preserve">
+    <value>Validar Existencia</value>
+  </data>
+  <data name="IteMigracion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 22</value>
+  </data>
+  <data name="IteMigracion.Text" xml:space="preserve">
+    <value>Migracion</value>
+  </data>
+  <data name="IteDoctor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 22</value>
+  </data>
+  <data name="IteDoctor.Text" xml:space="preserve">
+    <value>Doctor</value>
+  </data>
+  <data name="IteProgramador.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 18</value>
+  </data>
+  <data name="IteProgramador.Text" xml:space="preserve">
+    <value>Programador</value>
+  </data>
+  <data name="IteProgramador.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="msMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="msMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1028, 22</value>
+  </data>
+  <data name="msMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="msMenu.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;msMenu.Name" xml:space="preserve">
+    <value>msMenu</value>
+  </data>
+  <data name="&gt;&gt;msMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;msMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;msMenu.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="tsAccDir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>115, 12</value>
+  </metadata>
+  <data name="tsAccDir.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tsAccDir.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="tsbAuxiliares.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbAuxiliares.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 31</value>
+  </data>
+  <data name="tsbAuxiliares.Text" xml:space="preserve">
+    <value>Auxiliares</value>
+  </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 34</value>
+  </data>
+  <data name="tsbIngresos.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbIngresos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 31</value>
+  </data>
+  <data name="tsbIngresos.Text" xml:space="preserve">
+    <value>Ingresos</value>
+  </data>
+  <data name="tsbSalidas.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbSalidas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 31</value>
+  </data>
+  <data name="tsbSalidas.Text" xml:space="preserve">
+    <value>Salidas</value>
+  </data>
+  <data name="tsbTransferencias.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbTransferencias.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 31</value>
+  </data>
+  <data name="tsbTransferencias.Text" xml:space="preserve">
+    <value>Transferencias</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 34</value>
+  </data>
+  <data name="tsbRecalculo.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbRecalculo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 31</value>
+  </data>
+  <data name="tsbRecalculo.Text" xml:space="preserve">
+    <value>Recalculo</value>
+  </data>
+  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 34</value>
+  </data>
+  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 34</value>
+  </data>
+  <data name="tsbBloSis.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbBloSis.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 31</value>
+  </data>
+  <data name="tsbBloSis.Text" xml:space="preserve">
+    <value>Bloq. Sistema</value>
+  </data>
+  <data name="tsbBloSis.ToolTipText" xml:space="preserve">
+    <value>Bloquear sistema</value>
+  </data>
+  <data name="tsbCamAcc.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbCamAcc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 31</value>
+  </data>
+  <data name="tsbCamAcc.Text" xml:space="preserve">
+    <value>Cambiar Acceso</value>
+  </data>
+  <data name="tsbSalir.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbSalir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 31</value>
+  </data>
+  <data name="tsbSalir.Text" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="tsAccDir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 22</value>
+  </data>
+  <data name="tsAccDir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1028, 34</value>
+  </data>
+  <data name="tsAccDir.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tsAccDir.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;tsAccDir.Name" xml:space="preserve">
+    <value>tsAccDir</value>
+  </data>
+  <data name="&gt;&gt;tsAccDir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsAccDir.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tsAccDir.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tbcContenedor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tbcContenedor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 56</value>
+  </data>
+  <data name="tbcContenedor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1028, 183</value>
+  </data>
+  <data name="tbcContenedor.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tbcContenedor.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tbcContenedor.Name" xml:space="preserve">
+    <value>tbcContenedor</value>
+  </data>
+  <data name="&gt;&gt;tbcContenedor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbcContenedor.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbcContenedor.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="ssBarraEstado.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>207, 11</value>
+  </metadata>
+  <data name="tssBarraEstado.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 17</value>
+  </data>
+  <data name="tssBarraEstado.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="ssBarraEstado.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 239</value>
+  </data>
+  <data name="ssBarraEstado.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1028, 22</value>
+  </data>
+  <data name="ssBarraEstado.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="ssBarraEstado.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;ssBarraEstado.Name" xml:space="preserve">
+    <value>ssBarraEstado</value>
+  </data>
+  <data name="&gt;&gt;ssBarraEstado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ssBarraEstado.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ssBarraEstado.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>43</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1028, 261</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Software Almacen  Vs 1.0.1.0.6</value>
+  </data>
+  <data name="&gt;&gt;sistemaToolStripMenuItem.Name" xml:space="preserve">
+    <value>sistemaToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;sistemaToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteEmpresas.Name" xml:space="preserve">
+    <value>IteEmpresas</value>
+  </data>
+  <data name="&gt;&gt;IteEmpresas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteUsuarios.Name" xml:space="preserve">
+    <value>IteUsuarios</value>
+  </data>
+  <data name="&gt;&gt;IteUsuarios.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ItePerfiles.Name" xml:space="preserve">
+    <value>ItePerfiles</value>
+  </data>
+  <data name="&gt;&gt;ItePerfiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ItecambioDeClave.Name" xml:space="preserve">
+    <value>ItecambioDeClave</value>
+  </data>
+  <data name="&gt;&gt;ItecambioDeClave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteBloquearSistema.Name" xml:space="preserve">
+    <value>IteBloquearSistema</value>
+  </data>
+  <data name="&gt;&gt;IteBloquearSistema.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteCambiarAcceso.Name" xml:space="preserve">
+    <value>IteCambiarAcceso</value>
+  </data>
+  <data name="&gt;&gt;IteCambiarAcceso.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteSalir.Name" xml:space="preserve">
+    <value>IteSalir</value>
+  </data>
+  <data name="&gt;&gt;IteSalir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;maestrosToolStripMenuItem.Name" xml:space="preserve">
+    <value>maestrosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;maestrosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteTablas.Name" xml:space="preserve">
+    <value>IteTablas</value>
+  </data>
+  <data name="&gt;&gt;IteTablas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteTablasGenerales.Name" xml:space="preserve">
+    <value>IteTablasGenerales</value>
+  </data>
+  <data name="&gt;&gt;IteTablasGenerales.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteTablasEmpresa.Name" xml:space="preserve">
+    <value>IteTablasEmpresa</value>
+  </data>
+  <data name="&gt;&gt;IteTablasEmpresa.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ItePeriodos.Name" xml:space="preserve">
+    <value>ItePeriodos</value>
+  </data>
+  <data name="&gt;&gt;ItePeriodos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteTiposOperacion.Name" xml:space="preserve">
+    <value>IteTiposOperacion</value>
+  </data>
+  <data name="&gt;&gt;IteTiposOperacion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator11.Name" xml:space="preserve">
+    <value>toolStripSeparator11</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ItePersonal.Name" xml:space="preserve">
+    <value>ItePersonal</value>
+  </data>
+  <data name="&gt;&gt;ItePersonal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ItePersonalAlmacen.Name" xml:space="preserve">
+    <value>ItePersonalAlmacen</value>
+  </data>
+  <data name="&gt;&gt;ItePersonalAlmacen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ItePersonalAutorizan.Name" xml:space="preserve">
+    <value>ItePersonalAutorizan</value>
+  </data>
+  <data name="&gt;&gt;ItePersonalAutorizan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ItePersonalReciben.Name" xml:space="preserve">
+    <value>ItePersonalReciben</value>
+  </data>
+  <data name="&gt;&gt;ItePersonalReciben.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteAuxiliares.Name" xml:space="preserve">
+    <value>IteAuxiliares</value>
+  </data>
+  <data name="&gt;&gt;IteAuxiliares.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator7.Name" xml:space="preserve">
+    <value>toolStripSeparator7</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteAlmacenes.Name" xml:space="preserve">
+    <value>IteAlmacenes</value>
+  </data>
+  <data name="&gt;&gt;IteAlmacenes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteExistencias.Name" xml:space="preserve">
+    <value>IteExistencias</value>
+  </data>
+  <data name="&gt;&gt;IteExistencias.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;itePresupuestos.Name" xml:space="preserve">
+    <value>itePresupuestos</value>
+  </data>
+  <data name="&gt;&gt;itePresupuestos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iteTipoCambio.Name" xml:space="preserve">
+    <value>iteTipoCambio</value>
+  </data>
+  <data name="&gt;&gt;iteTipoCambio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteBancos.Name" xml:space="preserve">
+    <value>IteBancos</value>
+  </data>
+  <data name="&gt;&gt;IteBancos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteCuentaBancos.Name" xml:space="preserve">
+    <value>IteCuentaBancos</value>
+  </data>
+  <data name="&gt;&gt;IteCuentaBancos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;procesosToolStripMenuItem.Name" xml:space="preserve">
+    <value>procesosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;procesosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteIngresos.Name" xml:space="preserve">
+    <value>IteIngresos</value>
+  </data>
+  <data name="&gt;&gt;IteIngresos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteIngresosOrdenCompra.Name" xml:space="preserve">
+    <value>IteIngresosOrdenCompra</value>
+  </data>
+  <data name="&gt;&gt;IteIngresosOrdenCompra.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteSalidas.Name" xml:space="preserve">
+    <value>IteSalidas</value>
+  </data>
+  <data name="&gt;&gt;IteSalidas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteTransferencias.Name" xml:space="preserve">
+    <value>IteTransferencias</value>
+  </data>
+  <data name="&gt;&gt;IteTransferencias.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iteSolicitudPedido.Name" xml:space="preserve">
+    <value>iteSolicitudPedido</value>
+  </data>
+  <data name="&gt;&gt;iteSolicitudPedido.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iteOrdenCompra.Name" xml:space="preserve">
+    <value>iteOrdenCompra</value>
+  </data>
+  <data name="&gt;&gt;iteOrdenCompra.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator8.Name" xml:space="preserve">
+    <value>toolStripSeparator8</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;itePagosPorOrdenCompra.Name" xml:space="preserve">
+    <value>itePagosPorOrdenCompra</value>
+  </data>
+  <data name="&gt;&gt;itePagosPorOrdenCompra.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteRecalculo.Name" xml:space="preserve">
+    <value>IteRecalculo</value>
+  </data>
+  <data name="&gt;&gt;IteRecalculo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteRecalculoSaldos.Name" xml:space="preserve">
+    <value>IteRecalculoSaldos</value>
+  </data>
+  <data name="&gt;&gt;IteRecalculoSaldos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteRecalculoProduccion.Name" xml:space="preserve">
+    <value>IteRecalculoProduccion</value>
+  </data>
+  <data name="&gt;&gt;IteRecalculoProduccion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iteRecalculoPresupuesto.Name" xml:space="preserve">
+    <value>iteRecalculoPresupuesto</value>
+  </data>
+  <data name="&gt;&gt;iteRecalculoPresupuesto.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator10.Name" xml:space="preserve">
+    <value>toolStripSeparator10</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteCierreAnual.Name" xml:space="preserve">
+    <value>IteCierreAnual</value>
+  </data>
+  <data name="&gt;&gt;IteCierreAnual.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteInventarios.Name" xml:space="preserve">
+    <value>IteInventarios</value>
+  </data>
+  <data name="&gt;&gt;IteInventarios.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;consultasToolStripMenuItem.Name" xml:space="preserve">
+    <value>consultasToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;consultasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteSaldosPorExistencia.Name" xml:space="preserve">
+    <value>IteSaldosPorExistencia</value>
+  </data>
+  <data name="&gt;&gt;IteSaldosPorExistencia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteMovimientos.Name" xml:space="preserve">
+    <value>IteMovimientos</value>
+  </data>
+  <data name="&gt;&gt;IteMovimientos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteAlertaStockMinimo.Name" xml:space="preserve">
+    <value>IteAlertaStockMinimo</value>
+  </data>
+  <data name="&gt;&gt;IteAlertaStockMinimo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteLiberacionesSinMovimientos.Name" xml:space="preserve">
+    <value>IteLiberacionesSinMovimientos</value>
+  </data>
+  <data name="&gt;&gt;IteLiberacionesSinMovimientos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteConsultaProductoTerminado.Name" xml:space="preserve">
+    <value>IteConsultaProductoTerminado</value>
+  </data>
+  <data name="&gt;&gt;IteConsultaProductoTerminado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteProduccionConSaldo.Name" xml:space="preserve">
+    <value>IteProduccionConSaldo</value>
+  </data>
+  <data name="&gt;&gt;IteProduccionConSaldo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteControlCalidad.Name" xml:space="preserve">
+    <value>IteControlCalidad</value>
+  </data>
+  <data name="&gt;&gt;IteControlCalidad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteSolicitudPedidos.Name" xml:space="preserve">
+    <value>IteSolicitudPedidos</value>
+  </data>
+  <data name="&gt;&gt;IteSolicitudPedidos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteConsultaOrdenCompra.Name" xml:space="preserve">
+    <value>IteConsultaOrdenCompra</value>
+  </data>
+  <data name="&gt;&gt;IteConsultaOrdenCompra.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reportesToolStripMenuItem.Name" xml:space="preserve">
+    <value>reportesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;reportesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteKardex.Name" xml:space="preserve">
+    <value>IteKardex</value>
+  </data>
+  <data name="&gt;&gt;IteKardex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteKardexValorizado.Name" xml:space="preserve">
+    <value>IteKardexValorizado</value>
+  </data>
+  <data name="&gt;&gt;IteKardexValorizado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteKardexFisico.Name" xml:space="preserve">
+    <value>IteKardexFisico</value>
+  </data>
+  <data name="&gt;&gt;IteKardexFisico.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteExistenciasGenerales.Name" xml:space="preserve">
+    <value>IteExistenciasGenerales</value>
+  </data>
+  <data name="&gt;&gt;IteExistenciasGenerales.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteExiGenDetalle.Name" xml:space="preserve">
+    <value>IteExiGenDetalle</value>
+  </data>
+  <data name="&gt;&gt;IteExiGenDetalle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteExiGenResumen.Name" xml:space="preserve">
+    <value>IteExiGenResumen</value>
+  </data>
+  <data name="&gt;&gt;IteExiGenResumen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteResumenTipoExistencia.Name" xml:space="preserve">
+    <value>IteResumenTipoExistencia</value>
+  </data>
+  <data name="&gt;&gt;IteResumenTipoExistencia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteDocumentosEmitidos.Name" xml:space="preserve">
+    <value>IteDocumentosEmitidos</value>
+  </data>
+  <data name="&gt;&gt;IteDocumentosEmitidos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteDocEmiDetalle.Name" xml:space="preserve">
+    <value>IteDocEmiDetalle</value>
+  </data>
+  <data name="&gt;&gt;IteDocEmiDetalle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteDocEmiResumen.Name" xml:space="preserve">
+    <value>IteDocEmiResumen</value>
+  </data>
+  <data name="&gt;&gt;IteDocEmiResumen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteReporteSalidas.Name" xml:space="preserve">
+    <value>IteReporteSalidas</value>
+  </data>
+  <data name="&gt;&gt;IteReporteSalidas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteRepSalRecord.Name" xml:space="preserve">
+    <value>IteRepSalRecord</value>
+  </data>
+  <data name="&gt;&gt;IteRepSalRecord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteRepSalCeCo.Name" xml:space="preserve">
+    <value>IteRepSalCeCo</value>
+  </data>
+  <data name="&gt;&gt;IteRepSalCeCo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteRepSalCeCoDeta.Name" xml:space="preserve">
+    <value>IteRepSalCeCoDeta</value>
+  </data>
+  <data name="&gt;&gt;IteRepSalCeCoDeta.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteControlMovimientosIS.Name" xml:space="preserve">
+    <value>IteControlMovimientosIS</value>
+  </data>
+  <data name="&gt;&gt;IteControlMovimientosIS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteConMovISDetalle.Name" xml:space="preserve">
+    <value>IteConMovISDetalle</value>
+  </data>
+  <data name="&gt;&gt;IteConMovISDetalle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteProduccion.Name" xml:space="preserve">
+    <value>IteProduccion</value>
+  </data>
+  <data name="&gt;&gt;IteProduccion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteFormatoEnvasado.Name" xml:space="preserve">
+    <value>IteFormatoEnvasado</value>
+  </data>
+  <data name="&gt;&gt;IteFormatoEnvasado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteProductosTerminados.Name" xml:space="preserve">
+    <value>IteProductosTerminados</value>
+  </data>
+  <data name="&gt;&gt;IteProductosTerminados.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteCosUniPorProducto.Name" xml:space="preserve">
+    <value>IteCosUniPorProducto</value>
+  </data>
+  <data name="&gt;&gt;IteCosUniPorProducto.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteCosUniPromediosAcumulados.Name" xml:space="preserve">
+    <value>IteCosUniPromediosAcumulados</value>
+  </data>
+  <data name="&gt;&gt;IteCosUniPromediosAcumulados.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteCosUniVarCostos.Name" xml:space="preserve">
+    <value>IteCosUniVarCostos</value>
+  </data>
+  <data name="&gt;&gt;IteCosUniVarCostos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteCosPreVsReaXPro.Name" xml:space="preserve">
+    <value>IteCosPreVsReaXPro</value>
+  </data>
+  <data name="&gt;&gt;IteCosPreVsReaXPro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteCosPreVsReaXFec.Name" xml:space="preserve">
+    <value>IteCosPreVsReaXFec</value>
+  </data>
+  <data name="&gt;&gt;IteCosPreVsReaXFec.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteCosAcuPorProcesos.Name" xml:space="preserve">
+    <value>IteCosAcuPorProcesos</value>
+  </data>
+  <data name="&gt;&gt;IteCosAcuPorProcesos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;costosPorLoteToolStripMenuItem.Name" xml:space="preserve">
+    <value>costosPorLoteToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;costosPorLoteToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteCosLotEtaEnv.Name" xml:space="preserve">
+    <value>IteCosLotEtaEnv</value>
+  </data>
+  <data name="&gt;&gt;IteCosLotEtaEnv.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteCosLotClaEnc.Name" xml:space="preserve">
+    <value>IteCosLotClaEnc</value>
+  </data>
+  <data name="&gt;&gt;IteCosLotClaEnc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteCosLotEtaEnc.Name" xml:space="preserve">
+    <value>IteCosLotEtaEnc</value>
+  </data>
+  <data name="&gt;&gt;IteCosLotEtaEnc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteCosLotEtaRet.Name" xml:space="preserve">
+    <value>IteCosLotEtaRet</value>
+  </data>
+  <data name="&gt;&gt;IteCosLotEtaRet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteCosLotTotPro.Name" xml:space="preserve">
+    <value>IteCosLotTotPro</value>
+  </data>
+  <data name="&gt;&gt;IteCosLotTotPro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ItePorCumProd.Name" xml:space="preserve">
+    <value>ItePorCumProd</value>
+  </data>
+  <data name="&gt;&gt;ItePorCumProd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
+    <value>toolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteKpiDesmedro.Name" xml:space="preserve">
+    <value>IteKpiDesmedro</value>
+  </data>
+  <data name="&gt;&gt;IteKpiDesmedro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteKpiVersus.Name" xml:space="preserve">
+    <value>IteKpiVersus</value>
+  </data>
+  <data name="&gt;&gt;IteKpiVersus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteDesPT.Name" xml:space="preserve">
+    <value>IteDesPT</value>
+  </data>
+  <data name="&gt;&gt;IteDesPT.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteReporteIngresosOC.Name" xml:space="preserve">
+    <value>IteReporteIngresosOC</value>
+  </data>
+  <data name="&gt;&gt;IteReporteIngresosOC.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteRepIngOCCeCo.Name" xml:space="preserve">
+    <value>IteRepIngOCCeCo</value>
+  </data>
+  <data name="&gt;&gt;IteRepIngOCCeCo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iteStockFisicoProgramado.Name" xml:space="preserve">
+    <value>iteStockFisicoProgramado</value>
+  </data>
+  <data name="&gt;&gt;iteStockFisicoProgramado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iteCompraProveedor.Name" xml:space="preserve">
+    <value>iteCompraProveedor</value>
+  </data>
+  <data name="&gt;&gt;iteCompraProveedor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iteCompraExistencia.Name" xml:space="preserve">
+    <value>iteCompraExistencia</value>
+  </data>
+  <data name="&gt;&gt;iteCompraExistencia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;variosToolStripMenuItem.Name" xml:space="preserve">
+    <value>variosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;variosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteParametros.Name" xml:space="preserve">
+    <value>IteParametros</value>
+  </data>
+  <data name="&gt;&gt;IteParametros.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;baseDeDatosToolStripMenuItem.Name" xml:space="preserve">
+    <value>baseDeDatosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;baseDeDatosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteCopiaSeguridadBD.Name" xml:space="preserve">
+    <value>IteCopiaSeguridadBD</value>
+  </data>
+  <data name="&gt;&gt;IteCopiaSeguridadBD.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteImportaciones.Name" xml:space="preserve">
+    <value>IteImportaciones</value>
+  </data>
+  <data name="&gt;&gt;IteImportaciones.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteImpContabilidad.Name" xml:space="preserve">
+    <value>IteImpContabilidad</value>
+  </data>
+  <data name="&gt;&gt;IteImpContabilidad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recibosToolStripMenuItem.Name" xml:space="preserve">
+    <value>recibosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;recibosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteEnviarRecibo.Name" xml:space="preserve">
+    <value>IteEnviarRecibo</value>
+  </data>
+  <data name="&gt;&gt;IteEnviarRecibo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteProgramador.Name" xml:space="preserve">
+    <value>IteProgramador</value>
+  </data>
+  <data name="&gt;&gt;IteProgramador.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteBotones.Name" xml:space="preserve">
+    <value>IteBotones</value>
+  </data>
+  <data name="&gt;&gt;IteBotones.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteVentanas.Name" xml:space="preserve">
+    <value>IteVentanas</value>
+  </data>
+  <data name="&gt;&gt;IteVentanas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator9.Name" xml:space="preserve">
+    <value>toolStripSeparator9</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteMigracion.Name" xml:space="preserve">
+    <value>IteMigracion</value>
+  </data>
+  <data name="&gt;&gt;IteMigracion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteMigracionExistencias.Name" xml:space="preserve">
+    <value>IteMigracionExistencias</value>
+  </data>
+  <data name="&gt;&gt;IteMigracionExistencias.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteMigrarProduccion.Name" xml:space="preserve">
+    <value>IteMigrarProduccion</value>
+  </data>
+  <data name="&gt;&gt;IteMigrarProduccion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteValidarExistencia.Name" xml:space="preserve">
+    <value>IteValidarExistencia</value>
+  </data>
+  <data name="&gt;&gt;IteValidarExistencia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteDoctor.Name" xml:space="preserve">
+    <value>IteDoctor</value>
+  </data>
+  <data name="&gt;&gt;IteDoctor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbAuxiliares.Name" xml:space="preserve">
+    <value>tsbAuxiliares</value>
+  </data>
+  <data name="&gt;&gt;tsbAuxiliares.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
+    <value>toolStripSeparator4</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbIngresos.Name" xml:space="preserve">
+    <value>tsbIngresos</value>
+  </data>
+  <data name="&gt;&gt;tsbIngresos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbSalidas.Name" xml:space="preserve">
+    <value>tsbSalidas</value>
+  </data>
+  <data name="&gt;&gt;tsbSalidas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbTransferencias.Name" xml:space="preserve">
+    <value>tsbTransferencias</value>
+  </data>
+  <data name="&gt;&gt;tsbTransferencias.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
+    <value>toolStripSeparator3</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbRecalculo.Name" xml:space="preserve">
+    <value>tsbRecalculo</value>
+  </data>
+  <data name="&gt;&gt;tsbRecalculo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
+    <value>toolStripSeparator5</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator6.Name" xml:space="preserve">
+    <value>toolStripSeparator6</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbBloSis.Name" xml:space="preserve">
+    <value>tsbBloSis</value>
+  </data>
+  <data name="&gt;&gt;tsbBloSis.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbCamAcc.Name" xml:space="preserve">
+    <value>tsbCamAcc</value>
+  </data>
+  <data name="&gt;&gt;tsbCamAcc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbSalir.Name" xml:space="preserve">
+    <value>tsbSalir</value>
+  </data>
+  <data name="&gt;&gt;tsbSalir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssBarraEstado.Name" xml:space="preserve">
+    <value>tssBarraEstado</value>
+  </data>
+  <data name="&gt;&gt;tssBarraEstado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>wMenu</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

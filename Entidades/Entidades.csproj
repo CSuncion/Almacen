@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F709414D-38DF-4398-ADB6-868954045A27}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Entidades</RootNamespace>
+    <AssemblyName>Entidades</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adicionales\Adicional.cs" />
+    <Compile Include="Adicionales\Universal.cs" />
+    <Compile Include="BancoEN.cs" />
+    <Compile Include="CobranzaEN.cs" />
+    <Compile Include="CuentaBancoEN.cs" />
+    <Compile Include="CuotaEN.cs" />
+    <Compile Include="DetalleEnvioRecEN.cs" />
+    <Compile Include="DetalleRecepcionRecEN.cs" />
+    <Compile Include="EnvioRecEN.cs" />
+    <Compile Include="Estructuras\CostoTotalProduccion.cs" />
+    <Compile Include="Estructuras\CostoUnitarioProTer.cs" />
+    <Compile Include="Estructuras\CumplimientoProduccion.cs" />
+    <Compile Include="Estructuras\KpiVersus.cs" />
+    <Compile Include="Estructuras\KpiDesmedro.cs" />
+    <Compile Include="Estructuras\LoteRetiquetado.cs" />
+    <Compile Include="Estructuras\MotivoLiberacion.cs" />
+    <Compile Include="Estructuras\AcumuladoProceso.cs" />
+    <Compile Include="Estructuras\DesmedroPT.cs" />
+    <Compile Include="Estructuras\VersusCosto.cs" />
+    <Compile Include="FactorCIFEN.cs" />
+    <Compile Include="MovimientoOCCabeEN.cs" />
+    <Compile Include="MovimientoOCDetaEN.cs" />
+    <Compile Include="PagoEN.cs" />
+    <Compile Include="PersonalEN.cs" />
+    <Compile Include="PersonalRecibenEN.cs" />
+    <Compile Include="PersonalAutorizanEN.cs" />
+    <Compile Include="PresupuestoEN.cs" />
+    <Compile Include="RetiquetadoProTerEN.cs" />
+    <Compile Include="RetiquetadoEN.cs" />
+    <Compile Include="Estructuras\LiberacionProTer.cs" />
+    <Compile Include="LiberacionEN.cs" />
+    <Compile Include="EncajadoEN.cs" />
+    <Compile Include="ExistenciaEN.cs" />
+    <Compile Include="LoteDetaEN.cs" />
+    <Compile Include="BatchEN.cs" />
+    <Compile Include="LoteEN.cs" />
+    <Compile Include="InventarioDetaEN.cs" />
+    <Compile Include="InventarioCabeEN.cs" />
+    <Compile Include="Contabilidad\Auxiliar_Cont_EN.cs" />
+    <Compile Include="Contabilidad\RegContabDeta_Cont_EN.cs" />
+    <Compile Include="Estructuras\ExistenciaGeneralResu.cs" />
+    <Compile Include="Estructuras\ExistenciaGeneralDeta.cs" />
+    <Compile Include="Estructuras\SaldosExistencia.cs" />
+    <Compile Include="LicitacionEN.cs" />
+    <Compile Include="CentroCostoEN.cs" />
+    <Compile Include="AlmacenExistenciaEN.cs" />
+    <Compile Include="BotonEN.cs" />
+    <Compile Include="EmpresaEN.cs" />
+    <Compile Include="Estructuras\InsumoFaltante.cs" />
+    <Compile Include="Estructuras\KardexFisico.cs" />
+    <Compile Include="Estructuras\KardexValorizado.cs" />
+    <Compile Include="ItemEEN.cs" />
+    <Compile Include="ItemGEN.cs" />
+    <Compile Include="AuxiliarEN.cs" />
+    <Compile Include="FormulaDetaEN.cs" />
+    <Compile Include="MovimientoDetaEN.cs" />
+    <Compile Include="MovimientoCabeEN.cs" />
+    <Compile Include="ParametroEN.cs" />
+    <Compile Include="FactorCostoEN.cs" />
+    <Compile Include="PeriodoEN.cs" />
+    <Compile Include="AlmacenEN.cs" />
+    <Compile Include="PermisoAlmacenEN.cs" />
+    <Compile Include="FormulaCabeEN.cs" />
+    <Compile Include="ProduccionProTerEN.cs" />
+    <Compile Include="ProduccionExisEN.cs" />
+    <Compile Include="ProduccionDetaEN.cs" />
+    <Compile Include="ProduccionCabeEN.cs" />
+    <Compile Include="SaldoEN.cs" />
+    <Compile Include="SolicitudPedidoCabeEN.cs" />
+    <Compile Include="SolicitudPedidoDetaEN.cs" />
+    <Compile Include="TipoCambioEN.cs" />
+    <Compile Include="TipoOperacionEN.cs" />
+    <Compile Include="PerfilEN.cs" />
+    <Compile Include="PermisoEmpresaEN.cs" />
+    <Compile Include="PermisoPerfilEN.cs" />
+    <Compile Include="PermisoUsuarioEN.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TablaEN.cs" />
+    <Compile Include="UsuarioEN.cs" />
+    <Compile Include="VentanaBotonEN.cs" />
+    <Compile Include="VentanaEN.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RangoCabeEN.cs" />
+    <Compile Include="RangoDetaEN.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

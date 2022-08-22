@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7F3ECD31-C0D0-48CB-8AFA-BDE5FD070F6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Negocio</RootNamespace>
+    <AssemblyName>Negocio</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Comun, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Librerias\Librerias(2010)\Comun\bin\Debug\Comun.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlmacenExistenciaRN.cs" />
+    <Compile Include="BancoRN.cs" />
+    <Compile Include="CobranzaRN.cs" />
+    <Compile Include="CuentaBancoRN.cs" />
+    <Compile Include="CuotaRN.cs" />
+    <Compile Include="DetalleEnvioRecRN.cs" />
+    <Compile Include="EnvioRecRN.cs" />
+    <Compile Include="FactorCIFRN.cs" />
+    <Compile Include="MovimientoOCCabeRN.cs" />
+    <Compile Include="MovimientoOCDetaRN.cs" />
+    <Compile Include="PagoRN.cs" />
+    <Compile Include="PersonalRecibenRN.cs" />
+    <Compile Include="PersonalAutorizanRN.cs" />
+    <Compile Include="PersonalRN.cs" />
+    <Compile Include="PresupuestoRN.cs" />
+    <Compile Include="RetiquetadoProTerRN.cs" />
+    <Compile Include="RetiquetadoRN.cs" />
+    <Compile Include="LiberacionRN.cs" />
+    <Compile Include="EncajadoRN.cs" />
+    <Compile Include="ExistenciaRN.cs" />
+    <Compile Include="LoteDetaRN.cs" />
+    <Compile Include="BatchRN.cs" />
+    <Compile Include="LoteRN.cs" />
+    <Compile Include="InventarioDetaRN.cs" />
+    <Compile Include="InventarioCabeRN.cs" />
+    <Compile Include="Contabilidad\Auxiliar_Cont_RN.cs" />
+    <Compile Include="Contabilidad\RegContabDeta_Cont_RN.cs" />
+    <Compile Include="LicitacionRN.cs" />
+    <Compile Include="CentroCostoRN.cs" />
+    <Compile Include="FormulaDetaRN.cs" />
+    <Compile Include="ItemERN.cs" />
+    <Compile Include="MovimientoDetaRN.cs" />
+    <Compile Include="MovimientoCabeRN.cs" />
+    <Compile Include="BotonRN.cs" />
+    <Compile Include="EmpresaRN.cs" />
+    <Compile Include="ItemGRN.cs" />
+    <Compile Include="AuxiliarRN.cs" />
+    <Compile Include="AlmacenRN.cs" />
+    <Compile Include="ParametroRN.cs" />
+    <Compile Include="FactorCostoRN.cs" />
+    <Compile Include="PeriodoRN.cs" />
+    <Compile Include="PermisoAlmacenRN.cs" />
+    <Compile Include="FormulaCabeRN.cs" />
+    <Compile Include="ProduccionProTerRN.cs" />
+    <Compile Include="ProduccionExisRN.cs" />
+    <Compile Include="ProduccionDetaRN.cs" />
+    <Compile Include="ProduccionCabeRN.cs" />
+    <Compile Include="SaldoRN.cs" />
+    <Compile Include="SolicitudPedidoCabeRN.cs" />
+    <Compile Include="SolicitudPedidoDetaRN.cs" />
+    <Compile Include="TipoCambioRN.cs" />
+    <Compile Include="TipoOperacionRN.cs" />
+    <Compile Include="PerfilRN.cs" />
+    <Compile Include="PermisoEmpresaRN.cs" />
+    <Compile Include="PermisoPerfilRN.cs" />
+    <Compile Include="PermisoUsuarioRN.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TablaRN.cs" />
+    <Compile Include="UsuarioRN.cs" />
+    <Compile Include="VentanaBotonRN.cs" />
+    <Compile Include="VentanaRN.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{5c0f687f-576f-4754-8105-6e28a76a0bd1}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{f709414d-38df-4398-adb6-868954045a27}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RangoCabeRN.cs" />
+    <Compile Include="RangoDetaRN.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
