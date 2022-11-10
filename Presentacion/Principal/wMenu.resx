@@ -326,6 +326,12 @@
   <data name="iteOrdenCompra.Text" xml:space="preserve">
     <value>Orden de Compra</value>
   </data>
+  <data name="iteOrdenServicio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="iteOrdenServicio.Text" xml:space="preserve">
+    <value>Orden de Servicio</value>
+  </data>
   <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 6</value>
   </data>
@@ -1796,6 +1802,12 @@
   </data>
   <data name="&gt;&gt;tssBarraEstado.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iteOrdenServicio.Name" xml:space="preserve">
+    <value>iteOrdenServicio</value>
+  </data>
+  <data name="&gt;&gt;iteOrdenServicio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>wMenu</value>

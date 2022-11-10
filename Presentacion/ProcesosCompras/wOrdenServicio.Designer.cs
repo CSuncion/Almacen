@@ -89,6 +89,7 @@
             this.tsbAdicionar.Size = new System.Drawing.Size(63, 45);
             this.tsbAdicionar.Text = "Adicionar";
             this.tsbAdicionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbAdicionar.Click += new System.EventHandler(this.tsbAdicionar_Click);
             // 
             // tsbModificar
             // 
@@ -227,6 +228,7 @@
             this.lblPeriodo.Size = new System.Drawing.Size(13, 22);
             this.lblPeriodo.Text = "x";
             this.lblPeriodo.Visible = false;
+            this.lblPeriodo.TextChanged += new System.EventHandler(this.lblPeriodo_TextChanged);
             // 
             // lblDescripcionPeriodo
             // 
@@ -245,6 +247,7 @@
             this.btnPeriodo.Name = "btnPeriodo";
             this.btnPeriodo.Size = new System.Drawing.Size(23, 22);
             this.btnPeriodo.Text = "Filtrar";
+            this.btnPeriodo.Click += new System.EventHandler(this.btnPeriodo_Click);
             // 
             // toolStripLabel2
             // 

@@ -160,6 +160,7 @@
             this.tbcContenedor = new System.Windows.Forms.TabControl();
             this.ssBarraEstado = new System.Windows.Forms.StatusStrip();
             this.tssBarraEstado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.iteOrdenServicio = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.tsAccDir.SuspendLayout();
             this.ssBarraEstado.SuspendLayout();
@@ -387,6 +388,7 @@
             this.IteTransferencias,
             this.iteSolicitudPedido,
             this.iteOrdenCompra,
+            this.iteOrdenServicio,
             this.toolStripSeparator8,
             this.itePagosPorOrdenCompra,
             this.IteRecalculo,
@@ -1087,6 +1089,12 @@
             this.tssBarraEstado.Name = "tssBarraEstado";
             resources.ApplyResources(this.tssBarraEstado, "tssBarraEstado");
             // 
+            // iteOrdenServicio
+            // 
+            this.iteOrdenServicio.Name = "iteOrdenServicio";
+            resources.ApplyResources(this.iteOrdenServicio, "iteOrdenServicio");
+            this.iteOrdenServicio.Click += new System.EventHandler(this.iteOrdenServicio_Click);
+            // 
             // wMenu
             // 
             resources.ApplyResources(this, "$this");
@@ -1245,6 +1253,7 @@
         internal System.Windows.Forms.ToolStripMenuItem IteBancos;
         internal System.Windows.Forms.ToolStripMenuItem IteCuentaBancos;
         internal System.Windows.Forms.ToolStripMenuItem iteRecalculoPresupuesto;
+        internal System.Windows.Forms.ToolStripMenuItem iteOrdenServicio;
     }
 }
 

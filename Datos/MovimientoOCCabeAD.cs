@@ -95,6 +95,17 @@ namespace Datos
             xObjEnc.MontoPendiente = Convert.ToDecimal(iDr[MovimientoOCCabeEN.MonPen].ToString());
             xObjEnc.FlagCreadoxSolicitud = Convert.ToInt32(iDr[MovimientoOCCabeEN.FlgCrdSol].ToString());
             xObjEnc.ClaveSolicitudPedidoCabe = iDr[MovimientoOCCabeEN.ClaSolCabPed].ToString();
+            xObjEnc.CTipoServicio = iDr[MovimientoOCCabeEN.xCTipoServicio].ToString();
+            xObjEnc.NTipoServicio = iDr[MovimientoOCCabeEN.xNTipoServicio].ToString();
+            xObjEnc.PlazoEntrega = iDr[MovimientoOCCabeEN.xPlazoEntrega].ToString();
+            xObjEnc.Condiciones = iDr[MovimientoOCCabeEN.xCondiciones].ToString();
+            xObjEnc.Garantia = Convert.ToInt32(iDr[MovimientoOCCabeEN.xGarantia].ToString());
+            xObjEnc.CGarantia = iDr[MovimientoOCCabeEN.xCGarantia].ToString();
+            xObjEnc.NGarantia = iDr[MovimientoOCCabeEN.xNGarantia].ToString();
+            xObjEnc.ValidezCotizacion = Convert.ToInt32(iDr[MovimientoOCCabeEN.xValidezCotizacion].ToString());
+            xObjEnc.PrecioMaterialAccesorioOrdenServicio = Convert.ToDecimal(iDr[MovimientoOCCabeEN.xPrecioMaterialAccesorioOrdenServicio].ToString());
+            xObjEnc.CFormaPago = iDr[MovimientoOCCabeEN.xCFormaPago].ToString();
+            xObjEnc.NFormaPago = iDr[MovimientoOCCabeEN.xNFormaPago].ToString();
             xObjEnc.ClaveObjeto = xObjEnc.ClaveMovimientoCabe;
             return xObjEnc;
         }

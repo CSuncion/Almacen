@@ -1083,6 +1083,7 @@ namespace Presentacion.ProcesosCompras
             return Generico.EsCodigoItemGValido("TipCom", this.txtCTipDoc, this.txtNTipDoc, "Tipo documento");
         }
 
+
         public MovimientoOCCabeEN NuevoMovimientoCabeDeVentana()
         {
             MovimientoOCCabeEN iMovCabEN = new MovimientoOCCabeEN();

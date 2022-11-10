@@ -75,6 +75,17 @@ namespace Entidades
         public const string MonPen = "MontoTotalPendientePago";
         public const string FlgCrdSol = "FlagCreadoxSolicitud";
         public const string ClaSolCabPed = "ClaveSolicitudPedidoCabe";
+        public const string xCTipoServicio = "CTipoServicio";
+        public const string xNTipoServicio = "NTipoServicio";
+        public const string xPlazoEntrega = "PlazoEntrega";
+        public const string xCondiciones = "Condiciones";
+        public const string xGarantia = "Garantia";
+        public const string xCGarantia = "CGarantia";
+        public const string xNGarantia = "NGarantia";
+        public const string xValidezCotizacion = "ValidezCotizacion";
+        public const string xPrecioMaterialAccesorioOrdenServicio = "PrecioMaterialAccesorioOrdenServicio";
+        public const string xCFormaPago = "CFormaPago";
+        public const string xNFormaPago = "NFormaPago";
 
         //atributos
         private string _ClaveObjeto = string.Empty;
@@ -145,6 +156,17 @@ namespace Entidades
         private decimal _MontoPendiente = 0;
         private int _FlagCreadoxSolicitud = 0;
         private string _ClaveSolicitudPedidoCabe = string.Empty;
+        private string _CTipoServicio = string.Empty;
+        private string _NTipoServicio = string.Empty;
+        private string _PlazoEntrega = string.Empty;
+        private string _Condiciones = string.Empty;
+        private int _Garantia = 0;
+        private string _CGarantia = string.Empty;
+        private string _NGarantia = string.Empty;
+        private int _ValidezCotizacion = 0;
+        private decimal _PrecioMaterialAccesorioOrdenServicio = 0;
+        private string _CFormaPago = string.Empty;
+        private string _NFormaPago = string.Empty;
 
         //propiedades
         public string ClaveObjeto
@@ -552,6 +574,72 @@ namespace Entidades
         {
             get { return _ClaveSolicitudPedidoCabe; }
             set { _ClaveSolicitudPedidoCabe = value; }
+        }
+
+        public string CTipoServicio
+        {
+            get { return _CTipoServicio; }
+            set { _CTipoServicio = value; }
+        }
+
+        public string NTipoServicio
+        {
+            get { return _NTipoServicio; }
+            set { _NTipoServicio = value; }
+        }
+
+        public string PlazoEntrega
+        {
+            get { return _PlazoEntrega; }
+            set { _PlazoEntrega = value; }
+        }
+
+        public string Condiciones
+        {
+            get { return _Condiciones; }
+            set { _Condiciones = value; }
+        }
+
+        public int Garantia
+        {
+            get { return _Garantia; }
+            set { _Garantia = value; }
+        }
+
+        public string CGarantia
+        {
+            get { return _CGarantia; }
+            set { _CGarantia = value; }
+        }
+
+        public string NGarantia
+        {
+            get { return _NGarantia; }
+            set { _NGarantia = value; }
+        }
+
+        public int ValidezCotizacion
+        {
+            get { return _ValidezCotizacion; }
+            set { _ValidezCotizacion = value; }
+        }
+
+        public decimal PrecioMaterialAccesorioOrdenServicio
+        {
+            get { return _PrecioMaterialAccesorioOrdenServicio; }
+            set { _PrecioMaterialAccesorioOrdenServicio = value; }
+        }
+
+        public string CFormaPago
+        {
+            get { return _CFormaPago; }
+            set { _CFormaPago = value; }
+        }
+
+        public string NFormaPago
+        {
+            get { return _NFormaPago; }
+            set { _NFormaPago = value; }
         }
     }
 }
