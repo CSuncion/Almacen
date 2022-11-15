@@ -86,6 +86,12 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
+            this.txtCodMonSyD = new System.Windows.Forms.TextBox();
+            this.txtTipCam = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtCodAre = new System.Windows.Forms.TextBox();
+            this.txtDesAre = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovDet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,6 +150,7 @@
             this.cmbMon.Name = "cmbMon";
             this.cmbMon.Size = new System.Drawing.Size(99, 22);
             this.cmbMon.TabIndex = 483;
+            this.cmbMon.SelectionChangeCommitted += new System.EventHandler(this.cmbMon_SelectionChangeCommitted);
             // 
             // label12
             // 
@@ -236,6 +243,7 @@
             this.dtpFecMovCab.Name = "dtpFecMovCab";
             this.dtpFecMovCab.Size = new System.Drawing.Size(99, 22);
             this.dtpFecMovCab.TabIndex = 455;
+            this.dtpFecMovCab.Validated += new System.EventHandler(this.dtpFecMovCab_Validated);
             // 
             // label17
             // 
@@ -387,7 +395,7 @@
             // 
             // txtIgv
             // 
-            this.txtIgv.Location = new System.Drawing.Point(560, 133);
+            this.txtIgv.Location = new System.Drawing.Point(560, 161);
             this.txtIgv.Name = "txtIgv";
             this.txtIgv.Size = new System.Drawing.Size(99, 22);
             this.txtIgv.TabIndex = 503;
@@ -395,7 +403,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(484, 136);
+            this.label8.Location = new System.Drawing.Point(484, 164);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 14);
             this.label8.TabIndex = 502;
@@ -407,6 +415,7 @@
             this.txtPreVenta.Name = "txtPreVenta";
             this.txtPreVenta.Size = new System.Drawing.Size(99, 22);
             this.txtPreVenta.TabIndex = 505;
+            this.txtPreVenta.Validating += new System.ComponentModel.CancelEventHandler(this.txtPreVenta_Validating);
             // 
             // label9
             // 
@@ -423,6 +432,7 @@
             this.txtPreMatAcc.Name = "txtPreMatAcc";
             this.txtPreMatAcc.Size = new System.Drawing.Size(99, 22);
             this.txtPreMatAcc.TabIndex = 507;
+            this.txtPreMatAcc.Validating += new System.ComponentModel.CancelEventHandler(this.txtPreMatAcc_Validating);
             // 
             // label10
             // 
@@ -567,6 +577,7 @@
             this.btnAgregar.TabIndex = 521;
             this.btnAgregar.Tag = "19";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnCancelar
             // 
@@ -595,11 +606,72 @@
             this.label25.TabIndex = 526;
             this.label25.Text = "días";
             // 
+            // txtCodMonSyD
+            // 
+            this.txtCodMonSyD.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCodMonSyD.Location = new System.Drawing.Point(661, 105);
+            this.txtCodMonSyD.Name = "txtCodMonSyD";
+            this.txtCodMonSyD.Size = new System.Drawing.Size(11, 22);
+            this.txtCodMonSyD.TabIndex = 527;
+            this.txtCodMonSyD.Visible = false;
+            // 
+            // txtTipCam
+            // 
+            this.txtTipCam.Location = new System.Drawing.Point(560, 133);
+            this.txtTipCam.MaxLength = 10;
+            this.txtTipCam.Name = "txtTipCam";
+            this.txtTipCam.Size = new System.Drawing.Size(76, 22);
+            this.txtTipCam.TabIndex = 529;
+            this.txtTipCam.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(484, 136);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(21, 14);
+            this.label26.TabIndex = 528;
+            this.label26.Text = "T.C";
+            // 
+            // txtCodAre
+            // 
+            this.txtCodAre.Location = new System.Drawing.Point(319, 273);
+            this.txtCodAre.MaxLength = 15;
+            this.txtCodAre.Name = "txtCodAre";
+            this.txtCodAre.Size = new System.Drawing.Size(99, 22);
+            this.txtCodAre.TabIndex = 532;
+            this.txtCodAre.DoubleClick += new System.EventHandler(this.txtCodAre_DoubleClick);
+            this.txtCodAre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodAre_KeyDown);
+            this.txtCodAre.Validating += new System.ComponentModel.CancelEventHandler(this.txtCodAre_Validating);
+            // 
+            // txtDesAre
+            // 
+            this.txtDesAre.Location = new System.Drawing.Point(424, 273);
+            this.txtDesAre.Name = "txtDesAre";
+            this.txtDesAre.ReadOnly = true;
+            this.txtDesAre.Size = new System.Drawing.Size(235, 22);
+            this.txtDesAre.TabIndex = 531;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(231, 276);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(75, 14);
+            this.label27.TabIndex = 530;
+            this.label27.Text = "Centro Costo";
+            // 
             // wEditOrdenServicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 598);
+            this.ClientSize = new System.Drawing.Size(686, 598);
+            this.Controls.Add(this.txtCodAre);
+            this.Controls.Add(this.txtDesAre);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.txtTipCam);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.txtCodMonSyD);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -719,6 +791,12 @@
             this.Controls.SetChildIndex(this.btnAceptar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.label25, 0);
+            this.Controls.SetChildIndex(this.txtCodMonSyD, 0);
+            this.Controls.SetChildIndex(this.label26, 0);
+            this.Controls.SetChildIndex(this.txtTipCam, 0);
+            this.Controls.SetChildIndex(this.label27, 0);
+            this.Controls.SetChildIndex(this.txtDesAre, 0);
+            this.Controls.SetChildIndex(this.txtCodAre, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovDet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -785,5 +863,11 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label label25;
+        internal System.Windows.Forms.TextBox txtCodMonSyD;
+        internal System.Windows.Forms.TextBox txtTipCam;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        internal System.Windows.Forms.TextBox txtCodAre;
+        internal System.Windows.Forms.TextBox txtDesAre;
     }
 }

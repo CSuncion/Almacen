@@ -2792,3 +2792,4 @@ D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentac
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.application
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEditOrdenServicio.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wOrdenServicio.resources
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wDetalleOrdenServicio.resources

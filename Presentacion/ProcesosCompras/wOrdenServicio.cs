@@ -193,7 +193,7 @@ namespace Presentacion.ProcesosCompras
             iLisRes.Add(Dgv.NuevaColumnaTextCadena(MovimientoOCCabeEN.NCodMon, "Moneda", 90));
             iLisRes.Add(Dgv.NuevaColumnaTextCadena(MovimientoOCCabeEN.xCondiciones, "Condiciones", 150));
             iLisRes.Add(Dgv.NuevaColumnaTextCadena(MovimientoOCCabeEN.xCGarantia, "Garantia", 90));
-            iLisRes.Add(Dgv.NuevaColumnaTextCadena(MovimientoOCCabeEN.xValidezCotizacion, "V. Cotización", 90));
+            iLisRes.Add(Dgv.NuevaColumnaTextCadena(MovimientoOCCabeEN.xValidezCotizacion, "V. Cot.", 80));
             iLisRes.Add(Dgv.NuevaColumnaTextCadena(MovimientoOCCabeEN.xNFormaPago, "Forma Pago", 100));
             iLisRes.Add(Dgv.NuevaColumnaTextCadena(MovimientoOCCabeEN.ClaObj, "Clave", 50, false));
 

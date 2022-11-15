@@ -307,7 +307,7 @@
             this.DgvMovCab.GridColor = System.Drawing.Color.Silver;
             this.DgvMovCab.Location = new System.Drawing.Point(6, 96);
             this.DgvMovCab.Name = "DgvMovCab";
-            this.DgvMovCab.Size = new System.Drawing.Size(1099, 463);
+            this.DgvMovCab.Size = new System.Drawing.Size(1099, 441);
             this.DgvMovCab.TabIndex = 96;
             // 
             // sst1
@@ -333,16 +333,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1111, 565);
-            this.Controls.Add(this.sst1);
             this.Controls.Add(this.DgvMovCab);
+            this.Controls.Add(this.sst1);
             this.Controls.Add(this.tsSecundario);
             this.Controls.Add(this.tsPrincipal);
             this.Name = "wOrdenServicio";
             this.Text = "Orden Servicio";
             this.Controls.SetChildIndex(this.tsPrincipal, 0);
             this.Controls.SetChildIndex(this.tsSecundario, 0);
-            this.Controls.SetChildIndex(this.DgvMovCab, 0);
             this.Controls.SetChildIndex(this.sst1, 0);
+            this.Controls.SetChildIndex(this.DgvMovCab, 0);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
             this.tsSecundario.ResumeLayout(false);

@@ -55,6 +55,8 @@ namespace Datos
             xObjEnc.FechaAgrega = Convert.ToDateTime(iDr[AuxiliarEN.FecAgr]);
             xObjEnc.UsuarioModifica = iDr[AuxiliarEN.UsuMod].ToString();
             xObjEnc.FechaModifica = Convert.ToDateTime(iDr[AuxiliarEN.FecMod]);
+            xObjEnc.CuentaInterBancariaAuxiliar = iDr[AuxiliarEN.CtaIntBca].ToString();
+            xObjEnc.CuentaBancariaAuxiliar = iDr[AuxiliarEN.CtaBca].ToString();
             xObjEnc.ClaveObjeto = xObjEnc.ClaveAuxiliar;
             return xObjEnc;
         }

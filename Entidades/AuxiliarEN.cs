@@ -36,6 +36,8 @@ namespace Entidades
         public const string FecAgr = "FechaAgrega";
         public const string UsuMod = "UsuarioModifica";
         public const string FecMod = "FechaModifica";
+        public const string CtaIntBca = "CuentaInterBancariaAuxiliar";
+        public const string CtaBca = "CuentaBancariaAuxiliar";
         public const string VerFal = "VerdadFalso";
 
         //atributos
@@ -65,6 +67,8 @@ namespace Entidades
         private DateTime _FechaAgrega;
         private string _UsuarioModifica = string.Empty;
         private DateTime _FechaModifica;
+        private string _CtaIntBca = string.Empty;
+        private string _CtaBca = string.Empty;
         private Adicional _Adicionales = new Adicional();
         private bool _VerdadFalso = false;
         private string _CPermitir = "1";
@@ -98,7 +102,7 @@ namespace Entidades
             get { return this._CodigoAuxiliar; }
             set { this._CodigoAuxiliar = value; }
         }
-        
+
         public string ApellidoPaternoAuxiliar
         {
             get { return this._ApellidoPaternoAuxiliar; }
@@ -110,7 +114,7 @@ namespace Entidades
             get { return this._ApellidoMaternoAuxiliar; }
             set { this._ApellidoMaternoAuxiliar = value; }
         }
-        
+
         public string PrimerNombreAuxiliar
         {
             get { return this._PrimerNombreAuxiliar; }
@@ -199,6 +203,20 @@ namespace Entidades
         {
             get { return this._NEstadoAuxiliar; }
             set { this._NEstadoAuxiliar = value; }
+        }
+
+
+        public string CuentaInterBancariaAuxiliar
+        {
+            get { return this._CtaIntBca; }
+            set { this._CtaIntBca = value; }
+        }
+
+
+        public string CuentaBancariaAuxiliar
+        {
+            get { return this._CtaBca; }
+            set { this._CtaBca = value; }
         }
 
         public string UsuarioAgrega

@@ -355,7 +355,6 @@ namespace Presentacion.ProcesosCompras
 
         public void CargarTipoCambio()
         {
-            decimal tipCam = 0;
             TipoCambioEN objTipCam = new TipoCambioEN();
             objTipCam.Adicionales.CampoOrden = eNombreColumnaDgvTipOpe;
             eLisTipCam = TipoCambioRN.ListarTipoCambio(objTipCam);
@@ -443,7 +442,7 @@ namespace Presentacion.ProcesosCompras
         {
             //asignar parametros
             DataGridView iGrilla = this.dgvMovDet;
-            List<MovimientoOCDetaEN> iFuenteDatos = MovimientoOCDetaRN.RefrescarListaMovimientoDeta(this.eLisMovDet); ;
+            List<MovimientoOCDetaEN> iFuenteDatos = MovimientoOCDetaRN.RefrescarListaMovimientoDeta(this.eLisMovDet);
             Dgv.Franja iCondicionFranja = eFranjaDgvMovDet;
             string iClaveBusqueda = eClaveDgvMovDet;
             List<DataGridViewColumn> iListaColumnas = this.ListarColumnasDgvCom();
