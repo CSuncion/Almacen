@@ -257,6 +257,14 @@ namespace Datos
             xIns.AsignarParametro(MovimientoOCCabeEN.UsuMod, Universal.gCodigoUsuario);
             xIns.AsignarParametro(MovimientoOCCabeEN.FecMod, "FECHAHORA");
             xIns.AsignarParametro(MovimientoOCCabeEN.EstPag, "0");
+            xIns.AsignarParametro(MovimientoOCCabeEN.xCTipoServicio, pObj.CTipoServicio);
+            xIns.AsignarParametro(MovimientoOCCabeEN.xPlazoEntrega, pObj.PlazoEntrega);
+            xIns.AsignarParametro(MovimientoOCCabeEN.xCondiciones, pObj.Condiciones);
+            xIns.AsignarParametro(MovimientoOCCabeEN.xGarantia, pObj.Garantia.ToString());
+            xIns.AsignarParametro(MovimientoOCCabeEN.xCGarantia, pObj.CGarantia);
+            xIns.AsignarParametro(MovimientoOCCabeEN.xValidezCotizacion, pObj.ValidezCotizacion.ToString());
+            xIns.AsignarParametro(MovimientoOCCabeEN.xPrecioMaterialAccesorioOrdenServicio, pObj.PrecioMaterialAccesorioOrdenServicio.ToString());
+            xIns.AsignarParametro(MovimientoOCCabeEN.xCFormaPago, pObj.CFormaPago);
             xIns.AsignarParametro(MovimientoOCCabeEN.ClaSolCabPed, pObj.ClaveSolicitudPedidoCabe.ToString());
             xIns.FinParametros();
 
@@ -319,6 +327,14 @@ namespace Datos
                 xIns.AsignarParametro(MovimientoOCCabeEN.UsuMod, Universal.gCodigoUsuario);
                 xIns.AsignarParametro(MovimientoOCCabeEN.FecMod, "FECHAHORA");
                 xIns.AsignarParametro(MovimientoOCCabeEN.EstPag, "0");
+                xIns.AsignarParametro(MovimientoOCCabeEN.xCTipoServicio, xMovCab.CTipoServicio);
+                xIns.AsignarParametro(MovimientoOCCabeEN.xPlazoEntrega, xMovCab.PlazoEntrega);
+                xIns.AsignarParametro(MovimientoOCCabeEN.xCondiciones, xMovCab.Condiciones);
+                xIns.AsignarParametro(MovimientoOCCabeEN.xGarantia, xMovCab.Garantia.ToString());
+                xIns.AsignarParametro(MovimientoOCCabeEN.xCGarantia, xMovCab.CGarantia);
+                xIns.AsignarParametro(MovimientoOCCabeEN.xValidezCotizacion, xMovCab.ValidezCotizacion.ToString());
+                xIns.AsignarParametro(MovimientoOCCabeEN.xPrecioMaterialAccesorioOrdenServicio, xMovCab.PrecioMaterialAccesorioOrdenServicio.ToString());
+                xIns.AsignarParametro(MovimientoOCCabeEN.xCFormaPago, xMovCab.CFormaPago);
                 xIns.AsignarParametro(MovimientoOCCabeEN.ClaSolCabPed, xMovCab.ClaveSolicitudPedidoCabe.ToString());
                 xIns.FinParametros();
 
@@ -371,6 +387,14 @@ namespace Datos
             xUpd.AsignarParametro(MovimientoOCCabeEN.UsuMod, Universal.gCodigoUsuario);
             xUpd.AsignarParametro(MovimientoOCCabeEN.FecMod, "FECHAHORA");
             xUpd.AsignarParametro(MovimientoOCCabeEN.EstPag, "0");
+            xUpd.AsignarParametro(MovimientoOCCabeEN.xCTipoServicio, pObj.CTipoServicio);
+            xUpd.AsignarParametro(MovimientoOCCabeEN.xPlazoEntrega, pObj.PlazoEntrega);
+            xUpd.AsignarParametro(MovimientoOCCabeEN.xCondiciones, pObj.Condiciones);
+            xUpd.AsignarParametro(MovimientoOCCabeEN.xGarantia, pObj.Garantia.ToString());
+            xUpd.AsignarParametro(MovimientoOCCabeEN.xCGarantia, pObj.CGarantia);
+            xUpd.AsignarParametro(MovimientoOCCabeEN.xValidezCotizacion, pObj.ValidezCotizacion.ToString());
+            xUpd.AsignarParametro(MovimientoOCCabeEN.xPrecioMaterialAccesorioOrdenServicio, pObj.PrecioMaterialAccesorioOrdenServicio.ToString());
+            xUpd.AsignarParametro(MovimientoOCCabeEN.xCFormaPago, pObj.CFormaPago);
             xUpd.AsignarParametro(MovimientoOCCabeEN.ClaSolCabPed, pObj.ClaveSolicitudPedidoCabe.ToString());
             xUpd.FinParametros();
 
@@ -431,6 +455,14 @@ namespace Datos
                 xUpd.AsignarParametro(MovimientoOCCabeEN.UsuMod, Universal.gCodigoUsuario);
                 xUpd.AsignarParametro(MovimientoOCCabeEN.FecMod, "FECHAHORA");
                 xUpd.AsignarParametro(MovimientoOCCabeEN.EstPag, "0");
+                xUpd.AsignarParametro(MovimientoOCCabeEN.xCTipoServicio, xMovCab.CTipoServicio);
+                xUpd.AsignarParametro(MovimientoOCCabeEN.xPlazoEntrega, xMovCab.PlazoEntrega);
+                xUpd.AsignarParametro(MovimientoOCCabeEN.xCondiciones, xMovCab.Condiciones);
+                xUpd.AsignarParametro(MovimientoOCCabeEN.xGarantia, xMovCab.Garantia.ToString());
+                xUpd.AsignarParametro(MovimientoOCCabeEN.xCGarantia, xMovCab.CGarantia);
+                xUpd.AsignarParametro(MovimientoOCCabeEN.xValidezCotizacion, xMovCab.ValidezCotizacion.ToString());
+                xUpd.AsignarParametro(MovimientoOCCabeEN.xPrecioMaterialAccesorioOrdenServicio, xMovCab.PrecioMaterialAccesorioOrdenServicio.ToString());
+                xUpd.AsignarParametro(MovimientoOCCabeEN.xCFormaPago, xMovCab.CFormaPago);
                 xUpd.AsignarParametro(MovimientoOCCabeEN.ClaSolCabPed, xMovCab.ClaveSolicitudPedidoCabe.ToString());
                 xUpd.FinParametros();
 

@@ -34,7 +34,7 @@ namespace Presentacion.ProcesosCompras
         public int eFlgCrdSol = 0;
         public bool eFlgEnvOC = true;
         public string eClavSolPedCab = string.Empty;
-
+        public decimal preVenta = 0;
         public wEditOrdenServicio()
         {
             InitializeComponent();
@@ -501,11 +501,6 @@ namespace Presentacion.ProcesosCompras
             this.txtTotalGral.Text = (preVenta + preMatAcc).ToString();
         }
 
-        public void AgregarPrecioVentaDetalle()
-        {
-
-        }
-
         public void AdicionarMovimientoDeta()
         {
             MovimientoOCDetaEN iComDetEN = new MovimientoOCDetaEN();
@@ -532,37 +527,40 @@ namespace Presentacion.ProcesosCompras
             pObj.SerieDocumento = string.Empty;
             pObj.NumeroDocumento = string.Empty;
             pObj.FechaDocumento = string.Empty;
-            //pObj.CodigoCentroCosto = this.txtCodAre.Text.Trim();
-            //pObj.DescripcionCentroCosto = this.txtDesAre.Text.Trim();
-            //pObj.CCodigoPartida = this.txtCodPar.Text.Trim();
-            //pObj.NCodigoPartida = this.txtDesPar.Text.Trim();
-            //pObj.CodigoExistencia = this.txtCodExi.Text.Trim();
-            //pObj.DescripcionExistencia = this.txtDesExi.Text.Trim();
-            //pObj.CodigoUnidadMedida = this.txtCUniMed.Text.Trim();
-            //pObj.NombreUnidadMedida = this.txtNUniMed.Text.Trim();
-            //pObj.StockAnteriorExistencia = Convert.ToDecimal(this.txtStoAntExi.Text);
-            //pObj.PrecioAnteriorExistencia = Convert.ToDecimal(this.txtPreAntExi.Text);
-            //pObj.PrecioUnitarioMovimientoDeta = Convert.ToDecimal(this.txtPreUniMovDet.Text);
-            //pObj.PrecioUnitarioDolarMovimientoDeta = Convert.ToDecimal(this.txtPreUniDol.Text);
-            //pObj.CantidadMovimientoDeta = Convert.ToDecimal(this.txtCantMovDet.Text);
-            //pObj.StockExistencia = MovimientoOCDetaRN.ObtenerNuevoStockPorAdicion(pObj);
-            //pObj.PrecioExistencia = MovimientoOCDetaRN.ObtenerNuevoPrecioPromedio(pObj);
-            //pObj.CostoMovimientoDeta = Convert.ToDecimal(this.txtCosMovDet.Text);
-            //pObj.GlosaMovimientoDeta = this.txtGloMovDet.Text.Trim();
-            //pObj.CodigoTipo = this.txtCodTip.Text.Trim();
-            //pObj.CEsLote = this.txtCEsLot.Text.Trim();
-            //pObj.CEsUnidadConvertida = this.txtCEsUniCon.Text.Trim();
-            //pObj.FactorConversion = Convert.ToDecimal(this.txtFacCon.Text);
-            //pObj.PrecioUnitarioConversion = Convert.ToDecimal(this.txtPreUniCon.Text);
-            //pObj.CantidadConversion = Convert.ToDecimal(this.txtCanCon.Text);
+            pObj.CodigoCentroCosto = this.txtCodAre.Text.Trim();
+            pObj.DescripcionCentroCosto = this.txtDesAre.Text.Trim();
+            pObj.CCodigoPartida = string.Empty;
+            pObj.NCodigoPartida = string.Empty;
+            pObj.CodigoExistencia = "999999";
+            pObj.DescripcionExistencia = "ORDEN DE SERVICIO";
+            pObj.CodigoUnidadMedida = "NIU";
+            pObj.NombreUnidadMedida = string.Empty;
+            pObj.StockAnteriorExistencia = 0;
+            pObj.PrecioAnteriorExistencia = Convert.ToDecimal(0);
+            pObj.PrecioUnitarioMovimientoDeta = Convert.ToDecimal(this.txtPreVenta.Text);
+            pObj.PrecioUnitarioDolarMovimientoDeta = Convert.ToDecimal(this.txtPreVenta.Text) * Convert.ToDecimal(this.txtTipCam.Text);
+            pObj.CantidadMovimientoDeta = Convert.ToDecimal(1);
+            pObj.StockExistencia = MovimientoOCDetaRN.ObtenerNuevoStockPorAdicion(pObj);
+            pObj.PrecioExistencia = MovimientoOCDetaRN.ObtenerNuevoPrecioPromedio(pObj);
+            pObj.CostoMovimientoDeta = Convert.ToDecimal(this.txtPreVenta.Text);
+            pObj.GlosaMovimientoDeta = this.txtGloMovCab.Text.Trim();
+            pObj.CodigoTipo = "PT";
+            pObj.CEsLote = string.Empty;
+            pObj.CEsUnidadConvertida = string.Empty;
+            pObj.FactorConversion = Convert.ToDecimal(0);
+            pObj.PrecioUnitarioConversion = Convert.ToDecimal(this.txtPreVenta.Text);
+            pObj.CantidadConversion = Convert.ToDecimal(1);
             pObj.ClaveMovimientoCabe = this.ObtenerClaveMovimientoCabe();
             pObj.CCodigoMoneda = this.txtCodMonSyD.Text.ToString().Trim();
         }
 
         public void AccionAgregarItem()
         {
-            //valida cuando no hay tipo operacion
-            if (this.ElegirCentroCsotoAntesDeLlenarGrilla() == false) { return; }
+            //valida cuando no hay centro de costo
+            if (this.ElegirCentroCostoAntesDeLlenarGrilla() == false) { return; }
+
+            //valida cuando no hay precio materiales y accesorios
+            if (this.IngresarPrecioMaterialesAccesorioDeLlenarGrilla() == false) { return; }
 
             //instanciar
             wDetalleOrdenServicio win = new wDetalleOrdenServicio();
@@ -573,12 +571,23 @@ namespace Presentacion.ProcesosCompras
             win.VentanaAdicionar();
         }
 
-        public bool ElegirCentroCsotoAntesDeLlenarGrilla()
+        public bool ElegirCentroCostoAntesDeLlenarGrilla()
         {
             if (this.txtCodAre.Text.Trim() == string.Empty)
             {
                 Mensaje.OperacionDenegada("Debes elegir primero un centro de costo", "Centro de Costo");
                 this.txtCodAre.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        public bool IngresarPrecioMaterialesAccesorioDeLlenarGrilla()
+        {
+            if (this.txtPreMatAcc.Text.Trim() == string.Empty || Convert.ToDecimal(this.txtPreMatAcc.Text) < 1)
+            {
+                Mensaje.OperacionDenegada("Debes insertar un monto en el precio de materiales y accesorios", "Precio Materiales y Accesorios");
+                this.txtPreMatAcc.Focus();
                 return false;
             }
             return true;
@@ -597,16 +606,17 @@ namespace Presentacion.ProcesosCompras
             pMovCab.PeriodoMovimientoCabe = wOrdSer.lblPeriodo.Text;
             pMovCab.NumeroMovimientoCabe = this.txtNumMovCab.Text.Trim();
             pMovCab.FechaMovimientoCabe = dtpFecMovCab.Text;
-            pMovCab.CodigoTipoOperacion = string.Empty;
-            pMovCab.DescripcionTipoOperacion = string.Empty;
-            pMovCab.CodigoAlmacen = string.Empty;
-            pMovCab.DescripcionAlmacen = string.Empty;
+            pMovCab.CodigoTipoOperacion = "79";
+            pMovCab.DescripcionTipoOperacion = "SERVICIOS";
+            pMovCab.CClaseTipoOperacion = "4";
+            pMovCab.CodigoAlmacen = "A90";
+            pMovCab.DescripcionAlmacen = "ORDEN DE SERVICIO";
             pMovCab.CodigoPersonal = this.txtCodPer.Text.Trim();
             pMovCab.CodigoPersonalAutoriza = string.Empty;
             pMovCab.CodigoPersonalRecibe = string.Empty;
             pMovCab.CostoFleteMovimientoCabe = Conversion.ADecimal(null, 0);
             pMovCab.CCodigoMoneda = Cmb.ObtenerValor(this.cmbMon, string.Empty);
-            pMovCab.TipoCambio = Conversion.ADecimal(null, 0);
+            pMovCab.TipoCambio = Conversion.ADecimal(this.txtTipCam.Text, 0);
             pMovCab.CodigoAuxiliar = this.txtCodAux.Text.Trim();
             pMovCab.DescripcionAuxiliar = this.txtDesAux.Text.Trim();
             pMovCab.OrdenCompra = string.Empty;
@@ -623,6 +633,18 @@ namespace Presentacion.ProcesosCompras
             }
             pMovCab.FlagCreadoxSolicitud = this.eFlgCrdSol;
             pMovCab.FlagEnviadoMovimientoCabe = this.eFlgEnvOC;
+            pMovCab.PlazoEntrega = this.dtpPlazoEntrega.Text;
+            pMovCab.Condiciones = this.txtCondiciones.Text;
+            pMovCab.Garantia = Convert.ToInt32(this.txtGarantia.Text);
+            pMovCab.CGarantia = Cmb.ObtenerValor(this.cmbGarantia, string.Empty);
+            pMovCab.ValidezCotizacion = Convert.ToInt32(this.txtValCotizacion.Text);
+            pMovCab.MontoTotalMovimientoCabe = Convert.ToDecimal(this.txtTotalGral.Text);
+            pMovCab.CFormaPago = Cmb.ObtenerValor(this.cmbFormaPago, string.Empty);
+            pMovCab.CTipoServicio = this.txtCodTipSer.Text;
+            pMovCab.PrecioMaterialAccesorioOrdenServicio = Convert.ToDecimal(this.txtPreMatAcc.Text);
+            pMovCab.IgvMovimientoCabe = Convert.ToDecimal(this.txtValorIGV.Text);
+            pMovCab.PrecioVtaMovimientoCabe = Convert.ToDecimal(this.txtPreVenta.Text);
+            pMovCab.ValorVtaMovimientoCabe = Convert.ToDecimal(this.txtValorVenta.Text);
             pMovCab.ClaveMovimientoCabe = MovimientoOCCabeRN.ObtenerClaveMovimientoCabe(pMovCab);
         }
 
@@ -693,6 +715,269 @@ namespace Presentacion.ProcesosCompras
             win.NuevaVentana();
         }
 
+        public void EliminarMovimientoDeta()
+        {
+            this.eLisMovDet.Remove(this.eLisMovDet.Find(x => x.CodigoExistencia == "999999"));
+        }
+
+        public void AccionParaAgregarModificarEliminarMovimientoDeta()
+        {
+            //valida cuando no hay centro de costo
+            if (this.ElegirCentroCostoAntesDeLlenarGrilla() == false)
+            {
+                this.txtPreVenta.Text = Formato.NumeroDecimal(0, 2);
+                return;
+            }
+            if (this.txtPreVenta.Text == string.Empty || Convert.ToDecimal(this.txtPreVenta.Text) <= 0)
+                this.EliminarMovimientoDeta();
+            else
+            {
+                this.EliminarMovimientoDeta();
+                this.ObtenerValoresCalculados();
+                this.AdicionarMovimientoDeta();
+                this.MostrarMovimientosDeta();
+            }
+        }
+
+        public void AccionModificarItem()
+        {
+            //ver si hay registro
+            if (this.eLisMovDet.Count == 0)
+            {
+                Mensaje.OperacionDenegada("No hay registro que modificar", "Detalle");
+                return;
+            }
+
+            if (this.eLisMovDet[Dgv.ObtenerIndiceRegistroXFranja(this.dgvMovDet)].CodigoExistencia == "999999")
+            {
+                Mensaje.OperacionDenegada("No se puede modificar la orden de servicio", "Detalle");
+                return;
+            }
+
+            wDetalleOrdenServicio win = new wDetalleOrdenServicio();
+            win.wEditOrdSer = this;
+            win.eOperacion = Universal.Opera.Modificar;
+            this.eFranjaDgvMovDet = Dgv.Franja.PorValor;
+            TabCtrl.InsertarVentana(this, win);
+            win.VentanaModificar(this.eLisMovDet[Dgv.ObtenerIndiceRegistroXFranja(this.dgvMovDet)]);
+        }
+
+        public void AccionQuitarItem()
+        {
+            //ver si hay registro
+            if (this.eLisMovDet.Count == 0)
+            {
+                Mensaje.OperacionDenegada("No hay registro que quitar", "Detalle");
+                return;
+            }
+
+            if (this.eLisMovDet[Dgv.ObtenerIndiceRegistroXFranja(this.dgvMovDet)].CodigoExistencia == "999999")
+            {
+                Mensaje.OperacionDenegada("No se puede eliminar la orden de servicio", "Detalle");
+                return;
+            }
+
+            wDetalleOrdenServicio win = new wDetalleOrdenServicio();
+            win.wEditOrdSer = this;
+            win.eOperacion = Universal.Opera.Eliminar;
+            this.eFranjaDgvMovDet = Dgv.Franja.PorIndice;
+            TabCtrl.InsertarVentana(this, win);
+            win.VentanaEliminar(this.eLisMovDet[Dgv.ObtenerIndiceRegistroXFranja(this.dgvMovDet)]);
+        }
+
+        public void Cancelar()
+        {
+            List<MovimientoOCDetaEN> eListMovDeta = new List<MovimientoOCDetaEN>();
+            List<MovimientoOCDetaEN> eListMovDetTmp = new List<MovimientoOCDetaEN>();
+
+            eListMovDeta = this.eLisMovDet;
+
+            MovimientoOCCabeEN iCuoEN = new MovimientoOCCabeEN();
+            this.AsignarMovimientoCabe(iCuoEN);
+            this.LLenarMovimientoDetaDeBaseDatos(iCuoEN);
+
+            if (this.eLisMovDet.Count > 0)
+            {
+                foreach (MovimientoOCDetaEN obj in eListMovDeta)
+                {
+                    if (eLisMovDet.Where(e => e.ClaveObjeto == obj.ClaveObjeto).Count() == 0)
+                    {
+                        eListMovDetTmp.Add(obj);
+                    }
+                }
+
+                PresupuestoEN iPerEN = new PresupuestoEN();
+                iPerEN.Adicionales.CampoOrden = eNombreColumnaDgvPer;
+                this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
+
+
+
+                PresupuestoEN xObj = new PresupuestoEN();
+                foreach (MovimientoOCDetaEN objDeta in eListMovDetTmp)
+                {
+                    string presupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                && x.CCentroCosto == objDeta.CodigoCentroCosto).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
+                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text && x.CCentroCosto == objDeta.CodigoCentroCosto).FirstOrDefault().SaldoPresupuesto.ToString(), 2);
+
+                    xObj = new PresupuestoEN();
+                    xObj.CodigoPresupuesto = wOrdSer.lblPeriodo.Text;
+                    xObj.CCentroCosto = objDeta.CodigoCentroCosto;
+                    xObj.NuevoSaldoPresupuesto = Convert.ToDecimal(presupuesto) + (objDeta.PrecioUnitarioMovimientoDeta * objDeta.CantidadMovimientoDeta);
+                    PresupuestoRN.ModificarPresupuesto(xObj);
+                }
+            }
+            Generico.CancelarVentanaEditar(this, eOperacion, eMas, this.wOrdSer.eTitulo);
+        }
+
+        public void LLenarMovimientoDetaDeBaseDatos(MovimientoOCCabeEN pObj)
+        {
+            MovimientoOCDetaEN iMovDetEN = new MovimientoOCDetaEN();
+            iMovDetEN.ClaveMovimientoCabe = pObj.ClaveMovimientoCabe;
+            iMovDetEN.Adicionales.CampoOrden = MovimientoOCDetaEN.ClaMovDet;
+            this.eLisMovDet = MovimientoOCDetaRN.ListarMovimientosDetaXClaveMovimientoCabe(iMovDetEN);
+        }
+
+        public void Aceptar()
+        {
+            switch (this.eOperacion)
+            {
+                case Universal.Opera.Adicionar: { this.Adicionar(); break; }
+                //case Universal.Opera.Modificar: { this.Modificar(); break; }
+                //case Universal.Opera.Eliminar: { this.Eliminar(); break; }
+                default: break;
+            }
+        }
+
+        public void Adicionar()
+        {
+            //validar los campos obligatorios
+            if (eMas.CamposObligatorios() == false) { return; }
+
+            //volver a preguntar si es acto adicionar
+            if (this.wOrdSer.EsActoAdicionarMovimientoCabe().Adicionales.EsVerdad == false) { return; }
+
+            //validar si los totales coinciden
+            if (!this.ValidarTotalesCabeceraConDetalle()) { return; }
+
+            //desea realizar la operacion?
+            if (Mensaje.DeseasRealizarOperacion(this.wOrdSer.eTitulo) == false) { return; }
+
+            //mostrar numero movimientoCabe
+            this.MostrarNuevoNumero();
+
+            //adicionando el registro
+            this.AdicionarMovimientoCabe();
+
+            //adicionando detalles
+            this.AdicionarMovimientosDeta();
+
+            //mensaje satisfactorio
+            Mensaje.OperacionSatisfactoria("Se agrego la orden de compra correctamente", this.wOrdSer.eTitulo);
+
+            //actualizar al propietario           
+            this.wOrdSer.eClaveDgvMovCab = this.ObtenerClaveMovimientoCabe();
+            this.wOrdSer.ActualizarVentana();
+
+            //imprimir la nota
+            //this.wOrdCom.AccionImprimirNota();
+
+            //limpiar controles
+            this.MostrarMovimientoCabe(this.ObtenerMovimientoCabeParaSegundaAdicion());
+            this.eLisMovDet.Clear();
+            this.MostrarMovimientosDeta();
+            eMas.AccionPasarTextoPrincipal();
+            this.dtpFecMovCab.Focus();
+        }
+
+        public void MostrarNuevoNumero()
+        {
+            //asignar parametros
+            MovimientoOCCabeEN iMovCabEN = this.NuevoMovimientoCabeDeVentana();
+
+            //obtener el nuevo numero
+            string iNuevoNumero = MovimientoOCCabeRN.ObtenerNuevoNumeroMovimientoCabeAutogenerado(iMovCabEN);
+
+            //mostrar en pantalla
+            this.txtNumMovCab.Text = iNuevoNumero;
+        }
+
+        public void AdicionarMovimientoCabe()
+        {
+            MovimientoOCCabeEN iCuoEN = new MovimientoOCCabeEN();
+            this.AsignarMovimientoCabe(iCuoEN);
+            MovimientoOCCabeRN.AdicionarMovimientoCabe(iCuoEN);
+        }
+
+        public void AdicionarMovimientosDeta()
+        {
+            //variables
+            string iClaveMovimientoCabe = this.ObtenerClaveMovimientoCabe();
+            string iCorrelativo = "0000";
+            decimal iCostoFleteUnitario = 0;
+            decimal MontoTotalMovimientoOCCabe = 0;
+            string periodo = string.Empty;
+            string clavemovimientocabe = string.Empty;
+
+            //recorrer cada objeto
+            foreach (MovimientoOCDetaEN xMovDet in this.eLisMovDet)
+            {
+                //incrementar el correlativo
+                iCorrelativo = Numero.IncrementarCorrelativoNumerico(iCorrelativo);
+
+                //actualizar algunos datos antes de grabar
+                xMovDet.FechaMovimientoCabe = this.dtpFecMovCab.Text;
+                xMovDet.PrecioUnitarioMovimientoDeta = MovimientoOCDetaRN.ObtenerPrecioUnitarioConFlete(xMovDet, iCostoFleteUnitario);
+                xMovDet.CostoFleteMovimientoDeta = iCostoFleteUnitario;
+                xMovDet.CostoMovimientoDeta = MovimientoOCDetaRN.ObtenerCosto(xMovDet);
+                xMovDet.PrecioExistencia = MovimientoOCDetaRN.ObtenerNuevoPrecioPromedio(xMovDet);
+                xMovDet.NumeroMovimientoCabe = this.txtNumMovCab.Text.Trim();
+                xMovDet.ClaveMovimientoCabe = iClaveMovimientoCabe;
+                xMovDet.CorrelativoMovimientoDeta = iCorrelativo;
+                xMovDet.CostoFleteMovimientoCabe = Conversion.ADecimal("0", 0);
+                xMovDet.ClaveMovimientoDeta = MovimientoOCDetaRN.ObtenerClaveMovimientoDeta(xMovDet);
+                xMovDet.CCodigoMoneda = Cmb.ObtenerValor(this.cmbMon, string.Empty);
+                if (this.eFlgCrdSol == 0)
+                {
+                    xMovDet.CantidadRecibida = xMovDet.CantidadMovimientoDeta;
+                    xMovDet.CantidadPendiente = 0;
+                    xMovDet.CantidadRecibidaVarios = xMovDet.CantidadMovimientoDeta.ToString();
+                }
+                else
+                {
+                    xMovDet.CantidadRecibida = 0;
+                    xMovDet.CantidadPendiente = xMovDet.CantidadMovimientoDeta;
+                }
+
+                MontoTotalMovimientoOCCabe += xMovDet.CostoMovimientoDeta;
+                periodo = xMovDet.PeriodoMovimientoCabe;
+                clavemovimientocabe = xMovDet.ClaveMovimientoCabe;
+            }
+            MovimientoOCCabeRN.ActualizarCostoTotalMovimientoOCCabe(periodo, clavemovimientocabe, MontoTotalMovimientoOCCabe);
+            //adicion masiva
+            MovimientoOCDetaRN.AdicionarMovimientoDeta(this.eLisMovDet);
+        }
+
+        public MovimientoOCCabeEN ObtenerMovimientoCabeParaSegundaAdicion()
+        {
+            //objeto
+            MovimientoOCCabeEN iMovCabEN = new MovimientoOCCabeEN();
+
+            //pasamos los datos que queremos persistir para una segundo o mas adiciones
+            iMovCabEN.FechaMovimientoCabe = this.dtpFecMovCab.Text;
+
+            //devolver
+            return iMovCabEN;
+        }
+
+        public bool ValidarTotalesCabeceraConDetalle()
+        {
+            if (this.eLisMovDet.Sum(x => x.CostoMovimientoDeta) != Convert.ToDecimal(this.txtTotalGral.Text))
+            {
+                Mensaje.OperacionDenegada("El total general no coincide con el monto total de detalle.", "Detalle");
+                return false;
+            }
+            return true;
+        }
 
         private void txtCodTipSer_Validating(object sender, CancelEventArgs e)
         {
@@ -744,8 +1029,7 @@ namespace Presentacion.ProcesosCompras
 
         private void txtPreVenta_Validating(object sender, CancelEventArgs e)
         {
-            this.ObtenerValoresCalculados();
-
+            this.AccionParaAgregarModificarEliminarMovimientoDeta();
         }
 
         private void txtPreMatAcc_Validating(object sender, CancelEventArgs e)
@@ -796,6 +1080,26 @@ namespace Presentacion.ProcesosCompras
         private void txtCodAre_DoubleClick(object sender, EventArgs e)
         {
             this.ListarAreas();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            this.AccionModificarItem();
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            this.AccionQuitarItem();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            this.Aceptar();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Cancelar();
         }
 
         private void txtCodAux_Validating(object sender, CancelEventArgs e)

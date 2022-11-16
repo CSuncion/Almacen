@@ -310,6 +310,9 @@ namespace Presentacion.ProcesosCompras
             //validar los campos obligatorios
             if (eMas.CamposObligatorios() == false) { return; }
 
+            // validar que la existencia no sea 999999
+            if (!this.ValidarNoOrdenServicio()) { return; }
+
             //adicionar MovimientoDeta
             this.AdicionarMovimientoDeta();
 
@@ -372,6 +375,9 @@ namespace Presentacion.ProcesosCompras
         {
             //validar los campos obligatorios
             if (eMas.CamposObligatorios() == false) { return; }
+
+            // validar que la existencia no sea 999999
+            if (!this.ValidarNoOrdenServicio()) { return; }
 
             //modificar detalle
             this.ModificarMovimientoDeta();
@@ -861,6 +867,16 @@ namespace Presentacion.ProcesosCompras
             }
 
             this.MostrarCosto();
+        }
+
+        public bool ValidarNoOrdenServicio()
+        {
+            if (this.txtCodExi.Text == "999999")
+            {
+                Mensaje.OperacionDenegada("El código de existencia no puede ser seleccionada.", "Detalle");
+                return false;
+            }
+            return true;
         }
         #endregion
 

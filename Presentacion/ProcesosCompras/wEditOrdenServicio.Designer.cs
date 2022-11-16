@@ -557,6 +557,7 @@
             this.btnQuitar.TabIndex = 523;
             this.btnQuitar.Tag = "19";
             this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // btnModificar
             // 
@@ -567,6 +568,7 @@
             this.btnModificar.TabIndex = 522;
             this.btnModificar.Tag = "19";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -587,6 +589,7 @@
             this.btnCancelar.TabIndex = 525;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -596,6 +599,7 @@
             this.btnAceptar.TabIndex = 524;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // label25
             // 

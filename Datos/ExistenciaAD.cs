@@ -263,6 +263,7 @@ namespace Datos
             xIns.AsignarParametro(ExistenciaEN.UsuMod, Universal.gCodigoUsuario);
             xIns.AsignarParametro(ExistenciaEN.FecMod, "FECHAHORA");
             xIns.AsignarParametro(ExistenciaEN.CAfeIgv, pObj.CAfectoIgv);
+            xIns.AsignarParametro(ExistenciaEN.PreUltCom, pObj.PrecioUltimaCompra.ToString());
             xIns.FinParametros();
 
             xObjCon.ComandoTexto(xIns.ObtenerScript());
@@ -325,6 +326,7 @@ namespace Datos
                 xIns.AsignarParametro(ExistenciaEN.UsuMod, Universal.gCodigoUsuario);
                 xIns.AsignarParametro(ExistenciaEN.FecMod, "FECHAHORA");
                 xIns.AsignarParametro(ExistenciaEN.CAfeIgv, xExi.CAfectoIgv);
+                xIns.AsignarParametro(ExistenciaEN.PreUltCom, xExi.PrecioUltimaCompra.ToString());
                 xIns.FinParametros();
 
                 xObjCon.ComandoTexto(xIns.ObtenerScript());
@@ -379,6 +381,7 @@ namespace Datos
             xUpd.AsignarParametro(ExistenciaEN.UsuMod, Universal.gCodigoUsuario);
             xUpd.AsignarParametro(ExistenciaEN.FecMod, "FECHAHORA");
             xUpd.AsignarParametro(ExistenciaEN.CAfeIgv, pObj.CAfectoIgv);
+            xUpd.AsignarParametro(ExistenciaEN.PreUltCom, pObj.PrecioUltimaCompra.ToString());
             xUpd.FinParametros();
 
             //condicion
@@ -434,6 +437,7 @@ namespace Datos
                 xUpd.AsignarParametro(ExistenciaEN.UsuMod, Universal.gCodigoUsuario);
                 xUpd.AsignarParametro(ExistenciaEN.FecMod, "FECHAHORA");
                 xUpd.AsignarParametro(ExistenciaEN.CAfeIgv, xExi.CAfectoIgv);
+                xUpd.AsignarParametro(ExistenciaEN.PreUltCom, xExi.PrecioUltimaCompra.ToString());
                 xUpd.FinParametros();
 
                 //condicion
