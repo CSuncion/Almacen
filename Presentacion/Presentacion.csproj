@@ -87,7 +87,7 @@
   <ItemGroup>
     <Reference Include="Comun, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Librerias\Librerias(2010)\Comun\bin\Debug\Comun.dll</HintPath>
+      <HintPath>Dlls\Comun.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -104,7 +104,7 @@
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Heredados, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Trabajo\Librerias\Librerias(2010)\Heredados\bin\Debug\Heredados.dll</HintPath>
+      <HintPath>Dlls\Heredados.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -121,7 +121,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="WinControles, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Librerias\Librerias(2010)\WinControles\bin\Debug\WinControles.dll</HintPath>
+      <HintPath>Dlls\WinControles.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -3189,6 +3189,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Sent Message.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dlls\Comun.dll" />
+    <Content Include="Dlls\Heredados.dll" />
+    <Content Include="Dlls\ScriptBD.dll" />
+    <Content Include="Dlls\WinControles.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

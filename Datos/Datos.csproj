@@ -32,11 +32,11 @@
   <ItemGroup>
     <Reference Include="Comun, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Librerias\Librerias(2010)\Comun\bin\Debug\Comun.dll</HintPath>
+      <HintPath>..\Presentacion\Dlls\Comun.dll</HintPath>
     </Reference>
     <Reference Include="ScriptBD, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Trabajo\Librerias\Librerias(2010)\ScriptBD\bin\Debug\ScriptBD.dll</HintPath>
+      <HintPath>..\Presentacion\Dlls\ScriptBD.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

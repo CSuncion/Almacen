@@ -277,7 +277,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UGJU2mxaPhAYWiAeWmi+P1v4fLP23uuP/mCEoDHo6rs=</dsig:DigestValue>
+        <dsig:DigestValue>UiKKJJmt44qAwe4YNcpMpjESzcZOJ3/CbZJJ6AkMalE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -289,7 +289,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bhEGTVDmHeuXK+IDQylJbmn7Q68oAxjJ6iN4uLGEUXs=</dsig:DigestValue>
+        <dsig:DigestValue>xL7W0aEbakiHyoyOO7Flqg2y5hEkJmcAYAj1mmMmmu4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -337,7 +337,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FQKLLrhlp0Y1Q/lAx8H1le8FYvOdxlmmb4ZcMF/GQlQ=</dsig:DigestValue>
+        <dsig:DigestValue>JR1IL438Tux9ljvmncr3cPv6dNZQQ5j+Pn7+mlENPRI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -349,7 +349,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PvHIi9nT6qqFA7O2nt8X1ELn0yAr1JsqHF2LQc+UcQA=</dsig:DigestValue>
+        <dsig:DigestValue>/X8tiqM+GAXz9CguVjzT27Q/CcmfbhNvsM3VxW9NWWI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -390,17 +390,53 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinControles.dll" size="111616">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinControles.dll" size="116736">
       <assemblyIdentity name="WinControles" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>HT/QFj6evK8d32LNRFKgVuWhrT6wLhSFe1hLVu2J36E=</dsig:DigestValue>
+        <dsig:DigestValue>dGLwYX6NtPhLlNknxOjPRhoUvPuH0j0J/cT19BVRs2I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="Dlls\Comun.dll" size="80384">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>IJok+6YjSHgyyesVfr4q1orpCtOHEn5uSGZVUds5js4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Dlls\Heredados.dll" size="197120">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>DCJhWZsL3wHaoPjgsb4NHqmwWgMUhdBU/9MVmFw4/vg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Dlls\ScriptBD.dll" size="11264">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>oxJ9IuwH7QRa3aR8Jb6a1aVal5GdLbPmQZZZbbllGJQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Dlls\WinControles.dll" size="116736">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>dGLwYX6NtPhLlNknxOjPRhoUvPuH0j0J/cT19BVRs2I=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Presentacion.exe.config" size="2897">
     <hash>
       <dsig:Transforms>

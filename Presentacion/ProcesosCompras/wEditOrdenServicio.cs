@@ -35,6 +35,7 @@ namespace Presentacion.ProcesosCompras
         public bool eFlgEnvOC = true;
         public string eClavSolPedCab = string.Empty;
         public decimal preVenta = 0;
+        public int valCoti = 0;
         public wEditOrdenServicio()
         {
             InitializeComponent();
@@ -315,6 +316,7 @@ namespace Presentacion.ProcesosCompras
             this.txtGarantia.Text = pMovCab.Garantia.ToString();
             Cmb.SeleccionarValorItem(this.cmbGarantia, pMovCab.CGarantia);
             this.txtValCotizacion.Text = pMovCab.ValidezCotizacion.ToString();
+            this.valCoti = pMovCab.ValidezCotizacion;
             this.txtPreVenta.Text = Formato.NumeroDecimal(pMovCab.PrecioVtaMovimientoCabe, 2);
             this.txtPreMatAcc.Text = Formato.NumeroDecimal(pMovCab.PrecioMaterialAccesorioOrdenServicio, 2);
             this.txtValorVenta.Text = Formato.NumeroDecimal(pMovCab.ValorVtaMovimientoCabe, 2);
@@ -1174,8 +1176,14 @@ namespace Presentacion.ProcesosCompras
 
         private void txtValCotizacion_Validating(object sender, CancelEventArgs e)
         {
-            this.dtpPlazoEntrega.Text = this.txtValCotizacion.Text == string.Empty ? DateTime.Now.ToShortDateString()
-                : DateTime.Now.AddDays(Convert.ToInt32(this.txtValCotizacion.Text)).ToShortDateString();
+            if (this.eOperacion == Universal.Opera.Adicionar)
+                this.dtpPlazoEntrega.Text = this.txtValCotizacion.Text == string.Empty ? DateTime.Now.ToShortDateString()
+                    : DateTime.Now.AddDays(Convert.ToInt32(this.txtValCotizacion.Text)).ToShortDateString();
+            else
+                this.dtpPlazoEntrega.Text = this.txtValCotizacion.Text == string.Empty ? this.dtpPlazoEntrega.Text
+                    : Convert.ToDateTime(this.dtpPlazoEntrega.Text).AddDays(-this.valCoti)
+                    .AddDays(Convert.ToInt32(this.txtValCotizacion.Text)).ToShortDateString();
+            this.valCoti = Convert.ToInt32(this.txtValCotizacion.Text);
         }
 
         private void wEditOrdenServicio_FormClosing(object sender, FormClosingEventArgs e)
