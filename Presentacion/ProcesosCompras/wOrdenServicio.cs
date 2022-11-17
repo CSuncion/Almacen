@@ -3,6 +3,7 @@ using Entidades;
 using Entidades.Adicionales;
 using Heredados.VentanasPersonalizadas;
 using Negocio;
+using Presentacion.Principal;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -201,6 +202,94 @@ namespace Presentacion.ProcesosCompras
             return iLisRes;
         }
 
+        public void AccionModificar()
+        {
+            //preguntar si el registro seleccionado existe
+            MovimientoOCCabeEN iIngEN = this.EsActoModificarMovimientoCabe();
+            if (iIngEN.Adicionales.EsVerdad == false) { return; }
+
+            //si existe
+            wEditOrdenServicio win = new wEditOrdenServicio();
+            win.wOrdSer = this;
+            win.eOperacion = Universal.Opera.Modificar;
+            this.eFranjaDgvMovCab = Dgv.Franja.PorValor;
+            TabCtrl.InsertarVentana(this, win);
+            win.VentanaModificar(iIngEN);
+        }
+
+        public MovimientoOCCabeEN EsActoModificarMovimientoCabe()
+        {
+            MovimientoOCCabeEN iIngEN = new MovimientoOCCabeEN();
+            this.AsignarMovimientoCabe(iIngEN);
+            iIngEN = MovimientoOCCabeRN.EsActoModificarMovimientoCabe(iIngEN);
+            if (iIngEN.Adicionales.EsVerdad == false)
+            {
+                Mensaje.OperacionDenegada(iIngEN.Adicionales.Mensaje, this.eTitulo);
+            }
+            return iIngEN;
+        }
+
+        public void AccionEliminar()
+        {
+            //preguntar si el registro seleccionado existe
+            MovimientoOCCabeEN iCuoEN = this.EsActoEliminarMovimientoCabe();
+            if (iCuoEN.Adicionales.EsVerdad == false) { return; }
+
+
+            //si existe
+            wEditOrdenServicio win = new wEditOrdenServicio();
+            win.wOrdSer = this;
+            win.eOperacion = Universal.Opera.Eliminar;
+            this.eFranjaDgvMovCab = Dgv.Franja.PorIndice;
+            TabCtrl.InsertarVentana(this, win);
+            win.VentanaEliminar(iCuoEN);
+        }
+
+        public MovimientoOCCabeEN EsActoEliminarMovimientoCabe()
+        {
+            MovimientoOCCabeEN iIngEN = new MovimientoOCCabeEN();
+            this.AsignarMovimientoCabe(iIngEN);
+            iIngEN = MovimientoOCCabeRN.EsActoEliminarMovimientoCabe(iIngEN);
+            if (iIngEN.Adicionales.EsVerdad == false)
+            {
+                Mensaje.OperacionDenegada(iIngEN.Adicionales.Mensaje, this.eTitulo);
+            }
+            return iIngEN;
+        }
+
+        public void AccionVisualizar()
+        {
+            //preguntar si el registro seleccionado existe
+            MovimientoOCCabeEN iCuoEN = this.EsMovimientoCabeExistente();
+            if (iCuoEN.Adicionales.EsVerdad == false) { return; }
+
+            //si existe
+            wEditOrdenServicio win = new wEditOrdenServicio();
+            win.wOrdSer = this;
+            win.eOperacion = Universal.Opera.Visualizar;
+            TabCtrl.InsertarVentana(this, win);
+            win.VentanaVisualizar(iCuoEN);
+        }
+
+        public MovimientoOCCabeEN EsMovimientoCabeExistente()
+        {
+            MovimientoOCCabeEN iCuoEN = new MovimientoOCCabeEN();
+            this.AsignarMovimientoCabe(iCuoEN);
+            iCuoEN = MovimientoOCCabeRN.EsMovimientoCabeExistente(iCuoEN);
+            if (iCuoEN.Adicionales.EsVerdad == false)
+            {
+                Mensaje.OperacionDenegada(iCuoEN.Adicionales.Mensaje, this.eTitulo);
+            }
+            return iCuoEN;
+        }
+
+        public void Cerrar()
+        {
+            //obtener al wMenu
+            wMenu wMen = (wMenu)this.ParentForm;
+            wMen.CerrarVentanaHijo(this, wMen.iteOrdenServicio, null);
+        }
+
         private void btnPeriodo_Click(object sender, EventArgs e)
         {
             this.AccionSeleccionarPeriodo();
@@ -220,6 +309,61 @@ namespace Presentacion.ProcesosCompras
         {
             this.eFranjaDgvMovCab = Dgv.Franja.PorIndice;
             this.ActualizarVentana();
+        }
+
+        private void tsbModificar_Click(object sender, EventArgs e)
+        {
+            this.AccionModificar();
+        }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+            this.AccionEliminar();
+        }
+
+        private void tsbVisualizar_Click(object sender, EventArgs e)
+        {
+            this.AccionVisualizar();
+        }
+
+        private void tsbSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tsbPrimero_Click(object sender, EventArgs e)
+        {
+            Dgv.SeleccionarRegistroXDesplazamiento(this.DgvMovCab, Dgv.Desplazar.Primero);
+        }
+
+        private void tsbAnterior_Click(object sender, EventArgs e)
+        {
+            Dgv.SeleccionarRegistroXDesplazamiento(this.DgvMovCab, Dgv.Desplazar.Anterior);
+        }
+
+        private void tsbSiguiente_Click(object sender, EventArgs e)
+        {
+            Dgv.SeleccionarRegistroXDesplazamiento(this.DgvMovCab, Dgv.Desplazar.Siguiente);
+        }
+
+        private void tsbUltimo_Click(object sender, EventArgs e)
+        {
+            Dgv.SeleccionarRegistroXDesplazamiento(this.DgvMovCab, Dgv.Desplazar.Ultimo);
+        }
+
+        private void IteImportarAdicionar_Click(object sender, EventArgs e)
+        {
+            //this.AccionImportarExcel();
+        }
+
+        private void IteImportarEliminar_Click(object sender, EventArgs e)
+        {
+            //this.AccionEliminarImportarExcel();
+        }
+
+        private void wOrdenServicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Cerrar();
         }
     }
 }

@@ -205,6 +205,30 @@ namespace Presentacion.ProcesosCompras
             xCtrl.TxtTodo(this.txtValCotizacion, true, "Validez Cotización", "vvff", 6);
             xLis.Add(xCtrl);
 
+            xCtrl = new ControlEditar();
+            xCtrl.TxtTodo(this.txtCodAre, true, "Código Área", "vvff", 6);
+            xLis.Add(xCtrl);
+
+            xCtrl = new ControlEditar();
+            xCtrl.Cmb(this.cmbFormaPago, "vvff");
+            xLis.Add(xCtrl);
+
+
+            xCtrl = new ControlEditar();
+            xCtrl.TxtTodo(this.txtCodAux, false, "Proveedor", "vvff", 11);
+            xLis.Add(xCtrl);
+
+            xCtrl = new ControlEditar();
+            xCtrl.txtNoFoco(this.txtDesAux, this.txtCodAux, "ffff");
+            xLis.Add(xCtrl);
+
+            xCtrl = new ControlEditar();
+            xCtrl.TxtTodo(this.txtCtaDeposito, true, "Cuenta Deposito", "ffff", 6);
+            xLis.Add(xCtrl);
+
+            xCtrl = new ControlEditar();
+            xCtrl.TxtTodo(this.txtCII, true, "Cuenta CII", "ffff", 6);
+            xLis.Add(xCtrl);
 
             xCtrl = new ControlEditar();
             xCtrl.TxtNumeroPositivoConDecimales(this.txtPreVenta, true, "Precio Venta", "vvff", 2);
@@ -229,32 +253,6 @@ namespace Presentacion.ProcesosCompras
             xCtrl = new ControlEditar();
             xCtrl.TxtNumeroPositivoConDecimales(this.txtTotalGral, true, "Total General", "ffff", 2);
             xLis.Add(xCtrl);
-
-
-            xCtrl = new ControlEditar();
-            xCtrl.Cmb(this.cmbFormaPago, "vvff");
-            xLis.Add(xCtrl);
-
-            xCtrl = new ControlEditar();
-            xCtrl.TxtTodo(this.txtCodAre, true, "Código Área", "vvff", 6);
-            xLis.Add(xCtrl);
-
-            xCtrl = new ControlEditar();
-            xCtrl.TxtTodo(this.txtCodAux, false, "Proveedor", "vvff", 11);
-            xLis.Add(xCtrl);
-
-            xCtrl = new ControlEditar();
-            xCtrl.txtNoFoco(this.txtDesAux, this.txtCodAux, "ffff");
-            xLis.Add(xCtrl);
-
-            xCtrl = new ControlEditar();
-            xCtrl.TxtTodo(this.txtCtaDeposito, true, "Cuenta Deposito", "ffff", 6);
-            xLis.Add(xCtrl);
-
-            xCtrl = new ControlEditar();
-            xCtrl.TxtTodo(this.txtCII, true, "Cuenta CII", "ffff", 6);
-            xLis.Add(xCtrl);
-
 
             xCtrl = new ControlEditar();
             xCtrl.TxtTodo(this.txtGloMovCab, false, "Glosa", "vvff", 100);
@@ -310,8 +308,6 @@ namespace Presentacion.ProcesosCompras
             this.dtpFecMovCab.Text = pMovCab.FechaMovimientoCabe;
             this.txtCodTipSer.Text = pMovCab.CTipoServicio;
             this.txtDesTipSer.Text = pMovCab.NTipoServicio;
-            this.txtCCalPrePro.Text = pMovCab.CCalculaPrecioPromedio;
-            this.txtCConUni.Text = pMovCab.CConversionUnidad;
             this.txtCodPer.Text = pMovCab.CodigoPersonal;
             this.txtNomPer.Text = pMovCab.NombrePersonal;
             this.txtIgv.Text = pMovCab.IgvPorcentaje.ToString();
@@ -331,6 +327,10 @@ namespace Presentacion.ProcesosCompras
             this.txtDesAux.Text = pMovCab.DescripcionAuxiliar;
             this.txtGloMovCab.Text = pMovCab.GlosaMovimientoCabe;
             this.eClavSolPedCab = pMovCab.ClaveSolicitudPedidoCabe;
+            this.txtIgv.Text = pMovCab.IgvPorcentaje.ToString();
+            this.txtCodAre.Text = string.Empty;
+            this.txtDesAre.Text = string.Empty;
+            this.dtpPlazoEntrega.Text = pMovCab.PlazoEntrega;
         }
 
         public void MostrarFechaIngresoSugerida()
@@ -357,6 +357,11 @@ namespace Presentacion.ProcesosCompras
 
             //ejecutar metodo
             Dgv.RefrescarGrilla(iGrilla, iFuenteDatos, iCondicionFranja, iClaveBusqueda, iListaColumnas);
+            if (iFuenteDatos.Count != 0)
+            {
+                this.txtCodAre.Text = iFuenteDatos.FirstOrDefault().CodigoCentroCosto;
+                this.txtDesAre.Text = iFuenteDatos.FirstOrDefault().DescripcionCentroCosto;
+            }
         }
 
         public List<DataGridViewColumn> ListarColumnasDgvCom()
@@ -411,7 +416,7 @@ namespace Presentacion.ProcesosCompras
             win.eVentana = this;
             win.eTituloVentana = "Personales";
             win.eCtrlValor = this.txtCodPer;
-            win.eCtrlFoco = this.txtIgv;
+            win.eCtrlFoco = this.txtCondiciones;
             win.eCondicionLista = Listas.wLisPer.Condicion.PersonalesActivos;
             TabCtrl.InsertarVentana(this, win);
             win.NuevaVentana();
@@ -450,7 +455,7 @@ namespace Presentacion.ProcesosCompras
             win.eVentana = this;
             win.eTituloVentana = "Proveedores";
             win.eCtrlValor = this.txtCodAux;
-            win.eCtrlFoco = this.txtGloMovCab;
+            win.eCtrlFoco = this.txtPreVenta;
             win.eCondicionLista = Listas.wLisAux.Condicion.ProveedoresActivos;
             TabCtrl.InsertarVentana(this, win);
             win.NuevaVentana();
@@ -517,9 +522,9 @@ namespace Presentacion.ProcesosCompras
             pObj.FechaMovimientoCabe = this.dtpFecMovCab.Text;
             pObj.PeriodoMovimientoCabe = this.wOrdSer.lblPeriodo.Text;
             pObj.CodigoAlmacen = "A90";
-            pObj.CodigoTipoOperacion = string.Empty;
-            pObj.CCalculaPrecioPromedio = this.txtCCalPrePro.Text.Trim();
-            pObj.CConversionUnidad = this.txtCConUni.Text.Trim();
+            pObj.CodigoTipoOperacion = "79";
+            pObj.CCalculaPrecioPromedio = "0";
+            pObj.CConversionUnidad = "0";
             pObj.CClaseTipoOperacion = "4";//orden de compra
             pObj.NumeroMovimientoCabe = this.txtNumMovCab.Text.Trim();
             pObj.CodigoAuxiliar = this.txtCodAux.Text.Trim();
@@ -625,6 +630,7 @@ namespace Presentacion.ProcesosCompras
             pMovCab.NumeroDocumento = string.Empty;
             pMovCab.FechaDocumento = string.Empty;
             pMovCab.GlosaMovimientoCabe = this.txtGloMovCab.Text;
+            pMovCab.IgvPorcentaje = Conversion.ADecimal(this.txtIgv.Text, 2);
             pMovCab.COrigenVentanaCreacion = "1";//ingreso 
             if (pMovCab.FlagCreadoxSolicitud == 1)
             {
@@ -720,7 +726,7 @@ namespace Presentacion.ProcesosCompras
             this.eLisMovDet.Remove(this.eLisMovDet.Find(x => x.CodigoExistencia == "999999"));
         }
 
-        public void AccionParaAgregarModificarEliminarMovimientoDeta()
+        public void AccionParaAgregarEliminarMovimientoDeta()
         {
             //valida cuando no hay centro de costo
             if (this.ElegirCentroCostoAntesDeLlenarGrilla() == false)
@@ -842,8 +848,8 @@ namespace Presentacion.ProcesosCompras
             switch (this.eOperacion)
             {
                 case Universal.Opera.Adicionar: { this.Adicionar(); break; }
-                //case Universal.Opera.Modificar: { this.Modificar(); break; }
-                //case Universal.Opera.Eliminar: { this.Eliminar(); break; }
+                case Universal.Opera.Modificar: { this.Modificar(); break; }
+                case Universal.Opera.Eliminar: { this.Eliminar(); break; }
                 default: break;
             }
         }
@@ -872,7 +878,7 @@ namespace Presentacion.ProcesosCompras
             this.AdicionarMovimientosDeta();
 
             //mensaje satisfactorio
-            Mensaje.OperacionSatisfactoria("Se agrego la orden de compra correctamente", this.wOrdSer.eTitulo);
+            Mensaje.OperacionSatisfactoria("Se agrego la orden de servicio correctamente", this.wOrdSer.eTitulo);
 
             //actualizar al propietario           
             this.wOrdSer.eClaveDgvMovCab = this.ObtenerClaveMovimientoCabe();
@@ -887,6 +893,128 @@ namespace Presentacion.ProcesosCompras
             this.MostrarMovimientosDeta();
             eMas.AccionPasarTextoPrincipal();
             this.dtpFecMovCab.Focus();
+        }
+
+        public void Modificar()
+        {
+            //validar los campos obligatorios
+            if (eMas.CamposObligatorios() == false) { return; }
+
+            //preguntar si este objeto fue eliminado mientras estaba activa la ventana
+            if (this.wOrdSer.EsMovimientoCabeExistente().Adicionales.EsVerdad == false) { return; }
+
+            //desea realizar la operacion?
+            if (Mensaje.DeseasRealizarOperacion(this.wOrdSer.eTitulo) == false) { return; }
+
+            //modificar el registro    
+            this.ModificarMovimientoCabe();
+
+            //eliminar MovimientosDeta anterior
+            this.EliminarAntiguosMovimientosDeta();
+
+            //adicionando nuevos MovimientoDeta
+            this.AdicionarMovimientosDeta();
+
+            //mensaje satisfactorio
+            Mensaje.OperacionSatisfactoria("Se modifico la orden de servicio correctamente", this.wOrdSer.eTitulo);
+
+            //actualizar al wLot          
+            this.wOrdSer.eClaveDgvMovCab = this.ObtenerClaveMovimientoCabe();
+            this.wOrdSer.ActualizarVentana();
+
+            //imprimir la nota
+            //this.wOrdCom.AccionImprimirNota();
+            //this.GenerarOrdenCompra();
+
+            //salir de la ventana
+            this.Close();
+        }
+
+        public void Eliminar()
+        {
+            //preguntar si este objeto fue eliminado mientras estaba activa la ventana
+            if (this.wOrdSer.EsMovimientoCabeExistente().Adicionales.EsVerdad == false) { return; }
+
+            //desea realizar la operacion?
+            if (Mensaje.DeseasRealizarOperacion(this.wOrdSer.eTitulo) == false) { return; }
+
+            //retornar presupuesto
+            this.RetornarPresupuesto();
+
+            //eliminar el registro
+            this.EliminarMovimientoCabe();
+
+            //eliminar MovimientosDeta anterior
+            this.EliminarAntiguosMovimientosDeta();
+
+            //mensaje satisfactorio
+            Mensaje.OperacionSatisfactoria("Se elimino la orden de servicio correctamente", this.wOrdSer.eTitulo);
+
+            //actualizar al wLot           
+            this.wOrdSer.ActualizarVentana();
+
+            //salir de la ventana
+            this.Close();
+        }
+
+
+        public void EliminarMovimientoCabe()
+        {
+            MovimientoOCCabeEN iCuoEN = new MovimientoOCCabeEN();
+            SolicitudPedidoCabeEN pObj = new SolicitudPedidoCabeEN();
+
+            this.AsignarMovimientoCabe(iCuoEN);
+
+            pObj.ClaveSolicitudPedidoCabe = this.eClavSolPedCab;
+            pObj.PeriodoSolicitudPedidoCabe = iCuoEN.PeriodoMovimientoCabe;
+
+            SolicitudPedidoCabeRN.EnviadoSolicitudPedidoCabe(pObj);
+
+            MovimientoOCCabeRN.EliminarMovimientoCabe(iCuoEN);
+        }
+
+        public void ModificarMovimientoCabe()
+        {
+            MovimientoOCCabeEN iCuoEN = new MovimientoOCCabeEN();
+            this.AsignarMovimientoCabe(iCuoEN);
+            iCuoEN = MovimientoOCCabeRN.BuscarMovimientoCabeXClave(iCuoEN);
+            this.AsignarMovimientoCabe(iCuoEN);
+            MovimientoOCCabeRN.ModificarMovimientoCabe(iCuoEN);
+        }
+
+        public void EliminarAntiguosMovimientosDeta()
+        {
+            MovimientoOCDetaEN iMovDetEN = new MovimientoOCDetaEN();
+            iMovDetEN.ClaveMovimientoCabe = this.ObtenerClaveMovimientoCabe();
+            MovimientoOCDetaRN.EliminarMovimientoDetaXMovimientoCabe(iMovDetEN);
+        }
+
+
+        public void RetornarPresupuesto()
+        {
+            MovimientoOCCabeEN iCuoEN = new MovimientoOCCabeEN();
+            this.AsignarMovimientoCabe(iCuoEN);
+            this.LLenarMovimientoDetaDeBaseDatos(iCuoEN);
+
+            if (this.eLisMovDet.Count > 0)
+            {
+                PresupuestoEN iPerEN = new PresupuestoEN();
+                iPerEN.Adicionales.CampoOrden = eNombreColumnaDgvPer;
+                PresupuestoEN xObj = new PresupuestoEN();
+                foreach (MovimientoOCDetaEN objDeta in eLisMovDet)
+                {
+                    this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
+                    string presupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                && x.CCentroCosto == objDeta.CodigoCentroCosto).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
+                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text && x.CCentroCosto == objDeta.CodigoCentroCosto).FirstOrDefault().SaldoPresupuesto.ToString(), 2);
+
+                    xObj = new PresupuestoEN();
+                    xObj.CodigoPresupuesto = wOrdSer.lblPeriodo.Text;
+                    xObj.CCentroCosto = objDeta.CodigoCentroCosto;
+                    xObj.NuevoSaldoPresupuesto = Convert.ToDecimal(presupuesto) + (objDeta.PrecioUnitarioMovimientoDeta * objDeta.CantidadMovimientoDeta);
+                    PresupuestoRN.ModificarPresupuesto(xObj);
+                }
+            }
         }
 
         public void MostrarNuevoNumero()
@@ -979,6 +1107,40 @@ namespace Presentacion.ProcesosCompras
             return true;
         }
 
+        public void VentanaModificar(MovimientoOCCabeEN pMovCab)
+        {
+            this.InicializaVentana();
+            this.MostrarMovimientoCabe(pMovCab);
+            this.LLenarMovimientoDetaDeBaseDatos(pMovCab);
+            this.MostrarMovimientosDeta();
+            eMas.AccionHabilitarControles(1);
+            eMas.AccionPasarTextoPrincipal();
+            this.dtpFecMovCab.Focus();
+            this.CargarTipoCambio();
+        }
+
+        public void VentanaEliminar(MovimientoOCCabeEN pMovCab)
+        {
+            this.InicializaVentana();
+            this.MostrarMovimientoCabe(pMovCab);
+            this.LLenarMovimientoDetaDeBaseDatos(pMovCab);
+            this.MostrarMovimientosDeta();
+            eMas.AccionHabilitarControles(2);
+            this.btnAceptar.Focus();
+            this.CargarTipoCambio();
+        }
+
+        public void VentanaVisualizar(MovimientoOCCabeEN pMovCab)
+        {
+            this.InicializaVentana();
+            this.MostrarMovimientoCabe(pMovCab);
+            this.LLenarMovimientoDetaDeBaseDatos(pMovCab);
+            this.MostrarMovimientosDeta();
+            eMas.AccionHabilitarControles(3);
+            this.btnCancelar.Focus();
+            this.CargarTipoCambio();
+        }
+
         private void txtCodTipSer_Validating(object sender, CancelEventArgs e)
         {
             this.EsTipoServicioValido();
@@ -1029,7 +1191,7 @@ namespace Presentacion.ProcesosCompras
 
         private void txtPreVenta_Validating(object sender, CancelEventArgs e)
         {
-            this.AccionParaAgregarModificarEliminarMovimientoDeta();
+            this.AccionParaAgregarEliminarMovimientoDeta();
         }
 
         private void txtPreMatAcc_Validating(object sender, CancelEventArgs e)

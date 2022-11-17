@@ -49,8 +49,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.dtpPlazoEntrega = new System.Windows.Forms.DateTimePicker();
-            this.txtCCalPrePro = new System.Windows.Forms.TextBox();
-            this.txtCConUni = new System.Windows.Forms.TextBox();
             this.txtDesTipSer = new System.Windows.Forms.TextBox();
             this.txtCodTipSer = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -63,16 +61,6 @@
             this.cmbGarantia = new System.Windows.Forms.ComboBox();
             this.txtIgv = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtPreVenta = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtPreMatAcc = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtValorIGV = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtValorVenta = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtTotalGral = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.cmbFormaPago = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtCtaDeposito = new System.Windows.Forms.TextBox();
@@ -92,6 +80,17 @@
             this.txtCodAre = new System.Windows.Forms.TextBox();
             this.txtDesAre = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.txtTotalGral = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtValorVenta = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtValorIGV = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtPreMatAcc = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtPreVenta = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovDet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,7 +163,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 318);
+            this.label5.Location = new System.Drawing.Point(11, 265);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 14);
             this.label5.TabIndex = 466;
@@ -172,7 +171,7 @@
             // 
             // txtCodAux
             // 
-            this.txtCodAux.Location = new System.Drawing.Point(126, 315);
+            this.txtCodAux.Location = new System.Drawing.Point(126, 262);
             this.txtCodAux.Name = "txtCodAux";
             this.txtCodAux.Size = new System.Drawing.Size(86, 22);
             this.txtCodAux.TabIndex = 464;
@@ -182,7 +181,7 @@
             // 
             // txtDesAux
             // 
-            this.txtDesAux.Location = new System.Drawing.Point(213, 315);
+            this.txtDesAux.Location = new System.Drawing.Point(213, 262);
             this.txtDesAux.Name = "txtDesAux";
             this.txtDesAux.ReadOnly = true;
             this.txtDesAux.Size = new System.Drawing.Size(231, 22);
@@ -193,7 +192,7 @@
             this.label4.BackColor = System.Drawing.Color.DarkGray;
             this.label4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(13, 298);
+            this.label4.Location = new System.Drawing.Point(11, 245);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(659, 14);
             this.label4.TabIndex = 463;
@@ -248,7 +247,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(14, 397);
+            this.label17.Location = new System.Drawing.Point(13, 406);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(39, 14);
             this.label17.TabIndex = 454;
@@ -256,7 +255,7 @@
             // 
             // txtGloMovCab
             // 
-            this.txtGloMovCab.Location = new System.Drawing.Point(129, 394);
+            this.txtGloMovCab.Location = new System.Drawing.Point(127, 403);
             this.txtGloMovCab.Name = "txtGloMovCab";
             this.txtGloMovCab.Size = new System.Drawing.Size(543, 22);
             this.txtGloMovCab.TabIndex = 453;
@@ -266,7 +265,7 @@
             this.label16.BackColor = System.Drawing.Color.DarkGray;
             this.label16.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(16, 371);
+            this.label16.Location = new System.Drawing.Point(11, 386);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(656, 14);
             this.label16.TabIndex = 452;
@@ -289,24 +288,6 @@
             this.dtpPlazoEntrega.Name = "dtpPlazoEntrega";
             this.dtpPlazoEntrega.Size = new System.Drawing.Size(99, 22);
             this.dtpPlazoEntrega.TabIndex = 493;
-            // 
-            // txtCCalPrePro
-            // 
-            this.txtCCalPrePro.Location = new System.Drawing.Point(445, 105);
-            this.txtCCalPrePro.Name = "txtCCalPrePro";
-            this.txtCCalPrePro.ReadOnly = true;
-            this.txtCCalPrePro.Size = new System.Drawing.Size(10, 22);
-            this.txtCCalPrePro.TabIndex = 478;
-            this.txtCCalPrePro.Visible = false;
-            // 
-            // txtCConUni
-            // 
-            this.txtCConUni.Location = new System.Drawing.Point(456, 105);
-            this.txtCConUni.Name = "txtCConUni";
-            this.txtCConUni.ReadOnly = true;
-            this.txtCConUni.Size = new System.Drawing.Size(10, 22);
-            this.txtCConUni.TabIndex = 479;
-            this.txtCConUni.Visible = false;
             // 
             // txtDesTipSer
             // 
@@ -409,92 +390,10 @@
             this.label8.TabIndex = 502;
             this.label8.Text = "I.G.V. %";
             // 
-            // txtPreVenta
-            // 
-            this.txtPreVenta.Location = new System.Drawing.Point(126, 217);
-            this.txtPreVenta.Name = "txtPreVenta";
-            this.txtPreVenta.Size = new System.Drawing.Size(99, 22);
-            this.txtPreVenta.TabIndex = 505;
-            this.txtPreVenta.Validating += new System.ComponentModel.CancelEventHandler(this.txtPreVenta_Validating);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 220);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 14);
-            this.label9.TabIndex = 504;
-            this.label9.Text = "Precio Venta";
-            // 
-            // txtPreMatAcc
-            // 
-            this.txtPreMatAcc.Location = new System.Drawing.Point(319, 217);
-            this.txtPreMatAcc.Name = "txtPreMatAcc";
-            this.txtPreMatAcc.Size = new System.Drawing.Size(99, 22);
-            this.txtPreMatAcc.TabIndex = 507;
-            this.txtPreMatAcc.Validating += new System.ComponentModel.CancelEventHandler(this.txtPreMatAcc_Validating);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(231, 220);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 14);
-            this.label10.TabIndex = 506;
-            this.label10.Text = "Prec. Mat. Acc.";
-            // 
-            // txtValorIGV
-            // 
-            this.txtValorIGV.Location = new System.Drawing.Point(319, 245);
-            this.txtValorIGV.Name = "txtValorIGV";
-            this.txtValorIGV.Size = new System.Drawing.Size(99, 22);
-            this.txtValorIGV.TabIndex = 509;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(231, 248);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 14);
-            this.label11.TabIndex = 508;
-            this.label11.Text = "Valor I.G.V.";
-            // 
-            // txtValorVenta
-            // 
-            this.txtValorVenta.Location = new System.Drawing.Point(126, 245);
-            this.txtValorVenta.Name = "txtValorVenta";
-            this.txtValorVenta.Size = new System.Drawing.Size(99, 22);
-            this.txtValorVenta.TabIndex = 511;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 248);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 14);
-            this.label13.TabIndex = 510;
-            this.label13.Text = "Valor Venta";
-            // 
-            // txtTotalGral
-            // 
-            this.txtTotalGral.Location = new System.Drawing.Point(560, 245);
-            this.txtTotalGral.Name = "txtTotalGral";
-            this.txtTotalGral.Size = new System.Drawing.Size(99, 22);
-            this.txtTotalGral.TabIndex = 513;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(487, 248);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(63, 14);
-            this.label15.TabIndex = 512;
-            this.label15.Text = "Total Gral.";
-            // 
             // cmbFormaPago
             // 
             this.cmbFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFormaPago.Location = new System.Drawing.Point(126, 273);
+            this.cmbFormaPago.Location = new System.Drawing.Point(560, 220);
             this.cmbFormaPago.Name = "cmbFormaPago";
             this.cmbFormaPago.Size = new System.Drawing.Size(99, 22);
             this.cmbFormaPago.TabIndex = 514;
@@ -502,15 +401,15 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(11, 276);
+            this.label20.Location = new System.Drawing.Point(487, 223);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(73, 14);
+            this.label20.Size = new System.Drawing.Size(47, 14);
             this.label20.TabIndex = 515;
-            this.label20.Text = "Forma Pago ";
+            this.label20.Text = "F. Pago ";
             // 
             // txtCtaDeposito
             // 
-            this.txtCtaDeposito.Location = new System.Drawing.Point(560, 315);
+            this.txtCtaDeposito.Location = new System.Drawing.Point(560, 262);
             this.txtCtaDeposito.Name = "txtCtaDeposito";
             this.txtCtaDeposito.Size = new System.Drawing.Size(99, 22);
             this.txtCtaDeposito.TabIndex = 517;
@@ -518,7 +417,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(487, 318);
+            this.label22.Location = new System.Drawing.Point(487, 265);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(55, 14);
             this.label22.TabIndex = 516;
@@ -526,7 +425,7 @@
             // 
             // txtCII
             // 
-            this.txtCII.Location = new System.Drawing.Point(560, 343);
+            this.txtCII.Location = new System.Drawing.Point(560, 290);
             this.txtCII.Name = "txtCII";
             this.txtCII.Size = new System.Drawing.Size(99, 22);
             this.txtCII.TabIndex = 519;
@@ -534,7 +433,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(487, 346);
+            this.label23.Location = new System.Drawing.Point(487, 293);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(30, 14);
             this.label23.TabIndex = 518;
@@ -543,7 +442,7 @@
             // dgvMovDet
             // 
             this.dgvMovDet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMovDet.Location = new System.Drawing.Point(16, 422);
+            this.dgvMovDet.Location = new System.Drawing.Point(14, 431);
             this.dgvMovDet.Name = "dgvMovDet";
             this.dgvMovDet.Size = new System.Drawing.Size(613, 130);
             this.dgvMovDet.TabIndex = 520;
@@ -551,7 +450,7 @@
             // btnQuitar
             // 
             this.btnQuitar.Image = global::Presentacion.Properties.Resources._16__Borders_;
-            this.btnQuitar.Location = new System.Drawing.Point(635, 484);
+            this.btnQuitar.Location = new System.Drawing.Point(633, 493);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(29, 29);
             this.btnQuitar.TabIndex = 523;
@@ -562,7 +461,7 @@
             // btnModificar
             // 
             this.btnModificar.Image = global::Presentacion.Properties.Resources._16__Pencil_tool_;
-            this.btnModificar.Location = new System.Drawing.Point(635, 453);
+            this.btnModificar.Location = new System.Drawing.Point(633, 462);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(29, 29);
             this.btnModificar.TabIndex = 522;
@@ -573,7 +472,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Image = global::Presentacion.Properties.Resources._16__Plus_;
-            this.btnAgregar.Location = new System.Drawing.Point(635, 422);
+            this.btnAgregar.Location = new System.Drawing.Point(633, 431);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(29, 29);
             this.btnAgregar.TabIndex = 521;
@@ -583,7 +482,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(565, 558);
+            this.btnCancelar.Location = new System.Drawing.Point(563, 567);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(99, 25);
             this.btnCancelar.TabIndex = 525;
@@ -593,7 +492,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(460, 558);
+            this.btnAceptar.Location = new System.Drawing.Point(458, 567);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(99, 25);
             this.btnAceptar.TabIndex = 524;
@@ -639,7 +538,7 @@
             // 
             // txtCodAre
             // 
-            this.txtCodAre.Location = new System.Drawing.Point(319, 273);
+            this.txtCodAre.Location = new System.Drawing.Point(126, 217);
             this.txtCodAre.MaxLength = 15;
             this.txtCodAre.Name = "txtCodAre";
             this.txtCodAre.Size = new System.Drawing.Size(99, 22);
@@ -650,26 +549,131 @@
             // 
             // txtDesAre
             // 
-            this.txtDesAre.Location = new System.Drawing.Point(424, 273);
+            this.txtDesAre.Location = new System.Drawing.Point(231, 217);
             this.txtDesAre.Name = "txtDesAre";
             this.txtDesAre.ReadOnly = true;
-            this.txtDesAre.Size = new System.Drawing.Size(235, 22);
+            this.txtDesAre.Size = new System.Drawing.Size(213, 22);
             this.txtDesAre.TabIndex = 531;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(231, 276);
+            this.label27.Location = new System.Drawing.Point(12, 220);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(75, 14);
             this.label27.TabIndex = 530;
             this.label27.Text = "Centro Costo";
             // 
+            // txtTotalGral
+            // 
+            this.txtTotalGral.Location = new System.Drawing.Point(565, 361);
+            this.txtTotalGral.Name = "txtTotalGral";
+            this.txtTotalGral.Size = new System.Drawing.Size(99, 22);
+            this.txtTotalGral.TabIndex = 542;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(492, 364);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(63, 14);
+            this.label15.TabIndex = 541;
+            this.label15.Text = "Total Gral.";
+            // 
+            // txtValorVenta
+            // 
+            this.txtValorVenta.Location = new System.Drawing.Point(131, 361);
+            this.txtValorVenta.Name = "txtValorVenta";
+            this.txtValorVenta.Size = new System.Drawing.Size(99, 22);
+            this.txtValorVenta.TabIndex = 540;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(17, 364);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(69, 14);
+            this.label13.TabIndex = 539;
+            this.label13.Text = "Valor Venta";
+            // 
+            // txtValorIGV
+            // 
+            this.txtValorIGV.Location = new System.Drawing.Point(324, 361);
+            this.txtValorIGV.Name = "txtValorIGV";
+            this.txtValorIGV.Size = new System.Drawing.Size(99, 22);
+            this.txtValorIGV.TabIndex = 538;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(236, 364);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 14);
+            this.label11.TabIndex = 537;
+            this.label11.Text = "Valor I.G.V.";
+            // 
+            // txtPreMatAcc
+            // 
+            this.txtPreMatAcc.Location = new System.Drawing.Point(324, 333);
+            this.txtPreMatAcc.Name = "txtPreMatAcc";
+            this.txtPreMatAcc.Size = new System.Drawing.Size(99, 22);
+            this.txtPreMatAcc.TabIndex = 536;
+            this.txtPreMatAcc.Validating += new System.ComponentModel.CancelEventHandler(this.txtPreMatAcc_Validating);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(236, 336);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 14);
+            this.label10.TabIndex = 535;
+            this.label10.Text = "Prec. Mat. Acc.";
+            // 
+            // txtPreVenta
+            // 
+            this.txtPreVenta.Location = new System.Drawing.Point(131, 333);
+            this.txtPreVenta.Name = "txtPreVenta";
+            this.txtPreVenta.Size = new System.Drawing.Size(99, 22);
+            this.txtPreVenta.TabIndex = 534;
+            this.txtPreVenta.Validating += new System.ComponentModel.CancelEventHandler(this.txtPreVenta_Validating);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(16, 336);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 14);
+            this.label9.TabIndex = 533;
+            this.label9.Text = "Precio Venta";
+            // 
+            // label28
+            // 
+            this.label28.BackColor = System.Drawing.Color.DarkGray;
+            this.label28.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(11, 316);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(659, 14);
+            this.label28.TabIndex = 543;
+            this.label28.Text = "Totales";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // wEditOrdenServicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 598);
+            this.ClientSize = new System.Drawing.Size(686, 600);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.txtTotalGral);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.txtValorVenta);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtValorIGV);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtPreMatAcc);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtPreVenta);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtCodAre);
             this.Controls.Add(this.txtDesAre);
             this.Controls.Add(this.label27);
@@ -689,16 +693,6 @@
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.cmbFormaPago);
-            this.Controls.Add(this.txtTotalGral);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.txtValorVenta);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtValorIGV);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtPreMatAcc);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtPreVenta);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtIgv);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cmbGarantia);
@@ -712,8 +706,6 @@
             this.Controls.Add(this.dtpPlazoEntrega);
             this.Controls.Add(this.cmbMon);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtCConUni);
-            this.Controls.Add(this.txtCCalPrePro);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCodAux);
             this.Controls.Add(this.txtDesAux);
@@ -757,8 +749,6 @@
             this.Controls.SetChildIndex(this.txtDesAux, 0);
             this.Controls.SetChildIndex(this.txtCodAux, 0);
             this.Controls.SetChildIndex(this.label5, 0);
-            this.Controls.SetChildIndex(this.txtCCalPrePro, 0);
-            this.Controls.SetChildIndex(this.txtCConUni, 0);
             this.Controls.SetChildIndex(this.label12, 0);
             this.Controls.SetChildIndex(this.cmbMon, 0);
             this.Controls.SetChildIndex(this.dtpPlazoEntrega, 0);
@@ -772,16 +762,6 @@
             this.Controls.SetChildIndex(this.cmbGarantia, 0);
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.txtIgv, 0);
-            this.Controls.SetChildIndex(this.label9, 0);
-            this.Controls.SetChildIndex(this.txtPreVenta, 0);
-            this.Controls.SetChildIndex(this.label10, 0);
-            this.Controls.SetChildIndex(this.txtPreMatAcc, 0);
-            this.Controls.SetChildIndex(this.label11, 0);
-            this.Controls.SetChildIndex(this.txtValorIGV, 0);
-            this.Controls.SetChildIndex(this.label13, 0);
-            this.Controls.SetChildIndex(this.txtValorVenta, 0);
-            this.Controls.SetChildIndex(this.label15, 0);
-            this.Controls.SetChildIndex(this.txtTotalGral, 0);
             this.Controls.SetChildIndex(this.cmbFormaPago, 0);
             this.Controls.SetChildIndex(this.label20, 0);
             this.Controls.SetChildIndex(this.label22, 0);
@@ -801,6 +781,17 @@
             this.Controls.SetChildIndex(this.label27, 0);
             this.Controls.SetChildIndex(this.txtDesAre, 0);
             this.Controls.SetChildIndex(this.txtCodAre, 0);
+            this.Controls.SetChildIndex(this.label9, 0);
+            this.Controls.SetChildIndex(this.txtPreVenta, 0);
+            this.Controls.SetChildIndex(this.label10, 0);
+            this.Controls.SetChildIndex(this.txtPreMatAcc, 0);
+            this.Controls.SetChildIndex(this.label11, 0);
+            this.Controls.SetChildIndex(this.txtValorIGV, 0);
+            this.Controls.SetChildIndex(this.label13, 0);
+            this.Controls.SetChildIndex(this.txtValorVenta, 0);
+            this.Controls.SetChildIndex(this.label15, 0);
+            this.Controls.SetChildIndex(this.txtTotalGral, 0);
+            this.Controls.SetChildIndex(this.label28, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovDet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -830,8 +821,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label21;
         internal System.Windows.Forms.DateTimePicker dtpPlazoEntrega;
-        internal System.Windows.Forms.TextBox txtCCalPrePro;
-        internal System.Windows.Forms.TextBox txtCConUni;
         private System.Windows.Forms.TextBox txtDesTipSer;
         internal System.Windows.Forms.TextBox txtCodTipSer;
         private System.Windows.Forms.Label label18;
@@ -844,16 +833,6 @@
         private System.Windows.Forms.ComboBox cmbGarantia;
         private System.Windows.Forms.TextBox txtIgv;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtPreVenta;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtPreMatAcc;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtValorIGV;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtValorVenta;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtTotalGral;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cmbFormaPago;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtCtaDeposito;
@@ -873,5 +852,16 @@
         private System.Windows.Forms.Label label27;
         internal System.Windows.Forms.TextBox txtCodAre;
         internal System.Windows.Forms.TextBox txtDesAre;
+        private System.Windows.Forms.TextBox txtTotalGral;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtValorVenta;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtValorIGV;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtPreMatAcc;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtPreVenta;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label28;
     }
 }

@@ -99,6 +99,7 @@
             this.tsbModificar.Size = new System.Drawing.Size(61, 45);
             this.tsbModificar.Text = "Modificar";
             this.tsbModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbModificar.Click += new System.EventHandler(this.tsbModificar_Click);
             // 
             // tsbEliminar
             // 
@@ -108,6 +109,7 @@
             this.tsbEliminar.Size = new System.Drawing.Size(57, 45);
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
             // tsbVisualizar
             // 
@@ -117,6 +119,7 @@
             this.tsbVisualizar.Size = new System.Drawing.Size(66, 45);
             this.tsbVisualizar.Text = "Visualizar";
             this.tsbVisualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbVisualizar.Click += new System.EventHandler(this.tsbVisualizar_Click);
             // 
             // tsbSalir
             // 
@@ -126,6 +129,7 @@
             this.tsbSalir.Size = new System.Drawing.Size(36, 45);
             this.tsbSalir.Text = "Salir";
             this.tsbSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbSalir.Click += new System.EventHandler(this.tsbSalir_Click);
             // 
             // tsSecundario
             // 
@@ -160,6 +164,7 @@
             this.tsbPrimero.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPrimero.Name = "tsbPrimero";
             this.tsbPrimero.Size = new System.Drawing.Size(23, 22);
+            this.tsbPrimero.Click += new System.EventHandler(this.tsbPrimero_Click);
             // 
             // tsbAnterior
             // 
@@ -168,6 +173,7 @@
             this.tsbAnterior.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAnterior.Name = "tsbAnterior";
             this.tsbAnterior.Size = new System.Drawing.Size(23, 22);
+            this.tsbAnterior.Click += new System.EventHandler(this.tsbAnterior_Click);
             // 
             // tsbSiguiente
             // 
@@ -176,6 +182,7 @@
             this.tsbSiguiente.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbSiguiente.Name = "tsbSiguiente";
             this.tsbSiguiente.Size = new System.Drawing.Size(23, 22);
+            this.tsbSiguiente.Click += new System.EventHandler(this.tsbSiguiente_Click);
             // 
             // tsbUltimo
             // 
@@ -184,6 +191,7 @@
             this.tsbUltimo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbUltimo.Name = "tsbUltimo";
             this.tsbUltimo.Size = new System.Drawing.Size(23, 22);
+            this.tsbUltimo.Click += new System.EventHandler(this.tsbUltimo_Click);
             // 
             // tsbActualizarTabla
             // 
@@ -275,20 +283,22 @@
             this.IteImportarAdicionar,
             this.IteImportarEliminar});
             this.IteImportar.Name = "IteImportar";
-            this.IteImportar.Size = new System.Drawing.Size(120, 22);
+            this.IteImportar.Size = new System.Drawing.Size(152, 22);
             this.IteImportar.Text = "Importar";
             // 
             // IteImportarAdicionar
             // 
             this.IteImportarAdicionar.Name = "IteImportarAdicionar";
-            this.IteImportarAdicionar.Size = new System.Drawing.Size(125, 22);
+            this.IteImportarAdicionar.Size = new System.Drawing.Size(152, 22);
             this.IteImportarAdicionar.Text = "Adicionar";
+            this.IteImportarAdicionar.Click += new System.EventHandler(this.IteImportarAdicionar_Click);
             // 
             // IteImportarEliminar
             // 
             this.IteImportarEliminar.Name = "IteImportarEliminar";
-            this.IteImportarEliminar.Size = new System.Drawing.Size(125, 22);
+            this.IteImportarEliminar.Size = new System.Drawing.Size(152, 22);
             this.IteImportarEliminar.Text = "Eliminar";
+            this.IteImportarEliminar.Click += new System.EventHandler(this.IteImportarEliminar_Click);
             // 
             // tsbImprimirNota
             // 
@@ -340,6 +350,7 @@
             this.Controls.Add(this.tsPrincipal);
             this.Name = "wOrdenServicio";
             this.Text = "Orden Servicio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.wOrdenServicio_FormClosing);
             this.Controls.SetChildIndex(this.tsPrincipal, 0);
             this.Controls.SetChildIndex(this.tsSecundario, 0);
             this.Controls.SetChildIndex(this.sst1, 0);

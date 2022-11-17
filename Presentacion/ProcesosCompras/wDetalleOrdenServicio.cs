@@ -231,10 +231,10 @@ namespace Presentacion.ProcesosCompras
             pObj.CodigoEmpresa = Universal.gCodigoEmpresa;
             pObj.FechaMovimientoCabe = this.wEditOrdSer.dtpFecMovCab.Text;
             pObj.PeriodoMovimientoCabe = this.wEditOrdSer.wOrdSer.lblPeriodo.Text;
-            pObj.CodigoAlmacen = "A01";
-            pObj.CodigoTipoOperacion = string.Empty;
-            pObj.CCalculaPrecioPromedio = this.wEditOrdSer.txtCCalPrePro.Text.Trim();
-            pObj.CConversionUnidad = this.wEditOrdSer.txtCConUni.Text.Trim();
+            pObj.CodigoAlmacen = "A90";
+            pObj.CodigoTipoOperacion = "79";
+            pObj.CCalculaPrecioPromedio = "0";
+            pObj.CConversionUnidad = "0";
             pObj.CClaseTipoOperacion = "4";//orden de compra
             pObj.NumeroMovimientoCabe = this.wEditOrdSer.txtNumMovCab.Text.Trim();
             pObj.CodigoAuxiliar = this.wEditOrdSer.txtCodAux.Text.Trim();
