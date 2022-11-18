@@ -40,6 +40,8 @@ namespace Presentacion.Impresiones {
         
         private StockFisicoProgramadoDataTable tableStockFisicoProgramado;
         
+        private MovimientoOcOsDetaDataTable tableMovimientoOcOsDeta;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -91,6 +93,9 @@ namespace Presentacion.Impresiones {
                 }
                 if ((ds.Tables["StockFisicoProgramado"] != null)) {
                     base.Tables.Add(new StockFisicoProgramadoDataTable(ds.Tables["StockFisicoProgramado"]));
+                }
+                if ((ds.Tables["MovimientoOcOsDeta"] != null)) {
+                    base.Tables.Add(new MovimientoOcOsDetaDataTable(ds.Tables["MovimientoOcOsDeta"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -192,6 +197,16 @@ namespace Presentacion.Impresiones {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public MovimientoOcOsDetaDataTable MovimientoOcOsDeta {
+            get {
+                return this.tableMovimientoOcOsDeta;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -281,6 +296,9 @@ namespace Presentacion.Impresiones {
                 if ((ds.Tables["StockFisicoProgramado"] != null)) {
                     base.Tables.Add(new StockFisicoProgramadoDataTable(ds.Tables["StockFisicoProgramado"]));
                 }
+                if ((ds.Tables["MovimientoOcOsDeta"] != null)) {
+                    base.Tables.Add(new MovimientoOcOsDetaDataTable(ds.Tables["MovimientoOcOsDeta"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -362,6 +380,12 @@ namespace Presentacion.Impresiones {
                     this.tableStockFisicoProgramado.InitVars();
                 }
             }
+            this.tableMovimientoOcOsDeta = ((MovimientoOcOsDetaDataTable)(base.Tables["MovimientoOcOsDeta"]));
+            if ((initTable == true)) {
+                if ((this.tableMovimientoOcOsDeta != null)) {
+                    this.tableMovimientoOcOsDeta.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -388,6 +412,8 @@ namespace Presentacion.Impresiones {
             base.Tables.Add(this.tableProduccionDeta);
             this.tableStockFisicoProgramado = new StockFisicoProgramadoDataTable();
             base.Tables.Add(this.tableStockFisicoProgramado);
+            this.tableMovimientoOcOsDeta = new MovimientoOcOsDetaDataTable();
+            base.Tables.Add(this.tableMovimientoOcOsDeta);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -435,6 +461,12 @@ namespace Presentacion.Impresiones {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeStockFisicoProgramado() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeMovimientoOcOsDeta() {
             return false;
         }
         
@@ -516,6 +548,9 @@ namespace Presentacion.Impresiones {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void StockFisicoProgramadoRowChangeEventHandler(object sender, StockFisicoProgramadoRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void MovimientoOcOsDetaRowChangeEventHandler(object sender, MovimientoOcOsDetaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4666,6 +4701,726 @@ namespace Presentacion.Impresiones {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "StockFisicoProgramadoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class MovimientoOcOsDetaDataTable : global::System.Data.TypedTableBase<MovimientoOcOsDetaRow> {
+            
+            private global::System.Data.DataColumn columnCodigoExistencia;
+            
+            private global::System.Data.DataColumn columnDescripcionExistencia;
+            
+            private global::System.Data.DataColumn columnCodigoUnidadMedida;
+            
+            private global::System.Data.DataColumn columnNombreUnidadMedida;
+            
+            private global::System.Data.DataColumn columnUbicacionExistencia;
+            
+            private global::System.Data.DataColumn columnCantidadMovimientoDeta;
+            
+            private global::System.Data.DataColumn columnCodigoCentroCosto;
+            
+            private global::System.Data.DataColumn columnDescripcionCentroCosto;
+            
+            private global::System.Data.DataColumn columnCodigoTipo;
+            
+            private global::System.Data.DataColumn columnNombreTipo;
+            
+            private global::System.Data.DataColumn columnCostoMovimientoDeta;
+            
+            private global::System.Data.DataColumn columnPrecioExistencia;
+            
+            private global::System.Data.DataColumn columnNumeroMovimientoCabe;
+            
+            private global::System.Data.DataColumn columnFechaMovimientoCabe;
+            
+            private global::System.Data.DataColumn columnCTipoDocumento;
+            
+            private global::System.Data.DataColumn columnNTipoDocumento;
+            
+            private global::System.Data.DataColumn columnSerieDocumento;
+            
+            private global::System.Data.DataColumn columnNumeroDocumento;
+            
+            private global::System.Data.DataColumn columnCodigoAlmacen;
+            
+            private global::System.Data.DataColumn columnDescripcionAlmacen;
+            
+            private global::System.Data.DataColumn columnCodigoAuxiliar;
+            
+            private global::System.Data.DataColumn columnDescripcionAuxiliar;
+            
+            private global::System.Data.DataColumn columnPrecioUnitarioMovimientoDeta;
+            
+            private global::System.Data.DataColumn columnClaveMovimientoCabe;
+            
+            private global::System.Data.DataColumn columnCodigoTipoOperacion;
+            
+            private global::System.Data.DataColumn columnFlete;
+            
+            private global::System.Data.DataColumn columnFleteTotal;
+            
+            private global::System.Data.DataColumn columnCodigoArea;
+            
+            private global::System.Data.DataColumn columnNombreArea;
+            
+            private global::System.Data.DataColumn columnCodigoPartida;
+            
+            private global::System.Data.DataColumn columnNombrePartida;
+            
+            private global::System.Data.DataColumn columnTipoCambio;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MovimientoOcOsDetaDataTable() {
+                this.TableName = "MovimientoOcOsDeta";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal MovimientoOcOsDetaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected MovimientoOcOsDetaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodigoExistenciaColumn {
+                get {
+                    return this.columnCodigoExistencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionExistenciaColumn {
+                get {
+                    return this.columnDescripcionExistencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodigoUnidadMedidaColumn {
+                get {
+                    return this.columnCodigoUnidadMedida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NombreUnidadMedidaColumn {
+                get {
+                    return this.columnNombreUnidadMedida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UbicacionExistenciaColumn {
+                get {
+                    return this.columnUbicacionExistencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CantidadMovimientoDetaColumn {
+                get {
+                    return this.columnCantidadMovimientoDeta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodigoCentroCostoColumn {
+                get {
+                    return this.columnCodigoCentroCosto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionCentroCostoColumn {
+                get {
+                    return this.columnDescripcionCentroCosto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodigoTipoColumn {
+                get {
+                    return this.columnCodigoTipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NombreTipoColumn {
+                get {
+                    return this.columnNombreTipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CostoMovimientoDetaColumn {
+                get {
+                    return this.columnCostoMovimientoDeta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PrecioExistenciaColumn {
+                get {
+                    return this.columnPrecioExistencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumeroMovimientoCabeColumn {
+                get {
+                    return this.columnNumeroMovimientoCabe;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FechaMovimientoCabeColumn {
+                get {
+                    return this.columnFechaMovimientoCabe;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CTipoDocumentoColumn {
+                get {
+                    return this.columnCTipoDocumento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NTipoDocumentoColumn {
+                get {
+                    return this.columnNTipoDocumento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SerieDocumentoColumn {
+                get {
+                    return this.columnSerieDocumento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumeroDocumentoColumn {
+                get {
+                    return this.columnNumeroDocumento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodigoAlmacenColumn {
+                get {
+                    return this.columnCodigoAlmacen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionAlmacenColumn {
+                get {
+                    return this.columnDescripcionAlmacen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodigoAuxiliarColumn {
+                get {
+                    return this.columnCodigoAuxiliar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionAuxiliarColumn {
+                get {
+                    return this.columnDescripcionAuxiliar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PrecioUnitarioMovimientoDetaColumn {
+                get {
+                    return this.columnPrecioUnitarioMovimientoDeta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ClaveMovimientoCabeColumn {
+                get {
+                    return this.columnClaveMovimientoCabe;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodigoTipoOperacionColumn {
+                get {
+                    return this.columnCodigoTipoOperacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FleteColumn {
+                get {
+                    return this.columnFlete;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FleteTotalColumn {
+                get {
+                    return this.columnFleteTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodigoAreaColumn {
+                get {
+                    return this.columnCodigoArea;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NombreAreaColumn {
+                get {
+                    return this.columnNombreArea;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodigoPartidaColumn {
+                get {
+                    return this.columnCodigoPartida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NombrePartidaColumn {
+                get {
+                    return this.columnNombrePartida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TipoCambioColumn {
+                get {
+                    return this.columnTipoCambio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MovimientoOcOsDetaRow this[int index] {
+                get {
+                    return ((MovimientoOcOsDetaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MovimientoOcOsDetaRowChangeEventHandler MovimientoOcOsDetaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MovimientoOcOsDetaRowChangeEventHandler MovimientoOcOsDetaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MovimientoOcOsDetaRowChangeEventHandler MovimientoOcOsDetaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MovimientoOcOsDetaRowChangeEventHandler MovimientoOcOsDetaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddMovimientoOcOsDetaRow(MovimientoOcOsDetaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MovimientoOcOsDetaRow AddMovimientoOcOsDetaRow(
+                        string CodigoExistencia, 
+                        string DescripcionExistencia, 
+                        string CodigoUnidadMedida, 
+                        string NombreUnidadMedida, 
+                        string UbicacionExistencia, 
+                        decimal CantidadMovimientoDeta, 
+                        string CodigoCentroCosto, 
+                        string DescripcionCentroCosto, 
+                        string CodigoTipo, 
+                        string NombreTipo, 
+                        decimal CostoMovimientoDeta, 
+                        decimal PrecioExistencia, 
+                        string NumeroMovimientoCabe, 
+                        string FechaMovimientoCabe, 
+                        string CTipoDocumento, 
+                        string NTipoDocumento, 
+                        string SerieDocumento, 
+                        string NumeroDocumento, 
+                        string CodigoAlmacen, 
+                        string DescripcionAlmacen, 
+                        string CodigoAuxiliar, 
+                        string DescripcionAuxiliar, 
+                        decimal PrecioUnitarioMovimientoDeta, 
+                        string ClaveMovimientoCabe, 
+                        string CodigoTipoOperacion, 
+                        decimal Flete, 
+                        decimal FleteTotal, 
+                        string CodigoArea, 
+                        string NombreArea, 
+                        string CodigoPartida, 
+                        string NombrePartida, 
+                        decimal TipoCambio) {
+                MovimientoOcOsDetaRow rowMovimientoOcOsDetaRow = ((MovimientoOcOsDetaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        CodigoExistencia,
+                        DescripcionExistencia,
+                        CodigoUnidadMedida,
+                        NombreUnidadMedida,
+                        UbicacionExistencia,
+                        CantidadMovimientoDeta,
+                        CodigoCentroCosto,
+                        DescripcionCentroCosto,
+                        CodigoTipo,
+                        NombreTipo,
+                        CostoMovimientoDeta,
+                        PrecioExistencia,
+                        NumeroMovimientoCabe,
+                        FechaMovimientoCabe,
+                        CTipoDocumento,
+                        NTipoDocumento,
+                        SerieDocumento,
+                        NumeroDocumento,
+                        CodigoAlmacen,
+                        DescripcionAlmacen,
+                        CodigoAuxiliar,
+                        DescripcionAuxiliar,
+                        PrecioUnitarioMovimientoDeta,
+                        ClaveMovimientoCabe,
+                        CodigoTipoOperacion,
+                        Flete,
+                        FleteTotal,
+                        CodigoArea,
+                        NombreArea,
+                        CodigoPartida,
+                        NombrePartida,
+                        TipoCambio};
+                rowMovimientoOcOsDetaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMovimientoOcOsDetaRow);
+                return rowMovimientoOcOsDetaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                MovimientoOcOsDetaDataTable cln = ((MovimientoOcOsDetaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new MovimientoOcOsDetaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnCodigoExistencia = base.Columns["CodigoExistencia"];
+                this.columnDescripcionExistencia = base.Columns["DescripcionExistencia"];
+                this.columnCodigoUnidadMedida = base.Columns["CodigoUnidadMedida"];
+                this.columnNombreUnidadMedida = base.Columns["NombreUnidadMedida"];
+                this.columnUbicacionExistencia = base.Columns["UbicacionExistencia"];
+                this.columnCantidadMovimientoDeta = base.Columns["CantidadMovimientoDeta"];
+                this.columnCodigoCentroCosto = base.Columns["CodigoCentroCosto"];
+                this.columnDescripcionCentroCosto = base.Columns["DescripcionCentroCosto"];
+                this.columnCodigoTipo = base.Columns["CodigoTipo"];
+                this.columnNombreTipo = base.Columns["NombreTipo"];
+                this.columnCostoMovimientoDeta = base.Columns["CostoMovimientoDeta"];
+                this.columnPrecioExistencia = base.Columns["PrecioExistencia"];
+                this.columnNumeroMovimientoCabe = base.Columns["NumeroMovimientoCabe"];
+                this.columnFechaMovimientoCabe = base.Columns["FechaMovimientoCabe"];
+                this.columnCTipoDocumento = base.Columns["CTipoDocumento"];
+                this.columnNTipoDocumento = base.Columns["NTipoDocumento"];
+                this.columnSerieDocumento = base.Columns["SerieDocumento"];
+                this.columnNumeroDocumento = base.Columns["NumeroDocumento"];
+                this.columnCodigoAlmacen = base.Columns["CodigoAlmacen"];
+                this.columnDescripcionAlmacen = base.Columns["DescripcionAlmacen"];
+                this.columnCodigoAuxiliar = base.Columns["CodigoAuxiliar"];
+                this.columnDescripcionAuxiliar = base.Columns["DescripcionAuxiliar"];
+                this.columnPrecioUnitarioMovimientoDeta = base.Columns["PrecioUnitarioMovimientoDeta"];
+                this.columnClaveMovimientoCabe = base.Columns["ClaveMovimientoCabe"];
+                this.columnCodigoTipoOperacion = base.Columns["CodigoTipoOperacion"];
+                this.columnFlete = base.Columns["Flete"];
+                this.columnFleteTotal = base.Columns["FleteTotal"];
+                this.columnCodigoArea = base.Columns["CodigoArea"];
+                this.columnNombreArea = base.Columns["NombreArea"];
+                this.columnCodigoPartida = base.Columns["CodigoPartida"];
+                this.columnNombrePartida = base.Columns["NombrePartida"];
+                this.columnTipoCambio = base.Columns["TipoCambio"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnCodigoExistencia = new global::System.Data.DataColumn("CodigoExistencia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoExistencia);
+                this.columnDescripcionExistencia = new global::System.Data.DataColumn("DescripcionExistencia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionExistencia);
+                this.columnCodigoUnidadMedida = new global::System.Data.DataColumn("CodigoUnidadMedida", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoUnidadMedida);
+                this.columnNombreUnidadMedida = new global::System.Data.DataColumn("NombreUnidadMedida", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreUnidadMedida);
+                this.columnUbicacionExistencia = new global::System.Data.DataColumn("UbicacionExistencia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUbicacionExistencia);
+                this.columnCantidadMovimientoDeta = new global::System.Data.DataColumn("CantidadMovimientoDeta", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidadMovimientoDeta);
+                this.columnCodigoCentroCosto = new global::System.Data.DataColumn("CodigoCentroCosto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoCentroCosto);
+                this.columnDescripcionCentroCosto = new global::System.Data.DataColumn("DescripcionCentroCosto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionCentroCosto);
+                this.columnCodigoTipo = new global::System.Data.DataColumn("CodigoTipo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoTipo);
+                this.columnNombreTipo = new global::System.Data.DataColumn("NombreTipo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreTipo);
+                this.columnCostoMovimientoDeta = new global::System.Data.DataColumn("CostoMovimientoDeta", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCostoMovimientoDeta);
+                this.columnPrecioExistencia = new global::System.Data.DataColumn("PrecioExistencia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrecioExistencia);
+                this.columnNumeroMovimientoCabe = new global::System.Data.DataColumn("NumeroMovimientoCabe", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumeroMovimientoCabe);
+                this.columnFechaMovimientoCabe = new global::System.Data.DataColumn("FechaMovimientoCabe", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaMovimientoCabe);
+                this.columnCTipoDocumento = new global::System.Data.DataColumn("CTipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCTipoDocumento);
+                this.columnNTipoDocumento = new global::System.Data.DataColumn("NTipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNTipoDocumento);
+                this.columnSerieDocumento = new global::System.Data.DataColumn("SerieDocumento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSerieDocumento);
+                this.columnNumeroDocumento = new global::System.Data.DataColumn("NumeroDocumento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumeroDocumento);
+                this.columnCodigoAlmacen = new global::System.Data.DataColumn("CodigoAlmacen", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoAlmacen);
+                this.columnDescripcionAlmacen = new global::System.Data.DataColumn("DescripcionAlmacen", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionAlmacen);
+                this.columnCodigoAuxiliar = new global::System.Data.DataColumn("CodigoAuxiliar", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoAuxiliar);
+                this.columnDescripcionAuxiliar = new global::System.Data.DataColumn("DescripcionAuxiliar", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionAuxiliar);
+                this.columnPrecioUnitarioMovimientoDeta = new global::System.Data.DataColumn("PrecioUnitarioMovimientoDeta", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrecioUnitarioMovimientoDeta);
+                this.columnClaveMovimientoCabe = new global::System.Data.DataColumn("ClaveMovimientoCabe", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClaveMovimientoCabe);
+                this.columnCodigoTipoOperacion = new global::System.Data.DataColumn("CodigoTipoOperacion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoTipoOperacion);
+                this.columnFlete = new global::System.Data.DataColumn("Flete", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFlete);
+                this.columnFleteTotal = new global::System.Data.DataColumn("FleteTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFleteTotal);
+                this.columnCodigoArea = new global::System.Data.DataColumn("CodigoArea", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoArea);
+                this.columnNombreArea = new global::System.Data.DataColumn("NombreArea", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreArea);
+                this.columnCodigoPartida = new global::System.Data.DataColumn("CodigoPartida", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoPartida);
+                this.columnNombrePartida = new global::System.Data.DataColumn("NombrePartida", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombrePartida);
+                this.columnTipoCambio = new global::System.Data.DataColumn("TipoCambio", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipoCambio);
+                this.columnCodigoExistencia.Caption = "DataColumn1";
+                this.columnDescripcionExistencia.Caption = "DataColumn1";
+                this.columnCodigoUnidadMedida.Caption = "DataColumn1";
+                this.columnNombreUnidadMedida.Caption = "DataColumn1";
+                this.columnUbicacionExistencia.Caption = "DataColumn1";
+                this.columnCantidadMovimientoDeta.Caption = "DataColumn1";
+                this.columnCodigoCentroCosto.Caption = "DataColumn1";
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MovimientoOcOsDetaRow NewMovimientoOcOsDetaRow() {
+                return ((MovimientoOcOsDetaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new MovimientoOcOsDetaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(MovimientoOcOsDetaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.MovimientoOcOsDetaRowChanged != null)) {
+                    this.MovimientoOcOsDetaRowChanged(this, new MovimientoOcOsDetaRowChangeEvent(((MovimientoOcOsDetaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.MovimientoOcOsDetaRowChanging != null)) {
+                    this.MovimientoOcOsDetaRowChanging(this, new MovimientoOcOsDetaRowChangeEvent(((MovimientoOcOsDetaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.MovimientoOcOsDetaRowDeleted != null)) {
+                    this.MovimientoOcOsDetaRowDeleted(this, new MovimientoOcOsDetaRowChangeEvent(((MovimientoOcOsDetaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.MovimientoOcOsDetaRowDeleting != null)) {
+                    this.MovimientoOcOsDetaRowDeleting(this, new MovimientoOcOsDetaRowChangeEvent(((MovimientoOcOsDetaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveMovimientoOcOsDetaRow(MovimientoOcOsDetaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Impresion ds = new Impresion();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "MovimientoOcOsDetaDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -9100,6 +9855,932 @@ namespace Presentacion.Impresiones {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class MovimientoOcOsDetaRow : global::System.Data.DataRow {
+            
+            private MovimientoOcOsDetaDataTable tableMovimientoOcOsDeta;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal MovimientoOcOsDetaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableMovimientoOcOsDeta = ((MovimientoOcOsDetaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CodigoExistencia {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.CodigoExistenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodigoExistencia\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.CodigoExistenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionExistencia {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.DescripcionExistenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionExistencia\' in table \'MovimientoOcOsDeta\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.DescripcionExistenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CodigoUnidadMedida {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.CodigoUnidadMedidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodigoUnidadMedida\' in table \'MovimientoOcOsDeta\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.CodigoUnidadMedidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NombreUnidadMedida {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.NombreUnidadMedidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NombreUnidadMedida\' in table \'MovimientoOcOsDeta\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.NombreUnidadMedidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string UbicacionExistencia {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.UbicacionExistenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UbicacionExistencia\' in table \'MovimientoOcOsDeta\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.UbicacionExistenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CantidadMovimientoDeta {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableMovimientoOcOsDeta.CantidadMovimientoDetaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CantidadMovimientoDeta\' in table \'MovimientoOcOsDeta\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.CantidadMovimientoDetaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CodigoCentroCosto {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.CodigoCentroCostoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodigoCentroCosto\' in table \'MovimientoOcOsDeta\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.CodigoCentroCostoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionCentroCosto {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.DescripcionCentroCostoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionCentroCosto\' in table \'MovimientoOcOsDeta\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.DescripcionCentroCostoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CodigoTipo {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.CodigoTipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodigoTipo\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.CodigoTipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NombreTipo {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.NombreTipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NombreTipo\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.NombreTipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CostoMovimientoDeta {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableMovimientoOcOsDeta.CostoMovimientoDetaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CostoMovimientoDeta\' in table \'MovimientoOcOsDeta\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.CostoMovimientoDetaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal PrecioExistencia {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableMovimientoOcOsDeta.PrecioExistenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PrecioExistencia\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.PrecioExistenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NumeroMovimientoCabe {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.NumeroMovimientoCabeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumeroMovimientoCabe\' in table \'MovimientoOcOsDeta\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.NumeroMovimientoCabeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FechaMovimientoCabe {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.FechaMovimientoCabeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FechaMovimientoCabe\' in table \'MovimientoOcOsDeta\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.FechaMovimientoCabeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CTipoDocumento {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.CTipoDocumentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CTipoDocumento\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.CTipoDocumentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NTipoDocumento {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.NTipoDocumentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NTipoDocumento\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.NTipoDocumentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SerieDocumento {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.SerieDocumentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SerieDocumento\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.SerieDocumentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NumeroDocumento {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.NumeroDocumentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumeroDocumento\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.NumeroDocumentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CodigoAlmacen {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.CodigoAlmacenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodigoAlmacen\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.CodigoAlmacenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionAlmacen {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.DescripcionAlmacenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionAlmacen\' in table \'MovimientoOcOsDeta\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.DescripcionAlmacenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CodigoAuxiliar {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.CodigoAuxiliarColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodigoAuxiliar\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.CodigoAuxiliarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionAuxiliar {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.DescripcionAuxiliarColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionAuxiliar\' in table \'MovimientoOcOsDeta\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.DescripcionAuxiliarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal PrecioUnitarioMovimientoDeta {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableMovimientoOcOsDeta.PrecioUnitarioMovimientoDetaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PrecioUnitarioMovimientoDeta\' in table \'MovimientoOcOsDeta\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.PrecioUnitarioMovimientoDetaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ClaveMovimientoCabe {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.ClaveMovimientoCabeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClaveMovimientoCabe\' in table \'MovimientoOcOsDeta\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.ClaveMovimientoCabeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CodigoTipoOperacion {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.CodigoTipoOperacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodigoTipoOperacion\' in table \'MovimientoOcOsDeta\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.CodigoTipoOperacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Flete {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableMovimientoOcOsDeta.FleteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Flete\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.FleteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal FleteTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableMovimientoOcOsDeta.FleteTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FleteTotal\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.FleteTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CodigoArea {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.CodigoAreaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodigoArea\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.CodigoAreaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NombreArea {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.NombreAreaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NombreArea\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.NombreAreaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CodigoPartida {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.CodigoPartidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodigoPartida\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.CodigoPartidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NombrePartida {
+                get {
+                    try {
+                        return ((string)(this[this.tableMovimientoOcOsDeta.NombrePartidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NombrePartida\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.NombrePartidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal TipoCambio {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableMovimientoOcOsDeta.TipoCambioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TipoCambio\' in table \'MovimientoOcOsDeta\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMovimientoOcOsDeta.TipoCambioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodigoExistenciaNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.CodigoExistenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodigoExistenciaNull() {
+                this[this.tableMovimientoOcOsDeta.CodigoExistenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionExistenciaNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.DescripcionExistenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionExistenciaNull() {
+                this[this.tableMovimientoOcOsDeta.DescripcionExistenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodigoUnidadMedidaNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.CodigoUnidadMedidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodigoUnidadMedidaNull() {
+                this[this.tableMovimientoOcOsDeta.CodigoUnidadMedidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNombreUnidadMedidaNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.NombreUnidadMedidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNombreUnidadMedidaNull() {
+                this[this.tableMovimientoOcOsDeta.NombreUnidadMedidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUbicacionExistenciaNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.UbicacionExistenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUbicacionExistenciaNull() {
+                this[this.tableMovimientoOcOsDeta.UbicacionExistenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCantidadMovimientoDetaNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.CantidadMovimientoDetaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCantidadMovimientoDetaNull() {
+                this[this.tableMovimientoOcOsDeta.CantidadMovimientoDetaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodigoCentroCostoNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.CodigoCentroCostoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodigoCentroCostoNull() {
+                this[this.tableMovimientoOcOsDeta.CodigoCentroCostoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionCentroCostoNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.DescripcionCentroCostoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionCentroCostoNull() {
+                this[this.tableMovimientoOcOsDeta.DescripcionCentroCostoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodigoTipoNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.CodigoTipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodigoTipoNull() {
+                this[this.tableMovimientoOcOsDeta.CodigoTipoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNombreTipoNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.NombreTipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNombreTipoNull() {
+                this[this.tableMovimientoOcOsDeta.NombreTipoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCostoMovimientoDetaNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.CostoMovimientoDetaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCostoMovimientoDetaNull() {
+                this[this.tableMovimientoOcOsDeta.CostoMovimientoDetaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPrecioExistenciaNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.PrecioExistenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPrecioExistenciaNull() {
+                this[this.tableMovimientoOcOsDeta.PrecioExistenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumeroMovimientoCabeNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.NumeroMovimientoCabeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumeroMovimientoCabeNull() {
+                this[this.tableMovimientoOcOsDeta.NumeroMovimientoCabeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFechaMovimientoCabeNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.FechaMovimientoCabeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFechaMovimientoCabeNull() {
+                this[this.tableMovimientoOcOsDeta.FechaMovimientoCabeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCTipoDocumentoNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.CTipoDocumentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCTipoDocumentoNull() {
+                this[this.tableMovimientoOcOsDeta.CTipoDocumentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNTipoDocumentoNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.NTipoDocumentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNTipoDocumentoNull() {
+                this[this.tableMovimientoOcOsDeta.NTipoDocumentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSerieDocumentoNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.SerieDocumentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSerieDocumentoNull() {
+                this[this.tableMovimientoOcOsDeta.SerieDocumentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumeroDocumentoNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.NumeroDocumentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumeroDocumentoNull() {
+                this[this.tableMovimientoOcOsDeta.NumeroDocumentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodigoAlmacenNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.CodigoAlmacenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodigoAlmacenNull() {
+                this[this.tableMovimientoOcOsDeta.CodigoAlmacenColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionAlmacenNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.DescripcionAlmacenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionAlmacenNull() {
+                this[this.tableMovimientoOcOsDeta.DescripcionAlmacenColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodigoAuxiliarNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.CodigoAuxiliarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodigoAuxiliarNull() {
+                this[this.tableMovimientoOcOsDeta.CodigoAuxiliarColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionAuxiliarNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.DescripcionAuxiliarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionAuxiliarNull() {
+                this[this.tableMovimientoOcOsDeta.DescripcionAuxiliarColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPrecioUnitarioMovimientoDetaNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.PrecioUnitarioMovimientoDetaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPrecioUnitarioMovimientoDetaNull() {
+                this[this.tableMovimientoOcOsDeta.PrecioUnitarioMovimientoDetaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsClaveMovimientoCabeNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.ClaveMovimientoCabeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetClaveMovimientoCabeNull() {
+                this[this.tableMovimientoOcOsDeta.ClaveMovimientoCabeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodigoTipoOperacionNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.CodigoTipoOperacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodigoTipoOperacionNull() {
+                this[this.tableMovimientoOcOsDeta.CodigoTipoOperacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFleteNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.FleteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFleteNull() {
+                this[this.tableMovimientoOcOsDeta.FleteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFleteTotalNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.FleteTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFleteTotalNull() {
+                this[this.tableMovimientoOcOsDeta.FleteTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodigoAreaNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.CodigoAreaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodigoAreaNull() {
+                this[this.tableMovimientoOcOsDeta.CodigoAreaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNombreAreaNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.NombreAreaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNombreAreaNull() {
+                this[this.tableMovimientoOcOsDeta.NombreAreaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodigoPartidaNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.CodigoPartidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodigoPartidaNull() {
+                this[this.tableMovimientoOcOsDeta.CodigoPartidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNombrePartidaNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.NombrePartidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNombrePartidaNull() {
+                this[this.tableMovimientoOcOsDeta.NombrePartidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTipoCambioNull() {
+                return this.IsNull(this.tableMovimientoOcOsDeta.TipoCambioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTipoCambioNull() {
+                this[this.tableMovimientoOcOsDeta.TipoCambioColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -9357,6 +11038,40 @@ namespace Presentacion.Impresiones {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public StockFisicoProgramadoRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class MovimientoOcOsDetaRowChangeEvent : global::System.EventArgs {
+            
+            private MovimientoOcOsDetaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MovimientoOcOsDetaRowChangeEvent(MovimientoOcOsDetaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MovimientoOcOsDetaRow Row {
                 get {
                     return this.eventRow;
                 }

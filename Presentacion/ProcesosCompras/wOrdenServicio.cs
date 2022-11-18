@@ -3,6 +3,7 @@ using Entidades;
 using Entidades.Adicionales;
 using Heredados.VentanasPersonalizadas;
 using Negocio;
+using Presentacion.Impresiones;
 using Presentacion.Principal;
 using System;
 using System.Collections;
@@ -290,6 +291,19 @@ namespace Presentacion.ProcesosCompras
             wMen.CerrarVentanaHijo(this, wMen.iteOrdenServicio, null);
         }
 
+        public void AccionImprimirOrdenServicio()
+        {
+            //preguntar si el registro seleccionado existe
+            MovimientoOCCabeEN iSalEN = this.EsMovimientoCabeExistente();
+            if (iSalEN.Adicionales.EsVerdad == false) { return; }
+
+            //si existe
+            wImpOrdenServicio win = new wImpOrdenServicio();
+            win.wOrdSer = this;
+            win.eVentana = wImpOrdenServicio.Ventana.wOrdenServicio;
+            win.NuevaVentana(iSalEN);
+        }
+
         private void btnPeriodo_Click(object sender, EventArgs e)
         {
             this.AccionSeleccionarPeriodo();
@@ -364,6 +378,11 @@ namespace Presentacion.ProcesosCompras
         private void wOrdenServicio_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Cerrar();
+        }
+
+        private void tsbImprimirNota_Click(object sender, EventArgs e)
+        {
+            this.AccionImprimirOrdenServicio();
         }
     }
 }

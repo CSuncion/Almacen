@@ -887,7 +887,7 @@ namespace Presentacion.ProcesosCompras
             this.wOrdSer.ActualizarVentana();
 
             //imprimir la nota
-            //this.wOrdCom.AccionImprimirNota();
+            this.wOrdSer.AccionImprimirOrdenServicio();
 
             //limpiar controles
             this.MostrarMovimientoCabe(this.ObtenerMovimientoCabeParaSegundaAdicion());

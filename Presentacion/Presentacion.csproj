@@ -282,6 +282,12 @@
       <DependentUpon>CrIngresoOCCeCoResumen.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Impresiones\CrOrdenServicio.cs">
+      <DependentUpon>CrOrdenServicio.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Impresiones\CrProdRangoFecha.cs">
       <DependentUpon>CrProdRangoFecha.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -427,6 +433,12 @@
     </Compile>
     <Compile Include="Impresiones\wImpIngresosOCCeCo.designer.cs">
       <DependentUpon>wImpIngresosOCCeCo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\wImpOrdenServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresiones\wImpOrdenServicio.designer.cs">
+      <DependentUpon>wImpOrdenServicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Impresiones\wImpSolicitudPedido.cs">
       <SubType>Form</SubType>
@@ -1989,6 +2001,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrIngresoOCCeCoResumen.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\CrOrdenServicio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrOrdenServicio.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Impresiones\CrProdRangoFecha.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrProdRangoFecha.cs</LastGenOutput>
@@ -2075,6 +2091,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Impresiones\wImpIngresosOCCeCo.resx">
       <DependentUpon>wImpIngresosOCCeCo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresiones\wImpOrdenServicio.resx">
+      <DependentUpon>wImpOrdenServicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Impresiones\wImpSolicitudPedido.resx">
       <DependentUpon>wImpSolicitudPedido.cs</DependentUpon>

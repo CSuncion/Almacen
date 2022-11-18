@@ -283,20 +283,20 @@
             this.IteImportarAdicionar,
             this.IteImportarEliminar});
             this.IteImportar.Name = "IteImportar";
-            this.IteImportar.Size = new System.Drawing.Size(152, 22);
+            this.IteImportar.Size = new System.Drawing.Size(120, 22);
             this.IteImportar.Text = "Importar";
             // 
             // IteImportarAdicionar
             // 
             this.IteImportarAdicionar.Name = "IteImportarAdicionar";
-            this.IteImportarAdicionar.Size = new System.Drawing.Size(152, 22);
+            this.IteImportarAdicionar.Size = new System.Drawing.Size(125, 22);
             this.IteImportarAdicionar.Text = "Adicionar";
             this.IteImportarAdicionar.Click += new System.EventHandler(this.IteImportarAdicionar_Click);
             // 
             // IteImportarEliminar
             // 
             this.IteImportarEliminar.Name = "IteImportarEliminar";
-            this.IteImportarEliminar.Size = new System.Drawing.Size(152, 22);
+            this.IteImportarEliminar.Size = new System.Drawing.Size(125, 22);
             this.IteImportarEliminar.Text = "Eliminar";
             this.IteImportarEliminar.Click += new System.EventHandler(this.IteImportarEliminar_Click);
             // 
@@ -308,6 +308,7 @@
             this.tsbImprimirNota.Name = "tsbImprimirNota";
             this.tsbImprimirNota.Size = new System.Drawing.Size(23, 22);
             this.tsbImprimirNota.Text = "Imprimir Nota";
+            this.tsbImprimirNota.Click += new System.EventHandler(this.tsbImprimirNota_Click);
             // 
             // DgvMovCab
             // 
