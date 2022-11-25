@@ -73,7 +73,7 @@
             // txtNomIte
             // 
             this.txtNomIte.Location = new System.Drawing.Point(111, 110);
-            this.txtNomIte.MaxLength = 50;
+            this.txtNomIte.MaxLength = 200;
             this.txtNomIte.Name = "txtNomIte";
             this.txtNomIte.Size = new System.Drawing.Size(226, 22);
             this.txtNomIte.TabIndex = 55;

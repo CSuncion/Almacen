@@ -98,6 +98,7 @@ namespace Presentacion.Impresiones
             eMas.lisCtrls = this.ListaCtrls();
             eMas.EjecutarTodosLosEventos();
             this.CargarTipoReporte();
+            this.CargarTipoOrden();
             //mostrar ventana
             this.Show();
         }
@@ -105,6 +106,11 @@ namespace Presentacion.Impresiones
         public void CargarTipoReporte()
         {
             Cmb.Cargar(this.cmbTipoReporte, ItemGRN.ListarItemsG("TipRep"), ItemGEN.CodIteG, ItemGEN.NomIteG);
+        }
+
+        public void CargarTipoOrden()
+        {
+            Cmb.Cargar(this.cmbTipoOrden, ItemGRN.ListarItemsG("TipOrd"), ItemGEN.CodIteG, ItemGEN.NomIteG);
         }
 
         public void NuevaVentana()

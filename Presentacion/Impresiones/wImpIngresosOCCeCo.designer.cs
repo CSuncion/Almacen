@@ -56,6 +56,8 @@
             this.crIngresoOCCeCoResumen1 = new Presentacion.Impresiones.CrIngresoOCCeCoResumen();
             this.crv1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.crIngresoOCCeCoDetalle1 = new Presentacion.Impresiones.CrIngresoOCCeCoDetalle();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbTipoOrden = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -291,6 +293,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbTipoOrden);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.ckbAlm);
             this.groupBox1.Controls.Add(this.btnAceptar);
@@ -332,6 +336,23 @@
             this.crv1.Size = new System.Drawing.Size(1241, 380);
             this.crv1.TabIndex = 469;
             this.crv1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(870, 55);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 14);
+            this.label7.TabIndex = 468;
+            this.label7.Text = "Tipo Orden";
+            // 
+            // cmbTipoOrden
+            // 
+            this.cmbTipoOrden.FormattingEnabled = true;
+            this.cmbTipoOrden.Location = new System.Drawing.Point(953, 52);
+            this.cmbTipoOrden.Name = "cmbTipoOrden";
+            this.cmbTipoOrden.Size = new System.Drawing.Size(134, 22);
+            this.cmbTipoOrden.TabIndex = 469;
             // 
             // wImpIngresosOCCeCo
             // 
@@ -379,5 +400,7 @@
         private CrIngresoOCCeCoResumen crIngresoOCCeCoResumen1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crv1;
         private CrIngresoOCCeCoDetalle crIngresoOCCeCoDetalle1;
+        private System.Windows.Forms.ComboBox cmbTipoOrden;
+        private System.Windows.Forms.Label label7;
     }
 }

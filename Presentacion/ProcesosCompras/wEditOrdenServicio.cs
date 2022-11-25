@@ -237,7 +237,7 @@ namespace Presentacion.ProcesosCompras
 
 
             xCtrl = new ControlEditar();
-            xCtrl.TxtNumeroPositivoConDecimales(this.txtPreMatAcc, true, "Precio Material y Accesorio", "vvff", 2);
+            xCtrl.TxtNumeroConDecimales(this.txtPreMatAcc, false, "Precio Material y Accesorio", "vvff", 2);
             xLis.Add(xCtrl);
 
 
@@ -498,7 +498,7 @@ namespace Presentacion.ProcesosCompras
         public void ObtenerValoresCalculados()
         {
             decimal preVenta = Convert.ToDecimal(this.txtPreVenta.Text);
-            decimal preMatAcc = Convert.ToDecimal(this.txtPreMatAcc.Text);
+            decimal preMatAcc = this.txtPreMatAcc.Text == string.Empty ? 0 : Convert.ToDecimal(this.txtPreMatAcc.Text);
             decimal igv = Convert.ToDecimal(this.txtIgv.Text) / 100;
             decimal valIgv = (preVenta + preMatAcc) * igv;
             decimal valVenta = (preVenta + preMatAcc) - valIgv;

@@ -63,6 +63,7 @@ D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentac
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.Impresiones.wImpCompraPorExistencia.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.Impresiones.wImpCompraPorProveedor.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.Impresiones.wImpIngresosOCCeCo.resources
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.Impresiones.wImpOrdenServicio.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.Impresiones.wImpSolicitudPedido.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.Impresiones.wImpStockFisicoProgramado.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.Impresiones.wKpiVersus.resources
@@ -315,4 +316,3 @@ D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentac
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.application
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.exe
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.pdb
-D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.Impresiones.wImpOrdenServicio.resources
