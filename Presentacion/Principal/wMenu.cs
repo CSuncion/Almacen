@@ -775,6 +775,12 @@ namespace Presentacion.Principal
             this.FormatoVentanaHijoPrincipal(win, this.iteOrdenServicio, null, 0, 0);
             win.NuevaVentana();
         }
+        public void InstanciarImpresionOrdenServicio()
+        {
+            wImpOrdSerCeCo win = new wImpOrdSerCeCo();
+            this.FormatoVentanaHijoPrincipal(win, this.IteRepOrdSerCeCo, null, 0, 0);
+            win.NuevaVentana();
+        }
         #endregion
 
         private void wMenu_Load(object sender, EventArgs e)
@@ -1346,6 +1352,11 @@ namespace Presentacion.Principal
         private void iteOrdenServicio_Click(object sender, EventArgs e)
         {
             this.InstanciarOrdenServicio();
+        }
+
+        private void IteRepOrdSerCeCo_Click(object sender, EventArgs e)
+        {
+            this.InstanciarImpresionOrdenServicio();
         }
     }
 }

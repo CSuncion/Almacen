@@ -4179,5 +4179,11 @@ namespace Negocio
             iPerAD.ActualizarCantidadRecibidayClaveMovimientoDeta(pObj);
         }
 
+        public static List<MovimientoOCDetaEN> ListarMovimientosDetaParaOrdenServicioXCeCoDetalle(MovimientoOCDetaEN pObj)
+        {
+            MovimientoOCDetaAD iPerAD = new MovimientoOCDetaAD();
+            return iPerAD.ListarMovimientosDetaParaOrdenServicioXCeCoDetalle(pObj);
+        }
+
     }
 }

@@ -211,6 +211,10 @@ namespace Presentacion.ProcesosCompras
             xLis.Add(xCtrl);
 
             xCtrl = new ControlEditar();
+            xCtrl.TxtTodo(this.txtCodPar, true, "Código Partida", "vvff", 6);
+            xLis.Add(xCtrl);
+
+            xCtrl = new ControlEditar();
             xCtrl.Cmb(this.cmbFormaPago, "vvff");
             xLis.Add(xCtrl);
 
@@ -352,7 +356,7 @@ namespace Presentacion.ProcesosCompras
         {
             //asignar parametros
             DataGridView iGrilla = this.dgvMovDet;
-            List<MovimientoOCDetaEN> iFuenteDatos = MovimientoOCDetaRN.RefrescarListaMovimientoDeta(this.eLisMovDet); ;
+            List<MovimientoOCDetaEN> iFuenteDatos = MovimientoOCDetaRN.RefrescarListaMovimientoDeta(this.eLisMovDet);
             Dgv.Franja iCondicionFranja = eFranjaDgvMovDet;
             string iClaveBusqueda = eClaveDgvMovDet;
             List<DataGridViewColumn> iListaColumnas = this.ListarColumnasDgvCom();
@@ -363,6 +367,8 @@ namespace Presentacion.ProcesosCompras
             {
                 this.txtCodAre.Text = iFuenteDatos.FirstOrDefault().CodigoCentroCosto;
                 this.txtDesAre.Text = iFuenteDatos.FirstOrDefault().DescripcionCentroCosto;
+                this.txtCodPar.Text = iFuenteDatos.FirstOrDefault().CCodigoPartida;
+                this.txtDesPar.Text = iFuenteDatos.FirstOrDefault().NCodigoPartida;
             }
         }
 
@@ -536,8 +542,8 @@ namespace Presentacion.ProcesosCompras
             pObj.FechaDocumento = string.Empty;
             pObj.CodigoCentroCosto = this.txtCodAre.Text.Trim();
             pObj.DescripcionCentroCosto = this.txtDesAre.Text.Trim();
-            pObj.CCodigoPartida = string.Empty;
-            pObj.NCodigoPartida = string.Empty;
+            pObj.CCodigoPartida = this.txtCodPar.Text.Trim();
+            pObj.NCodigoPartida = this.txtDesPar.Text.Trim();
             pObj.CodigoExistencia = "999999";
             pObj.DescripcionExistencia = "ORDEN DE SERVICIO";
             pObj.CodigoUnidadMedida = "NIU";
@@ -716,7 +722,7 @@ namespace Presentacion.ProcesosCompras
             win.eVentana = this;
             win.eTituloVentana = "Centro de Costo";
             win.eCtrlValor = this.txtCodAre;
-            win.eCtrlFoco = this.txtCodAux;
+            win.eCtrlFoco = this.txtCodPar;
             win.eIteEN.CodigoTabla = "CenCos";
             win.eCondicionLista = Listas.wLisItemE.Condicion.ItemsActivosXTabla;
             TabCtrl.InsertarVentana(this, win);
@@ -1066,6 +1072,10 @@ namespace Presentacion.ProcesosCompras
                 xMovDet.CostoFleteMovimientoCabe = Conversion.ADecimal("0", 0);
                 xMovDet.ClaveMovimientoDeta = MovimientoOCDetaRN.ObtenerClaveMovimientoDeta(xMovDet);
                 xMovDet.CCodigoMoneda = Cmb.ObtenerValor(this.cmbMon, string.Empty);
+                xMovDet.CodigoCentroCosto = this.txtCodAre.Text.Trim();
+                xMovDet.DescripcionCentroCosto = this.txtDesAre.Text.Trim();
+                xMovDet.CCodigoPartida = this.txtCodPar.Text.Trim();
+                xMovDet.NCodigoPartida = this.txtDesPar.Text.Trim();
                 if (this.eFlgCrdSol == 0)
                 {
                     xMovDet.CantidadRecibida = xMovDet.CantidadMovimientoDeta;
@@ -1141,6 +1151,28 @@ namespace Presentacion.ProcesosCompras
             eMas.AccionHabilitarControles(3);
             this.btnCancelar.Focus();
             this.CargarTipoCambio();
+        }
+
+        public void ListarPartidas()
+        {
+            //solo cuando el control esta habilitado de escritura
+            if (this.txtCodAre.ReadOnly == true) { return; }
+
+            //instanciar
+            wLisItemE win = new wLisItemE();
+            win.eVentana = this;
+            win.eTituloVentana = "Partidas";
+            win.eCtrlValor = this.txtCodPar;
+            win.eCtrlFoco = this.txtCodAux;
+            win.eIteEN.CodigoTabla = "CodPar";
+            win.eIteEN.CodigoItemE = this.txtCodAre.Text.Trim();
+            win.eCondicionLista = Listas.wLisItemE.Condicion.ItemsActivosXTablaYArea;
+            TabCtrl.InsertarVentana(this, win);
+            win.NuevaVentana();
+        }
+        public bool EsCodigoPartidaValido()
+        {
+            return Generico.EsCodigoItemEActivoValido("CodPar", this.txtCodPar, this.txtDesPar, "Partidas");
         }
 
         private void txtCodTipSer_Validating(object sender, CancelEventArgs e)
@@ -1270,6 +1302,21 @@ namespace Presentacion.ProcesosCompras
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Cancelar();
+        }
+
+        private void txtCodPar_Validating(object sender, CancelEventArgs e)
+        {
+            this.EsCodigoPartidaValido();
+        }
+
+        private void txtCodPar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1) { this.ListarPartidas(); }
+        }
+
+        private void txtCodPar_DoubleClick(object sender, EventArgs e)
+        {
+            this.ListarPartidas();
         }
 
         private void txtCodAux_Validating(object sender, CancelEventArgs e)

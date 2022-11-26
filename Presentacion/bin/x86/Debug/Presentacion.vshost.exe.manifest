@@ -270,14 +270,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Datos.dll" size="459264">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Datos.dll" size="459776">
       <assemblyIdentity name="Datos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fOUsiWc22fI/AinSz/XZTm89az+SmmEqpv+lrOFF8AE=</dsig:DigestValue>
+        <dsig:DigestValue>fFAWmdp0YujDuNC6bFJZij9RlN/4R0Z+fqSWH/LODWE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -289,7 +289,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KhO2v0m1CSnKw9MZadrPx9bC7H8yNDUUv9XX8Bs33yM=</dsig:DigestValue>
+        <dsig:DigestValue>x9i014zqJSH64+nsIY8WQwQXy2G2cBiPARoYLkV4P+I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -337,19 +337,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5Jbn0sWVCHigHa4XqJax6ugTgPULy8Db04AitO+ppUA=</dsig:DigestValue>
+        <dsig:DigestValue>8m7M3vECKmEX6YapXk4wFppcZEa2Uq23hbBNpp1tHRA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="3328000">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="3376640">
       <assemblyIdentity name="Presentacion" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mtiGRo31UHaYcEx+Qsaj2eThXUfvesyRwgN7Qspk/4w=</dsig:DigestValue>
+        <dsig:DigestValue>KRhe+m2IAg51Dr0RPtPH5a6zu0KP8mlnzfNymvv/xE0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

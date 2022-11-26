@@ -903,7 +903,45 @@ namespace Datos
             xObjCon.Desconectar();
 
         }
+        public List<MovimientoOCDetaEN> ListarMovimientosDetaParaOrdenServicioXCeCoDetalle(MovimientoOCDetaEN pObj)
+        {
+            SqlSelect xSel = new SqlSelect();
+            xSel.SeleccionaVista(this.xVista);
+            xSel.CondicionCV(SqlSelect.Reservada.Cuando, MovimientoOCDetaEN.CodEmp, SqlSelect.Operador.Igual, Universal.gCodigoEmpresa);
+            xSel.CondicionCV(SqlSelect.Reservada.Y, MovimientoOCDetaEN.CClaTipOpe, SqlSelect.Operador.Igual, "4");//orden servicio
+            if (pObj.CodigoAlmacen != string.Empty)
+            {
+                xSel.CondicionCV(SqlSelect.Reservada.Y, MovimientoOCDetaEN.CodAlm, SqlSelect.Operador.Igual, pObj.CodigoAlmacen);
+            }
+            else
+            {
+                if (Universal.gStrPermisosAlmacen != string.Empty)
+                {
+                    xSel.CondicionINx(SqlSelect.Reservada.Y, MovimientoOCDetaEN.CodAlm, Universal.gStrPermisosAlmacen);
+                }
+            }
+            if (pObj.CodigoCentroCosto != string.Empty)
+            {
+                xSel.CondicionCV(SqlSelect.Reservada.Y, MovimientoOCDetaEN.CodCenCos, SqlSelect.Operador.Igual, pObj.CodigoCentroCosto);
+            }
+            if (pObj.CCodigoPartida != string.Empty)
+            {
+                xSel.CondicionCV(SqlSelect.Reservada.Y, MovimientoOCDetaEN.CCodPar, SqlSelect.Operador.Igual, pObj.CCodigoPartida);
+            }
+            if (pObj.CodigoAlmacen != string.Empty)
+            {
+                xSel.CondicionCV(SqlSelect.Reservada.Y, MovimientoOCDetaEN.CodAlm, SqlSelect.Operador.Igual, pObj.CodigoAlmacen);
+            }
+            if (pObj.CodigoExistencia != string.Empty)
+            {
+                xSel.CondicionCV(SqlSelect.Reservada.Y, MovimientoOCDetaEN.CodExi, SqlSelect.Operador.Igual, pObj.CodigoExistencia);
+            }
 
+            xSel.CondicionBetween(SqlSelect.Reservada.Y, MovimientoOCDetaEN.FecMovCab, Fecha.ObtenerAnoMesDia(pObj.Adicionales.Desde1)
+                    , Fecha.ObtenerAnoMesDia(pObj.Adicionales.Hasta1));
+            xSel.Ordenar(pObj.Adicionales.CampoOrden, SqlSelect.Orden.Asc);
+            return this.ListarObjetos(xSel.ObtenerScript());
+        }
         #endregion
 
     }

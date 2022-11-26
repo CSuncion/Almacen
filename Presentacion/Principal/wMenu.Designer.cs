@@ -66,6 +66,7 @@
             this.IteTransferencias = new System.Windows.Forms.ToolStripMenuItem();
             this.iteSolicitudPedido = new System.Windows.Forms.ToolStripMenuItem();
             this.iteOrdenCompra = new System.Windows.Forms.ToolStripMenuItem();
+            this.iteOrdenServicio = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.itePagosPorOrdenCompra = new System.Windows.Forms.ToolStripMenuItem();
             this.IteRecalculo = new System.Windows.Forms.ToolStripMenuItem();
@@ -160,7 +161,8 @@
             this.tbcContenedor = new System.Windows.Forms.TabControl();
             this.ssBarraEstado = new System.Windows.Forms.StatusStrip();
             this.tssBarraEstado = new System.Windows.Forms.ToolStripStatusLabel();
-            this.iteOrdenServicio = new System.Windows.Forms.ToolStripMenuItem();
+            this.IteReporteOrdenServicio = new System.Windows.Forms.ToolStripMenuItem();
+            this.IteRepOrdSerCeCo = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.tsAccDir.SuspendLayout();
             this.ssBarraEstado.SuspendLayout();
@@ -434,6 +436,12 @@
             resources.ApplyResources(this.iteOrdenCompra, "iteOrdenCompra");
             this.iteOrdenCompra.Click += new System.EventHandler(this.iteOrdenCompra_Click);
             // 
+            // iteOrdenServicio
+            // 
+            this.iteOrdenServicio.Name = "iteOrdenServicio";
+            resources.ApplyResources(this.iteOrdenServicio, "iteOrdenServicio");
+            this.iteOrdenServicio.Click += new System.EventHandler(this.iteOrdenServicio_Click);
+            // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
@@ -569,7 +577,8 @@
             this.IteReporteSalidas,
             this.IteControlMovimientosIS,
             this.IteProduccion,
-            this.IteReporteIngresosOC});
+            this.IteReporteIngresosOC,
+            this.IteReporteOrdenServicio});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             resources.ApplyResources(this.reportesToolStripMenuItem, "reportesToolStripMenuItem");
             // 
@@ -1089,11 +1098,18 @@
             this.tssBarraEstado.Name = "tssBarraEstado";
             resources.ApplyResources(this.tssBarraEstado, "tssBarraEstado");
             // 
-            // iteOrdenServicio
+            // IteReporteOrdenServicio
             // 
-            this.iteOrdenServicio.Name = "iteOrdenServicio";
-            resources.ApplyResources(this.iteOrdenServicio, "iteOrdenServicio");
-            this.iteOrdenServicio.Click += new System.EventHandler(this.iteOrdenServicio_Click);
+            this.IteReporteOrdenServicio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.IteRepOrdSerCeCo});
+            this.IteReporteOrdenServicio.Name = "IteReporteOrdenServicio";
+            resources.ApplyResources(this.IteReporteOrdenServicio, "IteReporteOrdenServicio");
+            // 
+            // IteRepOrdSerCeCo
+            // 
+            this.IteRepOrdSerCeCo.Name = "IteRepOrdSerCeCo";
+            resources.ApplyResources(this.IteRepOrdSerCeCo, "IteRepOrdSerCeCo");
+            this.IteRepOrdSerCeCo.Click += new System.EventHandler(this.IteRepOrdSerCeCo_Click);
             // 
             // wMenu
             // 
@@ -1254,6 +1270,8 @@
         internal System.Windows.Forms.ToolStripMenuItem IteCuentaBancos;
         internal System.Windows.Forms.ToolStripMenuItem iteRecalculoPresupuesto;
         internal System.Windows.Forms.ToolStripMenuItem iteOrdenServicio;
+        private System.Windows.Forms.ToolStripMenuItem IteReporteOrdenServicio;
+        private System.Windows.Forms.ToolStripMenuItem IteRepOrdSerCeCo;
     }
 }
 

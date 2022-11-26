@@ -713,6 +713,18 @@
   <data name="IteReporteIngresosOC.Text" xml:space="preserve">
     <value>Ingresos x Orden de Compra</value>
   </data>
+  <data name="IteRepOrdSerCeCo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="IteRepOrdSerCeCo.Text" xml:space="preserve">
+    <value>Centro Costo</value>
+  </data>
+  <data name="IteReporteOrdenServicio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="IteReporteOrdenServicio.Text" xml:space="preserve">
+    <value>Orden de Servicio</value>
+  </data>
   <data name="reportesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 18</value>
   </data>
@@ -1255,6 +1267,12 @@
     <value>iteOrdenCompra</value>
   </data>
   <data name="&gt;&gt;iteOrdenCompra.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iteOrdenServicio.Name" xml:space="preserve">
+    <value>iteOrdenServicio</value>
+  </data>
+  <data name="&gt;&gt;iteOrdenServicio.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator8.Name" xml:space="preserve">
@@ -1803,10 +1821,16 @@
   <data name="&gt;&gt;tssBarraEstado.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;iteOrdenServicio.Name" xml:space="preserve">
-    <value>iteOrdenServicio</value>
+  <data name="&gt;&gt;IteReporteOrdenServicio.Name" xml:space="preserve">
+    <value>IteReporteOrdenServicio</value>
   </data>
-  <data name="&gt;&gt;iteOrdenServicio.Type" xml:space="preserve">
+  <data name="&gt;&gt;IteReporteOrdenServicio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteRepOrdSerCeCo.Name" xml:space="preserve">
+    <value>IteRepOrdSerCeCo</value>
+  </data>
+  <data name="&gt;&gt;IteRepOrdSerCeCo.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

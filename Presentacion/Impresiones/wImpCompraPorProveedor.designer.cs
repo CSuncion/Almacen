@@ -312,14 +312,14 @@
             this.crv1.Location = new System.Drawing.Point(12, 117);
             this.crv1.Name = "crv1";
             this.crv1.ReportSource = this.crCompraProveedor1;
-            this.crv1.Size = new System.Drawing.Size(1219, 249);
+            this.crv1.Size = new System.Drawing.Size(1219, 314);
             this.crv1.TabIndex = 77;
             this.crv1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // wImpCompraPorProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
-            this.ClientSize = new System.Drawing.Size(1244, 378);
+            this.ClientSize = new System.Drawing.Size(1244, 443);
             this.Controls.Add(this.crv1);
             this.Controls.Add(this.groupBox1);
             this.Name = "wImpCompraPorProveedor";

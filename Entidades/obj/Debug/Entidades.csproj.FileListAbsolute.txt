@@ -1,5 +1,4 @@
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Entidades\bin\Debug\Entidades.dll
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Entidades\bin\Debug\Entidades.pdb
-D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Entidades\obj\Debug\Entidades.dll
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Entidades\obj\Debug\Entidades.pdb
