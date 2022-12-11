@@ -83,9 +83,11 @@ namespace Entidades
         public const string xCGarantia = "CGarantia";
         public const string xNGarantia = "NGarantia";
         public const string xValidezCotizacion = "ValidezCotizacion";
+        public const string xFechaValidezCotizacion = "FechaValidezCotizacion";
         public const string xPrecioMaterialAccesorioOrdenServicio = "PrecioMaterialAccesorioOrdenServicio";
         public const string xCFormaPago = "CFormaPago";
         public const string xNFormaPago = "NFormaPago";
+        public const string xFlagEnviadoMovimientoOCCabe = "FlagEnviadoMovimientoOCCabe";
 
         //atributos
         private string _ClaveObjeto = string.Empty;
@@ -164,9 +166,11 @@ namespace Entidades
         private string _CGarantia = string.Empty;
         private string _NGarantia = string.Empty;
         private int _ValidezCotizacion = 0;
+        private string _FechaValidezCotizacion = string.Empty;
         private decimal _PrecioMaterialAccesorioOrdenServicio = 0;
         private string _CFormaPago = string.Empty;
         private string _NFormaPago = string.Empty;
+        private bool _FlagEnviadoMovimientoOCCabe = false;
 
         //propiedades
         public string ClaveObjeto
@@ -624,6 +628,12 @@ namespace Entidades
             set { _ValidezCotizacion = value; }
         }
 
+        public string FechaValidezCotizacion
+        {
+            get { return _FechaValidezCotizacion; }
+            set { _FechaValidezCotizacion = value; }
+        }
+
         public decimal PrecioMaterialAccesorioOrdenServicio
         {
             get { return _PrecioMaterialAccesorioOrdenServicio; }
@@ -640,6 +650,12 @@ namespace Entidades
         {
             get { return _NFormaPago; }
             set { _NFormaPago = value; }
+        }
+
+        public bool FlagEnviadoMovimientoOCCabe
+        {
+            get { return _FlagEnviadoMovimientoOCCabe; }
+            set { _FlagEnviadoMovimientoOCCabe = value; }
         }
     }
 }

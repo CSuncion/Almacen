@@ -37,6 +37,7 @@ namespace Presentacion.ProcesosCompras
         string eCodAre = string.Empty;
         decimal eCan = 0;
         MovimientoOCDetaEN eMovDet = new MovimientoOCDetaEN();
+        decimal precioMatAcc = 0;
 
         #region Propietario
 
@@ -145,8 +146,9 @@ namespace Presentacion.ProcesosCompras
 
         }
 
-        public void VentanaAdicionar()
+        public void VentanaAdicionar(decimal precioMaterialAccesorio)
         {
+            this.precioMatAcc = precioMaterialAccesorio;
             this.InicializaVentana();
             this.Text = Universal.Opera.Adicionar.ToString() + Cadena.Espacios(1) + this.eTitulo;
             this.MostrarMovimientoDeta(MovimientoOCDetaRN.EnBlanco());
@@ -181,8 +183,9 @@ namespace Presentacion.ProcesosCompras
         //    this.txtCodExi.Focus();
         //}
 
-        public void VentanaModificar(MovimientoOCDetaEN pObj)
+        public void VentanaModificar(MovimientoOCDetaEN pObj, decimal precioMaterialAccesorio)
         {
+            this.precioMatAcc = precioMaterialAccesorio;
             this.eMovDet = pObj;
             this.InicializaVentana();
             this.Text = Universal.Opera.Modificar.ToString() + Cadena.Espacios(1) + this.eTitulo;
@@ -199,7 +202,6 @@ namespace Presentacion.ProcesosCompras
 
             //retorna presupuesto
             this.RetornarPresupuesto();
-
 
             //this.CargarPresupuesto();
             this.MostrarCosto();
@@ -313,6 +315,9 @@ namespace Presentacion.ProcesosCompras
             // validar que la existencia no sea 999999
             if (!this.ValidarNoOrdenServicio()) { return; }
 
+            // validar que el costo no sea mayor al de la cabecera
+            if (!ValidarPrecioMaterialAccesorio()) { return; }
+
             //adicionar MovimientoDeta
             this.AdicionarMovimientoDeta();
 
@@ -378,6 +383,9 @@ namespace Presentacion.ProcesosCompras
 
             // validar que la existencia no sea 999999
             if (!this.ValidarNoOrdenServicio()) { return; }
+
+            // validar que el costo no sea mayor al de la cabecera
+            if (!ValidarPrecioMaterialAccesorio()) { return; }
 
             //modificar detalle
             this.ModificarMovimientoDeta();
@@ -874,6 +882,16 @@ namespace Presentacion.ProcesosCompras
             if (this.txtCodExi.Text == "999999")
             {
                 Mensaje.OperacionDenegada("El código de existencia no puede ser seleccionada.", "Detalle");
+                return false;
+            }
+            return true;
+        }
+
+        public bool ValidarPrecioMaterialAccesorio()
+        {
+            if (Convert.ToDecimal(this.txtCosMovDet.Text) > this.precioMatAcc)
+            {
+                Mensaje.OperacionDenegada("El precio de materiales y accesorios ingresado es mayor a lo ingresada anteriormente.", "Detalle");
                 return false;
             }
             return true;

@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -180,6 +181,7 @@ namespace Presentacion.ProcesosCompras
             List<DataGridViewColumn> iLisRes = new List<DataGridViewColumn>();
 
             //agregando las columnas
+            iLisRes.Add(Dgv.NuevaColumnaCheckBox(MovimientoOCCabeEN.xFlagEnviadoMovimientoOCCabe, "Correo", 50));
             iLisRes.Add(Dgv.NuevaColumnaTextCadena(MovimientoOCCabeEN.NumMovCab, "Numero", 70));
             iLisRes.Add(Dgv.NuevaColumnaTextCadena(MovimientoOCCabeEN.FecMovCab, "Fecha", 70));
             iLisRes.Add(Dgv.NuevaColumnaTextCadena(MovimientoOCCabeEN.PerMovCab, "Periodo", 62));
@@ -304,6 +306,228 @@ namespace Presentacion.ProcesosCompras
             win.NuevaVentana(iSalEN);
         }
 
+        public void Enviar()
+        {
+            //validar envio
+            if (this.EsValidoEnvio() == false) { return; }
+
+            //validar si todas las marcadas tienen correo
+            if (this.EsValidaMarcadasConCorreoElectronico() == false) { return; }
+
+            //validar que existan todos los pds de las cuotas selecionadas
+            if (this.ExistenArchivosExcel() == false) { return; }
+
+            //validar que las orden de compra no hayan sido enviadas
+            if (this.EsValidaOrdenCompraEnviada() == false) { return; }
+
+            //desea realizar la operacion?
+            if (Mensaje.DeseasRealizarOperacion(this.eTitulo) == false) { return; }
+
+            wEnviarOrdenServicio win = new wEnviarOrdenServicio();
+            win.wOrdCom = this;
+            TabCtrl.InsertarVentana(this, win);
+            win.VentanaProgressBar(this.eLisMovCab);
+        }
+
+        public void AsignarMovimientoOrdenServicioEnviar(int pFilaChequeada, int pColumnaChequeada)
+        {
+            //solo debe actuar cuando la columna sea "0" y la fila diferente de "-1"
+            if (pColumnaChequeada == 0 && pFilaChequeada != -1)
+            {
+                MovimientoOCCabeEN iMovEN = new MovimientoOCCabeEN();
+                iMovEN.NumeroMovimientoCabe = Dgv.ObtenerValorCelda(this.DgvMovCab, MovimientoOCCabeEN.NumMovCab);
+                iMovEN.VerdadFalso = !this.eLisMovCab[pFilaChequeada].VerdadFalso;
+                MovimientoOCCabeRN.AsignarOrdenCompraEnviada(iMovEN, this.eLisMovCab);
+            }
+        }
+
+        public bool EsValidoEnvio()
+        {
+            //valida la grilla vacia
+            if (DgvMovCab.Rows.Count == 0)
+            {
+                Mensaje.OperacionDenegada("no hay registros en la grilla", eTitulo);
+                return false;
+            }
+
+            //validar cuotas marcadas
+            List<int> iLisMar = this.listaSolicitudesEnviadas();
+            if (iLisMar.Count == 0)
+            {
+                Mensaje.OperacionDenegada("Al menos debes chequear un registro", eTitulo);
+                return false;
+            }
+
+            //ok
+            return true;
+        }
+
+        public List<int> listaSolicitudesEnviadas()
+        {
+            List<int> cuentaCheck = new List<int>();
+            int cuenta = 0;
+            for (int i = 0; i < this.eLisMovCab.Count; i++)
+            {
+                if (Convert.ToBoolean(this.eLisMovCab[i].VerdadFalso))
+                {
+                    cuentaCheck.Add(cuenta++);
+                }
+            }
+            return cuentaCheck;
+        }
+
+        public bool EsValidaMarcadasConCorreoElectronico()
+        {
+            //recorrer cada registro
+            for (int n = 0; n <= this.eLisMovCab.Count - 1; n++)
+            {
+                //preguntar si esta chequeado
+                bool iValor = Convert.ToBoolean(this.eLisMovCab[n].VerdadFalso);
+                if (iValor == true)
+                {
+                    string iCorreo = this.eLisMovCab[n].CorreoAuxiliar.ToString().Trim();
+                    if (iCorreo == string.Empty)
+                    {
+                        Mensaje.OperacionDenegada("Hay propietarios que no tienen correo electronico", "Contrato");
+                        return false;
+                    }
+                }
+            }
+
+            //ok          
+            return true;
+        }
+
+        public bool EsValidaOrdenCompraDetaMonto()
+        {
+            //recorrer cada registro
+            for (int n = 0; n <= this.eLisMovCab.Count - 1; n++)
+            {
+                bool iValor = Convert.ToBoolean(this.eLisMovCab[n].VerdadFalso);
+                if (iValor)
+                {
+                    MovimientoOCDetaEN iMovDetEN = new MovimientoOCDetaEN();
+                    iMovDetEN.ClaveMovimientoCabe = this.eLisMovCab[n].ClaveMovimientoCabe;
+                    iMovDetEN.Adicionales.CampoOrden = MovimientoOCDetaEN.ClaMovDet;
+
+                    this.eLisMovDet = MovimientoOCDetaRN.ListarMovimientosDetaXClaveMovimientoCabe(iMovDetEN);
+
+                    decimal precio = 0;
+                    this.eLisMovDet.ForEach((x) =>
+                    {
+                        if (x.CantidadPendiente > 0)
+                        {
+                            precio += x.PrecioUnitarioMovimientoDeta;
+                        }
+                    });
+
+                    if (precio == 0)
+                    {
+                        Mensaje.OperacionDenegada("Hay ordenes de servicio que no se han actualizado su precio en el detalle.", "Contrato");
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        public bool ExistenArchivosExcel()
+        {
+            //obtener a las cuotas marcadas
+            List<MovimientoOCCabeEN> iLisMovCab = this.eLisMovCab;
+
+            ParametroEN iParEN = ParametroRN.BuscarParametro();
+
+            //obtener la ruta de la carpeta para el periodo elegido
+            string iRutaCarpetaPeriodo = iParEN.RutaCarpetaPlantillas; //wGenerarRecibos.ObtenerRutaCarpetaPeriodo(txtAno.Text, Cmb.ObtenerValor(cmbMes, ""));
+
+            //recorrer cada objeto cuota
+            foreach (MovimientoOCCabeEN xMov in iLisMovCab)
+            {
+                string fileName = "OrdenServicio_" + xMov.ClaveMovimientoCabe + ".xlsx";
+                //armar la ruta de su archivo
+                //string iRutaArchivo = "RutaArchivo";  
+                //wGenerarRecibos.ObtenerNuevaRutaPDF(xCuo, iRutaCarpetaPeriodo);
+
+                string destFile = System.IO.Path.Combine(iRutaCarpetaPeriodo, fileName);
+                bool iValor = Convert.ToBoolean(xMov.VerdadFalso);
+                if (iValor == true)
+                {
+                    //ver si existe este archivo
+                    if (File.Exists(destFile) == false)
+                    {
+                        Mensaje.OperacionDenegada("El(los) archivo(s) no existe(n)", "Excel");
+                        return false;
+                    }
+                }
+
+            }
+
+            //ok
+            return true;
+        }
+
+        public bool EsValidaOrdenCompraEnviada()
+        {
+            //recorrer cada registro
+            for (int n = 0; n <= this.eLisMovCab.Count - 1; n++)
+            {
+                //preguntar si esta chequeado
+                bool iValor = Convert.ToBoolean(this.eLisMovCab[n].VerdadFalso);
+                if (iValor)
+                {
+                    string estadoSolicitud = this.eLisMovCab[n].CEstadoMovimientoCabe.ToString();
+                    if (estadoSolicitud == "3")
+                    {
+                        Mensaje.OperacionDenegada("Hay orden de servicio que han sido enviadas.", "Contrato");
+                        return false;
+                    }
+                }
+            }
+
+            //ok          
+            return true;
+        }
+
+        public void AprobarOrdenServicio()
+        {
+            if (Mensaje.DeseasRealizarOperacion(this.eTitulo) == false) { return; }
+
+            MovimientoOCCabeEN iIngEN = this.EsActoAprobarOrdenServicioCabe();
+
+            if (iIngEN.Adicionales.EsVerdad == false) { return; }
+
+            if (iIngEN.CEstadoMovimientoCabe == "2")
+            {
+                Mensaje.OperacionDenegada("La orden de servicio ya fue aprobada, se puede realizar el envio al proveedor.", eTitulo);
+                return;
+            }
+
+            if (iIngEN.CEstadoMovimientoCabe == "3")
+            {
+                Mensaje.OperacionDenegada("La solicitud ya fue enviada.", eTitulo);
+                return;
+            }
+
+
+            MovimientoOCCabeRN.AprobarMovimientoOCCabe(iIngEN);
+
+            Mensaje.OperacionSatisfactoria("Se aprobó la orden de servicio correctamente", this.eTitulo);
+            this.ActualizarVentana();
+        }
+
+        public MovimientoOCCabeEN EsActoAprobarOrdenServicioCabe()
+        {
+            MovimientoOCCabeEN iIngEN = new MovimientoOCCabeEN();
+            this.AsignarMovimientoCabe(iIngEN);
+            iIngEN = MovimientoOCCabeRN.EsActoAprobarMovimientoOCCabe(iIngEN);
+            if (iIngEN.Adicionales.EsVerdad == false)
+            {
+                Mensaje.OperacionDenegada(iIngEN.Adicionales.Mensaje, this.eTitulo);
+            }
+            return iIngEN;
+        }
+
         private void btnPeriodo_Click(object sender, EventArgs e)
         {
             this.AccionSeleccionarPeriodo();
@@ -383,6 +607,21 @@ namespace Presentacion.ProcesosCompras
         private void tsbImprimirNota_Click(object sender, EventArgs e)
         {
             this.AccionImprimirOrdenServicio();
+        }
+
+        private void tsbAprobar_Click(object sender, EventArgs e)
+        {
+            this.AprobarOrdenServicio();
+        }
+
+        private void tsbEnviar_Click(object sender, EventArgs e)
+        {
+            this.Enviar();
+        }
+
+        private void DgvMovCab_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.AsignarMovimientoOrdenServicioEnviar(e.RowIndex, e.ColumnIndex);
         }
     }
 }

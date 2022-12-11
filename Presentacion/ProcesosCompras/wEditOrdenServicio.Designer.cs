@@ -94,6 +94,8 @@
             this.txtCodPar = new System.Windows.Forms.TextBox();
             this.txtDesPar = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.lblValCot = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovDet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -396,7 +398,7 @@
             // cmbFormaPago
             // 
             this.cmbFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFormaPago.Location = new System.Drawing.Point(560, 204);
+            this.cmbFormaPago.Location = new System.Drawing.Point(560, 226);
             this.cmbFormaPago.Name = "cmbFormaPago";
             this.cmbFormaPago.Size = new System.Drawing.Size(99, 22);
             this.cmbFormaPago.TabIndex = 514;
@@ -404,7 +406,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(487, 207);
+            this.label20.Location = new System.Drawing.Point(487, 229);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(47, 14);
             this.label20.TabIndex = 515;
@@ -464,7 +466,7 @@
             // btnModificar
             // 
             this.btnModificar.Image = global::Presentacion.Properties.Resources._16__Pencil_tool_;
-            this.btnModificar.Location = new System.Drawing.Point(633, 462);
+            this.btnModificar.Location = new System.Drawing.Point(634, 462);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(29, 29);
             this.btnModificar.TabIndex = 522;
@@ -689,11 +691,31 @@
             this.label29.TabIndex = 544;
             this.label29.Text = "Partida";
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(484, 207);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(58, 14);
+            this.label30.TabIndex = 548;
+            this.label30.Text = "Val. Cotiz.";
+            // 
+            // lblValCot
+            // 
+            this.lblValCot.AutoSize = true;
+            this.lblValCot.Location = new System.Drawing.Point(560, 207);
+            this.lblValCot.Name = "lblValCot";
+            this.lblValCot.Size = new System.Drawing.Size(56, 14);
+            this.lblValCot.TabIndex = 549;
+            this.lblValCot.Text = "lblValCot";
+            // 
             // wEditOrdenServicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 600);
+            this.Controls.Add(this.lblValCot);
+            this.Controls.Add(this.label30);
             this.Controls.Add(this.txtCodPar);
             this.Controls.Add(this.txtDesPar);
             this.Controls.Add(this.label29);
@@ -829,6 +851,8 @@
             this.Controls.SetChildIndex(this.label29, 0);
             this.Controls.SetChildIndex(this.txtDesPar, 0);
             this.Controls.SetChildIndex(this.txtCodPar, 0);
+            this.Controls.SetChildIndex(this.label30, 0);
+            this.Controls.SetChildIndex(this.lblValCot, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovDet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -903,5 +927,7 @@
         private System.Windows.Forms.TextBox txtCodPar;
         private System.Windows.Forms.TextBox txtDesPar;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lblValCot;
     }
 }

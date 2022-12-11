@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinControles;
 using WinControles.ControlesWindows;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Presentacion.ProcesosCompras
 {
@@ -321,6 +322,7 @@ namespace Presentacion.ProcesosCompras
             Cmb.SeleccionarValorItem(this.cmbGarantia, pMovCab.CGarantia);
             this.txtValCotizacion.Text = pMovCab.ValidezCotizacion.ToString();
             this.valCoti = pMovCab.ValidezCotizacion;
+            this.lblValCot.Text = pMovCab.FechaValidezCotizacion.ToString();
             this.txtPreVenta.Text = Formato.NumeroDecimal(pMovCab.PrecioVtaMovimientoCabe, 2);
             this.txtPreMatAcc.Text = Formato.NumeroDecimal(pMovCab.PrecioMaterialAccesorioOrdenServicio, 2);
             this.txtValorVenta.Text = Formato.NumeroDecimal(pMovCab.ValorVtaMovimientoCabe, 2);
@@ -336,6 +338,8 @@ namespace Presentacion.ProcesosCompras
             this.txtIgv.Text = pMovCab.IgvPorcentaje.ToString();
             this.txtCodAre.Text = string.Empty;
             this.txtDesAre.Text = string.Empty;
+            this.txtCodPar.Text = string.Empty;
+            this.txtDesPar.Text = string.Empty;
             this.dtpPlazoEntrega.Text = pMovCab.PlazoEntrega;
         }
 
@@ -505,12 +509,12 @@ namespace Presentacion.ProcesosCompras
         {
             decimal preVenta = Convert.ToDecimal(this.txtPreVenta.Text);
             decimal preMatAcc = this.txtPreMatAcc.Text == string.Empty ? 0 : Convert.ToDecimal(this.txtPreMatAcc.Text);
-            decimal igv = Convert.ToDecimal(this.txtIgv.Text) / 100;
-            decimal valIgv = (preVenta + preMatAcc) * igv;
+            decimal igv = Convert.ToDecimal(this.txtIgv.Text);
+            decimal valIgv = (preVenta + preMatAcc) * igv / (igv + 100);
             decimal valVenta = (preVenta + preMatAcc) - valIgv;
 
-            this.txtValorVenta.Text = (valVenta).ToString();
-            this.txtValorIGV.Text = (valIgv).ToString();
+            this.txtValorVenta.Text = (Formato.NumeroDecimal(valVenta, 2)).ToString();
+            this.txtValorIGV.Text = (Formato.NumeroDecimal(valIgv, 2)).ToString();
             this.txtTotalGral.Text = (preVenta + preMatAcc).ToString();
         }
 
@@ -581,7 +585,7 @@ namespace Presentacion.ProcesosCompras
             win.eOperacion = Universal.Opera.Adicionar;
             this.eFranjaDgvMovDet = Dgv.Franja.PorValor;
             TabCtrl.InsertarVentana(this, win);
-            win.VentanaAdicionar();
+            win.VentanaAdicionar(Convert.ToDecimal(this.txtPreMatAcc.Text));
         }
 
         public bool ElegirCentroCostoAntesDeLlenarGrilla()
@@ -652,8 +656,10 @@ namespace Presentacion.ProcesosCompras
             pMovCab.Garantia = Convert.ToInt32(this.txtGarantia.Text);
             pMovCab.CGarantia = Cmb.ObtenerValor(this.cmbGarantia, string.Empty);
             pMovCab.ValidezCotizacion = Convert.ToInt32(this.txtValCotizacion.Text);
+            pMovCab.FechaValidezCotizacion = this.lblValCot.Text;
             pMovCab.MontoTotalMovimientoCabe = Convert.ToDecimal(this.txtTotalGral.Text);
             pMovCab.CFormaPago = Cmb.ObtenerValor(this.cmbFormaPago, string.Empty);
+            pMovCab.NFormaPago = Cmb.ObtenerTexto(this.cmbFormaPago);
             pMovCab.CTipoServicio = this.txtCodTipSer.Text;
             pMovCab.PrecioMaterialAccesorioOrdenServicio = Convert.ToDecimal(this.txtPreMatAcc.Text);
             pMovCab.IgvMovimientoCabe = Convert.ToDecimal(this.txtValorIGV.Text);
@@ -773,7 +779,7 @@ namespace Presentacion.ProcesosCompras
             win.eOperacion = Universal.Opera.Modificar;
             this.eFranjaDgvMovDet = Dgv.Franja.PorValor;
             TabCtrl.InsertarVentana(this, win);
-            win.VentanaModificar(this.eLisMovDet[Dgv.ObtenerIndiceRegistroXFranja(this.dgvMovDet)]);
+            win.VentanaModificar(this.eLisMovDet[Dgv.ObtenerIndiceRegistroXFranja(this.dgvMovDet)], Convert.ToDecimal(this.txtPreMatAcc.Text));
         }
 
         public void AccionQuitarItem()
@@ -894,6 +900,7 @@ namespace Presentacion.ProcesosCompras
 
             //imprimir la nota
             this.wOrdSer.AccionImprimirOrdenServicio();
+            this.GenerarOrdenServicioExcel();
 
             //limpiar controles
             this.MostrarMovimientoCabe(this.ObtenerMovimientoCabeParaSegundaAdicion());
@@ -931,8 +938,8 @@ namespace Presentacion.ProcesosCompras
             this.wOrdSer.ActualizarVentana();
 
             //imprimir la nota
-            //this.wOrdCom.AccionImprimirNota();
-            //this.GenerarOrdenCompra();
+            this.wOrdSer.AccionImprimirOrdenServicio();
+            this.GenerarOrdenServicioExcel();
 
             //salir de la ventana
             this.Close();
@@ -1175,6 +1182,97 @@ namespace Presentacion.ProcesosCompras
             return Generico.EsCodigoItemEActivoValido("CodPar", this.txtCodPar, this.txtDesPar, "Partidas");
         }
 
+        public void GenerarOrdenServicioExcel()
+        {
+            MovimientoOCCabeEN iMovCabEn = new MovimientoOCCabeEN();
+            this.AsignarMovimientoCabe(iMovCabEn);
+
+            List<MovimientoOCDetaEN> list = this.eLisMovDet;
+
+            ParametroEN iParEN = ParametroRN.BuscarParametro();
+
+            string fileName = "OrdenServicio_" + iMovCabEn.ClaveMovimientoCabe + ".xlsx";
+
+            string sourceFile = iParEN.RutaCarpetaPlantillas + @"\Plantilla Orden Servicio.xlsx";
+
+            string targetPath = iParEN.RutaCarpetaPlantillas;
+
+            string destFile = System.IO.Path.Combine(targetPath, fileName);
+
+            System.IO.Directory.CreateDirectory(targetPath);
+
+            if (System.IO.File.Exists(destFile))
+            {
+                System.IO.File.Delete(destFile);
+            }
+
+            System.IO.File.Copy(sourceFile, destFile, true);
+
+
+            Excel.Application app = new Excel.Application();
+
+            Excel.Workbook iLibro;
+            Excel.Worksheet iHoja;
+            Excel.Range iRango;
+            object iOpcional = System.Reflection.Missing.Value;
+
+            //creamos una nueva aplicacion excel
+            app = new Microsoft.Office.Interop.Excel.Application();
+
+            //adicionamos el libro a la aplicacion
+            iLibro = app.Workbooks.Add(destFile);
+
+            //obtener la hoja 1 del libro
+            iHoja = iLibro.Worksheets["PLANTILLA"];
+
+            //dando el zoom predeterminado a la hoja
+            app.ActiveWindow.Zoom = 73;
+
+            iHoja.Cells[5, "N"] = iMovCabEn.ClaveMovimientoCabe;
+            iHoja.Cells[6, "N"] = iMovCabEn.FechaMovimientoCabe;
+
+            iHoja.Cells[23, "M"] = iMovCabEn.CodigoAuxiliar;
+            iHoja.Cells[25, "M"] = iMovCabEn.CorreoAuxiliar;
+            iHoja.Cells[23, "D"] = iMovCabEn.DescripcionAuxiliar;
+            iHoja.Cells[25, "D"] = iMovCabEn.NFormaPago;
+
+            iHoja.Cells[29, "D"] = iMovCabEn.DireccionAuxiliar;
+
+
+            iHoja.Cells[36, "D"] = iMovCabEn.GlosaMovimientoCabe;
+            iHoja.Cells[39, "E"] = this.eLisMovDet.FirstOrDefault().NCodigoPartida;
+
+            iHoja.Cells[79, "O"] = iMovCabEn.ValorVtaMovimientoCabe;
+            iHoja.Cells[81, "O"] = iMovCabEn.ValorVtaMovimientoCabe;
+            iHoja.Cells[82, "O"] = iMovCabEn.IgvMovimientoCabe;
+            iHoja.Cells[85, "O"] = iMovCabEn.MontoTotalMovimientoCabe;
+
+            int filaItem = 45;
+            int filaNueva = 0;
+            int item = 0;
+
+            foreach (MovimientoOCDetaEN movDeta in list)
+            {
+                item++;
+                iHoja.Cells[filaItem, "B"] = item;
+                iHoja.Cells[filaItem, "C"] = movDeta.DescripcionExistencia;
+                iHoja.Cells[filaItem, "K"] = movDeta.NombreUnidadMedida;
+                iHoja.Cells[filaItem, "L"] = movDeta.CantidadMovimientoDeta;
+                iHoja.Cells[filaItem, "M"] = movDeta.PrecioUnitarioMovimientoDeta;
+                iHoja.Cells[filaItem, "O"] = movDeta.CostoMovimientoDeta;
+                filaItem++;
+                //Excel.Range to = iHoja.Range["A" + filaItem + ":AI" + filaItem];
+                //to.Insert();
+                //from.Copy(to);                
+            }
+
+            iLibro.SaveAs(destFile, Excel.XlFileFormat.xlWorkbookDefault, iOpcional, iOpcional, true, iOpcional,
+                Excel.XlSaveAsAccessMode.xlExclusive, iOpcional, iOpcional, iOpcional, iOpcional, iOpcional);
+            iLibro.Close(true, iOpcional, iOpcional);
+            app.Quit();
+
+        }
+
         private void txtCodTipSer_Validating(object sender, CancelEventArgs e)
         {
             this.EsTipoServicioValido();
@@ -1209,12 +1307,13 @@ namespace Presentacion.ProcesosCompras
         private void txtValCotizacion_Validating(object sender, CancelEventArgs e)
         {
             if (this.eOperacion == Universal.Opera.Adicionar)
-                this.dtpPlazoEntrega.Text = this.txtValCotizacion.Text == string.Empty ? DateTime.Now.ToShortDateString()
+                this.lblValCot.Text = this.txtValCotizacion.Text == string.Empty ? DateTime.Now.ToShortDateString()
                     : DateTime.Now.AddDays(Convert.ToInt32(this.txtValCotizacion.Text)).ToShortDateString();
             else
-                this.dtpPlazoEntrega.Text = this.txtValCotizacion.Text == string.Empty ? this.dtpPlazoEntrega.Text
-                    : Convert.ToDateTime(this.dtpPlazoEntrega.Text).AddDays(-this.valCoti)
+                this.lblValCot.Text = this.txtValCotizacion.Text == string.Empty ? this.lblValCot.Text
+                    : Convert.ToDateTime(this.lblValCot.Text).AddDays(-this.valCoti)
                     .AddDays(Convert.ToInt32(this.txtValCotizacion.Text)).ToShortDateString();
+
             this.valCoti = Convert.ToInt32(this.txtValCotizacion.Text);
         }
 

@@ -56,6 +56,8 @@
             this.DgvMovCab = new System.Windows.Forms.DataGridView();
             this.sst1 = new System.Windows.Forms.StatusStrip();
             this.tssEstado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsbEnviar = new System.Windows.Forms.ToolStripButton();
+            this.tsbAprobar = new System.Windows.Forms.ToolStripButton();
             this.tsPrincipal.SuspendLayout();
             this.tsSecundario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMovCab)).BeginInit();
@@ -72,6 +74,8 @@
             this.tsbModificar,
             this.tsbEliminar,
             this.tsbVisualizar,
+            this.tsbAprobar,
+            this.tsbEnviar,
             this.tsbSalir});
             this.tsPrincipal.Location = new System.Drawing.Point(6, 23);
             this.tsPrincipal.Name = "tsPrincipal";
@@ -321,6 +325,7 @@
             this.DgvMovCab.Name = "DgvMovCab";
             this.DgvMovCab.Size = new System.Drawing.Size(1099, 441);
             this.DgvMovCab.TabIndex = 96;
+            this.DgvMovCab.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMovCab_CellContentClick);
             // 
             // sst1
             // 
@@ -339,6 +344,26 @@
             this.tssEstado.Name = "tssEstado";
             this.tssEstado.Size = new System.Drawing.Size(10, 17);
             this.tssEstado.Text = ".";
+            // 
+            // tsbEnviar
+            // 
+            this.tsbEnviar.Image = global::Presentacion.Properties.Resources.Sent_Message;
+            this.tsbEnviar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEnviar.Name = "tsbEnviar";
+            this.tsbEnviar.Size = new System.Drawing.Size(44, 45);
+            this.tsbEnviar.Text = "Enviar";
+            this.tsbEnviar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbEnviar.Click += new System.EventHandler(this.tsbEnviar_Click);
+            // 
+            // tsbAprobar
+            // 
+            this.tsbAprobar.Image = global::Presentacion.Properties.Resources.accept;
+            this.tsbAprobar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAprobar.Name = "tsbAprobar";
+            this.tsbAprobar.Size = new System.Drawing.Size(54, 45);
+            this.tsbAprobar.Text = "Aprobar";
+            this.tsbAprobar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbAprobar.Click += new System.EventHandler(this.tsbAprobar_Click);
             // 
             // wOrdenServicio
             // 
@@ -398,5 +423,7 @@
         private System.Windows.Forms.DataGridView DgvMovCab;
         internal System.Windows.Forms.StatusStrip sst1;
         private System.Windows.Forms.ToolStripStatusLabel tssEstado;
+        private System.Windows.Forms.ToolStripButton tsbAprobar;
+        private System.Windows.Forms.ToolStripButton tsbEnviar;
     }
 }

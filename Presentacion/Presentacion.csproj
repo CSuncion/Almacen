@@ -1028,6 +1028,12 @@
     <Compile Include="ProcesosCompras\wEliminarPagos.designer.cs">
       <DependentUpon>wEliminarPagos.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProcesosCompras\wEnviarOrdenServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEnviarOrdenServicio.designer.cs">
+      <DependentUpon>wEnviarOrdenServicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProcesosCompras\wEnviarOrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2408,6 +2414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProcesosCompras\wEliminarPagos.resx">
       <DependentUpon>wEliminarPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wEnviarOrdenServicio.resx">
+      <DependentUpon>wEnviarOrdenServicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProcesosCompras\wEnviarOrdenCompra.resx">
       <DependentUpon>wEnviarOrdenCompra.cs</DependentUpon>

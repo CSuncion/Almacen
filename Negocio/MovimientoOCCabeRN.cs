@@ -2921,5 +2921,49 @@ namespace Negocio
             MovimientoOCCabeAD iPerAD = new MovimientoOCCabeAD();
             iPerAD.ActualizarMontoPendienteMovimientoOCCabe(periodo, clavemovimientocabe, montopendiente);
         }
+
+        public static MovimientoOCCabeEN EsActoAprobarMovimientoOCCabe(MovimientoOCCabeEN pObj)
+        {
+            //objeto resultado
+            MovimientoOCCabeEN iSolPedidoCabEN = new MovimientoOCCabeEN();
+
+            //valida cuando es no es acto eliminar en este periodo
+            iSolPedidoCabEN = MovimientoOCCabeRN.ValidaCuandoNoEsActoRegistrarEnPeriodo(pObj);
+            if (iSolPedidoCabEN.Adicionales.EsVerdad == false) { return iSolPedidoCabEN; }
+
+            //valida si existe
+            iSolPedidoCabEN = MovimientoOCCabeRN.EsMovmientoOCCabeExistente(pObj);
+            if (iSolPedidoCabEN.Adicionales.EsVerdad == false) { return iSolPedidoCabEN; }
+
+            //valida cuando este registro no ha sido creado por la ventana en proceso
+            MovimientoOCCabeEN iMovCabVenEN = MovimientoOCCabeRN.ValidaCuandoRegistroNofueCreadoPorVentanaProceso(iSolPedidoCabEN, pObj.COrigenVentanaCreacion);
+            if (iMovCabVenEN.Adicionales.EsVerdad == false) { return iMovCabVenEN; }
+
+            //ok          
+            return iSolPedidoCabEN;
+        }
+
+        public static MovimientoOCCabeEN EsMovmientoOCCabeExistente(MovimientoOCCabeEN pObj)
+        {
+            //objeto resultado
+            MovimientoOCCabeEN iExiEN = new MovimientoOCCabeEN();
+
+            //validar si existe en b.d
+            iExiEN = MovimientoOCCabeRN.BuscarMovimientoCabeXClave(pObj);
+            if (iExiEN.ClaveMovimientoCabe == string.Empty)
+            {
+                iExiEN.Adicionales.EsVerdad = false;
+                iExiEN.Adicionales.Mensaje = "El registro no existe";
+                return iExiEN;
+            }
+
+            //ok        
+            return iExiEN;
+        }
+        public static void AprobarMovimientoOCCabe(MovimientoOCCabeEN pObj)
+        {
+            MovimientoOCCabeAD iPerAD = new MovimientoOCCabeAD();
+            iPerAD.AprobarMovimientoOCCabe(pObj);
+        }
     }
 }

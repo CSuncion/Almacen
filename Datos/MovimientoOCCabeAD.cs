@@ -103,6 +103,7 @@ namespace Datos
             xObjEnc.CGarantia = iDr[MovimientoOCCabeEN.xCGarantia].ToString();
             xObjEnc.NGarantia = iDr[MovimientoOCCabeEN.xNGarantia].ToString();
             xObjEnc.ValidezCotizacion = Convert.ToInt32(iDr[MovimientoOCCabeEN.xValidezCotizacion].ToString());
+            xObjEnc.FechaValidezCotizacion = iDr[MovimientoOCCabeEN.xFechaValidezCotizacion].ToString();
             xObjEnc.PrecioMaterialAccesorioOrdenServicio = Convert.ToDecimal(iDr[MovimientoOCCabeEN.xPrecioMaterialAccesorioOrdenServicio].ToString());
             xObjEnc.CFormaPago = iDr[MovimientoOCCabeEN.xCFormaPago].ToString();
             xObjEnc.NFormaPago = iDr[MovimientoOCCabeEN.xNFormaPago].ToString();
@@ -263,6 +264,7 @@ namespace Datos
             xIns.AsignarParametro(MovimientoOCCabeEN.xGarantia, pObj.Garantia.ToString());
             xIns.AsignarParametro(MovimientoOCCabeEN.xCGarantia, pObj.CGarantia);
             xIns.AsignarParametro(MovimientoOCCabeEN.xValidezCotizacion, pObj.ValidezCotizacion.ToString());
+            xIns.AsignarParametro(MovimientoOCCabeEN.xFechaValidezCotizacion, pObj.FechaValidezCotizacion.ToString());
             xIns.AsignarParametro(MovimientoOCCabeEN.xPrecioMaterialAccesorioOrdenServicio, pObj.PrecioMaterialAccesorioOrdenServicio.ToString());
             xIns.AsignarParametro(MovimientoOCCabeEN.xCFormaPago, pObj.CFormaPago);
             xIns.AsignarParametro(MovimientoOCCabeEN.ClaSolCabPed, pObj.ClaveSolicitudPedidoCabe.ToString());
@@ -333,6 +335,7 @@ namespace Datos
                 xIns.AsignarParametro(MovimientoOCCabeEN.xGarantia, xMovCab.Garantia.ToString());
                 xIns.AsignarParametro(MovimientoOCCabeEN.xCGarantia, xMovCab.CGarantia);
                 xIns.AsignarParametro(MovimientoOCCabeEN.xValidezCotizacion, xMovCab.ValidezCotizacion.ToString());
+                xIns.AsignarParametro(MovimientoOCCabeEN.xFechaValidezCotizacion, xMovCab.FechaValidezCotizacion.ToString());
                 xIns.AsignarParametro(MovimientoOCCabeEN.xPrecioMaterialAccesorioOrdenServicio, xMovCab.PrecioMaterialAccesorioOrdenServicio.ToString());
                 xIns.AsignarParametro(MovimientoOCCabeEN.xCFormaPago, xMovCab.CFormaPago);
                 xIns.AsignarParametro(MovimientoOCCabeEN.ClaSolCabPed, xMovCab.ClaveSolicitudPedidoCabe.ToString());
@@ -393,6 +396,7 @@ namespace Datos
             xUpd.AsignarParametro(MovimientoOCCabeEN.xGarantia, pObj.Garantia.ToString());
             xUpd.AsignarParametro(MovimientoOCCabeEN.xCGarantia, pObj.CGarantia);
             xUpd.AsignarParametro(MovimientoOCCabeEN.xValidezCotizacion, pObj.ValidezCotizacion.ToString());
+            xUpd.AsignarParametro(MovimientoOCCabeEN.xFechaValidezCotizacion, pObj.FechaValidezCotizacion.ToString());
             xUpd.AsignarParametro(MovimientoOCCabeEN.xPrecioMaterialAccesorioOrdenServicio, pObj.PrecioMaterialAccesorioOrdenServicio.ToString());
             xUpd.AsignarParametro(MovimientoOCCabeEN.xCFormaPago, pObj.CFormaPago);
             xUpd.AsignarParametro(MovimientoOCCabeEN.ClaSolCabPed, pObj.ClaveSolicitudPedidoCabe.ToString());
@@ -461,6 +465,7 @@ namespace Datos
                 xUpd.AsignarParametro(MovimientoOCCabeEN.xGarantia, xMovCab.Garantia.ToString());
                 xUpd.AsignarParametro(MovimientoOCCabeEN.xCGarantia, xMovCab.CGarantia);
                 xUpd.AsignarParametro(MovimientoOCCabeEN.xValidezCotizacion, xMovCab.ValidezCotizacion.ToString());
+                xUpd.AsignarParametro(MovimientoOCCabeEN.xFechaValidezCotizacion, xMovCab.FechaValidezCotizacion.ToString());
                 xUpd.AsignarParametro(MovimientoOCCabeEN.xPrecioMaterialAccesorioOrdenServicio, xMovCab.PrecioMaterialAccesorioOrdenServicio.ToString());
                 xUpd.AsignarParametro(MovimientoOCCabeEN.xCFormaPago, xMovCab.CFormaPago);
                 xUpd.AsignarParametro(MovimientoOCCabeEN.ClaSolCabPed, xMovCab.ClaveSolicitudPedidoCabe.ToString());
@@ -812,6 +817,24 @@ namespace Datos
             iScript += " Where CodigoEmpresa='" + Universal.gCodigoEmpresa + "'";
             iScript += " And PeriodoMovimientoCabe='" + periodo + "'";
             iScript += " And ClaveMovimientoCabe ='" + clavemovimientocabe + "'";
+
+            xObjCon.ComandoTexto(iScript);
+            xObjCon.EjecutarSinResultado();
+            xObjCon.Desconectar();
+        }
+
+        public void AprobarMovimientoOCCabe(MovimientoOCCabeEN pObj)
+        {
+            xObjCon.Conectar(SqlDatos.Bd.Almacen_Produccion);
+
+            //script manual
+            string iScript = string.Empty;
+
+            //actualizando la solicitud de pedido
+            iScript += "Update MovimientoOCCabe set CEstadoMovimientoCabe = 2";
+            iScript += " Where CodigoEmpresa='" + Universal.gCodigoEmpresa + "'";
+            iScript += " And PeriodoMovimientoCabe='" + pObj.PeriodoMovimientoCabe + "'";
+            iScript += " And ClaveMovimientoCabe ='" + pObj.ClaveMovimientoCabe + "'";
 
             xObjCon.ComandoTexto(iScript);
             xObjCon.EjecutarSinResultado();
