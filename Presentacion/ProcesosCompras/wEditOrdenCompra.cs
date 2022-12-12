@@ -1274,8 +1274,9 @@ namespace Presentacion.ProcesosCompras
                 foreach (MovimientoOCDetaEN objDeta in eListMovDetTmp)
                 {
                     string presupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdCom.lblPeriodo.Text
-                && x.CCentroCosto == objDeta.CodigoCentroCosto).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
-                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdCom.lblPeriodo.Text && x.CCentroCosto == objDeta.CodigoCentroCosto).FirstOrDefault().SaldoPresupuesto.ToString(), 2);
+                                            && x.CCentroCosto == objDeta.CodigoCentroCosto).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
+                                            Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdCom.lblPeriodo.Text 
+                                            && x.CCentroCosto == objDeta.CodigoCentroCosto).FirstOrDefault().SaldoPresupuesto.ToString(), 2);
 
                     xObj = new PresupuestoEN();
                     xObj.CodigoPresupuesto = wOrdCom.lblPeriodo.Text;

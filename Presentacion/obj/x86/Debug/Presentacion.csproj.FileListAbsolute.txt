@@ -160,6 +160,7 @@ D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentac
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEditPagosUnica.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEditSolicitudPedido.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEliminarPagos.resources
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEnviarOrdenServicio.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEnviarOrdenCompra.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEnviarSolicitudPedido.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wLote.resources
@@ -317,4 +318,3 @@ D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentac
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.application
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.exe
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.pdb
-D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEnviarOrdenServicio.resources

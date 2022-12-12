@@ -37,6 +37,9 @@ namespace Presentacion.ProcesosCompras
         public string eClavSolPedCab = string.Empty;
         public decimal preVenta = 0;
         public int valCoti = 0;
+        public string Presupuesto = string.Empty;
+        public string SaldoPresupuesto = string.Empty;
+
         public wEditOrdenServicio()
         {
             InitializeComponent();
@@ -748,15 +751,61 @@ namespace Presentacion.ProcesosCompras
                 this.txtPreVenta.Text = Formato.NumeroDecimal(0, 2);
                 return;
             }
+
             if (this.txtPreVenta.Text == string.Empty || Convert.ToDecimal(this.txtPreVenta.Text) <= 0)
-                this.EliminarMovimientoDeta();
+            {
+                if (this.eLisMovDet.Count > 0)
+                {
+                    this.CargarPresupuesto();
+                    this.ActualizarPresupuesto();
+                    this.EliminarMovimientoDeta();
+                }
+            }
             else
             {
+                this.CargarPresupuesto();
+                this.ActualizarPresupuesto();
                 this.EliminarMovimientoDeta();
                 this.ObtenerValoresCalculados();
                 this.AdicionarMovimientoDeta();
                 this.MostrarMovimientosDeta();
             }
+        }
+
+
+        public void CargarPresupuesto()
+        {
+            if (this.txtCodAre.Text.Trim() != string.Empty)
+            {
+                PresupuestoEN iPerEN = new PresupuestoEN();
+                iPerEN.Adicionales.CampoOrden = eNombreColumnaDgvPer;
+                this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
+                this.Presupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                && x.CCentroCosto == this.txtCodAre.Text.Trim()).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
+                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuesto.ToString(), 2);
+
+                this.SaldoPresupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                 && x.CCentroCosto == this.txtCodAre.Text.Trim()).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
+                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuesto.ToString(), 2);
+            }
+        }
+
+        public void ActualizarPresupuesto()
+        {
+            PresupuestoEN xObj = new PresupuestoEN();
+            xObj.CodigoPresupuesto = wOrdSer.lblPeriodo.Text;
+            xObj.CCentroCosto = this.txtCodAre.Text;
+            if (this.txtPreVenta.Text == string.Empty || Convert.ToDecimal(this.txtPreVenta.Text) <= 0)
+                xObj.NuevoSaldoPresupuesto = Convert.ToDecimal(this.SaldoPresupuesto) + Convert.ToDecimal(this.eLisMovDet.Find(x => x.CodigoExistencia == "999999").PrecioUnitarioMovimientoDeta);
+            else
+            {
+                if (this.eLisMovDet.Count > 0)
+                    xObj.NuevoSaldoPresupuesto = (Convert.ToDecimal(this.SaldoPresupuesto) + Convert.ToDecimal(this.eLisMovDet.Find(x => x.CodigoExistencia == "999999").PrecioUnitarioMovimientoDeta)) - Convert.ToDecimal(this.txtPreVenta.Text);
+                else
+                    xObj.NuevoSaldoPresupuesto = Convert.ToDecimal(this.SaldoPresupuesto) - Convert.ToDecimal(this.txtPreVenta.Text);
+            }
+
+            PresupuestoRN.ModificarPresupuestoActual(xObj);
         }
 
         public void AccionModificarItem()
@@ -807,46 +856,27 @@ namespace Presentacion.ProcesosCompras
 
         public void Cancelar()
         {
-            List<MovimientoOCDetaEN> eListMovDeta = new List<MovimientoOCDetaEN>();
-            List<MovimientoOCDetaEN> eListMovDetTmp = new List<MovimientoOCDetaEN>();
+            Generico.CancelarVentanaEditar(this, eOperacion, eMas, this.wOrdSer.eTitulo);
+        }
 
-            eListMovDeta = this.eLisMovDet;
-
-            MovimientoOCCabeEN iCuoEN = new MovimientoOCCabeEN();
-            this.AsignarMovimientoCabe(iCuoEN);
-            this.LLenarMovimientoDetaDeBaseDatos(iCuoEN);
-
+        public void CerrarYDevolverPresupuesto()
+        {
             if (this.eLisMovDet.Count > 0)
             {
-                foreach (MovimientoOCDetaEN obj in eListMovDeta)
-                {
-                    if (eLisMovDet.Where(e => e.ClaveObjeto == obj.ClaveObjeto).Count() == 0)
-                    {
-                        eListMovDetTmp.Add(obj);
-                    }
-                }
-
                 PresupuestoEN iPerEN = new PresupuestoEN();
                 iPerEN.Adicionales.CampoOrden = eNombreColumnaDgvPer;
                 this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
 
-
-
                 PresupuestoEN xObj = new PresupuestoEN();
-                foreach (MovimientoOCDetaEN objDeta in eListMovDetTmp)
-                {
-                    string presupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
-                && x.CCentroCosto == objDeta.CodigoCentroCosto).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
-                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text && x.CCentroCosto == objDeta.CodigoCentroCosto).FirstOrDefault().SaldoPresupuesto.ToString(), 2);
-
-                    xObj = new PresupuestoEN();
-                    xObj.CodigoPresupuesto = wOrdSer.lblPeriodo.Text;
-                    xObj.CCentroCosto = objDeta.CodigoCentroCosto;
-                    xObj.NuevoSaldoPresupuesto = Convert.ToDecimal(presupuesto) + (objDeta.PrecioUnitarioMovimientoDeta * objDeta.CantidadMovimientoDeta);
-                    PresupuestoRN.ModificarPresupuesto(xObj);
-                }
+                xObj = new PresupuestoEN();
+                xObj = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                                                && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault();
+                xObj.CodigoPresupuesto = wOrdSer.lblPeriodo.Text;
+                xObj.CCentroCosto = this.txtCodAre.Text.Trim();
+                xObj.SaldoPresupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                                                && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuesto + this.eLisMovDet.Sum(x => x.CostoMovimientoDeta);
+                PresupuestoRN.ModificarPresupuesto(xObj);
             }
-            Generico.CancelarVentanaEditar(this, eOperacion, eMas, this.wOrdSer.eTitulo);
         }
 
         public void LLenarMovimientoDetaDeBaseDatos(MovimientoOCCabeEN pObj)
@@ -918,6 +948,9 @@ namespace Presentacion.ProcesosCompras
             //preguntar si este objeto fue eliminado mientras estaba activa la ventana
             if (this.wOrdSer.EsMovimientoCabeExistente().Adicionales.EsVerdad == false) { return; }
 
+            //validar si los totales coinciden
+            if (!this.ValidarTotalesCabeceraConDetalle()) { return; }
+
             //desea realizar la operacion?
             if (Mensaje.DeseasRealizarOperacion(this.wOrdSer.eTitulo) == false) { return; }
 
@@ -968,8 +1001,11 @@ namespace Presentacion.ProcesosCompras
             //actualizar al wLot           
             this.wOrdSer.ActualizarVentana();
 
+            this.eLisMovDet.Clear();
+
             //salir de la ventana
             this.Close();
+
         }
 
 
@@ -1016,19 +1052,22 @@ namespace Presentacion.ProcesosCompras
                 PresupuestoEN iPerEN = new PresupuestoEN();
                 iPerEN.Adicionales.CampoOrden = eNombreColumnaDgvPer;
                 PresupuestoEN xObj = new PresupuestoEN();
-                foreach (MovimientoOCDetaEN objDeta in eLisMovDet)
-                {
-                    this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
-                    string presupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
-                && x.CCentroCosto == objDeta.CodigoCentroCosto).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
-                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text && x.CCentroCosto == objDeta.CodigoCentroCosto).FirstOrDefault().SaldoPresupuesto.ToString(), 2);
 
-                    xObj = new PresupuestoEN();
-                    xObj.CodigoPresupuesto = wOrdSer.lblPeriodo.Text;
-                    xObj.CCentroCosto = objDeta.CodigoCentroCosto;
-                    xObj.NuevoSaldoPresupuesto = Convert.ToDecimal(presupuesto) + (objDeta.PrecioUnitarioMovimientoDeta * objDeta.CantidadMovimientoDeta);
-                    PresupuestoRN.ModificarPresupuesto(xObj);
-                }
+                this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
+                string presupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                                    && x.CCentroCosto == this.txtCodAre.Text.Trim()).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
+                                    Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                                    && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuesto.ToString(), 2);
+
+                xObj = new PresupuestoEN();
+                xObj = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                                && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault();
+                xObj.CodigoPresupuesto = wOrdSer.lblPeriodo.Text;
+                xObj.CCentroCosto = this.txtCodAre.Text.Trim();
+                xObj.SaldoPresupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                                            && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuesto + this.eLisMovDet.Sum(x => x.CostoMovimientoDeta);
+                PresupuestoRN.ModificarPresupuesto(xObj);
+
             }
         }
 
@@ -1306,19 +1345,29 @@ namespace Presentacion.ProcesosCompras
 
         private void txtValCotizacion_Validating(object sender, CancelEventArgs e)
         {
-            if (this.eOperacion == Universal.Opera.Adicionar)
-                this.lblValCot.Text = this.txtValCotizacion.Text == string.Empty ? DateTime.Now.ToShortDateString()
-                    : DateTime.Now.AddDays(Convert.ToInt32(this.txtValCotizacion.Text)).ToShortDateString();
-            else
-                this.lblValCot.Text = this.txtValCotizacion.Text == string.Empty ? this.lblValCot.Text
-                    : Convert.ToDateTime(this.lblValCot.Text).AddDays(-this.valCoti)
-                    .AddDays(Convert.ToInt32(this.txtValCotizacion.Text)).ToShortDateString();
+            int vC = 0;
+            if (int.TryParse(this.txtValCotizacion.Text, out vC))
+            {
+                if (this.eOperacion == Universal.Opera.Adicionar)
+                    this.lblValCot.Text = this.txtValCotizacion.Text == string.Empty ? DateTime.Now.ToShortDateString()
+                        : DateTime.Now.AddDays(Convert.ToInt32(this.txtValCotizacion.Text)).ToShortDateString();
+                else
+                    this.lblValCot.Text = this.txtValCotizacion.Text == string.Empty ? this.lblValCot.Text
+                        : Convert.ToDateTime(this.lblValCot.Text).AddDays(-this.valCoti)
+                        .AddDays(Convert.ToInt32(this.txtValCotizacion.Text)).ToShortDateString();
 
-            this.valCoti = Convert.ToInt32(this.txtValCotizacion.Text);
+                this.valCoti = Convert.ToInt32(this.txtValCotizacion.Text);
+            }
+            else
+            {
+                this.txtValCotizacion.Text = "0";
+                Mensaje.OperacionDenegada("Debe ingresar un día valido.", "Detalle");
+            }
         }
 
         private void wEditOrdenServicio_FormClosing(object sender, FormClosingEventArgs e)
         {
+            this.CerrarYDevolverPresupuesto();
             this.wOrdSer.Enabled = true;
         }
 
@@ -1400,6 +1449,7 @@ namespace Presentacion.ProcesosCompras
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            this.CerrarYDevolverPresupuesto();
             this.Cancelar();
         }
 
@@ -1410,12 +1460,27 @@ namespace Presentacion.ProcesosCompras
 
         private void txtCodPar_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F1) { this.ListarPartidas(); }
+            if (e.KeyCode == Keys.F1)
+            {
+                if (this.txtCodAre.Text.Trim() == string.Empty)
+                {
+                    Mensaje.OperacionDenegada("Debe seleccionar el centro de costo", "Detalle");
+                    this.txtCodAre.Focus();
+                }
+                else
+                    this.ListarPartidas();
+            }
         }
 
         private void txtCodPar_DoubleClick(object sender, EventArgs e)
         {
-            this.ListarPartidas();
+            if (this.txtCodAre.Text.Trim() == string.Empty)
+            {
+                Mensaje.OperacionDenegada("Debe seleccionar el centro de costo", "Detalle");
+                this.txtCodAre.Focus();
+            }
+            else
+                this.ListarPartidas();
         }
 
         private void txtCodAux_Validating(object sender, CancelEventArgs e)

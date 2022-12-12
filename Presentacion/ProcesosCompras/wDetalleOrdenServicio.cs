@@ -291,8 +291,6 @@ namespace Presentacion.ProcesosCompras
             this.txtCEsUniCon.Text = pObj.CEsUnidadConvertida;
             this.txtFacCon.Text = Formato.NumeroDecimal(pObj.FactorConversion.ToString(), 3);
             this.txtCodMon.Text = this.wEditOrdSer.txtCodMonSyD.Text.ToString().Trim();
-            this.txtPresupuesto.Text = Formato.NumeroDecimal(0, 3);
-            this.txtSaldoPresupuesto.Text = Formato.NumeroDecimal(0, 3);
             eCodAre = pObj.CodigoCentroCosto;
         }
 
@@ -542,6 +540,8 @@ namespace Presentacion.ProcesosCompras
             //this.txtCantMovDet.Text = Formato.NumeroDecimal(this.ObtenerCantidad(), 3);
 
             //mostrar costo
+            if (this.eOperacion == Universal.Opera.Adicionar)
+                this.CargarPresupuesto();
             this.MostrarCosto();
 
             //cambiar atributo solo lectura al cambiar existencia
