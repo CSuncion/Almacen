@@ -96,6 +96,8 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.lblValCot = new System.Windows.Forms.Label();
+            this.lblPreVenTipCam = new System.Windows.Forms.Label();
+            this.lblPreMatAccTipCam = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovDet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -619,7 +621,7 @@
             // 
             // txtPreMatAcc
             // 
-            this.txtPreMatAcc.Location = new System.Drawing.Point(324, 335);
+            this.txtPreMatAcc.Location = new System.Drawing.Point(443, 335);
             this.txtPreMatAcc.Name = "txtPreMatAcc";
             this.txtPreMatAcc.Size = new System.Drawing.Size(99, 22);
             this.txtPreMatAcc.TabIndex = 536;
@@ -628,7 +630,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(236, 338);
+            this.label10.Location = new System.Drawing.Point(355, 338);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 14);
             this.label10.TabIndex = 535;
@@ -709,11 +711,31 @@
             this.lblValCot.TabIndex = 549;
             this.lblValCot.Text = "lblValCot";
             // 
+            // lblPreVenTipCam
+            // 
+            this.lblPreVenTipCam.AutoSize = true;
+            this.lblPreVenTipCam.Location = new System.Drawing.Point(236, 338);
+            this.lblPreVenTipCam.Name = "lblPreVenTipCam";
+            this.lblPreVenTipCam.Size = new System.Drawing.Size(99, 14);
+            this.lblPreVenTipCam.TabIndex = 550;
+            this.lblPreVenTipCam.Text = "lblPreVenTipCam";
+            // 
+            // lblPreMatAccTipCam
+            // 
+            this.lblPreMatAccTipCam.AutoSize = true;
+            this.lblPreMatAccTipCam.Location = new System.Drawing.Point(562, 338);
+            this.lblPreMatAccTipCam.Name = "lblPreMatAccTipCam";
+            this.lblPreMatAccTipCam.Size = new System.Drawing.Size(95, 14);
+            this.lblPreMatAccTipCam.TabIndex = 551;
+            this.lblPreMatAccTipCam.Text = "lblPreMATipCam";
+            // 
             // wEditOrdenServicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 600);
+            this.Controls.Add(this.lblPreMatAccTipCam);
+            this.Controls.Add(this.lblPreVenTipCam);
             this.Controls.Add(this.lblValCot);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.txtCodPar);
@@ -853,6 +875,8 @@
             this.Controls.SetChildIndex(this.txtCodPar, 0);
             this.Controls.SetChildIndex(this.label30, 0);
             this.Controls.SetChildIndex(this.lblValCot, 0);
+            this.Controls.SetChildIndex(this.lblPreVenTipCam, 0);
+            this.Controls.SetChildIndex(this.lblPreMatAccTipCam, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovDet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -929,5 +953,7 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label lblValCot;
+        private System.Windows.Forms.Label lblPreVenTipCam;
+        private System.Windows.Forms.Label lblPreMatAccTipCam;
     }
 }

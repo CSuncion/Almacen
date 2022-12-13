@@ -323,16 +323,24 @@ namespace Presentacion.ProcesosCompras
             this.txtCondiciones.Text = pMovCab.Condiciones;
             this.txtGarantia.Text = pMovCab.Garantia.ToString();
             Cmb.SeleccionarValorItem(this.cmbGarantia, pMovCab.CGarantia);
+            Cmb.SeleccionarValorItem(this.cmbMon, pMovCab.CCodigoMoneda);
+            this.txtCodMonSyD.Text = Cmb.ObtenerValor(this.cmbMon, string.Empty);
             this.txtValCotizacion.Text = pMovCab.ValidezCotizacion.ToString();
             this.valCoti = pMovCab.ValidezCotizacion;
             this.lblValCot.Text = pMovCab.FechaValidezCotizacion.ToString();
-            this.txtPreVenta.Text = Formato.NumeroDecimal(pMovCab.PrecioVtaMovimientoCabe, 2);
-            this.txtPreMatAcc.Text = Formato.NumeroDecimal(pMovCab.PrecioMaterialAccesorioOrdenServicio, 2);
+            this.txtPreVenta.Text = Cmb.ObtenerValor(this.cmbMon, string.Empty) == "0" ?
+                Formato.NumeroDecimal(pMovCab.PrecioVtaMovimientoCabe, 2)
+                : (Convert.ToDecimal(Formato.NumeroDecimal(pMovCab.PrecioVtaMovimientoCabe, 2)) / Convert.ToDecimal(this.txtTipCam.Text)).ToString();
+            this.lblPreVenTipCam.Text = Cmb.ObtenerValor(this.cmbMon, string.Empty) == "0" ?
+                "0" : (Convert.ToDecimal(Formato.NumeroDecimal(pMovCab.PrecioVtaMovimientoCabe, 2)) * Convert.ToDecimal(this.txtTipCam.Text)).ToString();
+            this.txtPreMatAcc.Text = Cmb.ObtenerValor(this.cmbMon, string.Empty) == "0" ?
+                Formato.NumeroDecimal(pMovCab.PrecioMaterialAccesorioOrdenServicio, 2)
+                : (Convert.ToDecimal(Formato.NumeroDecimal(pMovCab.PrecioMaterialAccesorioOrdenServicio, 2)) / Convert.ToDecimal(this.txtTipCam.Text)).ToString();
+            this.lblPreMatAccTipCam.Text = Cmb.ObtenerValor(this.cmbMon, string.Empty) == "0" ?
+                "0" : (Convert.ToDecimal(Formato.NumeroDecimal(pMovCab.PrecioMaterialAccesorioOrdenServicio, 2)) * Convert.ToDecimal(this.txtTipCam.Text)).ToString();
             this.txtValorVenta.Text = Formato.NumeroDecimal(pMovCab.ValorVtaMovimientoCabe, 2);
             this.txtValorIGV.Text = Formato.NumeroDecimal(pMovCab.IgvMovimientoCabe, 2);
             this.txtTotalGral.Text = Formato.NumeroDecimal(pMovCab.MontoTotalMovimientoCabe, 2);
-            Cmb.SeleccionarValorItem(this.cmbMon, pMovCab.CCodigoMoneda);
-            this.txtCodMonSyD.Text = Cmb.ObtenerValor(this.cmbMon, string.Empty);
             Cmb.SeleccionarValorItem(this.cmbFormaPago, pMovCab.CFormaPago);
             this.txtCodAux.Text = pMovCab.CodigoAuxiliar;
             this.txtDesAux.Text = pMovCab.DescripcionAuxiliar;
@@ -510,10 +518,28 @@ namespace Presentacion.ProcesosCompras
 
         public void ObtenerValoresCalculados()
         {
-            decimal preVenta = Convert.ToDecimal(this.txtPreVenta.Text);
-            decimal preMatAcc = this.txtPreMatAcc.Text == string.Empty ? 0 : Convert.ToDecimal(this.txtPreMatAcc.Text);
+            decimal preVenta = 0;
+            decimal preMatAcc = 0;
+            decimal tipoCambio = Convert.ToDecimal(this.txtTipCam.Text);
+
+            if (Cmb.ObtenerValor(this.cmbMon, string.Empty) == "0")
+            {
+                preVenta = Convert.ToDecimal(this.txtPreVenta.Text);
+                preMatAcc = this.txtPreMatAcc.Text == string.Empty ? 0 : Convert.ToDecimal(this.txtPreMatAcc.Text);
+            }
+            else
+            {
+                preVenta = Convert.ToDecimal(this.txtPreVenta.Text) * tipoCambio;
+                this.lblPreVenTipCam.Text = preVenta.ToString();
+                preMatAcc = this.txtPreMatAcc.Text == string.Empty ? 0 : Convert.ToDecimal(this.txtPreMatAcc.Text) * tipoCambio;
+                this.lblPreMatAccTipCam.Text = preMatAcc.ToString();
+            }
+
             decimal igv = Convert.ToDecimal(this.txtIgv.Text);
+
+
             decimal valIgv = (preVenta + preMatAcc) * igv / (igv + 100);
+
             decimal valVenta = (preVenta + preMatAcc) - valIgv;
 
             this.txtValorVenta.Text = (Formato.NumeroDecimal(valVenta, 2)).ToString();
@@ -557,12 +583,16 @@ namespace Presentacion.ProcesosCompras
             pObj.NombreUnidadMedida = string.Empty;
             pObj.StockAnteriorExistencia = 0;
             pObj.PrecioAnteriorExistencia = Convert.ToDecimal(0);
-            pObj.PrecioUnitarioMovimientoDeta = Convert.ToDecimal(this.txtPreVenta.Text);
+            pObj.PrecioUnitarioMovimientoDeta = Cmb.ObtenerValor(this.cmbMon, string.Empty) == "0" ?
+                Convert.ToDecimal(this.txtPreVenta.Text)
+                : Convert.ToDecimal(this.txtPreVenta.Text) * Convert.ToDecimal(this.txtTipCam.Text);
             pObj.PrecioUnitarioDolarMovimientoDeta = Convert.ToDecimal(this.txtPreVenta.Text) * Convert.ToDecimal(this.txtTipCam.Text);
             pObj.CantidadMovimientoDeta = Convert.ToDecimal(1);
             pObj.StockExistencia = MovimientoOCDetaRN.ObtenerNuevoStockPorAdicion(pObj);
             pObj.PrecioExistencia = MovimientoOCDetaRN.ObtenerNuevoPrecioPromedio(pObj);
-            pObj.CostoMovimientoDeta = Convert.ToDecimal(this.txtPreVenta.Text);
+            pObj.CostoMovimientoDeta = Cmb.ObtenerValor(this.cmbMon, string.Empty) == "0" ?
+                Convert.ToDecimal(this.txtPreVenta.Text)
+                : Convert.ToDecimal(this.txtPreVenta.Text) * Convert.ToDecimal(this.txtTipCam.Text);
             pObj.GlosaMovimientoDeta = this.txtGloMovCab.Text.Trim();
             pObj.CodigoTipo = "PT";
             pObj.CEsLote = string.Empty;
@@ -588,7 +618,8 @@ namespace Presentacion.ProcesosCompras
             win.eOperacion = Universal.Opera.Adicionar;
             this.eFranjaDgvMovDet = Dgv.Franja.PorValor;
             TabCtrl.InsertarVentana(this, win);
-            win.VentanaAdicionar(Convert.ToDecimal(this.txtPreMatAcc.Text));
+            win.VentanaAdicionar(Cmb.ObtenerValor(this.cmbMon, string.Empty) == "0" ? Convert.ToDecimal(this.txtPreMatAcc.Text)
+                : Convert.ToDecimal(this.lblPreMatAccTipCam.Text));
         }
 
         public bool ElegirCentroCostoAntesDeLlenarGrilla()
@@ -828,7 +859,9 @@ namespace Presentacion.ProcesosCompras
             win.eOperacion = Universal.Opera.Modificar;
             this.eFranjaDgvMovDet = Dgv.Franja.PorValor;
             TabCtrl.InsertarVentana(this, win);
-            win.VentanaModificar(this.eLisMovDet[Dgv.ObtenerIndiceRegistroXFranja(this.dgvMovDet)], Convert.ToDecimal(this.txtPreMatAcc.Text));
+            win.VentanaModificar(this.eLisMovDet[Dgv.ObtenerIndiceRegistroXFranja(this.dgvMovDet)],
+                Cmb.ObtenerValor(this.cmbMon, string.Empty) == "0" ? Convert.ToDecimal(this.txtPreMatAcc.Text)
+                : Convert.ToDecimal(this.lblPreMatAccTipCam.Text));
         }
 
         public void AccionQuitarItem()
@@ -857,26 +890,6 @@ namespace Presentacion.ProcesosCompras
         public void Cancelar()
         {
             Generico.CancelarVentanaEditar(this, eOperacion, eMas, this.wOrdSer.eTitulo);
-        }
-
-        public void CerrarYDevolverPresupuesto()
-        {
-            if (this.eLisMovDet.Count > 0)
-            {
-                PresupuestoEN iPerEN = new PresupuestoEN();
-                iPerEN.Adicionales.CampoOrden = eNombreColumnaDgvPer;
-                this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
-
-                PresupuestoEN xObj = new PresupuestoEN();
-                xObj = new PresupuestoEN();
-                xObj = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
-                                                && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault();
-                xObj.CodigoPresupuesto = wOrdSer.lblPeriodo.Text;
-                xObj.CCentroCosto = this.txtCodAre.Text.Trim();
-                xObj.SaldoPresupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
-                                                && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuesto + this.eLisMovDet.Sum(x => x.CostoMovimientoDeta);
-                PresupuestoRN.ModificarPresupuesto(xObj);
-            }
         }
 
         public void LLenarMovimientoDetaDeBaseDatos(MovimientoOCCabeEN pObj)
@@ -1054,20 +1067,32 @@ namespace Presentacion.ProcesosCompras
                 PresupuestoEN xObj = new PresupuestoEN();
 
                 this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
-                string presupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
-                                    && x.CCentroCosto == this.txtCodAre.Text.Trim()).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
-                                    Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
-                                    && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuesto.ToString(), 2);
-
                 xObj = new PresupuestoEN();
                 xObj = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
                                 && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault();
-                xObj.CodigoPresupuesto = wOrdSer.lblPeriodo.Text;
-                xObj.CCentroCosto = this.txtCodAre.Text.Trim();
                 xObj.SaldoPresupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
                                             && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuesto + this.eLisMovDet.Sum(x => x.CostoMovimientoDeta);
                 PresupuestoRN.ModificarPresupuesto(xObj);
+            }
+        }
 
+        public void CerrarYDevolverPresupuesto()
+        {
+            if (this.eLisMovDet.Count > 0)
+            {
+                PresupuestoEN iPerEN = new PresupuestoEN();
+                iPerEN.Adicionales.CampoOrden = eNombreColumnaDgvPer;
+                this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
+
+                PresupuestoEN xObj = new PresupuestoEN();
+                xObj = new PresupuestoEN();
+                xObj = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                                                && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault();
+                xObj.CodigoPresupuesto = wOrdSer.lblPeriodo.Text;
+                xObj.CCentroCosto = this.txtCodAre.Text.Trim();
+                xObj.SaldoPresupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                                                && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuesto + this.eLisMovDet.Sum(x => x.CostoMovimientoDeta);
+                PresupuestoRN.ModificarPresupuesto(xObj);
             }
         }
 
