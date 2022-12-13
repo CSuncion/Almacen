@@ -322,6 +322,7 @@ namespace Presentacion.ProcesosCompras
             this.txtIgv.Text = pMovCab.IgvPorcentaje.ToString();
             this.txtCondiciones.Text = pMovCab.Condiciones;
             this.txtGarantia.Text = pMovCab.Garantia.ToString();
+            this.txtTipCam.Text = pMovCab.TipoCambio.ToString();
             Cmb.SeleccionarValorItem(this.cmbGarantia, pMovCab.CGarantia);
             Cmb.SeleccionarValorItem(this.cmbMon, pMovCab.CCodigoMoneda);
             this.txtCodMonSyD.Text = Cmb.ObtenerValor(this.cmbMon, string.Empty);
@@ -695,9 +696,13 @@ namespace Presentacion.ProcesosCompras
             pMovCab.CFormaPago = Cmb.ObtenerValor(this.cmbFormaPago, string.Empty);
             pMovCab.NFormaPago = Cmb.ObtenerTexto(this.cmbFormaPago);
             pMovCab.CTipoServicio = this.txtCodTipSer.Text;
-            pMovCab.PrecioMaterialAccesorioOrdenServicio = Convert.ToDecimal(this.txtPreMatAcc.Text);
+            pMovCab.PrecioMaterialAccesorioOrdenServicio = Cmb.ObtenerValor(this.cmbMon, string.Empty) == "0" ?
+                Convert.ToDecimal(this.txtPreMatAcc.Text)
+                : Convert.ToDecimal(this.txtPreMatAcc.Text) * Convert.ToDecimal(this.txtTipCam.Text);
             pMovCab.IgvMovimientoCabe = Convert.ToDecimal(this.txtValorIGV.Text);
-            pMovCab.PrecioVtaMovimientoCabe = Convert.ToDecimal(this.txtPreVenta.Text);
+            pMovCab.PrecioVtaMovimientoCabe = Cmb.ObtenerValor(this.cmbMon, string.Empty) == "0" ?
+                Convert.ToDecimal(this.txtPreVenta.Text)
+                : Convert.ToDecimal(this.txtPreVenta.Text) * Convert.ToDecimal(this.txtTipCam.Text);
             pMovCab.ValorVtaMovimientoCabe = Convert.ToDecimal(this.txtValorVenta.Text);
             pMovCab.ClaveMovimientoCabe = MovimientoOCCabeRN.ObtenerClaveMovimientoCabe(pMovCab);
         }
@@ -827,13 +832,21 @@ namespace Presentacion.ProcesosCompras
             xObj.CodigoPresupuesto = wOrdSer.lblPeriodo.Text;
             xObj.CCentroCosto = this.txtCodAre.Text;
             if (this.txtPreVenta.Text == string.Empty || Convert.ToDecimal(this.txtPreVenta.Text) <= 0)
-                xObj.NuevoSaldoPresupuesto = Convert.ToDecimal(this.SaldoPresupuesto) + Convert.ToDecimal(this.eLisMovDet.Find(x => x.CodigoExistencia == "999999").PrecioUnitarioMovimientoDeta);
+                xObj.NuevoSaldoPresupuesto = Convert.ToDecimal(this.SaldoPresupuesto)
+                    + Convert.ToDecimal(this.eLisMovDet.Find(x => x.CodigoExistencia == "999999").PrecioUnitarioMovimientoDeta);
             else
             {
                 if (this.eLisMovDet.Count > 0)
-                    xObj.NuevoSaldoPresupuesto = (Convert.ToDecimal(this.SaldoPresupuesto) + Convert.ToDecimal(this.eLisMovDet.Find(x => x.CodigoExistencia == "999999").PrecioUnitarioMovimientoDeta)) - Convert.ToDecimal(this.txtPreVenta.Text);
+                    xObj.NuevoSaldoPresupuesto = (Convert.ToDecimal(this.SaldoPresupuesto)
+                        + Convert.ToDecimal(this.eLisMovDet.Find(x => x.CodigoExistencia == "999999").PrecioUnitarioMovimientoDeta))
+                        - (Cmb.ObtenerValor(this.cmbMon, string.Empty) == "0" ?
+                        Convert.ToDecimal(this.txtPreVenta.Text)
+                        : Convert.ToDecimal(this.txtPreVenta.Text) * Convert.ToDecimal(this.txtTipCam.Text));
                 else
-                    xObj.NuevoSaldoPresupuesto = Convert.ToDecimal(this.SaldoPresupuesto) - Convert.ToDecimal(this.txtPreVenta.Text);
+                    xObj.NuevoSaldoPresupuesto = Convert.ToDecimal(this.SaldoPresupuesto)
+                        - (Cmb.ObtenerValor(this.cmbMon, string.Empty) == "0" ?
+                        Convert.ToDecimal(this.txtPreVenta.Text)
+                        : Convert.ToDecimal(this.txtPreVenta.Text) * Convert.ToDecimal(this.txtTipCam.Text));
             }
 
             PresupuestoRN.ModificarPresupuestoActual(xObj);
@@ -1474,7 +1487,6 @@ namespace Presentacion.ProcesosCompras
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.CerrarYDevolverPresupuesto();
             this.Cancelar();
         }
 
