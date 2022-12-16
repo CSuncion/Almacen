@@ -626,6 +626,7 @@
             this.txtPreMatAcc.Size = new System.Drawing.Size(99, 22);
             this.txtPreMatAcc.TabIndex = 536;
             this.txtPreMatAcc.Validating += new System.ComponentModel.CancelEventHandler(this.txtPreMatAcc_Validating);
+            this.txtPreMatAcc.Validated += new System.EventHandler(this.txtPreMatAcc_Validated);
             // 
             // label10
             // 
@@ -643,6 +644,7 @@
             this.txtPreVenta.Size = new System.Drawing.Size(99, 22);
             this.txtPreVenta.TabIndex = 534;
             this.txtPreVenta.Validating += new System.ComponentModel.CancelEventHandler(this.txtPreVenta_Validating);
+            this.txtPreVenta.Validated += new System.EventHandler(this.txtPreVenta_Validated);
             // 
             // label9
             // 
