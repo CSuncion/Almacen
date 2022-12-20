@@ -134,7 +134,7 @@ namespace Entidades
         private string _NOrigenVentanaCreacion = string.Empty;
         private decimal _CostoFleteMovimientoCabe = 0;
         private string _CCodigoMoneda = "0";
-        private string _NCodigoMoneda = "Sol";
+        private string _NCodigoMoneda = string.Empty;
         private string _ClaveEncajado = string.Empty;
         private string _ClaveProduccionProTer = string.Empty;
         private string _DetalleProduccionDetaAdicional = string.Empty;

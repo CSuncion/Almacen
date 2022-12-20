@@ -27,7 +27,8 @@ namespace Entidades.Adicionales
             Visualizar,
             Anular,
             AgregarVarios,
-            Pendiente
+            Pendiente,
+            Cancelar
         }
 
 

@@ -1913,6 +1913,7 @@
     <Compile Include="Sistema\wUsuario.designer.cs">
       <DependentUpon>wUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilidades\Utilidad.cs" />
     <Compile Include="Varios\wCopiaSeguridad.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -4,6 +4,7 @@ using Entidades.Adicionales;
 using Negocio;
 using Presentacion.FuncionesGenericas;
 using Presentacion.Listas;
+using Presentacion.Utilidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -670,6 +671,7 @@ namespace Presentacion.ProcesosCompras
             pMovCab.CodigoPersonalRecibe = string.Empty;
             pMovCab.CostoFleteMovimientoCabe = Conversion.ADecimal(null, 0);
             pMovCab.CCodigoMoneda = Cmb.ObtenerValor(this.cmbMon, string.Empty);
+            pMovCab.NCodigoMoneda = Cmb.ObtenerTexto(this.cmbMon);
             pMovCab.TipoCambio = Conversion.ADecimal(this.txtTipCam.Text, 0);
             pMovCab.CodigoAuxiliar = this.txtCodAux.Text.Trim();
             pMovCab.DescripcionAuxiliar = this.txtDesAux.Text.Trim();
@@ -904,6 +906,7 @@ namespace Presentacion.ProcesosCompras
 
         public void Cancelar()
         {
+            this.eOperacion = Universal.Opera.Cancelar;
             Generico.CancelarVentanaEditar(this, eOperacion, eMas, this.wOrdSer.eTitulo);
         }
 
@@ -1102,55 +1105,39 @@ namespace Presentacion.ProcesosCompras
             this.AsignarMovimientoCabe(iCuoEN);
             this.LLenarMovimientoDetaDeBaseDatos(iCuoEN);
 
-            if (this.eLisMovDet.Count > 0)
+            foreach (MovimientoOCDetaEN obj in eListMovDeta)
             {
-                foreach (MovimientoOCDetaEN obj in eListMovDeta)
+                if (eListMovDeta.Count() != eLisMovDet.Count())
                 {
-                    if (eLisMovDet.Any(e => e.ClaveObjeto == obj.ClaveObjeto))
+                    eLisMovDet.ForEach(x =>
                     {
-                        eListMovDetTmp.Add(obj);
-                    }
-                }
-
-                PresupuestoEN iPerEN = new PresupuestoEN();
-                iPerEN.Adicionales.CampoOrden = eNombreColumnaDgvPer;
-                this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
-
-
-
-                PresupuestoEN xObj = new PresupuestoEN();
-                foreach (MovimientoOCDetaEN objDeta in eListMovDetTmp)
-                {
-                    string presupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
-                                            && x.CCentroCosto == objDeta.CodigoCentroCosto).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
-                                            Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
-                                            && x.CCentroCosto == objDeta.CodigoCentroCosto).FirstOrDefault().SaldoPresupuesto.ToString(), 2);
-
-                    xObj = new PresupuestoEN();
-                    xObj = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
-                                && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault();
-                    xObj.SaldoPresupuesto = Convert.ToDecimal(presupuesto) - (objDeta.PrecioUnitarioMovimientoDeta * objDeta.CantidadMovimientoDeta);
-                    PresupuestoRN.ModificarPresupuesto(xObj);
+                        if (x.ClaveObjeto != obj.ClaveObjeto)
+                        {
+                            eListMovDetTmp.Add(obj);
+                        }
+                    });
                 }
             }
-            else
+
+            PresupuestoEN iPerEN = new PresupuestoEN();
+            iPerEN.Adicionales.CampoOrden = eNombreColumnaDgvPer;
+            this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
+
+            PresupuestoEN xObj = new PresupuestoEN();
+            foreach (MovimientoOCDetaEN objDeta in eListMovDetTmp)
             {
-                if (eListMovDeta.Count > 0)
-                {
-                    PresupuestoEN iPerEN = new PresupuestoEN();
-                    iPerEN.Adicionales.CampoOrden = eNombreColumnaDgvPer;
-                    this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
+                string presupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                                        && x.CCentroCosto == objDeta.CodigoCentroCosto).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
+                                        Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                                        && x.CCentroCosto == objDeta.CodigoCentroCosto).FirstOrDefault().SaldoPresupuesto.ToString(), 2);
 
-                    PresupuestoEN xObj = new PresupuestoEN();
-                    xObj = new PresupuestoEN();
-                    xObj = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
-                                                    && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault();
-                    xObj.SaldoPresupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
-                                                    && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuesto
-                                                    + this.eLisMovDet.Sum(x => x.CostoMovimientoDeta);
-                    PresupuestoRN.ModificarPresupuesto(xObj);
-                }
+                xObj = new PresupuestoEN();
+                xObj = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                            && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault();
+                xObj.SaldoPresupuesto = Convert.ToDecimal(presupuesto) - (objDeta.PrecioUnitarioMovimientoDeta * objDeta.CantidadMovimientoDeta);
+                PresupuestoRN.ModificarPresupuesto(xObj);
             }
+
         }
 
         public void MostrarNuevoNumero()
@@ -1305,6 +1292,7 @@ namespace Presentacion.ProcesosCompras
 
         public void GenerarOrdenServicioExcel()
         {
+            Utilidad oMoneda = new Utilidad();
             MovimientoOCCabeEN iMovCabEn = new MovimientoOCCabeEN();
             this.AsignarMovimientoCabe(iMovCabEn);
 
@@ -1352,10 +1340,12 @@ namespace Presentacion.ProcesosCompras
             iHoja.Cells[5, "N"] = iMovCabEn.ClaveMovimientoCabe;
             iHoja.Cells[6, "N"] = iMovCabEn.FechaMovimientoCabe;
 
-            iHoja.Cells[23, "M"] = iMovCabEn.CodigoAuxiliar;
+            iHoja.Cells[23, "M"] = "'" + iMovCabEn.CodigoAuxiliar;
             iHoja.Cells[25, "M"] = iMovCabEn.CorreoAuxiliar;
             iHoja.Cells[23, "D"] = iMovCabEn.DescripcionAuxiliar;
             iHoja.Cells[25, "D"] = iMovCabEn.NFormaPago;
+
+            iHoja.Cells[28, "M"] = iMovCabEn.NCodigoMoneda;
 
             iHoja.Cells[29, "D"] = iMovCabEn.DireccionAuxiliar;
 
@@ -1363,10 +1353,27 @@ namespace Presentacion.ProcesosCompras
             iHoja.Cells[36, "D"] = iMovCabEn.GlosaMovimientoCabe;
             iHoja.Cells[39, "E"] = this.eLisMovDet.FirstOrDefault().NCodigoPartida;
 
-            iHoja.Cells[79, "O"] = iMovCabEn.ValorVtaMovimientoCabe;
-            iHoja.Cells[81, "O"] = iMovCabEn.ValorVtaMovimientoCabe;
-            iHoja.Cells[82, "O"] = iMovCabEn.IgvMovimientoCabe;
-            iHoja.Cells[85, "O"] = iMovCabEn.MontoTotalMovimientoCabe;
+            string resultado = string.Empty;
+
+            if (iMovCabEn.CCodigoMoneda == "0")
+            {
+                iHoja.Cells[79, "O"] = iMovCabEn.ValorVtaMovimientoCabe;
+                iHoja.Cells[81, "O"] = iMovCabEn.ValorVtaMovimientoCabe;
+                iHoja.Cells[82, "O"] = iMovCabEn.IgvMovimientoCabe;
+                iHoja.Cells[85, "O"] = iMovCabEn.MontoTotalMovimientoCabe;
+                resultado = oMoneda.Convertir(iMovCabEn.MontoTotalMovimientoCabe.ToString(), true, "SOLES");
+            }
+            else
+            {
+                iHoja.Cells[79, "O"] = iMovCabEn.ValorVtaMovimientoCabe / iMovCabEn.TipoCambio;
+                iHoja.Cells[81, "O"] = iMovCabEn.ValorVtaMovimientoCabe / iMovCabEn.TipoCambio;
+                iHoja.Cells[82, "O"] = iMovCabEn.IgvMovimientoCabe / iMovCabEn.TipoCambio;
+                iHoja.Cells[85, "O"] = iMovCabEn.MontoTotalMovimientoCabe / iMovCabEn.TipoCambio;
+                resultado = oMoneda.Convertir(iMovCabEn.MontoTotalMovimientoCabe.ToString(), true, "DOLARES");
+            }
+
+
+            iHoja.Cells[79, "C"] = resultado;
 
             int filaItem = 45;
             int filaNueva = 0;
@@ -1379,13 +1386,23 @@ namespace Presentacion.ProcesosCompras
                 iHoja.Cells[filaItem, "C"] = movDeta.DescripcionExistencia;
                 iHoja.Cells[filaItem, "K"] = movDeta.NombreUnidadMedida;
                 iHoja.Cells[filaItem, "L"] = movDeta.CantidadMovimientoDeta;
-                iHoja.Cells[filaItem, "M"] = movDeta.PrecioUnitarioMovimientoDeta;
-                iHoja.Cells[filaItem, "O"] = movDeta.CostoMovimientoDeta;
+                if (iMovCabEn.CCodigoMoneda == "0")
+                {
+                    iHoja.Cells[filaItem, "M"] = movDeta.PrecioUnitarioMovimientoDeta;
+                    iHoja.Cells[filaItem, "O"] = movDeta.CostoMovimientoDeta;
+                }
+                else
+                {
+                    iHoja.Cells[filaItem, "M"] = movDeta.PrecioUnitarioMovimientoDeta / iMovCabEn.TipoCambio;
+                    iHoja.Cells[filaItem, "O"] = movDeta.CostoMovimientoDeta / iMovCabEn.TipoCambio;
+                }
+
                 filaItem++;
                 //Excel.Range to = iHoja.Range["A" + filaItem + ":AI" + filaItem];
                 //to.Insert();
                 //from.Copy(to);                
             }
+
 
             iLibro.SaveAs(destFile, Excel.XlFileFormat.xlWorkbookDefault, iOpcional, iOpcional, true, iOpcional,
                 Excel.XlSaveAsAccessMode.xlExclusive, iOpcional, iOpcional, iOpcional, iOpcional, iOpcional);
