@@ -1109,13 +1109,20 @@ namespace Presentacion.ProcesosCompras
             {
                 if (eListMovDeta.Count() != eLisMovDet.Count())
                 {
-                    eLisMovDet.ForEach(x =>
+                    if (eLisMovDet.Count() == 0 && this.eOperacion == Universal.Opera.Cancelar)
                     {
-                        if (x.ClaveObjeto != obj.ClaveObjeto)
+                        eListMovDetTmp.Add(obj);
+                    }
+                    else
+                    {
+                        eLisMovDet.ForEach(x =>
                         {
-                            eListMovDetTmp.Add(obj);
-                        }
-                    });
+                            if (x.ClaveObjeto != obj.ClaveObjeto)
+                            {
+                                eListMovDetTmp.Add(obj);
+                            }
+                        });
+                    }
                 }
             }
 
@@ -1134,7 +1141,14 @@ namespace Presentacion.ProcesosCompras
                 xObj = new PresupuestoEN();
                 xObj = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
                             && x.CCentroCosto == this.txtCodAre.Text.Trim()).FirstOrDefault();
-                xObj.SaldoPresupuesto = Convert.ToDecimal(presupuesto) - (objDeta.PrecioUnitarioMovimientoDeta * objDeta.CantidadMovimientoDeta);
+                if (eLisMovDet.Count() == 0 && this.eOperacion == Universal.Opera.Cancelar)
+                {
+                    xObj.SaldoPresupuesto = Convert.ToDecimal(presupuesto) + (objDeta.PrecioUnitarioMovimientoDeta * objDeta.CantidadMovimientoDeta);
+                }
+                else
+                {
+                    xObj.SaldoPresupuesto = Convert.ToDecimal(presupuesto) - (objDeta.PrecioUnitarioMovimientoDeta * objDeta.CantidadMovimientoDeta);
+                }
                 PresupuestoRN.ModificarPresupuesto(xObj);
             }
 
