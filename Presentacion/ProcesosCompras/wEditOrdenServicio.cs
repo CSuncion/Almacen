@@ -1375,7 +1375,7 @@ namespace Presentacion.ProcesosCompras
                 iHoja.Cells[81, "O"] = iMovCabEn.ValorVtaMovimientoCabe;
                 iHoja.Cells[82, "O"] = iMovCabEn.IgvMovimientoCabe;
                 iHoja.Cells[85, "O"] = iMovCabEn.MontoTotalMovimientoCabe;
-                resultado = oMoneda.Convertir(iMovCabEn.MontoTotalMovimientoCabe.ToString(), true, "SOLES");
+                resultado = oMoneda.Convertir(iMovCabEn.MontoTotalMovimientoCabe.ToString("0.00"), true, "SOLES");
             }
             else
             {
@@ -1383,7 +1383,7 @@ namespace Presentacion.ProcesosCompras
                 iHoja.Cells[81, "O"] = iMovCabEn.ValorVtaMovimientoCabe / iMovCabEn.TipoCambio;
                 iHoja.Cells[82, "O"] = iMovCabEn.IgvMovimientoCabe / iMovCabEn.TipoCambio;
                 iHoja.Cells[85, "O"] = iMovCabEn.MontoTotalMovimientoCabe / iMovCabEn.TipoCambio;
-                resultado = oMoneda.Convertir(iMovCabEn.MontoTotalMovimientoCabe.ToString(), true, "DOLARES");
+                resultado = oMoneda.Convertir((iMovCabEn.MontoTotalMovimientoCabe / iMovCabEn.TipoCambio).ToString("0.00"), true, "DOLARES");
             }
 
 

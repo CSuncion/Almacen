@@ -277,7 +277,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Rr/sw57VJLgzqSOavooppivkQpLXbdLMbvAjs9wgzBU=</dsig:DigestValue>
+        <dsig:DigestValue>i93sTp6YFST5nssBCNmKiiVXrprZpWZGLZ/H7zgmMSM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -289,7 +289,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8h32Qv4MUlackvqyn3HGtR1I1nmW8T8TlW6KgQAPN5M=</dsig:DigestValue>
+        <dsig:DigestValue>aGzAQTTjeKtiQbxryhQQ/xPUEpg63OK4pGBhTs04FxY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -337,7 +337,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>u7uU4uJuNlNCUSRc9QBEyjn8SZWbd+ZUdqWmzpz5p2I=</dsig:DigestValue>
+        <dsig:DigestValue>RyAV9pONM79PDQQ2WEXDIswm5Uv6k9g3URYC07UVxiI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -349,7 +349,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fXB0l58pWYSPgtXZLjlsnW5LulNPKJJ5gyev1d1q2qQ=</dsig:DigestValue>
+        <dsig:DigestValue>Oea/n6lfe9MT41vnTUwrV7A1mvGqrSKdNlNefIRy4LA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -37,14 +37,13 @@ namespace Presentacion.Utilidades
             if (mc.Count > 0)
             {
                 //se divide el numero 0000000,00 -> entero y decimal
-                String[] Num = numero.Split(',');
+                string[] Num = numero.Split(',');
 
-                string MN = " M.N.";
-                if (moneda != "PESOS")
-                    MN = "";
+                string MN = moneda.ToUpper();
 
                 //de da formato al numero decimal
-                parte_decimal = moneda + " " + Num[1] + "/100" + MN;
+                parte_decimal = "CON " + Num[1] + "/100" + " " + MN;
+
                 //se convierte el numero a literal
                 if (int.Parse(Num[0]) == 0)
                 {//si el valor es cero
