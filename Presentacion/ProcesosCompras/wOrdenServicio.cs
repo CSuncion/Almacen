@@ -528,6 +528,24 @@ namespace Presentacion.ProcesosCompras
             return iIngEN;
         }
 
+        public void AbrirArchivo()
+        {
+            try
+            {
+                MovimientoOCCabeEN iIngEN = new MovimientoOCCabeEN();
+                this.AsignarMovimientoCabe(iIngEN);
+                ParametroEN iParEN = ParametroRN.BuscarParametro();
+                string targetPath = iParEN.RutaCarpetaPlantillas;
+                targetPath = targetPath + @"\" + iIngEN.ClaveMovimientoCabe;
+                System.Diagnostics.Process.Start(targetPath);
+            }
+            catch (Exception)
+            {
+                Mensaje.OperacionDenegada("No encuentra la ruta de la orden de servicio", eTitulo);
+            }
+
+        }
+
         private void btnPeriodo_Click(object sender, EventArgs e)
         {
             this.AccionSeleccionarPeriodo();
@@ -622,6 +640,11 @@ namespace Presentacion.ProcesosCompras
         private void DgvMovCab_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             this.AsignarMovimientoOrdenServicioEnviar(e.RowIndex, e.ColumnIndex);
+        }
+
+        private void tsbAbrirCarpeta_Click(object sender, EventArgs e)
+        {
+            this.AbrirArchivo();
         }
     }
 }

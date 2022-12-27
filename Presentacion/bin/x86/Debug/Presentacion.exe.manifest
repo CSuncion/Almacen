@@ -277,7 +277,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>i4ovKiNsPtxey19uTntanh1Hhr91asgu7mO3GfS0QWE=</dsig:DigestValue>
+        <dsig:DigestValue>H5JmRwJ8ySqgCzQ9VwO/0V5rBqaX2wfzE9fi8UMEQh4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -289,7 +289,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RPkfURC2abuFGXDR/etO5GAMdW0MbNkebD7AyXjGWCQ=</dsig:DigestValue>
+        <dsig:DigestValue>N1QkJqmer/vphu92ViiB9Oeke6yC9rYb4Zd4p1glJlc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -337,19 +337,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5BbRS2s0oTG7anZsQhmk+Lx9oEC3uIHtrNsMiThabbg=</dsig:DigestValue>
+        <dsig:DigestValue>I7GqH9neAhvhi9+RZ0IDYnkdA9+CuVue5yUO+31p2y8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="3392000">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="3394048">
       <assemblyIdentity name="Presentacion" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>y231p+JRlyIsi5g/QK3DJc7TIVxKql2aYdpPc//HMh4=</dsig:DigestValue>
+        <dsig:DigestValue>DogHN6oAfOEgs42m7X7w+4h/pgNCh1REGQKNmRJfFdM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -1320,10 +1320,14 @@ namespace Presentacion.ProcesosCompras
 
             string targetPath = iParEN.RutaCarpetaPlantillas;
 
-            string destFile = System.IO.Path.Combine(targetPath, fileName);
+            System.IO.Directory.CreateDirectory(targetPath);
+
+            targetPath = targetPath + @"\" + iMovCabEn.ClaveMovimientoCabe;
 
             System.IO.Directory.CreateDirectory(targetPath);
 
+            string destFile = System.IO.Path.Combine(targetPath, fileName);
+            
             if (System.IO.File.Exists(destFile))
             {
                 System.IO.File.Delete(destFile);

@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(wOrdenServicio));
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
             this.tsbAdicionar = new System.Windows.Forms.ToolStripButton();
             this.tsbModificar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.tsbVisualizar = new System.Windows.Forms.ToolStripButton();
+            this.tsbAprobar = new System.Windows.Forms.ToolStripButton();
+            this.tsbEnviar = new System.Windows.Forms.ToolStripButton();
             this.tsbSalir = new System.Windows.Forms.ToolStripButton();
             this.tsSecundario = new System.Windows.Forms.ToolStrip();
             this.tsbPrimero = new System.Windows.Forms.ToolStripButton();
@@ -56,8 +59,7 @@
             this.DgvMovCab = new System.Windows.Forms.DataGridView();
             this.sst1 = new System.Windows.Forms.StatusStrip();
             this.tssEstado = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsbEnviar = new System.Windows.Forms.ToolStripButton();
-            this.tsbAprobar = new System.Windows.Forms.ToolStripButton();
+            this.tsbAbrirCarpeta = new System.Windows.Forms.ToolStripButton();
             this.tsPrincipal.SuspendLayout();
             this.tsSecundario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMovCab)).BeginInit();
@@ -125,6 +127,26 @@
             this.tsbVisualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbVisualizar.Click += new System.EventHandler(this.tsbVisualizar_Click);
             // 
+            // tsbAprobar
+            // 
+            this.tsbAprobar.Image = global::Presentacion.Properties.Resources.accept;
+            this.tsbAprobar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAprobar.Name = "tsbAprobar";
+            this.tsbAprobar.Size = new System.Drawing.Size(54, 45);
+            this.tsbAprobar.Text = "Aprobar";
+            this.tsbAprobar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbAprobar.Click += new System.EventHandler(this.tsbAprobar_Click);
+            // 
+            // tsbEnviar
+            // 
+            this.tsbEnviar.Image = global::Presentacion.Properties.Resources.Sent_Message;
+            this.tsbEnviar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEnviar.Name = "tsbEnviar";
+            this.tsbEnviar.Size = new System.Drawing.Size(44, 45);
+            this.tsbEnviar.Text = "Enviar";
+            this.tsbEnviar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbEnviar.Click += new System.EventHandler(this.tsbEnviar_Click);
+            // 
             // tsbSalir
             // 
             this.tsbSalir.Image = global::Presentacion.Properties.Resources.gnome_home;
@@ -153,7 +175,8 @@
             this.btnPeriodo,
             this.toolStripLabel2,
             this.IteMasivos,
-            this.tsbImprimirNota});
+            this.tsbImprimirNota,
+            this.tsbAbrirCarpeta});
             this.tsSecundario.Location = new System.Drawing.Point(6, 71);
             this.tsSecundario.Name = "tsSecundario";
             this.tsSecundario.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -345,25 +368,15 @@
             this.tssEstado.Size = new System.Drawing.Size(10, 17);
             this.tssEstado.Text = ".";
             // 
-            // tsbEnviar
+            // tsbAbrirCarpeta
             // 
-            this.tsbEnviar.Image = global::Presentacion.Properties.Resources.Sent_Message;
-            this.tsbEnviar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEnviar.Name = "tsbEnviar";
-            this.tsbEnviar.Size = new System.Drawing.Size(44, 45);
-            this.tsbEnviar.Text = "Enviar";
-            this.tsbEnviar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbEnviar.Click += new System.EventHandler(this.tsbEnviar_Click);
-            // 
-            // tsbAprobar
-            // 
-            this.tsbAprobar.Image = global::Presentacion.Properties.Resources.accept;
-            this.tsbAprobar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbAprobar.Name = "tsbAprobar";
-            this.tsbAprobar.Size = new System.Drawing.Size(54, 45);
-            this.tsbAprobar.Text = "Aprobar";
-            this.tsbAprobar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbAprobar.Click += new System.EventHandler(this.tsbAprobar_Click);
+            this.tsbAbrirCarpeta.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbAbrirCarpeta.Image = ((System.Drawing.Image)(resources.GetObject("tsbAbrirCarpeta.Image")));
+            this.tsbAbrirCarpeta.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAbrirCarpeta.Name = "tsbAbrirCarpeta";
+            this.tsbAbrirCarpeta.Size = new System.Drawing.Size(23, 22);
+            this.tsbAbrirCarpeta.Text = "toolStripButton1";
+            this.tsbAbrirCarpeta.Click += new System.EventHandler(this.tsbAbrirCarpeta_Click);
             // 
             // wOrdenServicio
             // 
@@ -425,5 +438,6 @@
         private System.Windows.Forms.ToolStripStatusLabel tssEstado;
         private System.Windows.Forms.ToolStripButton tsbAprobar;
         private System.Windows.Forms.ToolStripButton tsbEnviar;
+        private System.Windows.Forms.ToolStripButton tsbAbrirCarpeta;
     }
 }
