@@ -17,6 +17,7 @@ using System.Windows.Forms;
 using WinControles;
 using WinControles.ControlesWindows;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Diagnostics;
 
 namespace Presentacion.ProcesosCompras
 {
@@ -960,7 +961,7 @@ namespace Presentacion.ProcesosCompras
             this.wOrdSer.ActualizarVentana();
 
             //imprimir la nota
-            this.wOrdSer.AccionImprimirOrdenServicio();
+            //this.wOrdSer.AccionImprimirOrdenServicio();
             this.GenerarOrdenServicioExcel();
 
             //limpiar controles
@@ -1002,7 +1003,7 @@ namespace Presentacion.ProcesosCompras
             this.wOrdSer.ActualizarVentana();
 
             //imprimir la nota
-            this.wOrdSer.AccionImprimirOrdenServicio();
+            //this.wOrdSer.AccionImprimirOrdenServicio();
             this.GenerarOrdenServicioExcel();
 
             //salir de la ventana
@@ -1327,7 +1328,7 @@ namespace Presentacion.ProcesosCompras
             System.IO.Directory.CreateDirectory(targetPath);
 
             string destFile = System.IO.Path.Combine(targetPath, fileName);
-            
+
             if (System.IO.File.Exists(destFile))
             {
                 System.IO.File.Delete(destFile);
@@ -1421,12 +1422,11 @@ namespace Presentacion.ProcesosCompras
                 //from.Copy(to);                
             }
 
-
+            Process.Start(destFile);
             iLibro.SaveAs(destFile, Excel.XlFileFormat.xlWorkbookDefault, iOpcional, iOpcional, true, iOpcional,
                 Excel.XlSaveAsAccessMode.xlExclusive, iOpcional, iOpcional, iOpcional, iOpcional, iOpcional);
             iLibro.Close(true, iOpcional, iOpcional);
             app.Quit();
-
         }
 
         private void txtCodTipSer_Validating(object sender, CancelEventArgs e)

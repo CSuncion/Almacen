@@ -118,8 +118,6 @@ namespace Presentacion.ProcesosCompras
                 //ejecutar metodos                    
                 PresupuestoRN.RecalcularPresupuesto(iAño, iCodigoMes, movDet.CodigoCentroCosto, costo);
             }
-
-
         }
 
         public void Cerrar()

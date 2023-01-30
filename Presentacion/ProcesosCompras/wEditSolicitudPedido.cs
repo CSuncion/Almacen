@@ -1153,47 +1153,68 @@ namespace Presentacion.ProcesosCompras
 
         public void Cancelar()
         {
-            List<SolicitudPedidoDetaEN> eListSolDet = new List<SolicitudPedidoDetaEN>();
-            List<SolicitudPedidoDetaEN> eListSolDetTmp = new List<SolicitudPedidoDetaEN>();
+            this.eOperacion = Universal.Opera.Cancelar;
+            Generico.CancelarVentanaEditar(this, eOperacion, eMas, this.wSol.eTitulo);
+        }
 
-            eListSolDet = this.eLisMovDet;
+        public void CerrarYDevolverPresupuesto()
+        {
+            List<SolicitudPedidoDetaEN> eListMovDeta = new List<SolicitudPedidoDetaEN>();
+            List<SolicitudPedidoDetaEN> eListMovDetTmp = new List<SolicitudPedidoDetaEN>();
+
+            eListMovDeta = this.eLisMovDet;
 
             SolicitudPedidoCabeEN iCuoEN = new SolicitudPedidoCabeEN();
             this.AsignarSolicitudPedidoCabe(iCuoEN);
             this.LLenarSolicitudPedidoDetaDeBaseDatos(iCuoEN);
 
-            if (this.eLisMovDet.Count > 0)
+            foreach (SolicitudPedidoDetaEN obj in eListMovDeta)
             {
-                foreach (SolicitudPedidoDetaEN obj in eListSolDet)
+                if (eListMovDeta.Count() != eLisMovDet.Count())
                 {
-                    if (eLisMovDet.Where(e => e.ClaveObjeto == obj.ClaveObjeto).Count() == 0)
+                    if (eLisMovDet.Count() == 0 && this.eOperacion == Universal.Opera.Cancelar)
                     {
-                        eListSolDetTmp.Add(obj);
+                        eListMovDetTmp.Add(obj);
+                    }
+                    else
+                    {
+                        eLisMovDet.ForEach(x =>
+                        {
+                            if (x.ClaveObjeto != obj.ClaveObjeto)
+                            {
+                                eListMovDetTmp.Add(obj);
+                            }
+                        });
                     }
                 }
-
-                PresupuestoEN iPerEN = new PresupuestoEN();
-                iPerEN.Adicionales.CampoOrden = eNombreColumnaDgvPer;
-
-
-
-
-                PresupuestoEN xObj = new PresupuestoEN();
-                foreach (SolicitudPedidoDetaEN objDeta in eListSolDetTmp)
-                {
-                    this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
-                    string presupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wSol.lblPeriodo.Text
-                && x.CCentroCosto == objDeta.CodigoCentroCosto).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
-                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wSol.lblPeriodo.Text && x.CCentroCosto == objDeta.CodigoCentroCosto).FirstOrDefault().SaldoPresupuestoTemporal.ToString(), 2);
-
-                    xObj = new PresupuestoEN();
-                    xObj.CodigoPresupuesto = wSol.lblPeriodo.Text;
-                    xObj.CCentroCosto = objDeta.CodigoCentroCosto;
-                    xObj.NuevoSaldoPresupuesto = Convert.ToDecimal(presupuesto) + (objDeta.PrecioUltimaCompra * objDeta.CantidadSolicitudPedidoDeta);
-                    PresupuestoRN.ModificarPresupuestoTemporal(xObj);
-                }
             }
-            Generico.CancelarVentanaEditar(this, eOperacion, eMas, this.wSol.eTitulo);
+
+            PresupuestoEN iPerEN = new PresupuestoEN();
+            iPerEN.Adicionales.CampoOrden = eNombreColumnaDgvPer;
+            this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
+
+            PresupuestoEN xObj = new PresupuestoEN();
+            foreach (SolicitudPedidoDetaEN objDeta in eListMovDetTmp)
+            {
+                string presupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wSol.lblPeriodo.Text
+                                        && x.CCentroCosto == objDeta.CodigoCentroCosto).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
+                                        Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wSol.lblPeriodo.Text
+                                        && x.CCentroCosto == objDeta.CodigoCentroCosto).FirstOrDefault().SaldoPresupuestoTemporal.ToString(), 2);
+
+                xObj = new PresupuestoEN();
+                xObj = this.eLisPre.Where(x => x.CodigoPresupuesto == wSol.lblPeriodo.Text
+                            && x.CCentroCosto == objDeta.CodigoCentroCosto).FirstOrDefault();
+                if (eLisMovDet.Count() == 0 && this.eOperacion == Universal.Opera.Cancelar)
+                {
+                    xObj.SaldoPresupuestoTemporal = Convert.ToDecimal(presupuesto) + (objDeta.PrecioUltimaCompra * objDeta.CantidadSolicitudPedidoDeta);
+                }
+                else
+                {
+                    xObj.SaldoPresupuestoTemporal = Convert.ToDecimal(presupuesto) - (objDeta.PrecioUltimaCompra * objDeta.CantidadSolicitudPedidoDeta);
+                }
+                PresupuestoRN.ModificarPresupuesto(xObj);
+            }
+
         }
 
         public void RetornarPresupuesto()
@@ -1228,6 +1249,7 @@ namespace Presentacion.ProcesosCompras
 
         private void wEditSolicitudPedido_FormClosing(object sender, FormClosingEventArgs e)
         {
+            this.CerrarYDevolverPresupuesto();
             this.wSol.Enabled = true;
         }
 

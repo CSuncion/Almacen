@@ -1293,6 +1293,11 @@ namespace Presentacion.ProcesosCompras
             MovimientoOCCabeEN iCuoEN = new MovimientoOCCabeEN();
             this.AsignarMovimientoCabe(iCuoEN);
 
+            AuxiliarEN aux = AuxiliarRN.BuscarAuxiliarXCodigo(iCuoEN.CodigoAuxiliar);
+
+            iCuoEN = MovimientoOCCabeRN.BuscarMovimientoCabeXClave(iCuoEN.ClaveMovimientoCabe);
+
+
             List<MovimientoOCDetaEN> list = this.eLisMovDet;
 
             ParametroEN iParEN = ParametroRN.BuscarParametro();
