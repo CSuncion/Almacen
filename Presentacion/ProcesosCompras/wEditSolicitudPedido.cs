@@ -592,10 +592,22 @@ namespace Presentacion.ProcesosCompras
                 xMovDet.CorrelativoSolicitudPedidoDeta = iCorrelativo;
                 xMovDet.CostoFleteSolicitudPedidoCabe = Conversion.ADecimal(this.txtCosFle.Text.Trim(), 0);
                 xMovDet.ClaveSolicitudPedidoDeta = SolicitudPedidoDetaRN.ObtenerClaveSolicitudPedidoDeta(xMovDet);
+
+                this.ModificacionSolicitudPedidoDetalleConCabecera(xMovDet);
             }
 
             //adicion masiva
             SolicitudPedidoDetaRN.AdicionarSolicitudPedidoDeta(this.eLisMovDet);
+        }
+
+        public void ModificacionSolicitudPedidoDetalleConCabecera(SolicitudPedidoDetaEN xMovDet)
+        {
+            xMovDet.FechaSolicitudPedidoCabe = this.dtpFecMovCab.Text;
+            xMovDet.PeriodoSolicitudPedidoCabe = this.wSol.lblPeriodo.Text;
+            xMovDet.CodigoAlmacen = this.txtCodAlm.Text.Trim();
+            xMovDet.NumeroSolicitudPedidoCabe = this.txtNumMovCab.Text.Trim();
+            xMovDet.CodigoAuxiliar = this.txtCodAux.Text.Trim();
+            xMovDet.FechaDocumento = this.dtpFecDoc.Text;
         }
 
         public decimal ObtenerCostoFleteUnitario()

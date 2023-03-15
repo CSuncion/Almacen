@@ -1,0 +1,9 @@
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Datos\bin\Debug\Datos.dll
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Datos\bin\Debug\Datos.pdb
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Datos\bin\Debug\Comun.dll
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Datos\bin\Debug\Entidades.dll
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Datos\bin\Debug\ScriptBD.dll
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Datos\bin\Debug\Entidades.pdb
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Datos\obj\Debug\Datos.dll
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen\Datos\obj\Debug\Datos.pdb
