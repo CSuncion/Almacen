@@ -2910,10 +2910,16 @@ namespace Negocio
             iPerAD.CambiarEstadoPagoMovimientoOCCabe(pObj, estado);
         }
 
-        public static void ActualizarCostoTotalMovimientoOCCabe(string periodo, string clavemovimientocabe, decimal montototal)
+        public static void ActualizarCostoTotalMovimientoOCCabe(string periodo, string clavemovimientocabe, decimal montototal, decimal igvMovimientoCabe, decimal ValorVtaMovimientoCabe)
         {
             MovimientoOCCabeAD iPerAD = new MovimientoOCCabeAD();
-            iPerAD.ActualizarCostoTotalMovimientoOCCabe(periodo, clavemovimientocabe, montototal);
+            iPerAD.ActualizarCostoTotalMovimientoOCCabe(periodo, clavemovimientocabe, montototal, igvMovimientoCabe, ValorVtaMovimientoCabe);
+        }
+
+        public static void ActualizarCostoTotalMovimientoOSCabe(string periodo, string clavemovimientocabe, decimal montototal)
+        {
+            MovimientoOCCabeAD iPerAD = new MovimientoOCCabeAD();
+            iPerAD.ActualizarCostoTotalMovimientoOSCabe(periodo, clavemovimientocabe, montototal);
         }
 
         public static void ActualizarMontoPendienteMovimientoOCCabe(string periodo, string clavemovimientocabe, decimal montopendiente)

@@ -786,7 +786,28 @@ namespace Datos
             xObjCon.Desconectar();
         }
 
-        public void ActualizarCostoTotalMovimientoOCCabe(string periodo, string clavemovimientocabe, decimal montototal)
+        public void ActualizarCostoTotalMovimientoOCCabe(string periodo, string clavemovimientocabe, decimal montototal, decimal igvMovimientoCabe, decimal ValorVtaMovimientoCabe)
+        {
+            xObjCon.Conectar(SqlDatos.Bd.Almacen_Produccion);
+
+            //script manual
+            string iScript = string.Empty;
+
+            //actualizando la solicitud de pedido
+            iScript += "Update MovimientoOCCabe set MontoTotalMovimientoCabe = " + montototal + ", ";
+            iScript += " MontoTotalPendientePago = " + montototal + ", ";
+            iScript += " IgvMovimientoCabe = " + igvMovimientoCabe + ", ";
+            iScript += " ValorVtaMovimientoCabe = " + ValorVtaMovimientoCabe;
+            iScript += " Where CodigoEmpresa='" + Universal.gCodigoEmpresa + "'";
+            iScript += " And PeriodoMovimientoCabe='" + periodo + "'";
+            iScript += " And ClaveMovimientoCabe ='" + clavemovimientocabe + "'";
+
+            xObjCon.ComandoTexto(iScript);
+            xObjCon.EjecutarSinResultado();
+            xObjCon.Desconectar();
+        }
+
+        public void ActualizarCostoTotalMovimientoOSCabe(string periodo, string clavemovimientocabe, decimal montototal)
         {
             xObjCon.Conectar(SqlDatos.Bd.Almacen_Produccion);
 

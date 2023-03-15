@@ -293,8 +293,8 @@ namespace Datos
             string iScript = string.Empty;
 
             //actualizando la solicitud de pedido
-            iScript += "Update Presupuesto set SaldoPresupuestotemporal = ImportePresupuesto - " + costoMovimiento + ",";
-            iScript += " SaldoPresupuesto = ImportePresupuesto - " + costoMovimiento + "";
+            iScript += "Update Presupuesto set SaldoPresupuestotemporal = (ImportePresupuesto + ImporteAdicionalPresupuesto) - " + costoMovimiento + ",";
+            iScript += " SaldoPresupuesto = (ImportePresupuesto + ImporteAdicionalPresupuesto) - " + costoMovimiento + "";
             iScript += " Where CodigoEmpresa='" + Universal.gCodigoEmpresa + "'";
             iScript += " And AnoPresupuesto ='" + iAno + "'";
             iScript += " And CMesPresupuesto ='" + iMes + "'";

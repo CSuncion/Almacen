@@ -590,8 +590,12 @@ namespace Presentacion.ProcesosCompras
             string iCorrelativo = "0000";
             decimal iCostoFleteUnitario = this.ObtenerCostoFleteUnitario();
             decimal MontoTotalMovimientoOCCabe = 0;
+            decimal IgvMovimientoCabe = 0;
+            decimal ValorVtaMovimientoCabe = 0;
             string periodo = string.Empty;
             string clavemovimientocabe = string.Empty;
+            ParametroEN iParEN = ParametroRN.BuscarParametro();
+            decimal igv = iParEN.PorcentajeIgv;
 
             //recorrer cada objeto
             foreach (MovimientoOCDetaEN xMovDet in this.eLisMovDet)
@@ -624,12 +628,44 @@ namespace Presentacion.ProcesosCompras
                 }
 
                 MontoTotalMovimientoOCCabe += xMovDet.CostoMovimientoDeta;
+
+                if (ExistenciaRN.BuscarExistencia(xMovDet.CodigoAlmacen, xMovDet.CodigoExistencia).CAfectoIgv == "0")
+                {
+                    IgvMovimientoCabe += xMovDet.CostoMovimientoDeta * (igv / 100);
+                    ValorVtaMovimientoCabe += xMovDet.CostoMovimientoDeta + IgvMovimientoCabe;
+                }
+                else
+                {
+                    IgvMovimientoCabe += xMovDet.CostoMovimientoDeta * (igv / (igv + 100));
+                    ValorVtaMovimientoCabe += xMovDet.CostoMovimientoDeta - IgvMovimientoCabe;
+                }
+
+                this.AsignarMovimientoDetalleConCabecera(xMovDet);
+
                 periodo = xMovDet.PeriodoMovimientoCabe;
                 clavemovimientocabe = xMovDet.ClaveMovimientoCabe;
             }
-            MovimientoOCCabeRN.ActualizarCostoTotalMovimientoOCCabe(periodo, clavemovimientocabe, MontoTotalMovimientoOCCabe);
+
+            MovimientoOCCabeRN.ActualizarCostoTotalMovimientoOCCabe(periodo, clavemovimientocabe, MontoTotalMovimientoOCCabe, IgvMovimientoCabe, ValorVtaMovimientoCabe);
             //adicion masiva
             MovimientoOCDetaRN.AdicionarMovimientoDeta(this.eLisMovDet);
+        }
+
+        public void AsignarMovimientoDetalleConCabecera(MovimientoOCDetaEN xMovDet)
+        {
+            xMovDet.FechaMovimientoCabe = this.dtpFecMovCab.Text;
+            xMovDet.PeriodoMovimientoCabe = this.wOrdCom.lblPeriodo.Text;
+            xMovDet.CodigoAlmacen = this.txtCodAlm.Text.Trim();
+            xMovDet.CodigoTipoOperacion = this.txtCodTipOpe.Text.Trim();
+            xMovDet.CCalculaPrecioPromedio = this.txtCCalPrePro.Text.Trim();
+            xMovDet.CConversionUnidad = this.txtCConUni.Text.Trim();
+            xMovDet.NumeroMovimientoCabe = this.txtNumMovCab.Text.Trim();
+            xMovDet.CodigoAuxiliar = this.txtCodAux.Text.Trim();
+            xMovDet.CTipoDocumento = this.txtCTipDoc.Text.Trim();
+            xMovDet.SerieDocumento = this.txtSerDoc.Text.Trim();
+            xMovDet.NumeroDocumento = this.txtNumDoc.Text.Trim();
+            xMovDet.FechaDocumento = this.dtpFecDoc.Text;
+            xMovDet.CCodigoMoneda = this.txtCodMonSyD.Text.ToString().Trim();
         }
 
         public decimal ObtenerCostoFleteUnitario()
@@ -1275,7 +1311,7 @@ namespace Presentacion.ProcesosCompras
                 {
                     string presupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdCom.lblPeriodo.Text
                                             && x.CCentroCosto == objDeta.CodigoCentroCosto).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
-                                            Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdCom.lblPeriodo.Text 
+                                            Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wOrdCom.lblPeriodo.Text
                                             && x.CCentroCosto == objDeta.CodigoCentroCosto).FirstOrDefault().SaldoPresupuesto.ToString(), 2);
 
                     xObj = new PresupuestoEN();

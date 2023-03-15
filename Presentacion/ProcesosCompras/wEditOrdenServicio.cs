@@ -1222,7 +1222,7 @@ namespace Presentacion.ProcesosCompras
                 periodo = xMovDet.PeriodoMovimientoCabe;
                 clavemovimientocabe = xMovDet.ClaveMovimientoCabe;
             }
-            MovimientoOCCabeRN.ActualizarCostoTotalMovimientoOCCabe(periodo, clavemovimientocabe, MontoTotalMovimientoOCCabe);
+            MovimientoOCCabeRN.ActualizarCostoTotalMovimientoOSCabe(periodo, clavemovimientocabe, MontoTotalMovimientoOCCabe);
             //adicion masiva
             MovimientoOCDetaRN.AdicionarMovimientoDeta(this.eLisMovDet);
         }
@@ -1422,10 +1422,10 @@ namespace Presentacion.ProcesosCompras
                 //from.Copy(to);                
             }
 
-            Process.Start(destFile);
             iLibro.SaveAs(destFile, Excel.XlFileFormat.xlWorkbookDefault, iOpcional, iOpcional, true, iOpcional,
                 Excel.XlSaveAsAccessMode.xlExclusive, iOpcional, iOpcional, iOpcional, iOpcional, iOpcional);
             iLibro.Close(true, iOpcional, iOpcional);
+            Process.Start(destFile);
             app.Quit();
         }
 
