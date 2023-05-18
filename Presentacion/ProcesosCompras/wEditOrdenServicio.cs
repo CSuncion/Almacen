@@ -649,6 +649,25 @@ namespace Presentacion.ProcesosCompras
             return true;
         }
 
+        public bool ValidarSiAreaTienePresupuesto()
+        {
+            List<PresupuestoEN> eListPresupuesto = new List<PresupuestoEN>();
+            PresupuestoEN iPerEN = new PresupuestoEN();
+            iPerEN.Adicionales.CampoOrden = eNombreColumnaDgvPer;
+            eListPresupuesto = PresupuestoRN.ListarPresupuestos(iPerEN);
+            int existsPresupuesto = eListPresupuesto.Where(p => p.CodigoPresupuesto == wOrdSer.lblPeriodo.Text
+                                    && p.CCentroCosto == this.txtCodAre.Text.Trim()).Count();
+            if (existsPresupuesto == 0)
+            {
+                Mensaje.OperacionDenegada("El área seleccionada no tiene presupuesto asignado.", "Presupuesto");
+                this.txtCodAre.Focus();
+                this.txtCodAre.Text = string.Empty;
+                this.txtDesAre.Text = string.Empty;
+                return false;
+            }
+            return true;
+        }
+
         public string ObtenerClaveMovimientoCabe()
         {
             MovimientoOCCabeEN iMovCabEN = new MovimientoOCCabeEN();
@@ -1537,6 +1556,8 @@ namespace Presentacion.ProcesosCompras
         private void txtCodAre_Validating(object sender, CancelEventArgs e)
         {
             this.EsCodigoAreaValido();
+            if (this.txtCodAre.Text != string.Empty)
+                if (this.ValidarSiAreaTienePresupuesto() == false) { return; }
         }
 
         private void txtCodAre_KeyDown(object sender, KeyEventArgs e)
@@ -1607,6 +1628,11 @@ namespace Presentacion.ProcesosCompras
         private void txtPreMatAcc_Validated(object sender, EventArgs e)
         {
             this.ObtenerValoresCalculados();
+        }
+
+        private void txtCodAre_Validated(object sender, EventArgs e)
+        {
+
         }
 
         private void txtCodAux_Validating(object sender, CancelEventArgs e)

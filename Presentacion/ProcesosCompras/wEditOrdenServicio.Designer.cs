@@ -553,6 +553,7 @@
             this.txtCodAre.DoubleClick += new System.EventHandler(this.txtCodAre_DoubleClick);
             this.txtCodAre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodAre_KeyDown);
             this.txtCodAre.Validating += new System.ComponentModel.CancelEventHandler(this.txtCodAre_Validating);
+            this.txtCodAre.Validated += new System.EventHandler(this.txtCodAre_Validated);
             // 
             // txtDesAre
             // 
