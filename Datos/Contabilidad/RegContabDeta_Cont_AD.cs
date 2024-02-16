@@ -199,7 +199,7 @@ namespace Datos
         }
         public void AgregarRegContaDeta(RegContabDeta_Cont_EN pObj)
         {
-            xObjCon.Conectar(SqlDatos.Bd.Almacen_Produccion);
+            xObjCon.Conectar(SqlDatos.Bd.Alfisa_Contabilidad);
             //armando escript para insertar
             SqlInsert xIns = new SqlInsert();
             xIns.Tabla(this.xTabla);
@@ -213,6 +213,7 @@ namespace Datos
             xIns.AsignarParametro(RegContabDeta_Cont_EN.FecDoc, pObj.FechaDocumento.ToString());
             xIns.AsignarParametro(RegContabDeta_Cont_EN.GloRegConDet, pObj.GlosaRegContabDeta.ToString());
             xIns.AsignarParametro(RegContabDeta_Cont_EN._ClaveRegContabDeta, pObj.ClaveRegContabDeta);
+            xIns.AsignarParametro(RegContabDeta_Cont_EN._COrigen, pObj.COrigen);
             xIns.AsignarParametro(RegContabDeta_Cont_EN._CFile, pObj.CFile);
             xIns.AsignarParametro(RegContabDeta_Cont_EN._CorrelativoRegContabCabe, pObj.CorrelativoRegContabCabe);
             xIns.AsignarParametro(RegContabDeta_Cont_EN._CorrelativoRegContabDeta, pObj.CorrelativoRegContabDeta);
@@ -234,9 +235,9 @@ namespace Datos
             xIns.AsignarParametro(RegContabDeta_Cont_EN._CTipoLineaAsiento, pObj.CTipoLineaAsiento);
             xIns.AsignarParametro(RegContabDeta_Cont_EN._CEstadoRegContabDeta, pObj.CEstadoRegContabDeta);
             xIns.AsignarParametro(RegContabDeta_Cont_EN._UsuarioAgrega, pObj.UsuarioAgrega);
-            xIns.AsignarParametro(RegContabDeta_Cont_EN._FechaAgrega, pObj.FechaAgrega.ToString());
+            xIns.AsignarParametro(RegContabDeta_Cont_EN._FechaAgrega, "FECHAHORA");
             xIns.AsignarParametro(RegContabDeta_Cont_EN._UsuarioModifica, pObj.UsuarioModifica);
-            xIns.AsignarParametro(RegContabDeta_Cont_EN._FechaModifica, pObj.FechaModifica.ToString());
+            xIns.AsignarParametro(RegContabDeta_Cont_EN._FechaModifica, "FECHAHORA");
 
 
 

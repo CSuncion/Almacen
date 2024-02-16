@@ -190,7 +190,8 @@ namespace Presentacion.ProcesosCompras
 
         public void VentanaAdicionar()
         {
-            //             
+            //
+            
             txtPerMovCab.Text = wFrm.lblDescripcionPeriodo.Text;
             wano = this.txtPerMovCab.Text.Substring(0, 4);
             wmes = this.txtPerMovCab.Text.Substring(5).ToUpper();
@@ -205,6 +206,7 @@ namespace Presentacion.ProcesosCompras
             this.InicializaVentana();
             this.MostrarSolicitudPedidoCabe(SolicitudPedidoCabeRN.EnBlanco());
             this.MostrarFechaIngresoSugerida();
+            this.CargarTipoCambio();
             this.MostrarSolicitudPedidosDeta();
             eMas.AccionHabilitarControles(0);
             eMas.AccionPasarTextoPrincipal();
@@ -216,6 +218,7 @@ namespace Presentacion.ProcesosCompras
         {
             this.InicializaVentana();
             this.MostrarSolicitudPedidoCabe(pMovCab);
+            this.CargarTipoCambio();
             this.LLenarSolicitudPedidoDetaDeBaseDatos(pMovCab);
             this.LLenarLotesDeBaseDatos(pMovCab);
             this.MostrarSolicitudPedidosDeta();
@@ -228,6 +231,7 @@ namespace Presentacion.ProcesosCompras
         {
             this.InicializaVentana();
             this.MostrarSolicitudPedidoCabe(pMovCab);
+            this.CargarTipoCambio();
             this.LLenarSolicitudPedidoDetaDeBaseDatos(pMovCab);
             this.LLenarLotesDeBaseDatos(pMovCab);
             this.MostrarSolicitudPedidosDeta();
@@ -239,6 +243,7 @@ namespace Presentacion.ProcesosCompras
         {
             this.InicializaVentana();
             this.MostrarSolicitudPedidoCabe(pMovCab);
+            this.CargarTipoCambio();
             this.LLenarSolicitudPedidoDetaDeBaseDatos(pMovCab);
             this.LLenarLotesDeBaseDatos(pMovCab);
             this.MostrarSolicitudPedidosDeta();

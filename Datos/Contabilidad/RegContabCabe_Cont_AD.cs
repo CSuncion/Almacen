@@ -197,9 +197,9 @@ namespace Datos.Contabilidad
             xIns.AsignarParametro(RegContabCabe_Cont_EN._ClaveIngresoRegContabCabe, pObj.ClaveIngresoRegContabCabe.ToString());
             xIns.AsignarParametro(RegContabCabe_Cont_EN._CEstadoRegContabCabe, pObj.CEstadoRegContabCabe.ToString());
             xIns.AsignarParametro(RegContabCabe_Cont_EN._UsuarioAgrega, pObj.UsuarioAgrega.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaAgrega, pObj.FechaAgrega.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaAgrega, "FECHAHORA");
             xIns.AsignarParametro(RegContabCabe_Cont_EN._UsuarioModifica, pObj.UsuarioModifica.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaModifica, pObj.FechaModifica.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaModifica, "FECHAHORA");
 
             xIns.FinParametros();
 

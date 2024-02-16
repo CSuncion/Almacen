@@ -93,7 +93,7 @@
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(122, 25);
             this.btnImportar.TabIndex = 258;
-            this.btnImportar.Text = "Importar Archivos";
+            this.btnImportar.Text = "Exportar Archivos";
             this.btnImportar.UseVisualStyleBackColor = true;
             this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 

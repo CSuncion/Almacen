@@ -241,7 +241,7 @@
             this.MinimizeBox = false;
             this.Name = "wImportarMovimientosSalidas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Importar Movimientos de Salidas";
+            this.Text = "Exportar Movimientos de Salidas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.wImportarAuxiliar_FormClosing);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.txtArcExc, 0);

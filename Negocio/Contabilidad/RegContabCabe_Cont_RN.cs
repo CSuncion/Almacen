@@ -177,7 +177,7 @@ namespace Negocio.Contabilidad
 
             foreach (MovimientoOCCabeEN movimientoOC in movimientoOCCabeENs)
             {
-                if (movimientoOC.FlagExportadoConta == 0)
+                if (movimientoOC.FlagExportadoConta == 0 && movimientoOC.PrecioVtaMovimientoCabe > 0)
                 {
                     RegContabCabe_Cont_EN regContabCabe_Cont_EN = new RegContabCabe_Cont_EN();
                     RegContabCabe_Cont_RN.AsignarReContabCabe(regContabCabe_Cont_EN, movimientoOC);
@@ -186,6 +186,7 @@ namespace Negocio.Contabilidad
                     MovimientoOCDetaEN movimientoOCDetaEN = new MovimientoOCDetaEN();
                     List<MovimientoOCDetaEN> movimientoOCDetaENs = new List<MovimientoOCDetaEN>();
                     movimientoOCDetaEN.ClaveMovimientoCabe = movimientoOC.ClaveMovimientoCabe;
+                    movimientoOCDetaEN.Adicionales.CampoOrden = MovimientoOCDetaEN.ClaMovDet;
                     movimientoOCDetaENs = MovimientoOCDetaRN.ListarMovimientosDetaXClaveMovimientoCabe(movimientoOCDetaEN);
 
                     for (int i = 0; i < 3; i++)
@@ -195,15 +196,12 @@ namespace Negocio.Contabilidad
                         RegContabDeta_Cont_RN.AdicionarRegContaDeta(regContabDeta_Cont_EN);
                     }
                 }
+                MovimientoOCCabeRN.ExportadoMovimientoCabe(movimientoOC);
             }
         }
 
         public static void AsignarRegContabDeta(RegContabDeta_Cont_EN regContabDeta_Cont_EN, RegContabCabe_Cont_EN regContabCabe_Cont_EN, int count, List<MovimientoOCDetaEN> movimientoOCDetaENs)
         {
-
-
-
-
             regContabDeta_Cont_EN.CodigoEmpresa = regContabCabe_Cont_EN.CodigoEmpresa;
             regContabDeta_Cont_EN.PeriodoRegContabCabe = regContabCabe_Cont_EN.PeriodoRegContabCabe;
 
@@ -213,6 +211,7 @@ namespace Negocio.Contabilidad
             regContabDeta_Cont_EN.ClaveRegContabCabe = regContabCabe_Cont_EN.ClaveRegContabCabe;
 
             regContabDeta_Cont_EN.ClaveRegContabDeta = RegContabCabe_Cont_RN.ObtenerClaveMovimientoDeta(regContabDeta_Cont_EN);
+            regContabDeta_Cont_EN.CorrelativoRegContabDeta = vaucherCorrelativoRegContDeta;
 
             regContabDeta_Cont_EN.CodigoAuxiliar = count == 0 ? regContabCabe_Cont_EN.CodigoAuxiliar : string.Empty;
             regContabDeta_Cont_EN.CTipoDocumento = count == 0 ? regContabCabe_Cont_EN.CTipoDocumento : string.Empty;
@@ -246,18 +245,14 @@ namespace Negocio.Contabilidad
             regContabDeta_Cont_EN.CTipoLineaAsiento = count == 1 ? "0" : "1";
             regContabDeta_Cont_EN.CEstadoRegContabDeta = "1";
             regContabDeta_Cont_EN.UsuarioAgrega = regContabCabe_Cont_EN.UsuarioAgrega;
-            regContabDeta_Cont_EN.FechaAgrega = DateTime.Now;
             regContabDeta_Cont_EN.UsuarioModifica = regContabCabe_Cont_EN.UsuarioModifica;
-            regContabDeta_Cont_EN.FechaModifica = DateTime.Now;
-
-
         }
 
         public static void AsignarReContabCabe(RegContabCabe_Cont_EN regContabCabe_Cont_EN, MovimientoOCCabeEN movimientoOC)
         {
             regContabCabe_Cont_EN.CodigoEmpresa = movimientoOC.CodigoEmpresa;
             regContabCabe_Cont_EN.PeriodoRegContabCabe = movimientoOC.PeriodoMovimientoCabe;
-            regContabCabe_Cont_EN.ClaveRegContabCabe = RegContabCabe_Cont_RN.ObtenerClaveMovimientoCabe(regContabCabe_Cont_EN);
+            regContabCabe_Cont_EN.ClaveRegContabCabe = RegContabCabe_Cont_RN.ObtenerClaveRegContabCabe(regContabCabe_Cont_EN);
             regContabCabe_Cont_EN.COrigen = "4";
             regContabCabe_Cont_EN.CFile = "401";
             regContabCabe_Cont_EN.CorrelativoRegContabCabe = vaucherCorrelativoRegCont;
@@ -308,12 +303,9 @@ namespace Negocio.Contabilidad
             regContabCabe_Cont_EN.ClaveIngresoRegContabCabe = string.Empty;
             regContabCabe_Cont_EN.CEstadoRegContabCabe = "1";
             regContabCabe_Cont_EN.UsuarioAgrega = movimientoOC.UsuarioAgrega;
-            regContabCabe_Cont_EN.FechaAgrega = DateTime.Now;
             regContabCabe_Cont_EN.UsuarioModifica = movimientoOC.UsuarioModifica;
-            regContabCabe_Cont_EN.FechaModifica = DateTime.Now;
-
         }
-        public static string ObtenerClaveMovimientoCabe(RegContabCabe_Cont_EN pPer)
+        public static string ObtenerClaveRegContabCabe(RegContabCabe_Cont_EN pPer)
         {
             RegContabCabe_Cont_RN.MostrarNuevoNumero(pPer);
             //valor resultado
@@ -354,7 +346,7 @@ namespace Negocio.Contabilidad
             string iUltimoCodigo = RegContabCabe_Cont_RN.ObtenerMaximoValorEnColumna(pObj);
 
             //obtener el siguiente codigo
-            iNumero = Numero.IncrementarCorrelativoNumerico(iUltimoCodigo, 6);
+            iNumero = Numero.IncrementarCorrelativoNumerico(iUltimoCodigo, 5);
 
             //devuelve
             return iNumero;
@@ -398,7 +390,7 @@ namespace Negocio.Contabilidad
             string iNuevoNumero = RegContabCabe_Cont_RN.ObtenerNuevoNumeroMovimientoDetaAutogenerado(iRegConCabEN);
 
             //mostrar en pantalla
-            vaucherCorrelativoRegCont = iNuevoNumero;
+            vaucherCorrelativoRegContDeta = iNuevoNumero;
         }
 
         public static string ObtenerNuevoNumeroMovimientoDetaAutogenerado(RegContabDeta_Cont_EN pObj)
@@ -410,7 +402,7 @@ namespace Negocio.Contabilidad
             string iUltimoCodigo = RegContabCabe_Cont_RN.ObtenerMaximoValorEnColumna(pObj);
 
             //obtener el siguiente codigo
-            iNumero = Numero.IncrementarCorrelativoNumerico(iUltimoCodigo, 6);
+            iNumero = Numero.IncrementarCorrelativoNumerico(iUltimoCodigo, 4);
 
             //devuelve
             return iNumero;

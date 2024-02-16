@@ -2865,6 +2865,11 @@ namespace Negocio
             MovimientoOCCabeAD iPerAD = new MovimientoOCCabeAD();
             iPerAD.EnviadoMovimientoCabe(pObj);
         }
+        public static void ExportadoMovimientoCabe(MovimientoOCCabeEN pObj)
+        {
+            MovimientoOCCabeAD iPerAD = new MovimientoOCCabeAD();
+            iPerAD.ExportadoMovimientoCabe(pObj);
+        }
 
         public static void NoEnviadoMovimientoCabe(MovimientoOCCabeEN pObj)
         {

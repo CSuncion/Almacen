@@ -126,6 +126,7 @@ namespace Presentacion.ProcesosCompras
             iLisRes.Add(Dgv.NuevaColumnaTextCadena(SolicitudPedidoCabeEN.NEstMovCab, "Estado", 90));
             iLisRes.Add(Dgv.NuevaColumnaTextCadena(SolicitudPedidoCabeEN.NCodMon, "Moneda", 90));
             iLisRes.Add(Dgv.NuevaColumnaTextCadena(SolicitudPedidoCabeEN.ClaObj, "Clave", 50, false));
+            iLisRes.Add(Dgv.NuevaColumnaTextCadena(SolicitudPedidoCabeEN.FlagEnvSolPed, "FlagEnvSolPed", 50, false));
 
             //devolver
             return iLisRes;
@@ -578,6 +579,14 @@ namespace Presentacion.ProcesosCompras
             return cuentaCheck;
         }
 
+        public void GenerarOrdenCompraPorRequerimiento()
+        {
+            if (this.EsValidoEnvio() == false) { return; }
+            if (this.EsValidaSolicitudPedidoAprobado() == false) { return; }
+            this.ListarProveedores();
+            this.ActualizarVentana();
+        }
+
         public bool EsValidaMarcadasConCorreoElectronico()
         {
             //recorrer cada registro
@@ -763,7 +772,9 @@ namespace Presentacion.ProcesosCompras
             {
                 SolicitudPedidoCabeEN iSolEN = new SolicitudPedidoCabeEN();
                 iSolEN.ClaveSolicitudPedidoCabe = Dgv.ObtenerValorCelda(this.DgvMovCab, SolicitudPedidoCabeEN.ClaObj);
-                iSolEN.VerdadFalso = !this.eLisMovCab[pFilaChequeada].VerdadFalso;
+                bool flagEnviado = Convert.ToBoolean(Dgv.ObtenerValorCelda(this.DgvMovCab, SolicitudPedidoCabeEN.FlagEnvSolPed));
+                if (!flagEnviado)
+                    iSolEN.VerdadFalso = !this.eLisMovCab[pFilaChequeada].VerdadFalso;
                 SolicitudPedidoCabeRN.AsignarSolicitudEnviada(iSolEN, this.eLisMovCab);
             }
         }
@@ -1183,8 +1194,7 @@ namespace Presentacion.ProcesosCompras
 
         private void tsbGenerarOC_Click(object sender, EventArgs e)
         {
-            if (this.EsValidoEnvio() == false) { return; }
-            this.ListarProveedores();
+            this.GenerarOrdenCompraPorRequerimiento();
         }
 
         private void tsbDesaprobar_Click(object sender, EventArgs e)

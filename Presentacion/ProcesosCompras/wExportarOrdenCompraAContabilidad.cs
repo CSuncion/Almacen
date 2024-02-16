@@ -92,7 +92,7 @@ namespace Presentacion.ProcesosCompras
             if (Mensaje.DeseasRealizarOperacion(this.eTitulo) == false) { return; }
 
             //importar de contabilidad
-            this.Importar();
+            this.Exportar();
 
             //mensaje satisfactorio
             Mensaje.OperacionSatisfactoria("la importacion se realizo correctamente", this.eTitulo);
@@ -100,7 +100,7 @@ namespace Presentacion.ProcesosCompras
             //limpiar controles         
             this.cmbMesSal.Focus();
         }
-        public void Importar()
+        public void Exportar()
         {
             //asignar parametro
             string iPeriodo = MiControl.ObtenerFormatoPeriodo(this.txtAñoSal, this.cmbMesSal);
