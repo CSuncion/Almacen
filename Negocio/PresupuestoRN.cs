@@ -476,5 +476,11 @@ namespace Negocio
             PresupuestoAD iPerAD = new PresupuestoAD();
             iPerAD.RecalcularPresupuesto(iAno, iMes, codCosto, costoMovimiento);
         }
+
+        public static void RecalcularPresupuestoSinMovimiento(string iAno, string iMes, string codCosto)
+        {
+            PresupuestoAD iPerAD = new PresupuestoAD();
+            iPerAD.RecalcularPresupuestoSinMovimiento(iAno, iMes, codCosto);
+        }
     }
 }

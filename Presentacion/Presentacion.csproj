@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Presentacion</RootNamespace>
     <AssemblyName>Presentacion</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -89,20 +89,36 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Dlls\Comun.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+    <Reference Include="CRVsPackageLib, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.TemplateEngine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonControls, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ObjectFactory, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.VSDesigner, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="Heredados, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Heredados, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Dlls\Heredados.dll</HintPath>
     </Reference>
@@ -1016,6 +1032,12 @@
     <Compile Include="ProcesosCompras\wEditPagosUnica.designer.cs">
       <DependentUpon>wEditPagosUnica.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProcesosCompras\wEditRequerimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wEditRequerimiento.designer.cs">
+      <DependentUpon>wEditRequerimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProcesosCompras\wEditSolicitudPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1045,6 +1067,18 @@
     </Compile>
     <Compile Include="ProcesosCompras\wEnviarSolicitudPedido.designer.cs">
       <DependentUpon>wEnviarSolicitudPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wExportarOrdenCompraAContabilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wExportarOrdenCompraAContabilidad.Designer.cs">
+      <DependentUpon>wExportarOrdenCompraAContabilidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wLisAuxGenerarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wLisAuxGenerarCompra.designer.cs">
+      <DependentUpon>wLisAuxGenerarCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="ProcesosCompras\wLote.cs">
       <SubType>Form</SubType>
@@ -1105,6 +1139,12 @@
     </Compile>
     <Compile Include="ProcesosCompras\wSelAux.designer.cs">
       <DependentUpon>wSelAux.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesosCompras\wRequerimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wRequerimiento.designer.cs">
+      <DependentUpon>wRequerimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="ProcesosCompras\wSolicitudPedido.cs">
       <SubType>Form</SubType>
@@ -2410,6 +2450,9 @@
     <EmbeddedResource Include="ProcesosCompras\wEditPagosUnica.resx">
       <DependentUpon>wEditPagosUnica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wEditRequerimiento.resx">
+      <DependentUpon>wEditRequerimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProcesosCompras\wEditSolicitudPedido.resx">
       <DependentUpon>wEditSolicitudPedido.cs</DependentUpon>
     </EmbeddedResource>
@@ -2424,6 +2467,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProcesosCompras\wEnviarSolicitudPedido.resx">
       <DependentUpon>wEnviarSolicitudPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wExportarOrdenCompraAContabilidad.resx">
+      <DependentUpon>wExportarOrdenCompraAContabilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wLisAuxGenerarCompra.resx">
+      <DependentUpon>wLisAuxGenerarCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProcesosCompras\wLote.resx">
       <DependentUpon>wLote.cs</DependentUpon>
@@ -2454,6 +2503,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProcesosCompras\wSelAux.resx">
       <DependentUpon>wSelAux.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wRequerimiento.resx">
+      <DependentUpon>wRequerimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProcesosCompras\wSolicitudPedido.resx">
       <DependentUpon>wSolicitudPedido.cs</DependentUpon>
@@ -3186,7 +3238,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

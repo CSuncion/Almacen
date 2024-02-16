@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Entidades</RootNamespace>
     <AssemblyName>Entidades</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +45,7 @@
     <Compile Include="Adicionales\Universal.cs" />
     <Compile Include="BancoEN.cs" />
     <Compile Include="CobranzaEN.cs" />
+    <Compile Include="Contabilidad\RegContabCabe_Cont_EN.cs" />
     <Compile Include="CuentaBancoEN.cs" />
     <Compile Include="CuotaEN.cs" />
     <Compile Include="DetalleEnvioRecEN.cs" />

@@ -87,6 +87,7 @@ namespace Datos
             xObjEnc.UsuarioModifica = iDr[MovimientoOCCabeEN.UsuMod].ToString();
             xObjEnc.FechaModifica = Convert.ToDateTime(iDr[MovimientoOCCabeEN.FecMod]);
             xObjEnc.FlagEnviadoMovimientoCabe = Convert.ToBoolean(iDr[MovimientoOCCabeEN.FlagEnvMov].ToString());
+            xObjEnc.FlagExportadoConta = Convert.ToInt32(iDr[MovimientoOCCabeEN.FlgExpCon].ToString());
             xObjEnc.CorreoAuxiliar = iDr[MovimientoOCCabeEN.CorreoAux].ToString();
             xObjEnc.EstadoPago = iDr[MovimientoOCCabeEN.EstPag].ToString();
             xObjEnc.DireccionAuxiliar = iDr[MovimientoOCCabeEN.DirAux].ToString();
@@ -253,6 +254,7 @@ namespace Datos
             xIns.AsignarParametro(MovimientoOCCabeEN.FlagEnvMov, pObj.FlagEnviadoMovimientoCabe.ToString());
             xIns.AsignarParametro(MovimientoOCCabeEN.MonPen, pObj.MontoPendiente.ToString());
             xIns.AsignarParametro(MovimientoOCCabeEN.FlgCrdSol, pObj.FlagCreadoxSolicitud.ToString());
+            xIns.AsignarParametro(MovimientoOCCabeEN.FlgExpCon, pObj.FlagExportadoConta.ToString());
             xIns.AsignarParametro(MovimientoOCCabeEN.UsuAgr, Universal.gCodigoUsuario);
             xIns.AsignarParametro(MovimientoOCCabeEN.FecAgr, "FECHAHORA");
             xIns.AsignarParametro(MovimientoOCCabeEN.UsuMod, Universal.gCodigoUsuario);
@@ -322,6 +324,7 @@ namespace Datos
                 xIns.AsignarParametro(MovimientoOCCabeEN.TipCam, xMovCab.TipoCambio.ToString());
                 xIns.AsignarParametro(MovimientoOCCabeEN.CEstMovCab, xMovCab.CEstadoMovimientoCabe);
                 xIns.AsignarParametro(MovimientoOCCabeEN.FlagEnvMov, xMovCab.FlagEnviadoMovimientoCabe.ToString());
+                xIns.AsignarParametro(MovimientoOCCabeEN.FlgExpCon, xMovCab.FlagExportadoConta.ToString());
                 xIns.AsignarParametro(MovimientoOCCabeEN.MonPen, xMovCab.MontoPendiente.ToString());
                 xIns.AsignarParametro(MovimientoOCCabeEN.FlgCrdSol, xMovCab.FlagCreadoxSolicitud.ToString());
                 xIns.AsignarParametro(MovimientoOCCabeEN.UsuAgr, Universal.gCodigoUsuario);
@@ -724,6 +727,42 @@ namespace Datos
 
             //actualizando la solicitud de pedido
             iScript += "Update MovimientoOCCabe set CEstadoMovimientoCabe = 3, FlagEnviadoMovimientoCabe = 1";
+            iScript += " Where CodigoEmpresa='" + Universal.gCodigoEmpresa + "'";
+            iScript += " And PeriodoMovimientoCabe='" + pObj.PeriodoMovimientoCabe + "'";
+            iScript += " And ClaveMovimientoCabe ='" + pObj.ClaveMovimientoCabe + "'";
+
+            xObjCon.ComandoTexto(iScript);
+            xObjCon.EjecutarSinResultado();
+            xObjCon.Desconectar();
+        }
+
+        public void ExportadoMovimientoCabe(MovimientoOCCabeEN pObj)
+        {
+            xObjCon.Conectar(SqlDatos.Bd.Almacen_Produccion);
+
+            //script manual
+            string iScript = string.Empty;
+
+            //actualizando la solicitud de pedido
+            iScript += "Update MovimientoOCCabe set  FlagExportadoConta = 1";
+            iScript += " Where CodigoEmpresa='" + Universal.gCodigoEmpresa + "'";
+            iScript += " And PeriodoMovimientoCabe='" + pObj.PeriodoMovimientoCabe + "'";
+            iScript += " And ClaveMovimientoCabe ='" + pObj.ClaveMovimientoCabe + "'";
+
+            xObjCon.ComandoTexto(iScript);
+            xObjCon.EjecutarSinResultado();
+            xObjCon.Desconectar();
+        }
+
+        public void NoEnviadoMovimientoCabe(MovimientoOCCabeEN pObj)
+        {
+            xObjCon.Conectar(SqlDatos.Bd.Almacen_Produccion);
+
+            //script manual
+            string iScript = string.Empty;
+
+            //actualizando la solicitud de pedido
+            iScript += "Update MovimientoOCCabe set CEstadoMovimientoCabe = 1, FlagEnviadoMovimientoCabe = 0";
             iScript += " Where CodigoEmpresa='" + Universal.gCodigoEmpresa + "'";
             iScript += " And PeriodoMovimientoCabe='" + pObj.PeriodoMovimientoCabe + "'";
             iScript += " And ClaveMovimientoCabe ='" + pObj.ClaveMovimientoCabe + "'";

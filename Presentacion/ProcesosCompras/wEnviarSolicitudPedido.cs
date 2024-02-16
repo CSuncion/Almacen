@@ -26,6 +26,7 @@ namespace Presentacion.ProcesosCompras
         }
 
         public wSolicitudPedido wSol;
+        public wRequerimiento wFrm;
         int eIncrementoBarra = 0;
         string eProcesoActual = string.Empty;
         Masivo eMas = new Masivo();

@@ -118,6 +118,17 @@ namespace Presentacion.ProcesosCompras
                 //ejecutar metodos                    
                 PresupuestoRN.RecalcularPresupuesto(iAño, iCodigoMes, movDet.CodigoCentroCosto, costo);
             }
+
+            List<PresupuestoEN> lPresupuesto = PresupuestoRN.ListarPresupuestos();
+
+            foreach (PresupuestoEN presupuesto in lPresupuesto)
+            {
+                if (!lMovDet.Exists(x => x.CodigoCentroCosto == presupuesto.CCentroCosto && x.PeriodoMovimientoCabe == presupuesto.CodigoPresupuesto)
+                    && iPeriodo == presupuesto.CodigoPresupuesto)
+                {
+                    PresupuestoRN.RecalcularPresupuestoSinMovimiento(iAño, iCodigoMes, presupuesto.CCentroCosto);
+                }
+            }
         }
 
         public void Cerrar()

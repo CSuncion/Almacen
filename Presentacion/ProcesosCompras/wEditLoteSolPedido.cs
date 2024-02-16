@@ -135,7 +135,7 @@ namespace Presentacion.ProcesosCompras
         public void AsignarLote(LoteEN pObj)
         {
             pObj.CodigoEmpresa = Universal.gCodigoEmpresa;
-            pObj.CodigoAlmacen = this.wLot.wDetSolPedido.wEditIng.txtCodAlm.Text.Trim();
+            pObj.CodigoAlmacen = this.wLot.wDetSolPedido.wFrm.txtCodAlm.Text.Trim();
             pObj.CodigoExistencia = this.wLot.wDetSolPedido.txtCodExi.Text.Trim();
             pObj.DescripcionExistencia = this.wLot.wDetSolPedido.txtDesExi.Text.Trim();
             pObj.CodigoLote = this.txtCodLot.Text.Trim();

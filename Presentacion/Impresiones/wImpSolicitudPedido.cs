@@ -52,6 +52,7 @@ namespace Presentacion.Impresiones
         #region Propietario
 
         public wSolicitudPedido wSol;
+        public wRequerimiento wFrm;
         //public wParteTrabajo wParTra;
         public wMovimientos wMov;
         //public wInventario wInv;

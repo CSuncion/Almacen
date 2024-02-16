@@ -293,8 +293,30 @@ namespace Datos
             string iScript = string.Empty;
 
             //actualizando la solicitud de pedido
-            iScript += "Update Presupuesto set SaldoPresupuestotemporal = (ImportePresupuesto + ImporteAdicionalPresupuesto) - " + costoMovimiento + ",";
+            iScript += "Update Presupuesto Set ";
+            iScript += " SaldoPresupuestotemporal = (ImportePresupuesto + ImporteAdicionalPresupuesto) - " + costoMovimiento + ",";
             iScript += " SaldoPresupuesto = (ImportePresupuesto + ImporteAdicionalPresupuesto) - " + costoMovimiento + "";
+            iScript += " Where CodigoEmpresa='" + Universal.gCodigoEmpresa + "'";
+            iScript += " And AnoPresupuesto ='" + iAno + "'";
+            iScript += " And CMesPresupuesto ='" + iMes + "'";
+            iScript += " And CCentroCosto ='" + codCosto + "'";
+
+            xObjCon.ComandoTexto(iScript);
+            xObjCon.EjecutarSinResultado();
+            xObjCon.Desconectar();
+        }
+
+        public void RecalcularPresupuestoSinMovimiento(string iAno, string iMes, string codCosto)
+        {
+            xObjCon.Conectar(SqlDatos.Bd.Almacen_Produccion);
+
+            //script manual
+            string iScript = string.Empty;
+
+            //actualizando la solicitud de pedido
+            iScript += "Update Presupuesto Set ";
+            iScript += " SaldoPresupuestotemporal = (ImportePresupuesto + ImporteAdicionalPresupuesto) ,";
+            iScript += " SaldoPresupuesto = (ImportePresupuesto + ImporteAdicionalPresupuesto) ";
             iScript += " Where CodigoEmpresa='" + Universal.gCodigoEmpresa + "'";
             iScript += " And AnoPresupuesto ='" + iAno + "'";
             iScript += " And CMesPresupuesto ='" + iMes + "'";

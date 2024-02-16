@@ -11,17 +11,17 @@
     <deploymentProvider codebase="file://server-lq/d/COMPARTIDO/SISTEMA_ALMACEN/Sistema/Presentacion.application" />
   </deployment>
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
-    <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.8.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Presentacion.exe.manifest" size="25389">
+    <dependentAssembly dependencyType="install" codebase="Presentacion.exe.manifest" size="41753">
       <assemblyIdentity name="Presentacion.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rTUv9dI12ZgUFHPmrw/OB5bsTxmaFKiyQTinkg3oAhI=</dsig:DigestValue>
+        <dsig:DigestValue>d/rDr/hT+YhmN6NlxHVccVpcFCiMbOky7KHv9ub1Ym4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

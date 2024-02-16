@@ -27,7 +27,9 @@ namespace Presentacion.ProcesosCompras
 
 
         //variables
+#pragma warning disable CS0414 // El campo 'wDetalleOrdenCompraPendiente.eNombreColumnaDgvPer' está asignado pero su valor nunca se usa
         string eNombreColumnaDgvPer = PresupuestoEN.CodPre;
+#pragma warning restore CS0414 // El campo 'wDetalleOrdenCompraPendiente.eNombreColumnaDgvPer' está asignado pero su valor nunca se usa
         public Universal.Opera eOperacion;
         public int wMoneda = 0;
         Masivo eMas = new Masivo();
@@ -35,7 +37,9 @@ namespace Presentacion.ProcesosCompras
         string eTitulo = "Item";
         public List<PresupuestoEN> eLisPre = new List<PresupuestoEN>();
         string eCenCos = string.Empty;
+#pragma warning disable CS0414 // El campo 'wDetalleOrdenCompraPendiente.eCan' está asignado pero su valor nunca se usa
         decimal eCan = 0;
+#pragma warning restore CS0414 // El campo 'wDetalleOrdenCompraPendiente.eCan' está asignado pero su valor nunca se usa
         MovimientoOCDetaEN eMovDet = new MovimientoOCDetaEN();
 
         #region Propietario

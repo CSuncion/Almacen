@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Datos</RootNamespace>
     <AssemblyName>Datos</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,12 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Comun, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Comun">
       <HintPath>..\Presentacion\Dlls\Comun.dll</HintPath>
     </Reference>
-    <Reference Include="ScriptBD, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="ScriptBD">
       <HintPath>..\Presentacion\Dlls\ScriptBD.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -51,6 +50,7 @@
   <ItemGroup>
     <Compile Include="BancoAD.cs" />
     <Compile Include="CobranzaAD.cs" />
+    <Compile Include="Contabilidad\RegContabCabe_Cont_AD.cs" />
     <Compile Include="CuentaBancoAD.cs" />
     <Compile Include="CuotaAD.cs" />
     <Compile Include="DetalleEnvioRecAD.cs" />

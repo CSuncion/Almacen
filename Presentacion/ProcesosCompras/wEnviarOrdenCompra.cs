@@ -97,7 +97,6 @@ namespace Presentacion.ProcesosCompras
                     if (movCabe.VerdadFalso)
                     {
                         this.EnviarCorreo(movCabe, iParEN);
-                        MovimientoOCCabeRN.EnviadoMovimientoCabe(movCabe);
                     }
 
                     iContadorObjeto++;
@@ -150,10 +149,12 @@ namespace Presentacion.ProcesosCompras
             try
             {
                 pSmtp.Send(pEmail);
+                MovimientoOCCabeRN.EnviadoMovimientoCabe(movCabe);
             }
             catch (Exception e)
             {
                 Mensaje.OperacionDenegada(e.Message, "Error");
+                MovimientoOCCabeRN.NoEnviadoMovimientoCabe(movCabe);
             }
 
         }

@@ -7,6 +7,7 @@ using Datos;
 using Comun;
 using Entidades.Adicionales;
 using Entidades.Contabilidad;
+using Datos.Contabilidad;
 
 namespace Negocio
 {
@@ -19,7 +20,7 @@ namespace Negocio
             return iPerEN;
         }
 
-        public static List<List< RegContabDeta_Cont_EN>> ListarRegContabDetasParaImportar(string pCodigoPeriodo)
+        public static List<List<RegContabDeta_Cont_EN>> ListarRegContabDetasParaImportar(string pCodigoPeriodo)
         {
             RegContabDeta_Cont_AD iPerAD = new RegContabDeta_Cont_AD();
             return iPerAD.ListarRegContabDetasParaImportar(pCodigoPeriodo);
@@ -129,6 +130,11 @@ namespace Negocio
             {
                 return true;
             }
+        }
+        public static void AdicionarRegContaDeta(RegContabDeta_Cont_EN pObj)
+        {
+            RegContabDeta_Cont_AD iPerAD = new RegContabDeta_Cont_AD();
+            iPerAD.AgregarRegContaDeta(pObj);
         }
 
     }

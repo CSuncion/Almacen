@@ -10,6 +10,7 @@ using Comun;
 using WinControles.ControlesWindows;
 using Entidades;
 using Negocio;
+using Presentacion.ProcesosCompras;
 
 namespace Presentacion.Listas
 {
@@ -41,6 +42,8 @@ namespace Presentacion.Listas
         public string eCampoBusqueda;
         public TextBox eCtrlValor;
         public Control eCtrlFoco;
+        public string codAux;
+        wRequerimiento wFrm = new wRequerimiento();
 
         #region Metodos
 
@@ -56,11 +59,11 @@ namespace Presentacion.Listas
 
         public void NuevaVentana()
         {
-            this.InicializaVentana();        
+            this.InicializaVentana();
             this.Show();
             this.txtBus.Focus();
         }
-        
+
         public void ActualizaVentana()
         {
             this.ActualizarListaAuxiliarsDeBaseDatos();
@@ -70,7 +73,7 @@ namespace Presentacion.Listas
         }
 
         public void ActualizarDgvLista()
-        {          
+        {
             //llenar la grilla
             Dgv iDgv = new Dgv();
             iDgv.MiDgv = this.DgvLista;
@@ -115,19 +118,30 @@ namespace Presentacion.Listas
             }
             else
             {
-                this.eCtrlValor.Text = Dgv.ObtenerValorCelda(this.DgvLista, AuxiliarEN.CodAux);
-                this.Close();
-                this.eCtrlValor.Focus();
-                this.eCtrlFoco.Focus();
+                if (this.eCtrlValor != null)
+                {
+                    this.eCtrlValor.Text = Dgv.ObtenerValorCelda(this.DgvLista, AuxiliarEN.CodAux);
+                    this.Close();
+                    this.eCtrlValor.Focus();
+                    this.eCtrlFoco.Focus();
+                }
+                else
+                {
+                    this.codAux = Dgv.ObtenerValorCelda(this.DgvLista, AuxiliarEN.CodAux);
+                    this.wFrm.MostrarPersistencia();
+                    this.wFrm.GenerarOrdenCompra(codAux);
+                    this.Close();
+                }
             }
         }
+
 
         public void OrdenarPorColumna(int pColumna)
         {
             eAuxEN.Adicionales.CampoOrden = this.DgvLista.Columns[pColumna].Name;
             this.eCampoBusqueda = this.DgvLista.Columns[pColumna].HeaderText;
             this.ActualizaVentana();
-            Txt.CursorAlUltimo(this.txtBus);  
+            Txt.CursorAlUltimo(this.txtBus);
         }
 
         public void ActualizarVentanaAlBuscarValor(KeyEventArgs pE)
@@ -173,9 +187,9 @@ namespace Presentacion.Listas
         }
 
         private void txtBus_KeyPress(object sender, KeyPressEventArgs e)
-        {         
+        {
             //si se selecciono la barra espaciadora
-            if (Encoding.ASCII.GetBytes(e.KeyChar.ToString())[0] == 13){this.DevolverDato();}
+            if (Encoding.ASCII.GetBytes(e.KeyChar.ToString())[0] == 13) { this.DevolverDato(); }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -190,7 +204,7 @@ namespace Presentacion.Listas
 
         private void txtBus_KeyUp(object sender, KeyEventArgs e)
         {
-            this.ActualizarVentanaAlBuscarValor(e);       
+            this.ActualizarVentanaAlBuscarValor(e);
         }
 
         private void DgvLista_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -198,6 +212,6 @@ namespace Presentacion.Listas
             this.OrdenarPorColumna(e.ColumnIndex);
         }
 
-       
+
     }
 }

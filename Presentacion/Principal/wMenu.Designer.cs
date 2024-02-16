@@ -64,6 +64,7 @@
             this.IteIngresosOrdenCompra = new System.Windows.Forms.ToolStripMenuItem();
             this.IteSalidas = new System.Windows.Forms.ToolStripMenuItem();
             this.IteTransferencias = new System.Windows.Forms.ToolStripMenuItem();
+            this.iteRequerimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.iteSolicitudPedido = new System.Windows.Forms.ToolStripMenuItem();
             this.iteOrdenCompra = new System.Windows.Forms.ToolStripMenuItem();
             this.iteOrdenServicio = new System.Windows.Forms.ToolStripMenuItem();
@@ -128,6 +129,8 @@
             this.iteStockFisicoProgramado = new System.Windows.Forms.ToolStripMenuItem();
             this.iteCompraProveedor = new System.Windows.Forms.ToolStripMenuItem();
             this.iteCompraExistencia = new System.Windows.Forms.ToolStripMenuItem();
+            this.IteReporteOrdenServicio = new System.Windows.Forms.ToolStripMenuItem();
+            this.IteRepOrdSerCeCo = new System.Windows.Forms.ToolStripMenuItem();
             this.variosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.IteParametros = new System.Windows.Forms.ToolStripMenuItem();
             this.baseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -146,23 +149,23 @@
             this.IteValidarExistencia = new System.Windows.Forms.ToolStripMenuItem();
             this.IteDoctor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsAccDir = new System.Windows.Forms.ToolStrip();
-            this.tsbAuxiliares = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbIngresos = new System.Windows.Forms.ToolStripButton();
-            this.tsbSalidas = new System.Windows.Forms.ToolStripButton();
-            this.tsbTransferencias = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbRecalculo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbBloSis = new System.Windows.Forms.ToolStripButton();
-            this.tsbCamAcc = new System.Windows.Forms.ToolStripButton();
-            this.tsbSalir = new System.Windows.Forms.ToolStripButton();
             this.tbcContenedor = new System.Windows.Forms.TabControl();
             this.ssBarraEstado = new System.Windows.Forms.StatusStrip();
             this.tssBarraEstado = new System.Windows.Forms.ToolStripStatusLabel();
-            this.IteReporteOrdenServicio = new System.Windows.Forms.ToolStripMenuItem();
-            this.IteRepOrdSerCeCo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbAuxiliares = new System.Windows.Forms.ToolStripButton();
+            this.tsbIngresos = new System.Windows.Forms.ToolStripButton();
+            this.tsbSalidas = new System.Windows.Forms.ToolStripButton();
+            this.tsbTransferencias = new System.Windows.Forms.ToolStripButton();
+            this.tsbRecalculo = new System.Windows.Forms.ToolStripButton();
+            this.tsbBloSis = new System.Windows.Forms.ToolStripButton();
+            this.tsbCamAcc = new System.Windows.Forms.ToolStripButton();
+            this.tsbSalir = new System.Windows.Forms.ToolStripButton();
+            this.exportacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iteExportarOrdComAConta = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.tsAccDir.SuspendLayout();
             this.ssBarraEstado.SuspendLayout();
@@ -388,6 +391,7 @@
             this.IteIngresosOrdenCompra,
             this.IteSalidas,
             this.IteTransferencias,
+            this.iteRequerimiento,
             this.iteSolicitudPedido,
             this.iteOrdenCompra,
             this.iteOrdenServicio,
@@ -423,6 +427,12 @@
             this.IteTransferencias.Name = "IteTransferencias";
             resources.ApplyResources(this.IteTransferencias, "IteTransferencias");
             this.IteTransferencias.Click += new System.EventHandler(this.IteTransferencias_Click);
+            // 
+            // iteRequerimiento
+            // 
+            this.iteRequerimiento.Name = "iteRequerimiento";
+            resources.ApplyResources(this.iteRequerimiento, "iteRequerimiento");
+            this.iteRequerimiento.Click += new System.EventHandler(this.iteRequerimiento_Click);
             // 
             // iteSolicitudPedido
             // 
@@ -862,13 +872,27 @@
             resources.ApplyResources(this.iteCompraExistencia, "iteCompraExistencia");
             this.iteCompraExistencia.Click += new System.EventHandler(this.iteCompraExistencia_Click);
             // 
+            // IteReporteOrdenServicio
+            // 
+            this.IteReporteOrdenServicio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.IteRepOrdSerCeCo});
+            this.IteReporteOrdenServicio.Name = "IteReporteOrdenServicio";
+            resources.ApplyResources(this.IteReporteOrdenServicio, "IteReporteOrdenServicio");
+            // 
+            // IteRepOrdSerCeCo
+            // 
+            this.IteRepOrdSerCeCo.Name = "IteRepOrdSerCeCo";
+            resources.ApplyResources(this.IteRepOrdSerCeCo, "IteRepOrdSerCeCo");
+            this.IteRepOrdSerCeCo.Click += new System.EventHandler(this.IteRepOrdSerCeCo_Click);
+            // 
             // variosToolStripMenuItem
             // 
             this.variosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.IteParametros,
             this.baseDeDatosToolStripMenuItem,
             this.IteImportaciones,
-            this.recibosToolStripMenuItem});
+            this.recibosToolStripMenuItem,
+            this.exportacionesToolStripMenuItem});
             this.variosToolStripMenuItem.Name = "variosToolStripMenuItem";
             resources.ApplyResources(this.variosToolStripMenuItem, "variosToolStripMenuItem");
             // 
@@ -999,50 +1023,15 @@
             this.tsbSalir});
             this.tsAccDir.Name = "tsAccDir";
             // 
-            // tsbAuxiliares
-            // 
-            this.tsbAuxiliares.Image = global::Presentacion.Properties.Resources.user_suit;
-            resources.ApplyResources(this.tsbAuxiliares, "tsbAuxiliares");
-            this.tsbAuxiliares.Name = "tsbAuxiliares";
-            this.tsbAuxiliares.Click += new System.EventHandler(this.tsbAuxiliares_Click);
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             // 
-            // tsbIngresos
-            // 
-            this.tsbIngresos.Image = global::Presentacion.Properties.Resources.arrow_in;
-            resources.ApplyResources(this.tsbIngresos, "tsbIngresos");
-            this.tsbIngresos.Name = "tsbIngresos";
-            this.tsbIngresos.Click += new System.EventHandler(this.tsbIngresos_Click);
-            // 
-            // tsbSalidas
-            // 
-            this.tsbSalidas.Image = global::Presentacion.Properties.Resources.arrow_out;
-            resources.ApplyResources(this.tsbSalidas, "tsbSalidas");
-            this.tsbSalidas.Name = "tsbSalidas";
-            this.tsbSalidas.Click += new System.EventHandler(this.tsbSalidas_Click);
-            // 
-            // tsbTransferencias
-            // 
-            this.tsbTransferencias.Image = global::Presentacion.Properties.Resources.arrow_refresh1;
-            resources.ApplyResources(this.tsbTransferencias, "tsbTransferencias");
-            this.tsbTransferencias.Name = "tsbTransferencias";
-            this.tsbTransferencias.Click += new System.EventHandler(this.tsbTransferencias_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
-            // 
-            // tsbRecalculo
-            // 
-            this.tsbRecalculo.Image = global::Presentacion.Properties.Resources._16__Calculator_;
-            resources.ApplyResources(this.tsbRecalculo, "tsbRecalculo");
-            this.tsbRecalculo.Name = "tsbRecalculo";
-            this.tsbRecalculo.Click += new System.EventHandler(this.tsbRecalculo_Click);
             // 
             // toolStripSeparator5
             // 
@@ -1053,27 +1042,6 @@
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
-            // 
-            // tsbBloSis
-            // 
-            this.tsbBloSis.Image = global::Presentacion.Properties.Resources._16__Lock_on_;
-            resources.ApplyResources(this.tsbBloSis, "tsbBloSis");
-            this.tsbBloSis.Name = "tsbBloSis";
-            this.tsbBloSis.Click += new System.EventHandler(this.tsbBloSis_Click);
-            // 
-            // tsbCamAcc
-            // 
-            this.tsbCamAcc.Image = global::Presentacion.Properties.Resources._16__Users_;
-            resources.ApplyResources(this.tsbCamAcc, "tsbCamAcc");
-            this.tsbCamAcc.Name = "tsbCamAcc";
-            this.tsbCamAcc.Click += new System.EventHandler(this.tsbCamAcc_Click);
-            // 
-            // tsbSalir
-            // 
-            this.tsbSalir.Image = global::Presentacion.Properties.Resources.gnome_home;
-            resources.ApplyResources(this.tsbSalir, "tsbSalir");
-            this.tsbSalir.Name = "tsbSalir";
-            this.tsbSalir.Click += new System.EventHandler(this.tsbSalir_Click);
             // 
             // tbcContenedor
             // 
@@ -1098,18 +1066,74 @@
             this.tssBarraEstado.Name = "tssBarraEstado";
             resources.ApplyResources(this.tssBarraEstado, "tssBarraEstado");
             // 
-            // IteReporteOrdenServicio
+            // tsbAuxiliares
             // 
-            this.IteReporteOrdenServicio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.IteRepOrdSerCeCo});
-            this.IteReporteOrdenServicio.Name = "IteReporteOrdenServicio";
-            resources.ApplyResources(this.IteReporteOrdenServicio, "IteReporteOrdenServicio");
+            this.tsbAuxiliares.Image = global::Presentacion.Properties.Resources.user_suit;
+            resources.ApplyResources(this.tsbAuxiliares, "tsbAuxiliares");
+            this.tsbAuxiliares.Name = "tsbAuxiliares";
+            this.tsbAuxiliares.Click += new System.EventHandler(this.tsbAuxiliares_Click);
             // 
-            // IteRepOrdSerCeCo
+            // tsbIngresos
             // 
-            this.IteRepOrdSerCeCo.Name = "IteRepOrdSerCeCo";
-            resources.ApplyResources(this.IteRepOrdSerCeCo, "IteRepOrdSerCeCo");
-            this.IteRepOrdSerCeCo.Click += new System.EventHandler(this.IteRepOrdSerCeCo_Click);
+            this.tsbIngresos.Image = global::Presentacion.Properties.Resources.arrow_in;
+            resources.ApplyResources(this.tsbIngresos, "tsbIngresos");
+            this.tsbIngresos.Name = "tsbIngresos";
+            this.tsbIngresos.Click += new System.EventHandler(this.tsbIngresos_Click);
+            // 
+            // tsbSalidas
+            // 
+            this.tsbSalidas.Image = global::Presentacion.Properties.Resources.arrow_out;
+            resources.ApplyResources(this.tsbSalidas, "tsbSalidas");
+            this.tsbSalidas.Name = "tsbSalidas";
+            this.tsbSalidas.Click += new System.EventHandler(this.tsbSalidas_Click);
+            // 
+            // tsbTransferencias
+            // 
+            this.tsbTransferencias.Image = global::Presentacion.Properties.Resources.arrow_refresh1;
+            resources.ApplyResources(this.tsbTransferencias, "tsbTransferencias");
+            this.tsbTransferencias.Name = "tsbTransferencias";
+            this.tsbTransferencias.Click += new System.EventHandler(this.tsbTransferencias_Click);
+            // 
+            // tsbRecalculo
+            // 
+            this.tsbRecalculo.Image = global::Presentacion.Properties.Resources._16__Calculator_;
+            resources.ApplyResources(this.tsbRecalculo, "tsbRecalculo");
+            this.tsbRecalculo.Name = "tsbRecalculo";
+            this.tsbRecalculo.Click += new System.EventHandler(this.tsbRecalculo_Click);
+            // 
+            // tsbBloSis
+            // 
+            this.tsbBloSis.Image = global::Presentacion.Properties.Resources._16__Lock_on_;
+            resources.ApplyResources(this.tsbBloSis, "tsbBloSis");
+            this.tsbBloSis.Name = "tsbBloSis";
+            this.tsbBloSis.Click += new System.EventHandler(this.tsbBloSis_Click);
+            // 
+            // tsbCamAcc
+            // 
+            this.tsbCamAcc.Image = global::Presentacion.Properties.Resources._16__Users_;
+            resources.ApplyResources(this.tsbCamAcc, "tsbCamAcc");
+            this.tsbCamAcc.Name = "tsbCamAcc";
+            this.tsbCamAcc.Click += new System.EventHandler(this.tsbCamAcc_Click);
+            // 
+            // tsbSalir
+            // 
+            this.tsbSalir.Image = global::Presentacion.Properties.Resources.gnome_home;
+            resources.ApplyResources(this.tsbSalir, "tsbSalir");
+            this.tsbSalir.Name = "tsbSalir";
+            this.tsbSalir.Click += new System.EventHandler(this.tsbSalir_Click);
+            // 
+            // exportacionesToolStripMenuItem
+            // 
+            this.exportacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iteExportarOrdComAConta});
+            this.exportacionesToolStripMenuItem.Name = "exportacionesToolStripMenuItem";
+            resources.ApplyResources(this.exportacionesToolStripMenuItem, "exportacionesToolStripMenuItem");
+            // 
+            // iteExportarOrdComAConta
+            // 
+            this.iteExportarOrdComAConta.Name = "iteExportarOrdComAConta";
+            resources.ApplyResources(this.iteExportarOrdComAConta, "iteExportarOrdComAConta");
+            this.iteExportarOrdComAConta.Click += new System.EventHandler(this.iteExportarOrdComAConta_Click);
             // 
             // wMenu
             // 
@@ -1272,6 +1296,9 @@
         internal System.Windows.Forms.ToolStripMenuItem iteOrdenServicio;
         private System.Windows.Forms.ToolStripMenuItem IteReporteOrdenServicio;
         private System.Windows.Forms.ToolStripMenuItem IteRepOrdSerCeCo;
+        internal System.Windows.Forms.ToolStripMenuItem iteRequerimiento;
+        private System.Windows.Forms.ToolStripMenuItem exportacionesToolStripMenuItem;
+        internal System.Windows.Forms.ToolStripMenuItem iteExportarOrdComAConta;
     }
 }
 

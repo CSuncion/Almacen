@@ -53,6 +53,7 @@
             this.txtDesAlm = new System.Windows.Forms.TextBox();
             this.crv1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.crCompraExistencia1 = new Presentacion.Impresiones.CrCompraExistencia();
+            this.CrCompraExistencia2 = new Presentacion.Impresiones.CrCompraExistencia();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -311,7 +312,7 @@
             this.crv1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crv1.Location = new System.Drawing.Point(12, 117);
             this.crv1.Name = "crv1";
-            this.crv1.ReportSource = this.crCompraExistencia1;
+            this.crv1.ReportSource = this.CrCompraExistencia2;
             this.crv1.Size = new System.Drawing.Size(1219, 249);
             this.crv1.TabIndex = 77;
             this.crv1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
@@ -360,5 +361,6 @@
         internal System.Windows.Forms.TextBox txtCodAux;
         private System.Windows.Forms.TextBox txtDesAux;
         private CrCompraExistencia crCompraExistencia1;
+        private CrCompraExistencia CrCompraExistencia2;
     }
 }

@@ -17,7 +17,7 @@ namespace Datos.Config
         public enum Bd
         {
             Almacen_Produccion = 0,
-            ContabilidadAlfisa
+            Alfisa_Contabilidad
         }
 
 
@@ -48,12 +48,12 @@ namespace Datos.Config
                         this.cn.ConnectionString = xCadenaConexion.ToString();
                         break;
                     }
-                case SqlDatos.Bd.ContabilidadAlfisa:
+                case SqlDatos.Bd.Alfisa_Contabilidad:
                     {
-                        //xCadenaConexion.Append(" Data Source=LENOVO-PC\\DESARROLLO;");                      
-                        //xCadenaConexion.Append(" Initial Catalog=" + SqlDatos.Bd.ContabilidadAlfisa.ToString() + ";");
-                        //xCadenaConexion.Append(" User Id=sa;");
-                        //xCadenaConexion.Append(" Password=.;");                        
+                        xCadenaConexion.Append(" Data Source=DESKTOP-VQ0I0E0\\SQLEXPRESS;");
+                        xCadenaConexion.Append(" Initial Catalog=" + SqlDatos.Bd.Alfisa_Contabilidad.ToString() + ";");
+                        xCadenaConexion.Append(" User Id=sa;");
+                        xCadenaConexion.Append(" Password=.;");
                         this.cn.ConnectionString = xCadenaConexion.ToString();
                         break;
                     }

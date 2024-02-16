@@ -2866,6 +2866,12 @@ namespace Negocio
             iPerAD.EnviadoMovimientoCabe(pObj);
         }
 
+        public static void NoEnviadoMovimientoCabe(MovimientoOCCabeEN pObj)
+        {
+            MovimientoOCCabeAD iPerAD = new MovimientoOCCabeAD();
+            iPerAD.NoEnviadoMovimientoCabe(pObj);
+        }
+
         public static void AsignarOrdenCompraEnviada(MovimientoOCCabeEN pObj, List<MovimientoOCCabeEN> pLista)
         {
             //lista actualizada

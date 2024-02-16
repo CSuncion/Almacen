@@ -192,25 +192,25 @@
     <value>Por Empresa</value>
   </data>
   <data name="IteTablas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="IteTablas.Text" xml:space="preserve">
     <value>Tablas</value>
   </data>
   <data name="ItePeriodos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ItePeriodos.Text" xml:space="preserve">
     <value>Periodos</value>
   </data>
   <data name="IteTiposOperacion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="IteTiposOperacion.Text" xml:space="preserve">
     <value>Tipos De Operacion</value>
   </data>
   <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="ItePersonalAlmacen.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 22</value>
@@ -231,13 +231,13 @@
     <value>Reciben</value>
   </data>
   <data name="ItePersonal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ItePersonal.Text" xml:space="preserve">
     <value>Personal</value>
   </data>
   <data name="IteAuxiliares.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="IteAuxiliares.Text" xml:space="preserve">
     <value>Auxiliares</value>
@@ -246,40 +246,40 @@
     <value>Clientes y Proveedores</value>
   </data>
   <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="IteAlmacenes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="IteAlmacenes.Text" xml:space="preserve">
     <value>Almacenes</value>
   </data>
   <data name="IteExistencias.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="IteExistencias.Text" xml:space="preserve">
     <value>Existencias</value>
   </data>
   <data name="itePresupuestos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="itePresupuestos.Text" xml:space="preserve">
     <value>Presupuestos</value>
   </data>
   <data name="iteTipoCambio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="iteTipoCambio.Text" xml:space="preserve">
     <value>Tipo de Cambio</value>
   </data>
   <data name="IteBancos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="IteBancos.Text" xml:space="preserve">
     <value>Bancos</value>
   </data>
   <data name="IteCuentaBancos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="IteCuentaBancos.Text" xml:space="preserve">
     <value>Cuentas Bancarias</value>
@@ -314,11 +314,20 @@
   <data name="IteTransferencias.Text" xml:space="preserve">
     <value>Transferencias</value>
   </data>
+  <data name="iteRequerimiento.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="iteRequerimiento.Text" xml:space="preserve">
+    <value>Requerimiento</value>
+  </data>
   <data name="iteSolicitudPedido.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
   </data>
   <data name="iteSolicitudPedido.Text" xml:space="preserve">
     <value>Solicitud de Pedidos</value>
+  </data>
+  <data name="iteSolicitudPedido.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="iteOrdenCompra.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
@@ -714,7 +723,7 @@
     <value>Ingresos x Orden de Compra</value>
   </data>
   <data name="IteRepOrdSerCeCo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>144, 22</value>
   </data>
   <data name="IteRepOrdSerCeCo.Text" xml:space="preserve">
     <value>Centro Costo</value>
@@ -750,7 +759,7 @@
     <value>Base De Datos</value>
   </data>
   <data name="IteImpContabilidad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="IteImpContabilidad.Text" xml:space="preserve">
     <value>Contabilidad</value>
@@ -772,6 +781,18 @@
   </data>
   <data name="recibosToolStripMenuItem.Text" xml:space="preserve">
     <value>Recibos</value>
+  </data>
+  <data name="iteExportarOrdComAConta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>306, 22</value>
+  </data>
+  <data name="iteExportarOrdComAConta.Text" xml:space="preserve">
+    <value>Exportar Orden de Compra =&gt; Contabilidad</value>
+  </data>
+  <data name="exportacionesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="exportacionesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exportaciones</value>
   </data>
   <data name="variosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 18</value>
@@ -1050,6 +1071,9 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1028, 261</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Software Almacen  Vs 1.0.1.0.6</value>
   </data>
@@ -1255,6 +1279,12 @@
     <value>IteTransferencias</value>
   </data>
   <data name="&gt;&gt;IteTransferencias.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iteRequerimiento.Name" xml:space="preserve">
+    <value>iteRequerimiento</value>
+  </data>
+  <data name="&gt;&gt;iteRequerimiento.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;iteSolicitudPedido.Name" xml:space="preserve">
@@ -1641,6 +1671,18 @@
   <data name="&gt;&gt;iteCompraExistencia.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;IteReporteOrdenServicio.Name" xml:space="preserve">
+    <value>IteReporteOrdenServicio</value>
+  </data>
+  <data name="&gt;&gt;IteReporteOrdenServicio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IteRepOrdSerCeCo.Name" xml:space="preserve">
+    <value>IteRepOrdSerCeCo</value>
+  </data>
+  <data name="&gt;&gt;IteRepOrdSerCeCo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;variosToolStripMenuItem.Name" xml:space="preserve">
     <value>variosToolStripMenuItem</value>
   </data>
@@ -1743,17 +1785,41 @@
   <data name="&gt;&gt;IteDoctor.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsbAuxiliares.Name" xml:space="preserve">
-    <value>tsbAuxiliares</value>
-  </data>
-  <data name="&gt;&gt;tsbAuxiliares.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
     <value>toolStripSeparator4</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
+    <value>toolStripSeparator3</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
+    <value>toolStripSeparator5</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator6.Name" xml:space="preserve">
+    <value>toolStripSeparator6</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssBarraEstado.Name" xml:space="preserve">
+    <value>tssBarraEstado</value>
+  </data>
+  <data name="&gt;&gt;tssBarraEstado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbAuxiliares.Name" xml:space="preserve">
+    <value>tsbAuxiliares</value>
+  </data>
+  <data name="&gt;&gt;tsbAuxiliares.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbIngresos.Name" xml:space="preserve">
     <value>tsbIngresos</value>
@@ -1773,29 +1839,11 @@
   <data name="&gt;&gt;tsbTransferencias.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
-    <value>toolStripSeparator3</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsbRecalculo.Name" xml:space="preserve">
     <value>tsbRecalculo</value>
   </data>
   <data name="&gt;&gt;tsbRecalculo.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
-    <value>toolStripSeparator5</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator6.Name" xml:space="preserve">
-    <value>toolStripSeparator6</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbBloSis.Name" xml:space="preserve">
     <value>tsbBloSis</value>
@@ -1815,22 +1863,16 @@
   <data name="&gt;&gt;tsbSalir.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tssBarraEstado.Name" xml:space="preserve">
-    <value>tssBarraEstado</value>
+  <data name="&gt;&gt;exportacionesToolStripMenuItem.Name" xml:space="preserve">
+    <value>exportacionesToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;tssBarraEstado.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;IteReporteOrdenServicio.Name" xml:space="preserve">
-    <value>IteReporteOrdenServicio</value>
-  </data>
-  <data name="&gt;&gt;IteReporteOrdenServicio.Type" xml:space="preserve">
+  <data name="&gt;&gt;exportacionesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;IteRepOrdSerCeCo.Name" xml:space="preserve">
-    <value>IteRepOrdSerCeCo</value>
+  <data name="&gt;&gt;iteExportarOrdComAConta.Name" xml:space="preserve">
+    <value>iteExportarOrdComAConta</value>
   </data>
-  <data name="&gt;&gt;IteRepOrdSerCeCo.Type" xml:space="preserve">
+  <data name="&gt;&gt;iteExportarOrdComAConta.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

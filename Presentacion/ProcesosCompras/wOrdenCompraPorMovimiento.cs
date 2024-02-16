@@ -33,7 +33,9 @@ namespace Presentacion.ProcesosCompras
         public Universal.Opera eOperacion;
         Masivo eMas = new Masivo();
         public string eClaveDgvLot = string.Empty;
+#pragma warning disable CS0414 // El campo 'wOrdenCompraPorMovimiento.eFranjaDgvLot' está asignado pero su valor nunca se usa
         Dgv.Franja eFranjaDgvLot = Dgv.Franja.PorIndice;
+#pragma warning restore CS0414 // El campo 'wOrdenCompraPorMovimiento.eFranjaDgvLot' está asignado pero su valor nunca se usa
         public List<dynamic> eLisMovDet = new List<dynamic>();
 
         #endregion

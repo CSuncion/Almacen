@@ -74,6 +74,7 @@ namespace Entidades
         public const string MonTot = "MontoTotal";
         public const string MonPen = "MontoTotalPendientePago";
         public const string FlgCrdSol = "FlagCreadoxSolicitud";
+        public const string FlgExpCon = "FlagExportadoConta";
         public const string ClaSolCabPed = "ClaveSolicitudPedidoCabe";
         public const string xCTipoServicio = "CTipoServicio";
         public const string xNTipoServicio = "NTipoServicio";
@@ -157,6 +158,7 @@ namespace Entidades
         private decimal _MontoTotal = 0;
         private decimal _MontoPendiente = 0;
         private int _FlagCreadoxSolicitud = 0;
+        private int _FlagExportadoConta = 0;
         private string _ClaveSolicitudPedidoCabe = string.Empty;
         private string _CTipoServicio = string.Empty;
         private string _NTipoServicio = string.Empty;
@@ -572,6 +574,12 @@ namespace Entidades
         {
             get { return _FlagCreadoxSolicitud; }
             set { _FlagCreadoxSolicitud = value; }
+        }
+
+        public int FlagExportadoConta
+        {
+            get { return _FlagExportadoConta; }
+            set { _FlagExportadoConta = value; }
         }
 
         public string ClaveSolicitudPedidoCabe

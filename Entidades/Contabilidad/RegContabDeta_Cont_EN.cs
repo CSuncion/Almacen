@@ -41,6 +41,61 @@ namespace Entidades.Contabilidad
         public const string CodCenCos = "CodigoCentroCosto";
         public const string NomCenCos = "NombreCentroCosto";
 
+        public const string _ClaveRegContabDeta = "ClaveRegContabDeta";
+        public const string _COrigen = "COrigen";
+        public const string _CFile = "CFile";
+        public const string _CorrelativoRegContabCabe = "CorrelativoRegContabCabe";
+        public const string _CorrelativoRegContabDeta = "CorrelativoRegContabDeta";
+        public const string _CTipoDocumento = "CTipoDocumento";
+        public const string _FechaVctoDocumento = "FechaVctoDocumento";
+        public const string _CMonedaDocumento = "CMonedaDocumento";
+        public const string _VentaTipoCambio = "VentaTipoCambio";
+        public const string _CodigoCuenta = "CodigoCuenta";
+        public const string _CDebeHaber = "CDebeHaber";
+        public const string _ImporteSolRegContabDeta = "ImporteSolRegContabDeta";
+        public const string _ImporteMonedaRegContabDeta = "ImporteMonedaRegContabDeta";
+        public const string _CIngresoEgreso = "CIngresoEgreso";
+        public const string _CCentroCosto = "CCentroCosto";
+        public const string _CArea = "CArea";
+        public const string _CFlujoCaja = "CFlujoCaja";
+        public const string _CodigoAlmacen = "CodigoAlmacen";
+        public const string _CodigoItemAlmacen = "CodigoItemAlmacen";
+        public const string _CantidadItemAlmacen = "CantidadItemAlmacen";
+        public const string _CTipoLineaAsiento = "CTipoLineaAsiento";
+        public const string _CEstadoRegContabDeta = "CEstadoRegContabDeta";
+        public const string _UsuarioAgrega = "UsuarioAgrega";
+        public const string _FechaAgrega = "FechaAgrega";
+        public const string _UsuarioModifica = "UsuarioModifica";
+        public const string _FechaModifica = "FechaModifica";
+
+        public string ClaveRegContabDeta { get; set; } = string.Empty;
+        public string COrigen { get; set; } = string.Empty;
+        public string CFile { get; set; } = string.Empty;
+        public string CorrelativoRegContabCabe { get; set; } = string.Empty;
+        public string CorrelativoRegContabDeta { get; set; } = string.Empty;
+        public string CTipoDocumento { get; set; } = string.Empty;
+        public string FechaVctoDocumento { get; set; } = string.Empty;
+        public string CMonedaDocumento { get; set; } = string.Empty;
+        public decimal VentaTipoCambio { get; set; } = 0;
+        public string CodigoCuenta { get; set; } = string.Empty;
+        public string CDebeHaber { get; set; } = string.Empty;
+        public decimal ImporteSolRegContabDeta { get; set; } = 0;
+        public decimal ImporteMonedaRegContabDeta { get; set; } = 0;
+        public string CIngresoEgreso { get; set; } = string.Empty;
+        public string CCentroCosto { get; set; } = string.Empty;
+        public string CArea { get; set; } = string.Empty;
+        public string CFlujoCaja { get; set; } = string.Empty;
+        public string CodigoAlmacen { get; set; } = string.Empty;
+        public string CodigoItemAlmacen { get; set; } = string.Empty;
+        public decimal CantidadItemAlmacen { get; set; } = 0;
+        public string CTipoLineaAsiento { get; set; } = string.Empty;
+        public string CEstadoRegContabDeta { get; set; } = string.Empty;
+        public string UsuarioAgrega { get; set; }
+        public DateTime FechaAgrega { get; set; }
+        public string UsuarioModifica { get; set; }
+        public DateTime FechaModifica { get; set; }
+
+
         //Atributos
         private string _ClaveObjeto = string.Empty;
         private string _ClaveRegContabCabe = string.Empty;
@@ -72,6 +127,8 @@ namespace Entidades.Contabilidad
         private string _CodigoCentroCosto = string.Empty;
         private string _NombreCentroCosto = string.Empty;
         private Adicional _Adicionales = new Adicional();
+
+
 
         //propiedades
         public string ClaveObjeto
@@ -253,6 +310,8 @@ namespace Entidades.Contabilidad
             get { return this._Adicionales; }
             set { this._Adicionales = value; }
         }
+
+
 
     }
 }

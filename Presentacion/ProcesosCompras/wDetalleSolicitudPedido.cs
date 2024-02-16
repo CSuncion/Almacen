@@ -41,6 +41,7 @@ namespace Presentacion.ProcesosCompras
         #region Propietario
 
         public wEditSolicitudPedido wEditIng;
+        public wEditRequerimiento wFrm;
 
 
         #endregion
@@ -134,7 +135,7 @@ namespace Presentacion.ProcesosCompras
             eMas.EjecutarTodosLosEventos();
 
             //deshabilita propietario
-            this.wEditIng.Enabled = false;
+            this.wFrm.Enabled = false;
 
             //ver ventana
             this.Show();
@@ -143,10 +144,10 @@ namespace Presentacion.ProcesosCompras
         public void LlenarListaLotesExistencia()
         {
             //asignar parametros
-            string iCodigoExistenciaGrilla = Dgv.ObtenerValorCelda(this.wEditIng.dgvMovDet, SolicitudPedidoDetaEN.CodExi);
+            string iCodigoExistenciaGrilla = Dgv.ObtenerValorCelda(this.wFrm.dgvMovDet, SolicitudPedidoDetaEN.CodExi);
 
             //ejecutar metodo    
-            this.eLisLotExi = ListaG.Filtrar<LoteEN>(this.wEditIng.eLisLot, LoteEN.CodExi, iCodigoExistenciaGrilla);
+            this.eLisLotExi = ListaG.Filtrar<LoteEN>(this.wFrm.eLisLot, LoteEN.CodExi, iCodigoExistenciaGrilla);
         }
 
         public void VentanaAdicionar()
@@ -221,13 +222,13 @@ namespace Presentacion.ProcesosCompras
         public void AsignarSolicitudPedidoDeta(SolicitudPedidoDetaEN pObj)
         {
             pObj.CodigoEmpresa = Universal.gCodigoEmpresa;
-            pObj.FechaSolicitudPedidoCabe = this.wEditIng.dtpFecMovCab.Text;
-            pObj.PeriodoSolicitudPedidoCabe = this.wEditIng.wSol.lblPeriodo.Text;
-            pObj.CodigoAlmacen = this.wEditIng.txtCodAlm.Text.Trim();
+            pObj.FechaSolicitudPedidoCabe = this.wFrm.dtpFecMovCab.Text;
+            pObj.PeriodoSolicitudPedidoCabe = this.wFrm.wFrm.lblPeriodo.Text;
+            pObj.CodigoAlmacen = this.wFrm.txtCodAlm.Text.Trim();
             pObj.CClaseTipoOperacion = "1";//ingreso
-            pObj.NumeroSolicitudPedidoCabe = this.wEditIng.txtNumMovCab.Text.Trim();
-            pObj.CodigoAuxiliar = this.wEditIng.txtCodAux.Text.Trim();
-            pObj.FechaDocumento = this.wEditIng.dtpFecDoc.Text;
+            pObj.NumeroSolicitudPedidoCabe = this.wFrm.txtNumMovCab.Text.Trim();
+            pObj.CodigoAuxiliar = this.wFrm.txtCodAux.Text.Trim();
+            pObj.FechaDocumento = this.wFrm.dtpFecDoc.Text;
             pObj.CodigoCentroCosto = this.txtCodAre.Text.Trim();
             pObj.DescripcionCentroCosto = this.txtDesAre.Text.Trim();
             pObj.CCodigoPartida = this.txtCodPar.Text.Trim();
@@ -245,7 +246,7 @@ namespace Presentacion.ProcesosCompras
             pObj.CantidadConversion = Convert.ToDecimal(this.txtCanCon.Text);
             pObj.PrecioUltimaCompra = Convert.ToDecimal(txtPrecUltComp.Text.Trim());
             pObj.FechaUltimaCompra = this.dtpFecPrecUltComp.Text;
-            pObj.ClaveSolicitudPedidoCabe = this.wEditIng.ObtenerClaveSolicitudPedidoCabe();
+            pObj.ClaveSolicitudPedidoCabe = this.wFrm.ObtenerClaveSolicitudPedidoCabe();
         }
 
         public void MostrarSolicitudPedidoDeta(SolicitudPedidoDetaEN pObj)
@@ -304,10 +305,10 @@ namespace Presentacion.ProcesosCompras
             Mensaje.OperacionSatisfactoria("Se adiciono el registro", "Detalle");
 
             //actualizar propietario
-            this.wEditIng.eClaveDgvMovDet = this.wEditIng.eLisMovDet[this.wEditIng.eLisMovDet.Count - 1].ClaveObjeto;
-            this.wEditIng.MostrarSolicitudPedidosDeta();
-            this.wEditIng.CambiarSoloLecturaACodigoAlmacen();
-            this.wEditIng.CambiarSoloLecturaACodigoTipoOperacion();
+            this.wFrm.eClaveDgvMovDet = this.wFrm.eLisMovDet[this.wFrm.eLisMovDet.Count - 1].ClaveObjeto;
+            this.wFrm.MostrarSolicitudPedidosDeta();
+            this.wFrm.CambiarSoloLecturaACodigoAlmacen();
+            this.wFrm.CambiarSoloLecturaACodigoTipoOperacion();
 
             //limpiar controles
             this.MostrarSolicitudPedidoDeta(SolicitudPedidoDetaRN.EnBlanco());
@@ -340,18 +341,18 @@ namespace Presentacion.ProcesosCompras
             this.AsignarSolicitudPedidoDeta(iComDetEN);
 
             //adicionar detalle
-            SolicitudPedidoDetaRN.AdicionarSolicitudPedidoDeta(this.wEditIng.eLisMovDet, iComDetEN);
+            SolicitudPedidoDetaRN.AdicionarSolicitudPedidoDeta(this.wFrm.eLisMovDet, iComDetEN);
         }
 
         public void AdicionarLotesExistencia()
         {
-            this.wEditIng.eLisLot.AddRange(this.eLisLotExi);
+            this.wFrm.eLisLot.AddRange(this.eLisLotExi);
         }
 
         public void ActualizarPresupuesto()
         {
             PresupuestoEN xObj = new PresupuestoEN();
-            xObj.CodigoPresupuesto = wEditIng.wSol.lblPeriodo.Text;
+            xObj.CodigoPresupuesto = wFrm.wFrm.lblPeriodo.Text;
             xObj.CCentroCosto = this.txtCodAre.Text;
 
 
@@ -383,13 +384,13 @@ namespace Presentacion.ProcesosCompras
             iPerEN.Adicionales.CampoOrden = eNombreColumnaDgvPer;
             this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
 
-            string presupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wEditIng.wSol.lblPeriodo.Text
+            string presupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wFrm.wFrm.lblPeriodo.Text
                 && x.CCentroCosto == txtCodAre.Text.Trim()).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
-                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wEditIng.wSol.lblPeriodo.Text && x.CCentroCosto == txtCodAre.Text.Trim()).FirstOrDefault().ImportePresupuesto.ToString(), 2);
+                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wFrm.wFrm.lblPeriodo.Text && x.CCentroCosto == txtCodAre.Text.Trim()).FirstOrDefault().ImportePresupuesto.ToString(), 2);
 
-            string nuevoPresupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wEditIng.wSol.lblPeriodo.Text
+            string nuevoPresupuesto = this.eLisPre.Where(x => x.CodigoPresupuesto == wFrm.wFrm.lblPeriodo.Text
                 && x.CCentroCosto == txtCodAre.Text.Trim()).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
-                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wEditIng.wSol.lblPeriodo.Text && x.CCentroCosto == txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuestoTemporal.ToString(), 2);
+                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wFrm.wFrm.lblPeriodo.Text && x.CCentroCosto == txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuestoTemporal.ToString(), 2);
 
             decimal ultimoPrecio = Convert.ToDecimal(Formato.NumeroDecimal(this.txtPrecUltComp.Text, 2));
             decimal cantidad = Convert.ToDecimal(Formato.NumeroDecimal(this.txtCantMovDet.Text, 2));
@@ -428,8 +429,8 @@ namespace Presentacion.ProcesosCompras
             Mensaje.OperacionSatisfactoria("Se modifico el registro", "Detalle");
 
             //Actualizar propietario
-            this.wEditIng.eClaveDgvMovDet = this.wEditIng.eLisMovDet[Dgv.ObtenerIndiceRegistroXFranja(this.wEditIng.dgvMovDet)].ClaveObjeto;
-            this.wEditIng.MostrarSolicitudPedidosDeta();
+            this.wFrm.eClaveDgvMovDet = this.wFrm.eLisMovDet[Dgv.ObtenerIndiceRegistroXFranja(this.wFrm.dgvMovDet)].ClaveObjeto;
+            this.wFrm.MostrarSolicitudPedidosDeta();
 
             //salir de la ventana
             this.Close();
@@ -439,23 +440,23 @@ namespace Presentacion.ProcesosCompras
         public void ModificarSolicitudPedidoDeta()
         {
             //obtener el objeto de la franja
-            SolicitudPedidoDetaEN iMovDetEN = this.wEditIng.eLisMovDet[Dgv.ObtenerIndiceRegistroXFranja(this.wEditIng.dgvMovDet)];
+            SolicitudPedidoDetaEN iMovDetEN = this.wFrm.eLisMovDet[Dgv.ObtenerIndiceRegistroXFranja(this.wFrm.dgvMovDet)];
 
             //asignar los nuevos valores
             this.AsignarSolicitudPedidoDeta(iMovDetEN);
 
 
             //actualizar este objeto en la lista
-            ListaG.Modificar<SolicitudPedidoDetaEN>(this.wEditIng.eLisMovDet, iMovDetEN, SolicitudPedidoDetaEN.CodExi, iMovDetEN.CodigoExistencia);
+            ListaG.Modificar<SolicitudPedidoDetaEN>(this.wFrm.eLisMovDet, iMovDetEN, SolicitudPedidoDetaEN.CodExi, iMovDetEN.CodigoExistencia);
         }
 
         public void EliminarLotesExistenciaAnterior()
         {
             //asignar parametros
-            string iCodigoExistencia = Dgv.ObtenerValorCelda(this.wEditIng.dgvMovDet, SolicitudPedidoDetaEN.CodExi);
+            string iCodigoExistencia = Dgv.ObtenerValorCelda(this.wFrm.dgvMovDet, SolicitudPedidoDetaEN.CodExi);
 
             //ejecutar metodo           
-            ListaG.Eliminar<LoteEN>(this.wEditIng.eLisLot, LoteEN.CodExi, iCodigoExistencia);
+            ListaG.Eliminar<LoteEN>(this.wFrm.eLisLot, LoteEN.CodExi, iCodigoExistencia);
         }
 
         public void Eliminar()
@@ -472,9 +473,9 @@ namespace Presentacion.ProcesosCompras
             Mensaje.OperacionSatisfactoria("Se elimino el registro", "Detalle");
 
             //mostra detalle comprobante
-            this.wEditIng.MostrarSolicitudPedidosDeta();
-            this.wEditIng.CambiarSoloLecturaACodigoAlmacen();
-            this.wEditIng.CambiarSoloLecturaACodigoTipoOperacion();
+            this.wFrm.MostrarSolicitudPedidosDeta();
+            this.wFrm.CambiarSoloLecturaACodigoAlmacen();
+            this.wFrm.CambiarSoloLecturaACodigoTipoOperacion();
 
             //salir de la ventana
             this.Close();
@@ -482,7 +483,7 @@ namespace Presentacion.ProcesosCompras
 
         public void EliminarSolicitudPedidoDeta()
         {
-            this.wEditIng.eLisMovDet.RemoveAt(Dgv.ObtenerIndiceRegistroXFranja(this.wEditIng.dgvMovDet));
+            this.wFrm.eLisMovDet.RemoveAt(Dgv.ObtenerIndiceRegistroXFranja(this.wFrm.dgvMovDet));
         }
 
         public void MostrarCosto()
@@ -574,8 +575,8 @@ namespace Presentacion.ProcesosCompras
             win.eTituloVentana = "Existencias";
             win.eCtrlValor = this.txtCodExi;
             win.eCtrlFoco = this.txtCanCon;
-            win.eExiEN.CodigoAlmacen = this.wEditIng.txtCodAlm.Text.Trim();
-            win.eLisSolPedidoDet = this.wEditIng.eLisMovDet;
+            win.eExiEN.CodigoAlmacen = this.wFrm.txtCodAlm.Text.Trim();
+            win.eLisSolPedidoDet = this.wFrm.eLisMovDet;
             win.eCondicionLista = wLisExi.Condicion.ExistenciasActivasNoProduccionDeAlmacenNoSeleccionadasGrillaSolicitudPedido;
             TabCtrl.InsertarVentana(this, win);
             win.NuevaVentana();
@@ -589,8 +590,8 @@ namespace Presentacion.ProcesosCompras
             //validar 
             //asignar parametros       
             ExistenciaEN iExiEN = this.NuevaExistenciaVentana();
-            string iCodigoExistenciaFranjaGrilla = Dgv.ObtenerValorCelda(this.wEditIng.dgvMovDet, SolicitudPedidoDetaEN.CodExi);
-            List<SolicitudPedidoDetaEN> iLisMovDetGrilla = this.wEditIng.eLisMovDet;
+            string iCodigoExistenciaFranjaGrilla = Dgv.ObtenerValorCelda(this.wFrm.dgvMovDet, SolicitudPedidoDetaEN.CodExi);
+            List<SolicitudPedidoDetaEN> iLisMovDetGrilla = this.wFrm.eLisMovDet;
             Universal.Opera iOperacionVentana = this.eOperacion;
             //iLisMovDetGrilla
             //ejecutar metodo
@@ -636,9 +637,9 @@ namespace Presentacion.ProcesosCompras
             SolicitudPedidoDetaEN iMovDetEN = new SolicitudPedidoDetaEN();
 
             //si la grilla esta llena, toma al objeto
-            if (this.wEditIng.eLisMovDet.Count != 0)
+            if (this.wFrm.eLisMovDet.Count != 0)
             {
-                iMovDetEN = this.wEditIng.eLisMovDet[Dgv.ObtenerIndiceRegistroXFranja(this.wEditIng.dgvMovDet)];
+                iMovDetEN = this.wFrm.eLisMovDet[Dgv.ObtenerIndiceRegistroXFranja(this.wFrm.dgvMovDet)];
             }
 
             //retornar
@@ -704,8 +705,8 @@ namespace Presentacion.ProcesosCompras
             ExistenciaEN iExiEN = new ExistenciaEN();
 
             //pasamos datos desde las ventanas
-            iExiEN.CodigoAlmacen = this.wEditIng.txtCodAlm.Text.Trim();
-            iExiEN.DescripcionAlmacen = this.wEditIng.txtDesAlm.Text.Trim();
+            iExiEN.CodigoAlmacen = this.wFrm.txtCodAlm.Text.Trim();
+            iExiEN.DescripcionAlmacen = this.wFrm.txtDesAlm.Text.Trim();
             iExiEN.CodigoExistencia = this.txtCodExi.Text.Trim();
             iExiEN.ClaveExistencia = ExistenciaRN.ObtenerClaveExistencia(iExiEN);
 
@@ -725,7 +726,7 @@ namespace Presentacion.ProcesosCompras
             //ahora saber si se debe limpiar el valor que tiene "txtCantMovDet" solo si es readonly
             //si la existencia tiene lotes registrados, entonces el valor "txtCantMovDet"
             //no se limpia 
-            List<LoteEN> iLisLotExi = LoteRN.FiltrarLotes(this.wEditIng.eLisLot, LoteEN.CodExi, this.txtCodExi.Text);
+            List<LoteEN> iLisLotExi = LoteRN.FiltrarLotes(this.wFrm.eLisLot, LoteEN.CodExi, this.txtCodExi.Text);
             if (this.txtCantMovDet.ReadOnly == true && iLisLotExi.Count == 0)
             {
                 this.txtCantMovDet.Text = Txt.ObtenerValorXDefecto(this.txtCantMovDet);
@@ -823,7 +824,7 @@ namespace Presentacion.ProcesosCompras
             //asignar parametros
             SolicitudPedidoDetaEN iMovDetEN = new SolicitudPedidoDetaEN();
             this.AsignarSolicitudPedidoDeta(iMovDetEN);
-            List<LoteEN> iLisLotExi = ListaG.Filtrar<LoteEN>(this.wEditIng.eLisLot, LoteEN.CodExi, this.txtCodExi.Text);
+            List<LoteEN> iLisLotExi = ListaG.Filtrar<LoteEN>(this.wFrm.eLisLot, LoteEN.CodExi, this.txtCodExi.Text);
 
             //ejecutar metodo
             return SolicitudPedidoDetaRN.ObtenerCantidadSugerido(iMovDetEN, iLisLotExi);
@@ -883,13 +884,13 @@ namespace Presentacion.ProcesosCompras
                 iPerEN.Adicionales.CampoOrden = eNombreColumnaDgvPer;
                 this.eLisPre = PresupuestoRN.ListarPresupuestos(iPerEN);
 
-                this.txtPresupuesto.Text = this.eLisPre.Where(x => x.CodigoPresupuesto == wEditIng.wSol.lblPeriodo.Text
+                this.txtPresupuesto.Text = this.eLisPre.Where(x => x.CodigoPresupuesto == wFrm.wFrm.lblPeriodo.Text
                 && x.CCentroCosto == txtCodAre.Text.Trim()).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
-                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wEditIng.wSol.lblPeriodo.Text && x.CCentroCosto == txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuestoTemporal.ToString(), 2);
+                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wFrm.wFrm.lblPeriodo.Text && x.CCentroCosto == txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuestoTemporal.ToString(), 2);
 
-                this.txtSaldoPresupuesto.Text = this.eLisPre.Where(x => x.CodigoPresupuesto == wEditIng.wSol.lblPeriodo.Text
+                this.txtSaldoPresupuesto.Text = this.eLisPre.Where(x => x.CodigoPresupuesto == wFrm.wFrm.lblPeriodo.Text
                 && x.CCentroCosto == txtCodAre.Text.Trim()).Count() == 0 ? Formato.NumeroDecimal(0, 2) :
-                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wEditIng.wSol.lblPeriodo.Text && x.CCentroCosto == txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuestoTemporal.ToString(), 2);
+                Formato.NumeroDecimal(this.eLisPre.Where(x => x.CodigoPresupuesto == wFrm.wFrm.lblPeriodo.Text && x.CCentroCosto == txtCodAre.Text.Trim()).FirstOrDefault().SaldoPresupuestoTemporal.ToString(), 2);
             }
         }
 
@@ -1010,7 +1011,7 @@ namespace Presentacion.ProcesosCompras
 
         private void wDetalleSolicitudPedido_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.wEditIng.Enabled = true;
+            this.wFrm.Enabled = true;
         }
     }
 }

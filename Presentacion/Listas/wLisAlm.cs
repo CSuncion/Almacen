@@ -10,6 +10,7 @@ using Comun;
 using WinControles.ControlesWindows;
 using Entidades;
 using Negocio;
+using System.Linq;
 
 namespace Presentacion.Listas
 {
@@ -89,13 +90,15 @@ namespace Presentacion.Listas
         {
             //validar si es acto ir a la bd
             if (txtBus.Text.Trim() != string.Empty) { return; }
-
+            AlmacenEN iAlmEN = new AlmacenEN();
+            iAlmEN.CodigoAlmacen = this.eCtrlValor.Text;
+            iAlmEN.ClaveAlmacen = AlmacenRN.ObtenerClaveAlmacen(iAlmEN);
             //ejecutar segun condicion
             switch (eCondicionLista)
             {
                 case Condicion.Almacenes: { this.eLisAlm = AlmacenRN.ListarAlmacenes(eAlmEN); break; }
                 case Condicion.AlmacenesExceptoUno: { this.eLisAlm = AlmacenRN.ListarAlmacenesExceptoUno(eAlmEN); break; }
-                case Condicion.AlmacenesActivos: { this.eLisAlm = AlmacenRN.ListarAlmacenesActivos(eAlmEN); break; }
+                case Condicion.AlmacenesActivos: { this.eLisAlm = AlmacenRN.ListarAlmacenesActivos(eAlmEN).Where(x => x.ClaveAlmacen == iAlmEN.ClaveAlmacen).ToList(); break; }
                 case Condicion.AlmacenesActivosExceptoUno: { this.eLisAlm = AlmacenRN.ListarAlmacenesActivosExceptoUno(eAlmEN); break; }
                 case Condicion.AlmacenesActivosParaProduccion: { this.eLisAlm = AlmacenRN.ListarAlmacenesActivosParaProduccion(eAlmEN,eProDetEN); break; }
                 case Condicion.AlmacenesActivosParaEncajado: { this.eLisAlm = AlmacenRN.ListarAlmacenesActivosParaAdicionalesEncajado(eAlmEN); break; }

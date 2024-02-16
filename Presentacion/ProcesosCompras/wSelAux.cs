@@ -56,6 +56,7 @@ namespace Presentacion.ProcesosCompras
         #region Propietario
 
         public wSolicitudPedido wSol;
+        public wRequerimiento wFrm;
         public Form eVentana = new Form();
         public AuxiliarEN eAuxEN = new AuxiliarEN();
         public List<AuxiliarEN> eLisAux = new List<AuxiliarEN>();
@@ -322,7 +323,7 @@ namespace Presentacion.ProcesosCompras
             Mensaje.OperacionSatisfactoria("Se agrego la solicitud de pedido correctamente", this.wSol.eTitulo);
 
             //actualizar al propietario           
-            //this.wSol.eClaveDgvMovCab = this.ObtenerClaveSolicitudPedidoCabe();
+            //this.wFrm.eClaveDgvMovCab = this.ObtenerClaveSolicitudPedidoCabe();
             this.wSol.ActualizarVentana();
             this.Close();
         }
@@ -355,7 +356,9 @@ namespace Presentacion.ProcesosCompras
 
             Excel.Workbook iLibro;
             Excel.Worksheet iHoja;
+#pragma warning disable CS0168 // La variable está declarada pero nunca se usa
             Excel.Range iRango;
+#pragma warning restore CS0168 // La variable está declarada pero nunca se usa
             object iOpcional = System.Reflection.Missing.Value;
 
             //creamos una nueva aplicacion excel
@@ -382,7 +385,9 @@ namespace Presentacion.ProcesosCompras
             iHoja.Cells[22, "F"] = eLisMovCab.CodigoAuxiliar;
 
             int filaItem = 29;
+#pragma warning disable CS0219 // La variable está asignada pero nunca se usa su valor
             int filaNueva = 0;
+#pragma warning restore CS0219 // La variable está asignada pero nunca se usa su valor
             int item = 0;
 
             foreach (SolicitudPedidoDetaEN solDeta in eLisMovDet)

@@ -286,7 +286,18 @@ namespace Presentacion.Principal
             this.FormatoVentanaHijoPrincipal(win, this.iteSolicitudPedido, null, 90, 90);
             win.NuevaVentana();
         }
-
+        public void InstanciarRequerimiento()
+        {
+            wRequerimiento win = new wRequerimiento();
+            this.FormatoVentanaHijoPrincipal(win, this.iteRequerimiento, null, 90, 90);
+            win.NuevaVentana();
+        }
+        public void InstanciarExportarOrdenCompra()
+        {
+            wExportarOrdenCompraAContabilidad win = new wExportarOrdenCompraAContabilidad();
+            this.FormatoVentanaHijoPrincipal(win, this.iteExportarOrdComAConta, null, 0, 0);
+            win.NuevaVentana();
+        }
         public void InstanciarOrdenCompra()
         {
             wOrdenCompra win = new wOrdenCompra();
@@ -1357,6 +1368,16 @@ namespace Presentacion.Principal
         private void IteRepOrdSerCeCo_Click(object sender, EventArgs e)
         {
             this.InstanciarImpresionOrdenServicio();
+        }
+
+        private void iteRequerimiento_Click(object sender, EventArgs e)
+        {
+            this.InstanciarRequerimiento();
+        }
+
+        private void iteExportarOrdComAConta_Click(object sender, EventArgs e)
+        {
+            this.InstanciarExportarOrdenCompra();
         }
     }
 }
