@@ -383,9 +383,7 @@ namespace Presentacion.Varios
             CuotaEN iCuoEN = this.ListarCuotasMarcadasDeGrilla()[0];
 
             //obtener la ruta de la carpeta para el periodo elegido
-#pragma warning disable CS0219 // La variable está asignada pero nunca se usa su valor
             string iRutaCarpetaPeriodo = "RutaPeriodo"; //wGenerarRecibos.ObtenerRutaCarpetaPeriodo(txtAno.Text, Cmb.ObtenerValor(cmbMes, ""));
-#pragma warning restore CS0219 // La variable está asignada pero nunca se usa su valor
 
 
             //armar la ruta de su archivo
@@ -432,9 +430,7 @@ namespace Presentacion.Varios
             CuotaEN iCuoEN = this.ListarCuotasMarcadasDeGrilla()[0];
 
             //obtener la ruta de la carpeta para el periodo elegido
-#pragma warning disable CS0219 // La variable está asignada pero nunca se usa su valor
             string iRutaCarpetaPeriodo = "RutaCarpetaPeriodo"; //wGenerarRecibos.ObtenerRutaCarpetaPeriodo(txtAno.Text, Cmb.ObtenerValor(cmbMes, ""));
-#pragma warning restore CS0219 // La variable está asignada pero nunca se usa su valor
 
             //armar la ruta de su archivo
             string iRutaArchivo = "RutaArchivo";  //wGenerarRecibos.ObtenerNuevaRutaPDF(iCuoEN, iRutaCarpetaPeriodo);
@@ -449,9 +445,7 @@ namespace Presentacion.Varios
             List< CuotaEN> iLisCuoMar = this.ListarCuotasMarcadasDeGrilla();
 
             //obtener la ruta de la carpeta para el periodo elegido
-#pragma warning disable CS0219 // La variable está asignada pero nunca se usa su valor
             string iRutaCarpetaPeriodo = "RutaCarpetaPeriodo"; //wGenerarRecibos.ObtenerRutaCarpetaPeriodo(txtAno.Text, Cmb.ObtenerValor(cmbMes, ""));
-#pragma warning restore CS0219 // La variable está asignada pero nunca se usa su valor
 
             //recorrer cada objeto cuota
             foreach (CuotaEN xCuo in iLisCuoMar)

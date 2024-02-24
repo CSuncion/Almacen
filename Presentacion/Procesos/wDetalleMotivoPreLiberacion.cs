@@ -192,14 +192,12 @@ namespace Presentacion.Procesos
             string iCampoDetalleMotivo = LiberacionRN.ConvertirListaACampoDetalleMotivo(this.wMotPreLib.eLisMotLib);
 
             //ejecutar metodo(segun tipoMotivo)
-#pragma warning disable CS1522 // Bloque switch vacío
             switch (this.wMotPreLib.eTipoMotivo)
             {
                 //case "MotMue": this.wMotPreLib.wPreLib.eLibMotEN.DetalleMotivoReproceso = iCampoDetalleMotivo; break;
                 //case "MotCMu": this.wMotPreLib.wPreLib.eLibMotEN.DetalleMotivoMuestra = iCampoDetalleMotivo; break;
                 //case "MotObs": this.wMotPreLib.wPreLib.eLibMotEN.DetalleMotivoDesecho = iCampoDetalleMotivo; break;
             }
-#pragma warning restore CS1522 // Bloque switch vacío
         }
 
         public void Modificar( )

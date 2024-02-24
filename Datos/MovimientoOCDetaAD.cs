@@ -59,6 +59,7 @@ namespace Datos
             xObjEnc.DescripcionCentroCosto = iDr[MovimientoOCDetaEN.DesCenCos].ToString();
             xObjEnc.CodigoExistencia = iDr[MovimientoOCDetaEN.CodExi].ToString();
             xObjEnc.DescripcionExistencia = iDr[MovimientoOCDetaEN.DesExi].ToString();
+            xObjEnc.ContableExistencia = iDr[MovimientoOCDetaEN.ConExi].ToString();
             xObjEnc.CodigoTipo = iDr[MovimientoOCDetaEN.CodTip].ToString();
             xObjEnc.NombreTipo = iDr[MovimientoOCDetaEN.NomTip].ToString();
             xObjEnc.CEsLote = iDr[MovimientoOCDetaEN.CEsLot].ToString();

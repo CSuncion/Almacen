@@ -188,11 +188,21 @@ namespace Negocio.Contabilidad
                     movimientoOCDetaEN.ClaveMovimientoCabe = movimientoOC.ClaveMovimientoCabe;
                     movimientoOCDetaEN.Adicionales.CampoOrden = MovimientoOCDetaEN.ClaMovDet;
                     movimientoOCDetaENs = MovimientoOCDetaRN.ListarMovimientosDetaXClaveMovimientoCabe(movimientoOCDetaEN);
-
-                    for (int i = 0; i < 3; i++)
+                    int i = 0;
+                    if (i == 0)
+                    {
+                        foreach (MovimientoOCDetaEN item in movimientoOCDetaENs)
+                        {
+                            RegContabDeta_Cont_EN regContabDeta_Cont_EN = new RegContabDeta_Cont_EN();
+                            RegContabCabe_Cont_RN.AsignarRegContabDeta(regContabDeta_Cont_EN, regContabCabe_Cont_EN, i, item);
+                            RegContabDeta_Cont_RN.AdicionarRegContaDeta(regContabDeta_Cont_EN);
+                        }
+                        i += 1;
+                    }
+                    for (i = 1; i < 3; i++)
                     {
                         RegContabDeta_Cont_EN regContabDeta_Cont_EN = new RegContabDeta_Cont_EN();
-                        RegContabCabe_Cont_RN.AsignarRegContabDeta(regContabDeta_Cont_EN, regContabCabe_Cont_EN, i, movimientoOCDetaENs);
+                        RegContabCabe_Cont_RN.AsignarRegContabDeta(regContabDeta_Cont_EN, regContabCabe_Cont_EN, i, null);
                         RegContabDeta_Cont_RN.AdicionarRegContaDeta(regContabDeta_Cont_EN);
                     }
                 }
@@ -200,7 +210,7 @@ namespace Negocio.Contabilidad
             }
         }
 
-        public static void AsignarRegContabDeta(RegContabDeta_Cont_EN regContabDeta_Cont_EN, RegContabCabe_Cont_EN regContabCabe_Cont_EN, int count, List<MovimientoOCDetaEN> movimientoOCDetaENs)
+        public static void AsignarRegContabDeta(RegContabDeta_Cont_EN regContabDeta_Cont_EN, RegContabCabe_Cont_EN regContabCabe_Cont_EN, int count, MovimientoOCDetaEN movimientoOCDetaENs)
         {
             regContabDeta_Cont_EN.CodigoEmpresa = regContabCabe_Cont_EN.CodigoEmpresa;
             regContabDeta_Cont_EN.PeriodoRegContabCabe = regContabCabe_Cont_EN.PeriodoRegContabCabe;
@@ -213,22 +223,25 @@ namespace Negocio.Contabilidad
             regContabDeta_Cont_EN.ClaveRegContabDeta = RegContabCabe_Cont_RN.ObtenerClaveMovimientoDeta(regContabDeta_Cont_EN);
             regContabDeta_Cont_EN.CorrelativoRegContabDeta = vaucherCorrelativoRegContDeta;
 
-            regContabDeta_Cont_EN.CodigoAuxiliar = count == 0 ? regContabCabe_Cont_EN.CodigoAuxiliar : string.Empty;
-            regContabDeta_Cont_EN.CTipoDocumento = count == 0 ? regContabCabe_Cont_EN.CTipoDocumento : string.Empty;
-            regContabDeta_Cont_EN.SerieDocumento = count == 0 ? regContabCabe_Cont_EN.SerieDocumento : string.Empty;
-            regContabDeta_Cont_EN.NumeroDocumento = count == 0 ? regContabCabe_Cont_EN.NumeroDocumento : string.Empty;
-            regContabDeta_Cont_EN.FechaDocumento = count == 0 ? regContabCabe_Cont_EN.FechaDocumento : string.Empty;
-            regContabDeta_Cont_EN.FechaVctoDocumento = count == 0 ? regContabCabe_Cont_EN.FechaVctoDocumento : string.Empty;
-            regContabDeta_Cont_EN.CMonedaDocumento = count == 0 ? regContabCabe_Cont_EN.CMonedaDocumento : string.Empty;
+
+            // 0 = 421101 total venta // 1 = 521111 valor venta // 2 = 721111 igv
+            // 0 = tiene su cuenta valor venta // 1 = 421101 total venta // 2 = 721111 igv
+
+            regContabDeta_Cont_EN.CodigoAuxiliar = count == 1 ? regContabCabe_Cont_EN.CodigoAuxiliar : string.Empty;
+            regContabDeta_Cont_EN.CTipoDocumento = count == 1 ? regContabCabe_Cont_EN.CTipoDocumento : string.Empty;
+            regContabDeta_Cont_EN.SerieDocumento = count == 1 ? regContabCabe_Cont_EN.SerieDocumento : string.Empty;
+            regContabDeta_Cont_EN.NumeroDocumento = count == 1 ? regContabCabe_Cont_EN.NumeroDocumento : string.Empty;
+            regContabDeta_Cont_EN.FechaDocumento = count == 1 ? regContabCabe_Cont_EN.FechaDocumento : string.Empty;
+            regContabDeta_Cont_EN.FechaVctoDocumento = count == 1 ? regContabCabe_Cont_EN.FechaVctoDocumento : string.Empty;
+            regContabDeta_Cont_EN.CMonedaDocumento = count == 1 ? regContabCabe_Cont_EN.CMonedaDocumento : string.Empty;
 
             regContabDeta_Cont_EN.VentaTipoCambio = 0;
 
-            // 0 = 421101 total venta // 1 = 521111 valor venta // 2 = 721111 igv
 
-            regContabDeta_Cont_EN.CodigoCuenta = count == 0 ? "421101" : count == 1 ? "521111" : "721111";
-            regContabDeta_Cont_EN.CDebeHaber = count == 0 ? "1" : "0";
+            regContabDeta_Cont_EN.CodigoCuenta = count == 1 ? "421101" : count == 0 ? movimientoOCDetaENs.ContableExistencia : "721111";
+            regContabDeta_Cont_EN.CDebeHaber = count == 1 ? "1" : "0";
 
-            regContabDeta_Cont_EN.ImporteSolRegContabDeta = count == 0 ? regContabCabe_Cont_EN.PrecioVentaRegContabCabe : count == 1 ? regContabCabe_Cont_EN.ValorVentaRegContabCabe : regContabCabe_Cont_EN.IgvRegContabCabe; ;
+            regContabDeta_Cont_EN.ImporteSolRegContabDeta = count == 0 ? movimientoOCDetaENs.CostoMovimientoDeta : count == 1 ? regContabCabe_Cont_EN.PrecioVentaRegContabCabe : regContabCabe_Cont_EN.IgvRegContabCabe; ;
 
             regContabDeta_Cont_EN.GlosaRegContabDeta = regContabCabe_Cont_EN.GlosaRegContabCabe;
 
@@ -236,13 +249,13 @@ namespace Negocio.Contabilidad
 
             regContabDeta_Cont_EN.ImporteMonedaRegContabDeta = 0;
             regContabDeta_Cont_EN.CIngresoEgreso = string.Empty;
-            regContabDeta_Cont_EN.CCentroCosto = count == 1 ? movimientoOCDetaENs.FirstOrDefault().CodigoCentroCosto : string.Empty;
+            regContabDeta_Cont_EN.CCentroCosto = count == 0 ? movimientoOCDetaENs.CodigoCentroCosto : string.Empty;
             regContabDeta_Cont_EN.CArea = string.Empty;
             regContabDeta_Cont_EN.CFlujoCaja = string.Empty;
             regContabDeta_Cont_EN.CodigoAlmacen = string.Empty;
             regContabDeta_Cont_EN.CodigoItemAlmacen = string.Empty;
             regContabDeta_Cont_EN.CantidadItemAlmacen = 0;
-            regContabDeta_Cont_EN.CTipoLineaAsiento = count == 1 ? "0" : "1";
+            regContabDeta_Cont_EN.CTipoLineaAsiento = count == 0 ? "0" : "1";
             regContabDeta_Cont_EN.CEstadoRegContabDeta = "1";
             regContabDeta_Cont_EN.UsuarioAgrega = regContabCabe_Cont_EN.UsuarioAgrega;
             regContabDeta_Cont_EN.UsuarioModifica = regContabCabe_Cont_EN.UsuarioModifica;

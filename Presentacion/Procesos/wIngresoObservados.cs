@@ -453,7 +453,7 @@ namespace Presentacion.Procesos
             //asignar parametros
             LiberacionEN iLibEN = new LiberacionEN();
             //iLibEN.ClaveLiberacion = Dgv.ObtenerValorCelda(this.wLib.DgvLib, LiberacionEN.ClaObj);          
-            //iLibEN.ClaveIngresoObservadas = this.ObtenerClaveRegContabCabe();
+            //iLibEN.ClaveIngresoObservadas = this.ObtenerClaveMovimientoCabe();
             
             //ejecutar metodo
             LiberacionRN.ModificarPorTransferenciaObservados(iLibEN);

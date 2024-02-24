@@ -267,7 +267,7 @@
             this.IteImportarEliminar});
             this.IteImportar.Name = "IteImportar";
             this.IteImportar.Size = new System.Drawing.Size(152, 22);
-            this.IteImportar.Text = "Exportar";
+            this.IteImportar.Text = "Importar";
             // 
             // IteImportarAdicionar
             // 

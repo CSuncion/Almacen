@@ -39,6 +39,7 @@ namespace Entidades
         public const string DesCenCos = "DescripcionCentroCosto";
         public const string CodExi = "CodigoExistencia";
         public const string DesExi = "DescripcionExistencia";
+        public const string ConExi = "ContableExistencia";
         public const string CEsPro = "CEsProduccion";
         public const string CodTip = "CodigoTipo";
         public const string NomTip = "NombreTipo";
@@ -110,6 +111,7 @@ namespace Entidades
         private string _CCodigoMoneda = "0";
         private string _NCodigoMoneda = "Sol";
         private string _CodigoCentroCosto = string.Empty;
+        private string _ContableExistencia = string.Empty;
         private string _DescripcionCentroCosto = string.Empty;
         private string _CodigoExistencia = string.Empty;
         private string _DescripcionExistencia = string.Empty;
@@ -156,7 +158,7 @@ namespace Entidades
         private decimal _CantidadRecibida = 0;
         private decimal _CantidadPendiente = 0;
         private string _CantidadRecibidaVarios = string.Empty;
-        private string _ClaveMovimientoICabe = string.Empty; 
+        private string _ClaveMovimientoICabe = string.Empty;
 
 
         //propiedades
@@ -315,6 +317,13 @@ namespace Entidades
             get { return _CodigoCentroCosto; }
             set { _CodigoCentroCosto = value; }
         }
+
+        public string ContableExistencia
+        {
+            get { return _ContableExistencia; }
+            set { _ContableExistencia = value; }
+        }
+
 
         public string DescripcionCentroCosto
         {

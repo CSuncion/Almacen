@@ -439,7 +439,7 @@ namespace Presentacion.ProcesosCompras
             this.wSol.ActualizarVentana();
 
             //imprimir la nota
-            //this.wFrm.AccionImprimirNota();
+            //this.wSol.AccionImprimirNota();
 
             this.GenerarSolicitudPedido();
 
@@ -485,9 +485,7 @@ namespace Presentacion.ProcesosCompras
 
             Excel.Workbook iLibro;
             Excel.Worksheet iHoja;
-#pragma warning disable CS0168 // La variable está declarada pero nunca se usa
             Excel.Range iRango;
-#pragma warning restore CS0168 // La variable está declarada pero nunca se usa
             object iOpcional = System.Reflection.Missing.Value;
 
             //creamos una nueva aplicacion excel
@@ -514,9 +512,7 @@ namespace Presentacion.ProcesosCompras
             iHoja.Cells[22, "F"] = iCuoEN.CodigoAuxiliar;
 
             int filaItem = 29;
-#pragma warning disable CS0219 // La variable está asignada pero nunca se usa su valor
             int filaNueva = 0;
-#pragma warning restore CS0219 // La variable está asignada pero nunca se usa su valor
             int item = 0;
 
             foreach (SolicitudPedidoDetaEN solDeta in list)
@@ -689,7 +685,7 @@ namespace Presentacion.ProcesosCompras
             this.wSol.ActualizarVentana();
 
             //imprimir la nota
-            //this.wFrm.AccionImprimirNota();
+            //this.wSol.AccionImprimirNota();
 
             this.GenerarSolicitudPedido();
 

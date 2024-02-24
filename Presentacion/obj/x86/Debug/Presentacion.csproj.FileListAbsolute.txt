@@ -185,11 +185,14 @@ D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Pres
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEditOrdenCompra.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEditOrdenServicio.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEditPagosUnica.resources
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEditRequerimiento.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEditSolicitudPedido.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEliminarPagos.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEnviarOrdenServicio.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEnviarOrdenCompra.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEnviarSolicitudPedido.resources
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wExportarOrdenCompraAContabilidad.resources
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wLisAuxGenerarCompra.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wLote.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wLoteSolPedido.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wModificarPagos.resources
@@ -200,6 +203,7 @@ D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Pres
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wPagosLetras.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wRecalculoPresupuesto.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wSelAux.resources
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wRequerimiento.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wSolicitudPedido.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.Procesos.wAgregarParteFaseEmpaquetado.resources
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.Procesos.wCalcularFlete.resources
@@ -347,7 +351,3 @@ D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Pres
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.csproj.CopyComplete
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.exe
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.pdb
-D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wEditRequerimiento.resources
-D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wRequerimiento.resources
-D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wLisAuxGenerarCompra.resources
-D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wExportarOrdenCompraAContabilidad.resources

@@ -32,9 +32,7 @@ namespace Presentacion.ProcesosCompras
         int eVaBD = 1;//0 : no , 1 : si
         public string eTitulo = "Orden de Servicio";
         string iNuevoNumero = string.Empty;
-#pragma warning disable CS0414 // El campo 'wOrdenServicio.iCorrelativo' está asignado pero su valor nunca se usa
         string iCorrelativo = "0000";
-#pragma warning restore CS0414 // El campo 'wOrdenServicio.iCorrelativo' está asignado pero su valor nunca se usa
 
         public wOrdenServicio()
         {

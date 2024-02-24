@@ -1360,9 +1360,7 @@ namespace Presentacion.ProcesosCompras
 
             Excel.Workbook iLibro;
             Excel.Worksheet iHoja;
-#pragma warning disable CS0168 // La variable está declarada pero nunca se usa
             Excel.Range iRango;
-#pragma warning restore CS0168 // La variable está declarada pero nunca se usa
             object iOpcional = System.Reflection.Missing.Value;
 
             //creamos una nueva aplicacion excel
@@ -1416,9 +1414,7 @@ namespace Presentacion.ProcesosCompras
             iHoja.Cells[79, "C"] = resultado;
 
             int filaItem = 45;
-#pragma warning disable CS0219 // La variable está asignada pero nunca se usa su valor
             int filaNueva = 0;
-#pragma warning restore CS0219 // La variable está asignada pero nunca se usa su valor
             int item = 0;
 
             foreach (MovimientoOCDetaEN movDeta in list)

@@ -37,12 +37,8 @@ namespace Presentacion.ProcesosCompras
         int eIndiceFilaAnteriorCon;
         int eIndiceFilaAnteriorPag;
         Dgv.Franja eFranjaCon;
-#pragma warning disable CS0649 // El campo 'wPagos.eFranjaPag' nunca se asigna y siempre tendrá el valor predeterminado
         Dgv.Franja eFranjaPag;
-#pragma warning restore CS0649 // El campo 'wPagos.eFranjaPag' nunca se asigna y siempre tendrá el valor predeterminado
-#pragma warning disable CS0414 // El campo 'wPagos.eAplicaEventoCombo' está asignado pero su valor nunca se usa
         int eAplicaEventoCombo = 0;//0 : no aplica evennto , 1 : si aplica evento
-#pragma warning restore CS0414 // El campo 'wPagos.eAplicaEventoCombo' está asignado pero su valor nunca se usa
 
         #region General
 

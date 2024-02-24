@@ -231,7 +231,7 @@ namespace Presentacion.Procesos
         public void Aceptar()
         {
             //desea realizar la operacion
-            if (Mensaje.DeseasRealizarOperacion("Exportar") == false) { return; }
+            if (Mensaje.DeseasRealizarOperacion("Importar") == false) { return; }
 
             //importar
             MovimientoCabeRN.ImportarIngresosDeExcel(this.eLisMovDet);

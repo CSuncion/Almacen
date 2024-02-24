@@ -208,14 +208,12 @@ namespace Presentacion.Procesos
                 case 1:
                     {
                         //ejecutar metodo(segun tipoMotivo)
-#pragma warning disable CS1522 // Bloque switch vacío
                         switch (this.wMotLib.eTipoMotivo)
                         {
                             //case "MotRep": this.wMotLib.wEdiAnaBlo.eLibMotEN.DetalleMotivoReproceso = iCampoDetalleMotivo; break;
                             //case "MotDon": this.wMotLib.wEdiAnaBlo.eLibMotEN.DetalleMotivoDonacion = iCampoDetalleMotivo; break;                             
                             //case "MotDes": this.wMotLib.wEdiAnaBlo.eLibMotEN.DetalleMotivoDesecho = iCampoDetalleMotivo; break;
                         }
-#pragma warning restore CS1522 // Bloque switch vacío
                         break;
                     }
                 case 2:

@@ -1360,9 +1360,7 @@ namespace Presentacion.ProcesosCompras
 
             Excel.Workbook iLibro;
             Excel.Worksheet iHoja;
-#pragma warning disable CS0168 // La variable está declarada pero nunca se usa
             Excel.Range iRango;
-#pragma warning restore CS0168 // La variable está declarada pero nunca se usa
             object iOpcional = System.Reflection.Missing.Value;
 
             //creamos una nueva aplicacion excel

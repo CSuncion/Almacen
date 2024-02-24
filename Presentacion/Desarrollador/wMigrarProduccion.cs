@@ -146,7 +146,7 @@ namespace Presentacion.Desarrollador
         public void Aceptar()
         {
             //desea realizar la operacion
-            if (Mensaje.DeseasRealizarOperacion("Exportar") == false) { return; }
+            if (Mensaje.DeseasRealizarOperacion("Importar") == false) { return; }
 
             //importar
             ProduccionDetaRN.MigrarProduccion(eLisMovDet, eLisProDet);
@@ -321,7 +321,7 @@ namespace Presentacion.Desarrollador
         public void AceptarHilo()
         {
             //desea realizar la operacion
-            if (Mensaje.DeseasRealizarOperacion("Exportar") == false) { return; }
+            if (Mensaje.DeseasRealizarOperacion("Importar") == false) { return; }
 
             //desactivar ventana
             this.Enabled = false;

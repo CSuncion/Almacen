@@ -331,7 +331,7 @@ namespace Presentacion.Procesos
             //Mensaje.OperacionSatisfactoria("Se agrego la salida correctamente", this.wSalAdi.eTitulo);
 
             ////actualizar al propietario           
-            //this.wSalAdi.eClaveDgvMovCab = this.ObtenerClaveRegContabCabe();
+            //this.wSalAdi.eClaveDgvMovCab = this.ObtenerClaveMovimientoCabe();
             //this.wSalAdi.ActualizarVentana();
 
             ////imprimir la nota
@@ -457,7 +457,7 @@ namespace Presentacion.Procesos
             //Mensaje.OperacionSatisfactoria("Se modifico la salida correctamente", this.wSalAdi.eTitulo);
 
             ////actualizar al wLot          
-            //this.wSalAdi.eClaveDgvMovCab = this.ObtenerClaveRegContabCabe();
+            //this.wSalAdi.eClaveDgvMovCab = this.ObtenerClaveMovimientoCabe();
             //this.wSalAdi.ActualizarVentana();
 
             ////imprimir la nota
