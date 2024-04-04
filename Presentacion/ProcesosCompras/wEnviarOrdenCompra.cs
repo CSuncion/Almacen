@@ -15,6 +15,8 @@ using Presentacion.Principal;
 using System.IO;
 using System.Net.Mail;
 using System.Net;
+using Outlook = Microsoft.Office.Interop.Outlook;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Presentacion.ProcesosCompras
 {
@@ -96,7 +98,8 @@ namespace Presentacion.ProcesosCompras
                 {
                     if (movCabe.VerdadFalso)
                     {
-                        this.EnviarCorreo(movCabe, iParEN);
+                        //this.EnviarCorreo(movCabe, iParEN);
+                        this.EnviarCorreoConOutlook(movCabe, iParEN);
                     }
 
                     iContadorObjeto++;
@@ -138,13 +141,14 @@ namespace Presentacion.ProcesosCompras
             Attachment data = new Attachment(iRutaRecibo);
             pEmail.Attachments.Add(data);
 
-            SmtpClient pSmtp = new SmtpClient();
+            SmtpClient pSmtp = new SmtpClient("smtp-legacy.office365.com");
             pSmtp.Host = pPar.HostCorreoEnvio;//(live) parar hotmail
             pSmtp.Port = Conversion.AInt(pPar.PuertoCorreoEnvio, 0);//(25) para hotmail,587
             pSmtp.EnableSsl = true;
             pSmtp.UseDefaultCredentials = false;
             pSmtp.EnableSsl = true;
             pSmtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             pSmtp.Credentials = new NetworkCredential(pPar.CorreoEnvio, pPar.ClaveCorreoEnvio);
             try
             {
@@ -158,7 +162,59 @@ namespace Presentacion.ProcesosCompras
             }
 
         }
+        public void EnviarCorreoConOutlook(MovimientoOCCabeEN movCabe, ParametroEN pPar)
+        {
+            var outlook = new Outlook.Application();
 
+            var mailItem = (Outlook.MailItem)outlook.CreateItem(Outlook.OlItemType.olMailItem);
+
+            // Retrieve the account that has the specific SMTP address.
+            Outlook.Account account = GetAccountForEmailAddress(outlook, pPar.CorreoEnvio);
+            // Use this account to send the email.
+            mailItem.SendUsingAccount = account;
+
+            mailItem.To = movCabe.CorreoAuxiliar.Replace(";", ",");
+            //mailItem.sen = new MailAddress(pPar.CorreoEnvio);
+            mailItem.Subject = "Orden de Compra " + movCabe.PeriodoMovimientoCabe;
+            mailItem.Body = "<html><body><h3>Estimados</h3>" +
+                "<p>Envío la OC N° " + movCabe.ClaveMovimientoCabe + "</p>" +
+                "<p>Por favor confirmar la recepción del mismo</p>" +
+                "<p>aludos Cordiales</p>" +
+                "</body></html>";
+            //mailItem.IsBodyHtml = false;
+            //mailItem.Priority = MailPriority.Normal;
+
+            string iRutaRecibo = pPar.RutaCarpetaPlantillas + @"\OrdenCompra_" + movCabe.ClaveMovimientoCabe + ".xlsx";
+            Attachment data = new Attachment(iRutaRecibo);
+            mailItem.Attachments.Add(iRutaRecibo, Outlook.OlAttachmentType.olByValue, Type.Missing, Type.Missing);
+
+            try
+            {
+                mailItem.Send();
+                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(mailItem);
+                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(outlook);
+                MovimientoOCCabeRN.EnviadoMovimientoCabe(movCabe);
+            }
+            catch (Exception e)
+            {
+                Mensaje.OperacionDenegada(e.Message, "Error");
+                MovimientoOCCabeRN.NoEnviadoMovimientoCabe(movCabe);
+            }
+        }
+        public static Outlook.Account GetAccountForEmailAddress(Outlook.Application application, string smtpAddress)
+        {
+            // Loop over the Accounts collection of the current Outlook session.
+            Outlook.Accounts accounts = application.Session.Accounts;
+            foreach (Outlook.Account account in accounts)
+            {
+                // When the email address matches, return the account.
+                if (account.SmtpAddress == smtpAddress)
+                {
+                    return account;
+                }
+            }
+            throw new System.Exception(string.Format("No Account with SmtpAddress: {0} exists!", smtpAddress));
+        }
         #endregion
 
         protected override void OnFormClosing(FormClosingEventArgs e)

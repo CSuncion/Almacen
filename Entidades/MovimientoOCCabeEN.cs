@@ -168,7 +168,7 @@ namespace Entidades
         private string _CGarantia = string.Empty;
         private string _NGarantia = string.Empty;
         private int _ValidezCotizacion = 0;
-        private string _FechaValidezCotizacion = string.Empty;
+        private string _FechaValidezCotizacion = DateTime.Now.ToString();
         private decimal _PrecioMaterialAccesorioOrdenServicio = 0;
         private string _CFormaPago = string.Empty;
         private string _NFormaPago = string.Empty;

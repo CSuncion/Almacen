@@ -835,11 +835,30 @@ namespace Presentacion.ProcesosCompras
 
             this.AsignarMovimientoCabe(iCuoEN);
 
-            pObj.ClaveSolicitudPedidoCabe = this.eClavSolPedCab;
-            pObj.PeriodoSolicitudPedidoCabe = iCuoEN.PeriodoMovimientoCabe;
+            foreach (string cadena in this.eClavSolPedCab.Split('|'))
+            {
+                pObj.ClaveSolicitudPedidoCabe = cadena;
+                pObj.PeriodoSolicitudPedidoCabe = iCuoEN.PeriodoMovimientoCabe;
 
-            SolicitudPedidoCabeRN.EnviadoSolicitudPedidoCabe(pObj);
+                SolicitudPedidoCabeRN.AprobarSolicitudPedidoCabe(pObj);
 
+
+                List<SolicitudPedidoDetaEN> listaDeta = SolicitudPedidoDetaRN.ListarSolicitudPedidosDetaPorClaveSolicitudPedidoCabe(pObj.ClaveSolicitudPedidoCabe);
+
+                foreach (SolicitudPedidoDetaEN item in listaDeta)
+                {
+                    if (item.FlagCheckItem)
+                    {
+                        SolicitudPedidoDetaEN pObjDeta = new SolicitudPedidoDetaEN();
+
+                        pObjDeta.FlagCheckItem = false;
+                        pObjDeta.PeriodoSolicitudPedidoCabe = pObj.PeriodoSolicitudPedidoCabe;
+                        pObjDeta.ClaveSolicitudPedidoDeta = item.ClaveSolicitudPedidoDeta;
+
+                        SolicitudPedidoDetaRN.ActualizarFlagCheckItem(pObjDeta);
+                    }
+                }
+            }
             MovimientoOCCabeRN.EliminarMovimientoCabe(iCuoEN);
         }
 

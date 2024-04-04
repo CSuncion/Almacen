@@ -449,7 +449,7 @@ namespace Datos
             string iScript = string.Empty;
 
             //actualizando la solicitud de pedido
-            iScript += "Update SolicitudPedidoCabe set CEstadoSolicitudPedidoCabe = 2";
+            iScript += "Update SolicitudPedidoCabe set CEstadoSolicitudPedidoCabe = 2 , FlagEnviadoSolicitudPedido = 0";
             iScript += " Where CodigoEmpresa='" + Universal.gCodigoEmpresa + "'";
             iScript += " And PeriodoSolicitudPedidoCabe='" + pObj.PeriodoSolicitudPedidoCabe + "'";
             iScript += " And ClaveSolicitudPedidoCabe ='" + pObj.ClaveSolicitudPedidoCabe + "'";

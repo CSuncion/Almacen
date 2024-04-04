@@ -14,14 +14,14 @@
     <framework targetVersion="4.8.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Presentacion.exe.manifest" size="41753">
+    <dependentAssembly dependencyType="install" codebase="Presentacion.exe.manifest" size="40353">
       <assemblyIdentity name="Presentacion.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+Sh2gFQy7F8HPlarGjnTFSLXgJc/XQpEgoOSfRNyDf4=</dsig:DigestValue>
+        <dsig:DigestValue>s4Mnivv1aF3Q4k+qwKM3geoMlJlQuxSOEbwUQl7awj4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

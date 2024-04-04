@@ -1014,7 +1014,7 @@ namespace Presentacion.Impresiones {
                 this.columnTotalActual = base.Columns["TotalActual"];
                 this.columnFechaMovimientoCabe = base.Columns["FechaMovimientoCabe"];
                 this.columnNumeroMovimientoCabe = base.Columns["NumeroMovimientoCabe"];
-                this.columnCTipoDocumento = base.Columns["CTipoDocumento"];
+                this.columnCTipoDocumento = base.Columns["TipoDocumento"];
                 this.columnNTipoDocumento = base.Columns["NTipoDocumento"];
                 this.columnSerieDocumento = base.Columns["SerieDocumento"];
                 this.columnNumeroDocumento = base.Columns["NumeroDocumento"];
@@ -1060,7 +1060,7 @@ namespace Presentacion.Impresiones {
                 base.Columns.Add(this.columnFechaMovimientoCabe);
                 this.columnNumeroMovimientoCabe = new global::System.Data.DataColumn("NumeroMovimientoCabe", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNumeroMovimientoCabe);
-                this.columnCTipoDocumento = new global::System.Data.DataColumn("CTipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCTipoDocumento = new global::System.Data.DataColumn("TipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCTipoDocumento);
                 this.columnNTipoDocumento = new global::System.Data.DataColumn("NTipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNTipoDocumento);
@@ -2187,7 +2187,7 @@ namespace Presentacion.Impresiones {
                 this.columnPrecioExistencia = base.Columns["PrecioExistencia"];
                 this.columnNumeroMovimientoCabe = base.Columns["NumeroMovimientoCabe"];
                 this.columnFechaMovimientoCabe = base.Columns["FechaMovimientoCabe"];
-                this.columnCTipoDocumento = base.Columns["CTipoDocumento"];
+                this.columnCTipoDocumento = base.Columns["TipoDocumento"];
                 this.columnNTipoDocumento = base.Columns["NTipoDocumento"];
                 this.columnSerieDocumento = base.Columns["SerieDocumento"];
                 this.columnNumeroDocumento = base.Columns["NumeroDocumento"];
@@ -2238,7 +2238,7 @@ namespace Presentacion.Impresiones {
                 base.Columns.Add(this.columnNumeroMovimientoCabe);
                 this.columnFechaMovimientoCabe = new global::System.Data.DataColumn("FechaMovimientoCabe", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFechaMovimientoCabe);
-                this.columnCTipoDocumento = new global::System.Data.DataColumn("CTipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCTipoDocumento = new global::System.Data.DataColumn("TipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCTipoDocumento);
                 this.columnNTipoDocumento = new global::System.Data.DataColumn("NTipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNTipoDocumento);
@@ -5241,7 +5241,7 @@ namespace Presentacion.Impresiones {
                 this.columnPrecioExistencia = base.Columns["PrecioExistencia"];
                 this.columnNumeroMovimientoCabe = base.Columns["NumeroMovimientoCabe"];
                 this.columnFechaMovimientoCabe = base.Columns["FechaMovimientoCabe"];
-                this.columnCTipoDocumento = base.Columns["CTipoDocumento"];
+                this.columnCTipoDocumento = base.Columns["TipoDocumento"];
                 this.columnNTipoDocumento = base.Columns["NTipoDocumento"];
                 this.columnSerieDocumento = base.Columns["SerieDocumento"];
                 this.columnNumeroDocumento = base.Columns["NumeroDocumento"];
@@ -5292,7 +5292,7 @@ namespace Presentacion.Impresiones {
                 base.Columns.Add(this.columnNumeroMovimientoCabe);
                 this.columnFechaMovimientoCabe = new global::System.Data.DataColumn("FechaMovimientoCabe", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFechaMovimientoCabe);
-                this.columnCTipoDocumento = new global::System.Data.DataColumn("CTipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCTipoDocumento = new global::System.Data.DataColumn("TipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCTipoDocumento);
                 this.columnNTipoDocumento = new global::System.Data.DataColumn("NTipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNTipoDocumento);
@@ -5684,7 +5684,7 @@ namespace Presentacion.Impresiones {
                         return ((string)(this[this.tableKardexValorizado.CTipoDocumentoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CTipoDocumento\' de la tabla \'KardexValorizado\' es DBNull." +
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TipoDocumento\' de la tabla \'KardexValorizado\' es DBNull." +
                                 "", e);
                     }
                 }
@@ -6976,7 +6976,7 @@ namespace Presentacion.Impresiones {
                         return ((string)(this[this.tableMovimientoDeta.CTipoDocumentoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CTipoDocumento\' de la tabla \'MovimientoDeta\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TipoDocumento\' de la tabla \'MovimientoDeta\' es DBNull.", e);
                     }
                 }
                 set {
@@ -10164,7 +10164,7 @@ namespace Presentacion.Impresiones {
                         return ((string)(this[this.tableMovimientoOcOsDeta.CTipoDocumentoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CTipoDocumento\' de la tabla \'MovimientoOcOsDeta\' es DBNul" +
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TipoDocumento\' de la tabla \'MovimientoOcOsDeta\' es DBNul" +
                                 "l.", e);
                     }
                 }

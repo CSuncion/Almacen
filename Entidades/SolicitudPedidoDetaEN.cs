@@ -65,6 +65,7 @@ namespace Entidades
         public const string NCodPar = "NCodigoPartida";
         public const string CEstMovDet = "CEstadoSolicitudPedidoDeta";
         public const string NEstMovDet = "NEstadoSolicitudPedidoDeta";
+        public const string FlgChkIt = "FlagCheckItem";
         public const string UsuAgr = "UsuarioAgrega";
         public const string FecAgr = "FechaAgrega";
         public const string UsuMod = "UsuarioModifica";
@@ -128,6 +129,8 @@ namespace Entidades
         private string _NCodigoPartida = string.Empty;
         private string _CEstadoSolicitudPedidoDeta = "1";
         private string _NEstadoSolicitudPedidoDeta = "Activado";
+        private bool _FlagCheckItem = false;
+        private bool _VerdadFalso = false;
         private string _UsuarioAgrega = string.Empty;
         private DateTime _FechaAgrega;
         private string _UsuarioModifica = string.Empty;
@@ -468,6 +471,11 @@ namespace Entidades
             get { return _NEstadoSolicitudPedidoDeta; }
             set { _NEstadoSolicitudPedidoDeta = value; }
         }
+        public bool FlagCheckItem
+        {
+            get { return _FlagCheckItem; }
+            set { _FlagCheckItem = value; }
+        }
 
         public string UsuarioAgrega
         {
@@ -511,6 +519,11 @@ namespace Entidades
             set { this._NuevoPresupuesto = value; }
         }
 
+        public bool VerdadFalso
+        {
+            get { return this._VerdadFalso; }
+            set { this._VerdadFalso = value; }
+        }
         public Adicional Adicionales
         {
             get { return _Adicionales; }

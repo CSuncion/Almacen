@@ -44,7 +44,7 @@ namespace Datos.Contabilidad
 
         private List<Auxiliar_Cont_EN> ListarObjetos(string pScript)
         {
-            xObjCon.Conectar(SqlDatos.Bd.Alfisa_Contabilidad);
+            xObjCon.Conectar(SqlDatos.Bd.contabilidad);
             xObjCon.ComandoTexto(pScript);
             IDataReader xIdr = xObjCon.ObtenerIdr();
             while (xIdr.Read())
@@ -58,7 +58,7 @@ namespace Datos.Contabilidad
 
         private Auxiliar_Cont_EN BuscarObjeto(string pScript)
         {
-            xObjCon.Conectar(SqlDatos.Bd.Alfisa_Contabilidad);
+            xObjCon.Conectar(SqlDatos.Bd.contabilidad);
             xObjCon.ComandoTexto(pScript);
             IDataReader xIdr = xObjCon.ObtenerIdr();
             while (xIdr.Read())
@@ -72,7 +72,7 @@ namespace Datos.Contabilidad
 
         private bool ExisteObjeto(string pScript)
         {
-            xObjCon.Conectar(SqlDatos.Bd.Alfisa_Contabilidad);
+            xObjCon.Conectar(SqlDatos.Bd.contabilidad);
             xObjCon.ComandoTexto(pScript);
             IDataReader xIdr = xObjCon.ObtenerIdr();
             bool xResultado = false;

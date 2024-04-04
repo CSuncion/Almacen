@@ -27,55 +27,43 @@ namespace Datos.Contabilidad
             xObjEnc.ClaveRegContabCabe = iDr[RegContabCabe_Cont_EN._ClaveRegContabCabe].ToString();
             xObjEnc.CodigoEmpresa = iDr[RegContabCabe_Cont_EN._CodigoEmpresa].ToString();
             xObjEnc.PeriodoRegContabCabe = iDr[RegContabCabe_Cont_EN._PeriodoRegContabCabe].ToString();
-            xObjEnc.COrigen = iDr[RegContabCabe_Cont_EN._COrigen].ToString();
-            xObjEnc.CFile = iDr[RegContabCabe_Cont_EN._CFile].ToString();
-            xObjEnc.CorrelativoRegContabCabe = iDr[RegContabCabe_Cont_EN._CorrelativoRegContabCabe].ToString();
-            xObjEnc.FechaRegContabCabe = iDr[RegContabCabe_Cont_EN._FechaRegContabCabe].ToString();
+            xObjEnc.CodigoOrigen = iDr[RegContabCabe_Cont_EN._CodigoOrigen].ToString();
+            xObjEnc.CodigoFile = iDr[RegContabCabe_Cont_EN._CodigoFile].ToString();
+            xObjEnc.NumeroVoucherRegContabCabe = iDr[RegContabCabe_Cont_EN._NumeroVoucherRegContabCabe].ToString();
+            xObjEnc.FechaVoucherRegContabCabe = iDr[RegContabCabe_Cont_EN._FechaVoucherRegContabCabe].ToString();
             xObjEnc.CodigoAuxiliar = iDr[RegContabCabe_Cont_EN._CodigoAuxiliar].ToString();
-            xObjEnc.CModoCompra = iDr[RegContabCabe_Cont_EN._CModoCompra].ToString();
-            xObjEnc.CTipoCompra = iDr[RegContabCabe_Cont_EN._CTipoCompra].ToString();
-            xObjEnc.CTipoDocumento = iDr[RegContabCabe_Cont_EN._CTipoDocumento].ToString();
+
+            xObjEnc.TipoDocumento = iDr[RegContabCabe_Cont_EN._TipoDocumento].ToString();
             xObjEnc.SerieDocumento = iDr[RegContabCabe_Cont_EN._SerieDocumento].ToString();
             xObjEnc.NumeroDocumento = iDr[RegContabCabe_Cont_EN._NumeroDocumento].ToString();
             xObjEnc.FechaDocumento = iDr[RegContabCabe_Cont_EN._FechaDocumento].ToString();
-            xObjEnc.FechaVctoDocumento = iDr[RegContabCabe_Cont_EN._FechaVctoDocumento].ToString();
-            xObjEnc.CMonedaDocumento = iDr[RegContabCabe_Cont_EN._CMonedaDocumento].ToString();
-            xObjEnc.CTipoDocumentoRef = iDr[RegContabCabe_Cont_EN._CTipoDocumentoRef].ToString();
-            xObjEnc.SerieDocumentoRef = iDr[RegContabCabe_Cont_EN._SerieDocumentoRef].ToString();
-            xObjEnc.NumeroDocumentoRef = iDr[RegContabCabe_Cont_EN._NumeroDocumentoRef].ToString();
-            xObjEnc.FechaDocumentoRef = iDr[RegContabCabe_Cont_EN._FechaDocumentoRef].ToString();
-            xObjEnc.FechaVctoDocumentoRef = iDr[RegContabCabe_Cont_EN._FechaVctoDocumentoRef].ToString();
-            xObjEnc.CMonedaDocumentoRef = iDr[RegContabCabe_Cont_EN._CMonedaDocumentoRef].ToString();
+            xObjEnc.FechaVencimiento = iDr[RegContabCabe_Cont_EN._FechaVencimiento].ToString();
+            xObjEnc.MonedaDocumento = iDr[RegContabCabe_Cont_EN._CMonedaDocumento].ToString();
+            xObjEnc.TipoDocumento1 = iDr[RegContabCabe_Cont_EN._CTipoDocumentoRef].ToString();
+            xObjEnc.SerieDocumento1 = iDr[RegContabCabe_Cont_EN._SerieDocumentoRef].ToString();
+            xObjEnc.NumeroDocumento1 = iDr[RegContabCabe_Cont_EN._NumeroDocumentoRef].ToString();
+            xObjEnc.FechaDocumento1 = iDr[RegContabCabe_Cont_EN._FechaDocumentoRef].ToString();
+            xObjEnc.MonedaDocumento1 = iDr[RegContabCabe_Cont_EN._CMonedaDocumentoRef].ToString();
             xObjEnc.VentaTipoCambio = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._VentaTipoCambio]);
-            xObjEnc.PorcentajeIgv = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._PorcentajeIgv]);
-            xObjEnc.CAplicaIgv = iDr[RegContabCabe_Cont_EN._CAplicaIgv].ToString();
-            xObjEnc.CAplicaInafecto = iDr[RegContabCabe_Cont_EN._CAplicaInafecto].ToString();
-            xObjEnc.ValorVentaRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._ValorVentaRegContabCabe]);
+            xObjEnc.IgvPar = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._PorcentajeIgv]);
+            xObjEnc.ValorVtaRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._ValorVentaRegContabCabe]);
             xObjEnc.IgvRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._IgvRegContabCabe]);
             xObjEnc.ExoneradoRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._ExoneradoRegContabCabe]);
-            xObjEnc.InafectoRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._InafectoRegContabCabe]);
-            xObjEnc.PrecioVentaRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._PrecioVentaRegContabCabe]);
-            xObjEnc.ValorVentaSolRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._ValorVentaSolRegContabCabe]);
+            xObjEnc.PrecioVtaRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._PrecioVentaRegContabCabe]);
             xObjEnc.IgvSolRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._IgvSolRegContabCabe]);
             xObjEnc.ExoneradoSolRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._ExoneradoSolRegContabCabe]);
-            xObjEnc.InafectoSolRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._InafectoSolRegContabCabe]);
-            xObjEnc.PrecioVentaSolRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._PrecioVentaSolRegContabCabe]);
+            xObjEnc.PrecioVtaSolRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._PrecioVentaSolRegContabCabe]);
             xObjEnc.GlosaRegContabCabe = iDr[RegContabCabe_Cont_EN._GlosaRegContabCabe].ToString();
-            xObjEnc.CAplicaDetraccion = iDr[RegContabCabe_Cont_EN._CAplicaDetraccion].ToString();
-            xObjEnc.NumeroPapeletaDetraccion = iDr[RegContabCabe_Cont_EN._NumeroPapeletaDetraccion].ToString();
-            xObjEnc.FechaDetraccion = iDr[RegContabCabe_Cont_EN._FechaDetraccion].ToString();
-            xObjEnc.CodigoCuenta = iDr[RegContabCabe_Cont_EN._CodigoCuenta].ToString();
-            xObjEnc.CAplicaRetencion = iDr[RegContabCabe_Cont_EN._CAplicaRetencion].ToString();
-            xObjEnc.TotalHonorario = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._TotalHonorario]);
-            xObjEnc.RetencionHonorario = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._RetencionHonorario]);
-            xObjEnc.PagoHonorario = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._PagoHonorario]);
+            xObjEnc.DetraccionRegContabCabe = iDr[RegContabCabe_Cont_EN._CAplicaDetraccion].ToString();
+            xObjEnc.NumeroPapeletaRegContabCabe = iDr[RegContabCabe_Cont_EN._NumeroPapeletaDetraccion].ToString();
+            xObjEnc.FechaDetraccionRegContabCabe = iDr[RegContabCabe_Cont_EN._FechaDetraccion].ToString();
+            xObjEnc.CodigoCuentaBanco = iDr[RegContabCabe_Cont_EN._CodigoCuenta].ToString();
+            xObjEnc.RetencionRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._RetencionHonorario]);
             xObjEnc.ImporteRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._ImporteRegContabCabe]);
             xObjEnc.ImporteSolRegContabCabe = Convert.ToDecimal(iDr[RegContabCabe_Cont_EN._ImporteSolRegContabCabe]);
-            xObjEnc.CModoPago = iDr[RegContabCabe_Cont_EN._CModoPago].ToString();
-            xObjEnc.GiradoPagoRegContabCabe = iDr[RegContabCabe_Cont_EN._GiradoPagoRegContabCabe].ToString();
+            xObjEnc.CodigoModoPago = iDr[RegContabCabe_Cont_EN._CModoPago].ToString();
             xObjEnc.CartaRegContabCabe = iDr[RegContabCabe_Cont_EN._CartaRegContabCabe].ToString();
-            xObjEnc.ClaveIngresoRegContabCabe = iDr[RegContabCabe_Cont_EN._ClaveIngresoRegContabCabe].ToString();
-            xObjEnc.CEstadoRegContabCabe = iDr[RegContabCabe_Cont_EN._CEstadoRegContabCabe].ToString();
+            xObjEnc.EstadoRegContabCabe = iDr[RegContabCabe_Cont_EN._EstadoRegContabCabe].ToString();
             xObjEnc.UsuarioAgrega = iDr[RegContabCabe_Cont_EN._UsuarioAgrega].ToString();
             xObjEnc.FechaAgrega = Convert.ToDateTime(iDr[RegContabCabe_Cont_EN._FechaAgrega]);
             xObjEnc.UsuarioModifica = iDr[RegContabCabe_Cont_EN._UsuarioModifica].ToString();
@@ -86,7 +74,7 @@ namespace Datos.Contabilidad
 
         private List<RegContabCabe_Cont_EN> ListarObjetos(string pScript)
         {
-            xObjCon.Conectar(SqlDatos.Bd.Alfisa_Contabilidad);
+            xObjCon.Conectar(SqlDatos.Bd.contabilidad);
             xObjCon.ComandoTexto(pScript);
             IDataReader xIdr = xObjCon.ObtenerIdr();
             while (xIdr.Read())
@@ -100,7 +88,7 @@ namespace Datos.Contabilidad
 
         private RegContabCabe_Cont_EN BuscarObjeto(string pScript)
         {
-            xObjCon.Conectar(SqlDatos.Bd.Alfisa_Contabilidad);
+            xObjCon.Conectar(SqlDatos.Bd.contabilidad);
             xObjCon.ComandoTexto(pScript);
             IDataReader xIdr = xObjCon.ObtenerIdr();
             while (xIdr.Read())
@@ -114,7 +102,7 @@ namespace Datos.Contabilidad
 
         private bool ExisteObjeto(string pScript)
         {
-            xObjCon.Conectar(SqlDatos.Bd.Alfisa_Contabilidad);
+            xObjCon.Conectar(SqlDatos.Bd.contabilidad);
             xObjCon.ComandoTexto(pScript);
             IDataReader xIdr = xObjCon.ObtenerIdr();
             bool xResultado = false;
@@ -131,7 +119,7 @@ namespace Datos.Contabilidad
         }
         private string ObtenerValor(string pScript)
         {
-            xObjCon.Conectar(SqlDatos.Bd.Alfisa_Contabilidad);
+            xObjCon.Conectar(SqlDatos.Bd.contabilidad);
             xObjCon.ComandoTexto(pScript);
             string iValor = xObjCon.ObtenerValor();
             xObjCon.Desconectar();
@@ -140,62 +128,59 @@ namespace Datos.Contabilidad
 
         public void AgregarRegContaCabe(RegContabCabe_Cont_EN pObj)
         {
-            xObjCon.Conectar(SqlDatos.Bd.Alfisa_Contabilidad);
+            xObjCon.Conectar(SqlDatos.Bd.contabilidad);
             //armando escript para insertar
             SqlInsert xIns = new SqlInsert();
             xIns.Tabla(this.xTabla);
             xIns.AsignarParametro(RegContabCabe_Cont_EN._ClaveRegContabCabe, pObj.ClaveRegContabCabe.ToString());
             xIns.AsignarParametro(RegContabCabe_Cont_EN._CodigoEmpresa, pObj.CodigoEmpresa.ToString());
             xIns.AsignarParametro(RegContabCabe_Cont_EN._PeriodoRegContabCabe, pObj.PeriodoRegContabCabe.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._COrigen, pObj.COrigen.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._CFile, pObj.CFile.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._CorrelativoRegContabCabe, pObj.CorrelativoRegContabCabe.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaRegContabCabe, pObj.FechaRegContabCabe.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._CodigoOrigen, pObj.CodigoOrigen.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._CodigoFile, pObj.CodigoFile.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._NumeroVoucherRegContabCabe, pObj.NumeroVoucherRegContabCabe.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaVoucherRegContabCabe, Fecha.ObtenerAnoMesDia(pObj.FechaVoucherRegContabCabe));
             xIns.AsignarParametro(RegContabCabe_Cont_EN._CodigoAuxiliar, pObj.CodigoAuxiliar.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._CModoCompra, pObj.CModoCompra.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._CTipoCompra, pObj.CTipoCompra.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._CTipoDocumento, pObj.CTipoDocumento.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._DiaVoucherRegContabCabe, Fecha.ObtenerNumeroDia(Convert.ToDateTime(pObj.FechaVoucherRegContabCabe)));
+
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._TipoDocumento, pObj.TipoDocumento.ToString());
             xIns.AsignarParametro(RegContabCabe_Cont_EN._SerieDocumento, pObj.SerieDocumento.ToString());
             xIns.AsignarParametro(RegContabCabe_Cont_EN._NumeroDocumento, pObj.NumeroDocumento.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaDocumento, pObj.FechaDocumento.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaVctoDocumento, pObj.FechaVctoDocumento.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._CMonedaDocumento, pObj.CMonedaDocumento.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._CTipoDocumentoRef, pObj.CTipoDocumentoRef.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._SerieDocumentoRef, pObj.SerieDocumentoRef.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._NumeroDocumentoRef, pObj.NumeroDocumentoRef.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaDocumentoRef, pObj.FechaDocumentoRef.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaVctoDocumentoRef, pObj.FechaVctoDocumentoRef.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._CMonedaDocumentoRef, pObj.CMonedaDocumentoRef.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaDocumento, Fecha.ObtenerAnoMesDia(pObj.FechaDocumento));
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaVencimiento, Fecha.ObtenerAnoMesDia(pObj.FechaVencimiento));
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._CMonedaDocumento, pObj.MonedaDocumento.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._CTipoDocumentoRef, pObj.TipoDocumento1.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._SerieDocumentoRef, pObj.SerieDocumento1.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._NumeroDocumentoRef, pObj.NumeroDocumento1.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaDocumentoRef, Fecha.ObtenerDiaMesAno(pObj.FechaDocumento1));
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._CMonedaDocumentoRef, pObj.MonedaDocumento1.ToString());
             xIns.AsignarParametro(RegContabCabe_Cont_EN._VentaTipoCambio, pObj.VentaTipoCambio.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._PorcentajeIgv, pObj.PorcentajeIgv.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._CAplicaIgv, pObj.CAplicaIgv.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._CAplicaInafecto, pObj.CAplicaInafecto.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._ValorVentaRegContabCabe, pObj.ValorVentaRegContabCabe.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._PorcentajeIgv, pObj.IgvPar.ToString());
+
+
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._ValorVentaRegContabCabe, pObj.ValorVtaRegContabCabe.ToString());
             xIns.AsignarParametro(RegContabCabe_Cont_EN._IgvRegContabCabe, pObj.IgvRegContabCabe.ToString());
             xIns.AsignarParametro(RegContabCabe_Cont_EN._ExoneradoRegContabCabe, pObj.ExoneradoRegContabCabe.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._InafectoRegContabCabe, pObj.InafectoRegContabCabe.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._PrecioVentaRegContabCabe, pObj.PrecioVentaRegContabCabe.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._ValorVentaSolRegContabCabe, pObj.ValorVentaSolRegContabCabe.ToString());
+
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._PrecioVentaRegContabCabe, pObj.PrecioVtaRegContabCabe.ToString());
             xIns.AsignarParametro(RegContabCabe_Cont_EN._IgvSolRegContabCabe, pObj.IgvSolRegContabCabe.ToString());
             xIns.AsignarParametro(RegContabCabe_Cont_EN._ExoneradoSolRegContabCabe, pObj.ExoneradoSolRegContabCabe.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._InafectoSolRegContabCabe, pObj.InafectoSolRegContabCabe.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._PrecioVentaSolRegContabCabe, pObj.PrecioVentaSolRegContabCabe.ToString());
+
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._PrecioVentaSolRegContabCabe, pObj.PrecioVtaSolRegContabCabe.ToString());
             xIns.AsignarParametro(RegContabCabe_Cont_EN._GlosaRegContabCabe, pObj.GlosaRegContabCabe.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._CAplicaDetraccion, pObj.CAplicaDetraccion.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._NumeroPapeletaDetraccion, pObj.NumeroPapeletaDetraccion.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaDetraccion, pObj.FechaDetraccion.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._CodigoCuenta, pObj.CodigoCuenta.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._CAplicaRetencion, pObj.CAplicaRetencion.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._TotalHonorario, pObj.TotalHonorario.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._RetencionHonorario, pObj.RetencionHonorario.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._PagoHonorario, pObj.PagoHonorario.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._CAplicaDetraccion, pObj.DetraccionRegContabCabe.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._NumeroPapeletaDetraccion, pObj.NumeroPapeletaRegContabCabe.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaDetraccion, Fecha.ObtenerDiaMesAno(pObj.FechaDetraccionRegContabCabe));
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._CodigoCuenta, pObj.CodigoCuentaBanco.ToString());
+
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._RetencionHonorario, pObj.RetencionRegContabCabe.ToString());
+
             xIns.AsignarParametro(RegContabCabe_Cont_EN._ImporteRegContabCabe, pObj.ImporteRegContabCabe.ToString());
             xIns.AsignarParametro(RegContabCabe_Cont_EN._ImporteSolRegContabCabe, pObj.ImporteSolRegContabCabe.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._CModoPago, pObj.CModoPago.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._GiradoPagoRegContabCabe, pObj.GiradoPagoRegContabCabe.ToString());
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._CModoPago, pObj.CodigoModoPago.ToString());
+
             xIns.AsignarParametro(RegContabCabe_Cont_EN._CartaRegContabCabe, pObj.CartaRegContabCabe.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._ClaveIngresoRegContabCabe, pObj.ClaveIngresoRegContabCabe.ToString());
-            xIns.AsignarParametro(RegContabCabe_Cont_EN._CEstadoRegContabCabe, pObj.CEstadoRegContabCabe.ToString());
+
+            xIns.AsignarParametro(RegContabCabe_Cont_EN._EstadoRegContabCabe, pObj.EstadoRegContabCabe.ToString());
             xIns.AsignarParametro(RegContabCabe_Cont_EN._UsuarioAgrega, pObj.UsuarioAgrega.ToString());
             xIns.AsignarParametro(RegContabCabe_Cont_EN._FechaAgrega, "FECHAHORA");
             xIns.AsignarParametro(RegContabCabe_Cont_EN._UsuarioModifica, pObj.UsuarioModifica.ToString());
@@ -210,11 +195,11 @@ namespace Datos.Contabilidad
         public string ObtenerMaximoValorEnColumna(RegContabCabe_Cont_EN pObj)
         {
             SqlSelect xSel = new SqlSelect();
-            xSel.ObtenerMaximoValor(this.xVista, RegContabCabe_Cont_EN._CorrelativoRegContabCabe);
+            xSel.ObtenerMaximoValor(this.xVista, RegContabCabe_Cont_EN._NumeroVoucherRegContabCabe);
             xSel.CondicionCV(SqlSelect.Reservada.Cuando, RegContabCabe_Cont_EN._CodigoEmpresa, SqlSelect.Operador.Igual, Universal.gCodigoEmpresa);
             xSel.CondicionCV(SqlSelect.Reservada.Y, RegContabCabe_Cont_EN._PeriodoRegContabCabe, SqlSelect.Operador.Igual, pObj.PeriodoRegContabCabe);
-            xSel.CondicionCV(SqlSelect.Reservada.Y, RegContabCabe_Cont_EN._COrigen, SqlSelect.Operador.Igual, pObj.COrigen);
-            xSel.CondicionCV(SqlSelect.Reservada.Y, RegContabCabe_Cont_EN._CFile, SqlSelect.Operador.Igual, pObj.CFile);
+            xSel.CondicionCV(SqlSelect.Reservada.Y, RegContabCabe_Cont_EN._CodigoOrigen, SqlSelect.Operador.Igual, pObj.CodigoOrigen);
+            xSel.CondicionCV(SqlSelect.Reservada.Y, RegContabCabe_Cont_EN._CodigoFile, SqlSelect.Operador.Igual, pObj.CodigoFile);
             return this.ObtenerValor(xSel.ObtenerScript());
         }
     }

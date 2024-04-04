@@ -3947,6 +3947,10 @@ namespace Negocio
             //devolver
             return iMovDetEN;
         }
-
+        public static void ActualizarFlagCheckItem(SolicitudPedidoDetaEN pObj)
+        {
+            SolicitudPedidoDetaAD iPerAD = new SolicitudPedidoDetaAD();
+            iPerAD.ActualizarFlagCheckItem(pObj);
+        }
     }
 }

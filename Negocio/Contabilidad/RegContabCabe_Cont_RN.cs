@@ -40,55 +40,53 @@ namespace Negocio.Contabilidad
                 case RegContabCabe_Cont_EN._ClaveRegContabCabe: return pObj.ClaveRegContabCabe.ToString();
                 case RegContabCabe_Cont_EN._CodigoEmpresa: return pObj.CodigoEmpresa.ToString();
                 case RegContabCabe_Cont_EN._PeriodoRegContabCabe: return pObj.PeriodoRegContabCabe.ToString();
-                case RegContabCabe_Cont_EN._COrigen: return pObj.COrigen.ToString();
-                case RegContabCabe_Cont_EN._CFile: return pObj.CFile.ToString();
-                case RegContabCabe_Cont_EN._CorrelativoRegContabCabe: return pObj.CorrelativoRegContabCabe.ToString();
-                case RegContabCabe_Cont_EN._FechaRegContabCabe: return pObj.FechaRegContabCabe.ToString();
+                case RegContabCabe_Cont_EN._CodigoOrigen: return pObj.CodigoOrigen.ToString();
+                case RegContabCabe_Cont_EN._CodigoFile: return pObj.CodigoFile.ToString();
+                case RegContabCabe_Cont_EN._NumeroVoucherRegContabCabe: return pObj.NumeroVoucherRegContabCabe.ToString();
+                case RegContabCabe_Cont_EN._FechaVoucherRegContabCabe: return pObj.FechaVoucherRegContabCabe.ToString();
                 case RegContabCabe_Cont_EN._CodigoAuxiliar: return pObj.CodigoAuxiliar.ToString();
                 case RegContabCabe_Cont_EN._CModoCompra: return pObj.CModoCompra.ToString();
                 case RegContabCabe_Cont_EN._CTipoCompra: return pObj.CTipoCompra.ToString();
-                case RegContabCabe_Cont_EN._CTipoDocumento: return pObj.CTipoDocumento.ToString();
+                case RegContabCabe_Cont_EN._TipoDocumento: return pObj.TipoDocumento.ToString();
                 case RegContabCabe_Cont_EN._SerieDocumento: return pObj.SerieDocumento.ToString();
                 case RegContabCabe_Cont_EN._NumeroDocumento: return pObj.NumeroDocumento.ToString();
                 case RegContabCabe_Cont_EN._FechaDocumento: return pObj.FechaDocumento.ToString();
-                case RegContabCabe_Cont_EN._FechaVctoDocumento: return pObj.FechaVctoDocumento.ToString();
-                case RegContabCabe_Cont_EN._CMonedaDocumento: return pObj.CMonedaDocumento.ToString();
-                case RegContabCabe_Cont_EN._CTipoDocumentoRef: return pObj.CTipoDocumentoRef.ToString();
-                case RegContabCabe_Cont_EN._SerieDocumentoRef: return pObj.SerieDocumentoRef.ToString();
-                case RegContabCabe_Cont_EN._NumeroDocumentoRef: return pObj.NumeroDocumentoRef.ToString();
-                case RegContabCabe_Cont_EN._FechaDocumentoRef: return pObj.FechaDocumentoRef.ToString();
-                case RegContabCabe_Cont_EN._FechaVctoDocumentoRef: return pObj.FechaVctoDocumentoRef.ToString();
-                case RegContabCabe_Cont_EN._CMonedaDocumentoRef: return pObj.CMonedaDocumentoRef.ToString();
+                case RegContabCabe_Cont_EN._FechaVencimiento: return pObj.FechaVencimiento.ToString();
+                case RegContabCabe_Cont_EN._CMonedaDocumento: return pObj.MonedaDocumento.ToString();
+                case RegContabCabe_Cont_EN._CTipoDocumentoRef: return pObj.TipoDocumento1.ToString();
+                case RegContabCabe_Cont_EN._SerieDocumentoRef: return pObj.SerieDocumento1.ToString();
+                case RegContabCabe_Cont_EN._NumeroDocumentoRef: return pObj.NumeroDocumento1.ToString();
+                case RegContabCabe_Cont_EN._FechaDocumentoRef: return pObj.FechaDocumento1.ToString();
+                case RegContabCabe_Cont_EN._CMonedaDocumentoRef: return pObj.MonedaDocumento1.ToString();
                 case RegContabCabe_Cont_EN._VentaTipoCambio: return pObj.VentaTipoCambio.ToString();
-                case RegContabCabe_Cont_EN._PorcentajeIgv: return pObj.PorcentajeIgv.ToString();
+                case RegContabCabe_Cont_EN._PorcentajeIgv: return pObj.IgvPar.ToString();
                 case RegContabCabe_Cont_EN._CAplicaIgv: return pObj.CAplicaIgv.ToString();
                 case RegContabCabe_Cont_EN._CAplicaInafecto: return pObj.CAplicaInafecto.ToString();
-                case RegContabCabe_Cont_EN._ValorVentaRegContabCabe: return pObj.ValorVentaRegContabCabe.ToString();
+                case RegContabCabe_Cont_EN._ValorVentaRegContabCabe: return pObj.ValorVtaRegContabCabe.ToString();
                 case RegContabCabe_Cont_EN._IgvRegContabCabe: return pObj.IgvRegContabCabe.ToString();
                 case RegContabCabe_Cont_EN._ExoneradoRegContabCabe: return pObj.ExoneradoRegContabCabe.ToString();
                 case RegContabCabe_Cont_EN._InafectoRegContabCabe: return pObj.InafectoRegContabCabe.ToString();
-                case RegContabCabe_Cont_EN._PrecioVentaRegContabCabe: return pObj.PrecioVentaRegContabCabe.ToString();
-                case RegContabCabe_Cont_EN._ValorVentaSolRegContabCabe: return pObj.ValorVentaSolRegContabCabe.ToString();
+                case RegContabCabe_Cont_EN._PrecioVentaRegContabCabe: return pObj.PrecioVtaRegContabCabe.ToString();
                 case RegContabCabe_Cont_EN._IgvSolRegContabCabe: return pObj.IgvSolRegContabCabe.ToString();
                 case RegContabCabe_Cont_EN._ExoneradoSolRegContabCabe: return pObj.ExoneradoSolRegContabCabe.ToString();
                 case RegContabCabe_Cont_EN._InafectoSolRegContabCabe: return pObj.InafectoSolRegContabCabe.ToString();
-                case RegContabCabe_Cont_EN._PrecioVentaSolRegContabCabe: return pObj.PrecioVentaSolRegContabCabe.ToString();
+                case RegContabCabe_Cont_EN._PrecioVentaSolRegContabCabe: return pObj.PrecioVtaSolRegContabCabe.ToString();
                 case RegContabCabe_Cont_EN._GlosaRegContabCabe: return pObj.GlosaRegContabCabe.ToString();
-                case RegContabCabe_Cont_EN._CAplicaDetraccion: return pObj.CAplicaDetraccion.ToString();
-                case RegContabCabe_Cont_EN._NumeroPapeletaDetraccion: return pObj.NumeroPapeletaDetraccion.ToString();
-                case RegContabCabe_Cont_EN._FechaDetraccion: return pObj.FechaDetraccion.ToString();
-                case RegContabCabe_Cont_EN._CodigoCuenta: return pObj.CodigoCuenta.ToString();
+                case RegContabCabe_Cont_EN._CAplicaDetraccion: return pObj.DetraccionRegContabCabe.ToString();
+                case RegContabCabe_Cont_EN._NumeroPapeletaDetraccion: return pObj.NumeroPapeletaRegContabCabe.ToString();
+                case RegContabCabe_Cont_EN._FechaDetraccion: return pObj.FechaDetraccionRegContabCabe.ToString();
+                case RegContabCabe_Cont_EN._CodigoCuenta: return pObj.CodigoCuentaBanco.ToString();
                 case RegContabCabe_Cont_EN._CAplicaRetencion: return pObj.CAplicaRetencion.ToString();
                 case RegContabCabe_Cont_EN._TotalHonorario: return pObj.TotalHonorario.ToString();
-                case RegContabCabe_Cont_EN._RetencionHonorario: return pObj.RetencionHonorario.ToString();
+                case RegContabCabe_Cont_EN._RetencionHonorario: return pObj.RetencionRegContabCabe.ToString();
                 case RegContabCabe_Cont_EN._PagoHonorario: return pObj.PagoHonorario.ToString();
                 case RegContabCabe_Cont_EN._ImporteRegContabCabe: return pObj.ImporteRegContabCabe.ToString();
                 case RegContabCabe_Cont_EN._ImporteSolRegContabCabe: return pObj.ImporteSolRegContabCabe.ToString();
-                case RegContabCabe_Cont_EN._CModoPago: return pObj.CModoPago.ToString();
+                case RegContabCabe_Cont_EN._CModoPago: return pObj.CodigoModoPago.ToString();
                 case RegContabCabe_Cont_EN._GiradoPagoRegContabCabe: return pObj.GiradoPagoRegContabCabe.ToString();
                 case RegContabCabe_Cont_EN._CartaRegContabCabe: return pObj.CartaRegContabCabe.ToString();
                 case RegContabCabe_Cont_EN._ClaveIngresoRegContabCabe: return pObj.ClaveIngresoRegContabCabe.ToString();
-                case RegContabCabe_Cont_EN._CEstadoRegContabCabe: return pObj.CEstadoRegContabCabe.ToString();
+                case RegContabCabe_Cont_EN._EstadoRegContabCabe: return pObj.EstadoRegContabCabe.ToString();
                 case RegContabCabe_Cont_EN._UsuarioAgrega: return pObj.UsuarioAgrega.ToString();
                 case RegContabCabe_Cont_EN._FechaAgrega: return pObj.FechaAgrega.ToString();
                 case RegContabCabe_Cont_EN._UsuarioModifica: return pObj.UsuarioModifica.ToString();
@@ -151,7 +149,7 @@ namespace Negocio.Contabilidad
         public static bool EsCompraNacional(RegContabCabe_Cont_EN pObj)
         {
             //validar por el tipo documento
-            if (Cadena.ExisteValorEnConjuntoDeValores(pObj.CTipoDocumento, "00,46,51,52,53,91,97,98") == true)
+            if (Cadena.ExisteValorEnConjuntoDeValores(pObj.TipoDocumento, "00,46,51,52,53,91,97,98") == true)
             {
                 //seria importacion por lotanto devuelve false
                 return false;
@@ -180,14 +178,19 @@ namespace Negocio.Contabilidad
                 if (movimientoOC.FlagExportadoConta == 0 && movimientoOC.PrecioVtaMovimientoCabe > 0)
                 {
                     RegContabCabe_Cont_EN regContabCabe_Cont_EN = new RegContabCabe_Cont_EN();
-                    RegContabCabe_Cont_RN.AsignarReContabCabe(regContabCabe_Cont_EN, movimientoOC);
-                    RegContabCabe_Cont_RN.AdicionarRegContaCabe(regContabCabe_Cont_EN);
 
                     MovimientoOCDetaEN movimientoOCDetaEN = new MovimientoOCDetaEN();
                     List<MovimientoOCDetaEN> movimientoOCDetaENs = new List<MovimientoOCDetaEN>();
                     movimientoOCDetaEN.ClaveMovimientoCabe = movimientoOC.ClaveMovimientoCabe;
                     movimientoOCDetaEN.Adicionales.CampoOrden = MovimientoOCDetaEN.ClaMovDet;
                     movimientoOCDetaENs = MovimientoOCDetaRN.ListarMovimientosDetaXClaveMovimientoCabe(movimientoOCDetaEN);
+
+                    int ultimoCorrelativo = movimientoOCCabeENs.Count + 2;
+
+                    RegContabCabe_Cont_RN.AsignarReContabCabe(regContabCabe_Cont_EN, movimientoOC, ultimoCorrelativo);
+                    RegContabCabe_Cont_RN.AdicionarRegContaCabe(regContabCabe_Cont_EN);
+
+
                     int i = 0;
                     if (i == 0)
                     {
@@ -215,9 +218,9 @@ namespace Negocio.Contabilidad
             regContabDeta_Cont_EN.CodigoEmpresa = regContabCabe_Cont_EN.CodigoEmpresa;
             regContabDeta_Cont_EN.PeriodoRegContabCabe = regContabCabe_Cont_EN.PeriodoRegContabCabe;
 
-            regContabDeta_Cont_EN.CFile = regContabCabe_Cont_EN.CFile;
-            regContabDeta_Cont_EN.COrigen = regContabCabe_Cont_EN.COrigen;
-            regContabDeta_Cont_EN.CorrelativoRegContabCabe = regContabCabe_Cont_EN.CorrelativoRegContabCabe;
+            regContabDeta_Cont_EN.CFile = regContabCabe_Cont_EN.CodigoFile;
+            regContabDeta_Cont_EN.COrigen = regContabCabe_Cont_EN.CodigoOrigen;
+            regContabDeta_Cont_EN.NumeroVoucherRegContabCabe = regContabCabe_Cont_EN.NumeroVoucherRegContabCabe;
             regContabDeta_Cont_EN.ClaveRegContabCabe = regContabCabe_Cont_EN.ClaveRegContabCabe;
 
             regContabDeta_Cont_EN.ClaveRegContabDeta = RegContabCabe_Cont_RN.ObtenerClaveMovimientoDeta(regContabDeta_Cont_EN);
@@ -228,20 +231,21 @@ namespace Negocio.Contabilidad
             // 0 = tiene su cuenta valor venta // 1 = 421101 total venta // 2 = 721111 igv
 
             regContabDeta_Cont_EN.CodigoAuxiliar = count == 1 ? regContabCabe_Cont_EN.CodigoAuxiliar : string.Empty;
-            regContabDeta_Cont_EN.CTipoDocumento = count == 1 ? regContabCabe_Cont_EN.CTipoDocumento : string.Empty;
+            regContabDeta_Cont_EN.CTipoDocumento = count == 1 ? regContabCabe_Cont_EN.TipoDocumento : string.Empty;
             regContabDeta_Cont_EN.SerieDocumento = count == 1 ? regContabCabe_Cont_EN.SerieDocumento : string.Empty;
             regContabDeta_Cont_EN.NumeroDocumento = count == 1 ? regContabCabe_Cont_EN.NumeroDocumento : string.Empty;
             regContabDeta_Cont_EN.FechaDocumento = count == 1 ? regContabCabe_Cont_EN.FechaDocumento : string.Empty;
-            regContabDeta_Cont_EN.FechaVctoDocumento = count == 1 ? regContabCabe_Cont_EN.FechaVctoDocumento : string.Empty;
-            regContabDeta_Cont_EN.CMonedaDocumento = count == 1 ? regContabCabe_Cont_EN.CMonedaDocumento : string.Empty;
+            regContabDeta_Cont_EN.FechaVctoDocumento = count == 1 ? regContabCabe_Cont_EN.FechaVencimiento : string.Empty;
+            regContabDeta_Cont_EN.CMonedaDocumento = count == 1 ? regContabCabe_Cont_EN.MonedaDocumento : string.Empty;
 
             regContabDeta_Cont_EN.VentaTipoCambio = 0;
 
 
-            regContabDeta_Cont_EN.CodigoCuenta = count == 1 ? "421101" : count == 0 ? movimientoOCDetaENs.ContableExistencia : "721111";
+            //si el contador es 0, se agrega el contable existencia de movimientoOcDetalle, luego ingresará ingresara
+            regContabDeta_Cont_EN.CodigoCuenta = count == 1 ? regContabCabe_Cont_EN.MonedaDocumento == "0" ? "421101" : "421102" : count == 0 ? movimientoOCDetaENs.ContableExistencia : "721111";
             regContabDeta_Cont_EN.CDebeHaber = count == 1 ? "1" : "0";
 
-            regContabDeta_Cont_EN.ImporteSolRegContabDeta = count == 0 ? movimientoOCDetaENs.CostoMovimientoDeta : count == 1 ? regContabCabe_Cont_EN.PrecioVentaRegContabCabe : regContabCabe_Cont_EN.IgvRegContabCabe; ;
+            regContabDeta_Cont_EN.ImporteSolRegContabDeta = count == 0 ? movimientoOCDetaENs.CostoMovimientoDeta : count == 1 ? regContabCabe_Cont_EN.PrecioVtaRegContabCabe : regContabCabe_Cont_EN.IgvRegContabCabe; ;
 
             regContabDeta_Cont_EN.GlosaRegContabDeta = regContabCabe_Cont_EN.GlosaRegContabCabe;
 
@@ -261,60 +265,60 @@ namespace Negocio.Contabilidad
             regContabDeta_Cont_EN.UsuarioModifica = regContabCabe_Cont_EN.UsuarioModifica;
         }
 
-        public static void AsignarReContabCabe(RegContabCabe_Cont_EN regContabCabe_Cont_EN, MovimientoOCCabeEN movimientoOC)
+        public static void AsignarReContabCabe(RegContabCabe_Cont_EN regContabCabe_Cont_EN, MovimientoOCCabeEN movimientoOC, int ultimoCorrelativo)
         {
             regContabCabe_Cont_EN.CodigoEmpresa = movimientoOC.CodigoEmpresa;
-            regContabCabe_Cont_EN.PeriodoRegContabCabe = movimientoOC.PeriodoMovimientoCabe;
-            regContabCabe_Cont_EN.ClaveRegContabCabe = RegContabCabe_Cont_RN.ObtenerClaveRegContabCabe(regContabCabe_Cont_EN);
-            regContabCabe_Cont_EN.COrigen = "4";
-            regContabCabe_Cont_EN.CFile = "401";
-            regContabCabe_Cont_EN.CorrelativoRegContabCabe = vaucherCorrelativoRegCont;
-            regContabCabe_Cont_EN.FechaRegContabCabe = DateTime.Now.ToShortDateString();
+            regContabCabe_Cont_EN.PeriodoRegContabCabe = movimientoOC.PeriodoMovimientoCabe.Replace("-", string.Empty);
+            regContabCabe_Cont_EN.ClaveRegContabCabe = RegContabCabe_Cont_RN.ObtenerClaveRegContabCabe(regContabCabe_Cont_EN).Replace("-", string.Empty);
+            regContabCabe_Cont_EN.CodigoOrigen = "4";
+            regContabCabe_Cont_EN.CodigoFile = "401";
+            regContabCabe_Cont_EN.NumeroVoucherRegContabCabe = vaucherCorrelativoRegCont;
+            regContabCabe_Cont_EN.UltimoCorrelativo = ultimoCorrelativo.ToString();
+            regContabCabe_Cont_EN.FechaVoucherRegContabCabe = DateTime.Now.ToShortDateString();
             regContabCabe_Cont_EN.CodigoAuxiliar = movimientoOC.CodigoAuxiliar;
             regContabCabe_Cont_EN.CModoCompra = "1";
             regContabCabe_Cont_EN.CTipoCompra = "0";
-            regContabCabe_Cont_EN.CTipoDocumento = movimientoOC.CTipoDocumento;
+            regContabCabe_Cont_EN.TipoDocumento = movimientoOC.CTipoDocumento;
             regContabCabe_Cont_EN.SerieDocumento = movimientoOC.SerieDocumento;
             regContabCabe_Cont_EN.NumeroDocumento = movimientoOC.NumeroDocumento;
             regContabCabe_Cont_EN.FechaDocumento = movimientoOC.FechaDocumento;
-            regContabCabe_Cont_EN.FechaVctoDocumento = movimientoOC.FechaValidezCotizacion;
-            regContabCabe_Cont_EN.CMonedaDocumento = movimientoOC.CCodigoMoneda;
-            regContabCabe_Cont_EN.CTipoDocumentoRef = string.Empty;
-            regContabCabe_Cont_EN.SerieDocumentoRef = string.Empty;
-            regContabCabe_Cont_EN.NumeroDocumentoRef = string.Empty;
-            regContabCabe_Cont_EN.FechaDocumentoRef = string.Empty;
-            regContabCabe_Cont_EN.FechaVctoDocumentoRef = string.Empty;
-            regContabCabe_Cont_EN.CMonedaDocumentoRef = string.Empty;
+            regContabCabe_Cont_EN.FechaVencimiento = DateTime.Now.ToShortDateString();
+            regContabCabe_Cont_EN.FechaDocumento1 = DateTime.Now.ToShortDateString();
+            regContabCabe_Cont_EN.FechaDetraccionRegContabCabe = DateTime.Now.ToShortDateString();
+            regContabCabe_Cont_EN.MonedaDocumento = movimientoOC.CCodigoMoneda;
+            regContabCabe_Cont_EN.TipoDocumento1 = string.Empty;
+            regContabCabe_Cont_EN.SerieDocumento1 = string.Empty;
+            regContabCabe_Cont_EN.NumeroDocumento1 = string.Empty;
+            regContabCabe_Cont_EN.MonedaDocumento1 = string.Empty;
             regContabCabe_Cont_EN.VentaTipoCambio = movimientoOC.TipoCambio;
-            regContabCabe_Cont_EN.PorcentajeIgv = movimientoOC.IgvPorcentaje;
+            regContabCabe_Cont_EN.IgvPar = movimientoOC.IgvPorcentaje;
             regContabCabe_Cont_EN.CAplicaIgv = movimientoOC.IgvPorcentaje == 0 ? "0" : "1";
             regContabCabe_Cont_EN.CAplicaInafecto = movimientoOC.IgvPorcentaje == 0 ? "0" : "1";
-            regContabCabe_Cont_EN.ValorVentaRegContabCabe = movimientoOC.ValorVtaMovimientoCabe;
+            regContabCabe_Cont_EN.ValorVtaRegContabCabe = movimientoOC.ValorVtaMovimientoCabe;
             regContabCabe_Cont_EN.IgvRegContabCabe = movimientoOC.IgvMovimientoCabe;
             regContabCabe_Cont_EN.ExoneradoRegContabCabe = 0;
             regContabCabe_Cont_EN.InafectoRegContabCabe = 0;
-            regContabCabe_Cont_EN.PrecioVentaRegContabCabe = movimientoOC.MontoTotalMovimientoCabe;
-            regContabCabe_Cont_EN.ValorVentaSolRegContabCabe = movimientoOC.ValorVtaMovimientoCabe;
+            regContabCabe_Cont_EN.PrecioVtaRegContabCabe = movimientoOC.MontoTotalMovimientoCabe;
+            regContabCabe_Cont_EN.ValorVtaRegContabCabe = movimientoOC.ValorVtaMovimientoCabe;
             regContabCabe_Cont_EN.IgvSolRegContabCabe = movimientoOC.IgvMovimientoCabe;
             regContabCabe_Cont_EN.ExoneradoSolRegContabCabe = 0;
             regContabCabe_Cont_EN.InafectoSolRegContabCabe = 0;
-            regContabCabe_Cont_EN.PrecioVentaSolRegContabCabe = movimientoOC.MontoTotalMovimientoCabe;
+            regContabCabe_Cont_EN.PrecioVtaSolRegContabCabe = movimientoOC.MontoTotalMovimientoCabe;
             regContabCabe_Cont_EN.GlosaRegContabCabe = movimientoOC.GlosaMovimientoCabe;
-            regContabCabe_Cont_EN.CAplicaDetraccion = "0";
-            regContabCabe_Cont_EN.NumeroPapeletaDetraccion = string.Empty;
-            regContabCabe_Cont_EN.FechaDetraccion = string.Empty;
-            regContabCabe_Cont_EN.CodigoCuenta = movimientoOC.CCodigoMoneda == "0" ? "421101" : "421102";
+            regContabCabe_Cont_EN.DetraccionRegContabCabe = "0";
+            regContabCabe_Cont_EN.NumeroPapeletaRegContabCabe = string.Empty;
+            regContabCabe_Cont_EN.CodigoCuentaBanco = movimientoOC.CCodigoMoneda == "0" ? "421101" : "421102";
             regContabCabe_Cont_EN.CAplicaRetencion = string.Empty;
             regContabCabe_Cont_EN.TotalHonorario = 0;
-            regContabCabe_Cont_EN.RetencionHonorario = 0;
+            regContabCabe_Cont_EN.RetencionRegContabCabe = 0;
             regContabCabe_Cont_EN.PagoHonorario = 0;
             regContabCabe_Cont_EN.ImporteRegContabCabe = 0;
             regContabCabe_Cont_EN.ImporteSolRegContabCabe = 0;
-            regContabCabe_Cont_EN.CModoPago = string.Empty;
+            regContabCabe_Cont_EN.CodigoModoPago = string.Empty;
             regContabCabe_Cont_EN.GiradoPagoRegContabCabe = string.Empty;
             regContabCabe_Cont_EN.CartaRegContabCabe = string.Empty;
             regContabCabe_Cont_EN.ClaveIngresoRegContabCabe = string.Empty;
-            regContabCabe_Cont_EN.CEstadoRegContabCabe = "1";
+            regContabCabe_Cont_EN.EstadoRegContabCabe = "1";
             regContabCabe_Cont_EN.UsuarioAgrega = movimientoOC.UsuarioAgrega;
             regContabCabe_Cont_EN.UsuarioModifica = movimientoOC.UsuarioModifica;
         }
@@ -325,10 +329,10 @@ namespace Negocio.Contabilidad
             string iClave = string.Empty;
 
             //armar clave
-            iClave += Universal.gCodigoEmpresa + "-";
-            iClave += pPer.PeriodoRegContabCabe + "-";
-            iClave += "4-";
-            iClave += "401-";
+            iClave += Universal.gCodigoEmpresa + "";
+            iClave += pPer.PeriodoRegContabCabe + "";
+            iClave += "4";
+            iClave += "401";
             iClave += vaucherCorrelativoRegCont;
 
             //retornar
@@ -340,8 +344,8 @@ namespace Negocio.Contabilidad
             RegContabCabe_Cont_EN iRegConCabEN = new RegContabCabe_Cont_EN();
 
             iRegConCabEN.PeriodoRegContabCabe = pObj.PeriodoRegContabCabe;
-            iRegConCabEN.CFile = "401";
-            iRegConCabEN.COrigen = "4";
+            iRegConCabEN.CodigoFile = "401";
+            iRegConCabEN.CodigoOrigen = "4";
 
             //obtener el nuevo numero
             string iNuevoNumero = RegContabCabe_Cont_RN.ObtenerNuevoNumeroRegContaCabeAutogenerado(iRegConCabEN);
@@ -359,7 +363,7 @@ namespace Negocio.Contabilidad
             string iUltimoCodigo = RegContabCabe_Cont_RN.ObtenerMaximoValorEnColumna(pObj);
 
             //obtener el siguiente codigo
-            iNumero = Numero.IncrementarCorrelativoNumerico(iUltimoCodigo, 5);
+            iNumero = Numero.IncrementarCorrelativoNumerico(iUltimoCodigo, 6);
 
             //devuelve
             return iNumero;
@@ -379,11 +383,11 @@ namespace Negocio.Contabilidad
             string iClave = string.Empty;
 
             //armar clave
-            iClave += Universal.gCodigoEmpresa + "-";
-            iClave += pPer.PeriodoRegContabCabe + "-";
-            iClave += "4-";
-            iClave += "401-";
-            iClave += vaucherCorrelativoRegCont + "-";
+            iClave += Universal.gCodigoEmpresa + "";
+            iClave += pPer.PeriodoRegContabCabe + "";
+            iClave += "4";
+            iClave += "401";
+            iClave += vaucherCorrelativoRegCont + "";
             iClave += vaucherCorrelativoRegContDeta;
 
             //retornar
@@ -397,7 +401,7 @@ namespace Negocio.Contabilidad
             iRegConCabEN.PeriodoRegContabCabe = pObj.PeriodoRegContabCabe;
             iRegConCabEN.CFile = "401";
             iRegConCabEN.COrigen = "4";
-            iRegConCabEN.CorrelativoRegContabCabe = vaucherCorrelativoRegCont;
+            iRegConCabEN.NumeroVoucherRegContabCabe = vaucherCorrelativoRegCont;
 
             //obtener el nuevo numero
             string iNuevoNumero = RegContabCabe_Cont_RN.ObtenerNuevoNumeroMovimientoDetaAutogenerado(iRegConCabEN);

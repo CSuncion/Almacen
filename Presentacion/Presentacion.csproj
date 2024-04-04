@@ -1074,6 +1074,12 @@
     <Compile Include="ProcesosCompras\wExportarOrdenCompraAContabilidad.Designer.cs">
       <DependentUpon>wExportarOrdenCompraAContabilidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProcesosCompras\wGenerarOrdenCompraPorItemDeRequerimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesosCompras\wGenerarOrdenCompraPorItemDeRequerimiento.Designer.cs">
+      <DependentUpon>wGenerarOrdenCompraPorItemDeRequerimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProcesosCompras\wLisAuxGenerarCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2471,6 +2477,9 @@
     <EmbeddedResource Include="ProcesosCompras\wExportarOrdenCompraAContabilidad.resx">
       <DependentUpon>wExportarOrdenCompraAContabilidad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProcesosCompras\wGenerarOrdenCompraPorItemDeRequerimiento.resx">
+      <DependentUpon>wGenerarOrdenCompraPorItemDeRequerimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProcesosCompras\wLisAuxGenerarCompra.resx">
       <DependentUpon>wLisAuxGenerarCompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -3282,6 +3291,24 @@
       <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>1</VersionMajor>
       <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Outlook">
+      <Guid>{00062FFF-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>

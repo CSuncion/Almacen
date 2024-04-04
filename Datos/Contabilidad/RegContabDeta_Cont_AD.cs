@@ -65,7 +65,7 @@ namespace Datos
             xObjEnc.ClaveRegContabDeta = iDr[RegContabDeta_Cont_EN._ClaveRegContabDeta].ToString();
             xObjEnc.COrigen = iDr[RegContabDeta_Cont_EN._COrigen].ToString();
             xObjEnc.CFile = iDr[RegContabDeta_Cont_EN._CFile].ToString();
-            xObjEnc.CorrelativoRegContabCabe = iDr[RegContabDeta_Cont_EN._CorrelativoRegContabCabe].ToString();
+            xObjEnc.NumeroVoucherRegContabCabe = iDr[RegContabDeta_Cont_EN._NumeroVoucherRegContabCabe].ToString();
             xObjEnc.CorrelativoRegContabDeta = iDr[RegContabDeta_Cont_EN._CorrelativoRegContabDeta].ToString();
             xObjEnc.CTipoDocumento = iDr[RegContabDeta_Cont_EN._CTipoDocumento].ToString();
             xObjEnc.FechaVctoDocumento = iDr[RegContabDeta_Cont_EN._FechaVctoDocumento].ToString();
@@ -96,7 +96,7 @@ namespace Datos
 
         private List<RegContabDeta_Cont_EN> ListarObjetos(string pScript)
         {
-            xObjCon.Conectar(SqlDatos.Bd.Alfisa_Contabilidad);
+            xObjCon.Conectar(SqlDatos.Bd.contabilidad);
             xObjCon.ComandoTexto(pScript);
             IDataReader xIdr = xObjCon.ObtenerIdr();
             while (xIdr.Read())
@@ -110,7 +110,7 @@ namespace Datos
 
         private RegContabDeta_Cont_EN BuscarObjeto(string pScript)
         {
-            xObjCon.Conectar(SqlDatos.Bd.Alfisa_Contabilidad);
+            xObjCon.Conectar(SqlDatos.Bd.contabilidad);
             xObjCon.ComandoTexto(pScript);
             IDataReader xIdr = xObjCon.ObtenerIdr();
             while (xIdr.Read())
@@ -124,7 +124,7 @@ namespace Datos
 
         private bool ExisteObjeto(string pScript)
         {
-            xObjCon.Conectar(SqlDatos.Bd.Alfisa_Contabilidad);
+            xObjCon.Conectar(SqlDatos.Bd.contabilidad);
             xObjCon.ComandoTexto(pScript);
             IDataReader xIdr = xObjCon.ObtenerIdr();
             bool xResultado = false;
@@ -141,7 +141,7 @@ namespace Datos
         }
         private string ObtenerValor(string pScript)
         {
-            xObjCon.Conectar(SqlDatos.Bd.Alfisa_Contabilidad);
+            xObjCon.Conectar(SqlDatos.Bd.contabilidad);
             xObjCon.ComandoTexto(pScript);
             string iValor = xObjCon.ObtenerValor();
             xObjCon.Desconectar();
@@ -160,7 +160,7 @@ namespace Datos
             xSel.CondicionCV(SqlSelect.Reservada.Y, RegContabDeta_Cont_EN.CodGasRep, SqlSelect.Operador.Diferente, string.Empty);
             xSel.CondicionCV(SqlSelect.Reservada.Y, RegContabDeta_Cont_EN.Can, SqlSelect.Operador.Diferente, "0");
             xSel.Ordenar(RegContabDeta_Cont_EN.ClaRegConCab, SqlSelect.Orden.Asc);
-            xObjCon.Conectar(SqlDatos.Bd.Alfisa_Contabilidad);
+            xObjCon.Conectar(SqlDatos.Bd.contabilidad);
             xObjCon.ComandoTexto(xSel.ObtenerScript());
 
             //lista resultado
@@ -199,27 +199,25 @@ namespace Datos
         }
         public void AgregarRegContaDeta(RegContabDeta_Cont_EN pObj)
         {
-            xObjCon.Conectar(SqlDatos.Bd.Alfisa_Contabilidad);
+            xObjCon.Conectar(SqlDatos.Bd.contabilidad);
             //armando escript para insertar
             SqlInsert xIns = new SqlInsert();
             xIns.Tabla(this.xTabla);
 
             xIns.AsignarParametro(RegContabDeta_Cont_EN.ClaRegConCab, pObj.ClaveRegContabCabe.ToString());
-            xIns.AsignarParametro(RegContabDeta_Cont_EN.CodEmp, pObj.CodigoEmpresa.ToString());
-            xIns.AsignarParametro(RegContabDeta_Cont_EN.PerRegConCab, pObj.PeriodoRegContabCabe.ToString());
+
             xIns.AsignarParametro(RegContabDeta_Cont_EN.CodAux, pObj.CodigoAuxiliar.ToString());
             xIns.AsignarParametro(RegContabDeta_Cont_EN.SerDoc, pObj.SerieDocumento.ToString());
             xIns.AsignarParametro(RegContabDeta_Cont_EN.NumDoc, pObj.NumeroDocumento.ToString());
-            xIns.AsignarParametro(RegContabDeta_Cont_EN.FecDoc, pObj.FechaDocumento.ToString());
+            xIns.AsignarParametro(RegContabDeta_Cont_EN.FecDoc, Fecha.ObtenerAnoMesDia(pObj.FechaDocumento));
             xIns.AsignarParametro(RegContabDeta_Cont_EN.GloRegConDet, pObj.GlosaRegContabDeta.ToString());
             xIns.AsignarParametro(RegContabDeta_Cont_EN._ClaveRegContabDeta, pObj.ClaveRegContabDeta);
-            xIns.AsignarParametro(RegContabDeta_Cont_EN._COrigen, pObj.COrigen);
-            xIns.AsignarParametro(RegContabDeta_Cont_EN._CFile, pObj.CFile);
-            xIns.AsignarParametro(RegContabDeta_Cont_EN._CorrelativoRegContabCabe, pObj.CorrelativoRegContabCabe);
+
+
             xIns.AsignarParametro(RegContabDeta_Cont_EN._CorrelativoRegContabDeta, pObj.CorrelativoRegContabDeta);
             xIns.AsignarParametro(RegContabDeta_Cont_EN._CTipoDocumento, pObj.CTipoDocumento);
-            xIns.AsignarParametro(RegContabDeta_Cont_EN._FechaVctoDocumento, pObj.FechaVctoDocumento);
-            xIns.AsignarParametro(RegContabDeta_Cont_EN._CMonedaDocumento, pObj.CMonedaDocumento);
+
+
             xIns.AsignarParametro(RegContabDeta_Cont_EN._VentaTipoCambio, pObj.VentaTipoCambio.ToString());
             xIns.AsignarParametro(RegContabDeta_Cont_EN._CodigoCuenta, pObj.CodigoCuenta);
             xIns.AsignarParametro(RegContabDeta_Cont_EN._CDebeHaber, pObj.CDebeHaber);
@@ -227,12 +225,12 @@ namespace Datos
             xIns.AsignarParametro(RegContabDeta_Cont_EN._ImporteMonedaRegContabDeta, pObj.ImporteMonedaRegContabDeta.ToString());
             xIns.AsignarParametro(RegContabDeta_Cont_EN._CIngresoEgreso, pObj.CIngresoEgreso);
             xIns.AsignarParametro(RegContabDeta_Cont_EN._CCentroCosto, pObj.CCentroCosto);
-            xIns.AsignarParametro(RegContabDeta_Cont_EN._CArea, pObj.CArea);
-            xIns.AsignarParametro(RegContabDeta_Cont_EN._CFlujoCaja, pObj.CFlujoCaja);
-            xIns.AsignarParametro(RegContabDeta_Cont_EN._CodigoAlmacen, pObj.CodigoAlmacen);
+
+
+
             xIns.AsignarParametro(RegContabDeta_Cont_EN._CodigoItemAlmacen, pObj.CodigoItemAlmacen);
-            xIns.AsignarParametro(RegContabDeta_Cont_EN._CantidadItemAlmacen, pObj.CantidadItemAlmacen.ToString());
-            xIns.AsignarParametro(RegContabDeta_Cont_EN._CTipoLineaAsiento, pObj.CTipoLineaAsiento);
+
+
             xIns.AsignarParametro(RegContabDeta_Cont_EN._CEstadoRegContabDeta, pObj.CEstadoRegContabDeta);
             xIns.AsignarParametro(RegContabDeta_Cont_EN._UsuarioAgrega, pObj.UsuarioAgrega);
             xIns.AsignarParametro(RegContabDeta_Cont_EN._FechaAgrega, "FECHAHORA");
@@ -255,7 +253,7 @@ namespace Datos
             xSel.CondicionCV(SqlSelect.Reservada.Y, RegContabDeta_Cont_EN.PerRegConCab, SqlSelect.Operador.Igual, pObj.PeriodoRegContabCabe);
             xSel.CondicionCV(SqlSelect.Reservada.Y, RegContabDeta_Cont_EN._COrigen, SqlSelect.Operador.Igual, pObj.COrigen);
             xSel.CondicionCV(SqlSelect.Reservada.Y, RegContabDeta_Cont_EN._CFile, SqlSelect.Operador.Igual, pObj.CFile);
-            xSel.CondicionCV(SqlSelect.Reservada.Y, RegContabDeta_Cont_EN._CorrelativoRegContabCabe, SqlSelect.Operador.Igual, pObj.CorrelativoRegContabCabe);
+            xSel.CondicionCV(SqlSelect.Reservada.Y, RegContabDeta_Cont_EN._NumeroVoucherRegContabCabe, SqlSelect.Operador.Igual, pObj.NumeroVoucherRegContabCabe);
             return this.ObtenerValor(xSel.ObtenerScript());
         }
         #endregion

@@ -85,6 +85,7 @@ namespace Datos
             xObjEnc.FechaModifica = Convert.ToDateTime(iDr[SolicitudPedidoDetaEN.FecMod]);
             xObjEnc.PrecioUltimaCompra = Convert.ToDecimal(iDr[SolicitudPedidoDetaEN.PreUltCom]);
             xObjEnc.FechaUltimaCompra = Fecha.ObtenerDiaMesAno(iDr[SolicitudPedidoDetaEN.FecUltCom]);
+            xObjEnc.FlagCheckItem = Convert.ToBoolean(iDr[SolicitudPedidoDetaEN.FlgChkIt]);
             xObjEnc.ClaveObjeto = xObjEnc.ClaveSolicitudPedidoDeta;
             return xObjEnc;
         }
@@ -208,6 +209,7 @@ namespace Datos
             xIns.AsignarParametro(SolicitudPedidoDetaEN.FecMod, "FECHAHORA");
             xIns.AsignarParametro(SolicitudPedidoDetaEN.PreUltCom, Formato.NumeroDecimal(pObj.PrecioUltimaCompra, 3));
             xIns.AsignarParametro(SolicitudPedidoDetaEN.FecUltCom, Fecha.ObtenerAnoMesDia(pObj.FechaUltimaCompra));
+            xIns.AsignarParametro(SolicitudPedidoDetaEN.FlgChkIt, Convert.ToString(pObj.FlagCheckItem));
             xIns.FinParametros();
 
             xObjCon.ComandoTexto(xIns.ObtenerScript());
@@ -261,6 +263,7 @@ namespace Datos
                 xIns.AsignarParametro(SolicitudPedidoDetaEN.FecMod, "FECHAHORA");
                 xIns.AsignarParametro(SolicitudPedidoDetaEN.PreUltCom, Formato.NumeroDecimal(xMovDet.PrecioUltimaCompra, 3));
                 xIns.AsignarParametro(SolicitudPedidoDetaEN.FecUltCom, Fecha.ObtenerAnoMesDia(xMovDet.FechaUltimaCompra));
+                xIns.AsignarParametro(SolicitudPedidoDetaEN.FlgChkIt, Convert.ToString(xMovDet.FlagCheckItem));
                 xIns.FinParametros();
 
                 xObjCon.ComandoTexto(xIns.ObtenerScript());
@@ -791,7 +794,23 @@ namespace Datos
             xSel.Ordenar(pObj.Adicionales.CampoOrden, SqlSelect.Orden.Asc);
             return this.ListarObjetos(xSel.ObtenerScript());
         }
+        public void ActualizarFlagCheckItem(SolicitudPedidoDetaEN pObj)
+        {
+            xObjCon.Conectar(SqlDatos.Bd.Almacen_Produccion);
 
+            //script manual
+            string iScript = string.Empty;
+
+            //actualizando la solicitud de pedido
+            iScript += "Update SolicitudPedidoDeta set FlagCheckItem = " + (pObj.FlagCheckItem ? 1 : 0).ToString();
+            iScript += " Where CodigoEmpresa='" + Universal.gCodigoEmpresa + "'";
+            iScript += " And PeriodoSolicitudPedidoCabe='" + pObj.PeriodoSolicitudPedidoCabe + "'";
+            iScript += " And ClaveSolicitudPedidoDeta ='" + pObj.ClaveSolicitudPedidoDeta + "'";
+
+            xObjCon.ComandoTexto(iScript);
+            xObjCon.EjecutarSinResultado();
+            xObjCon.Desconectar();
+        }
         #endregion
     }
 }

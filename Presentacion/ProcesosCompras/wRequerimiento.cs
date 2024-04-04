@@ -583,8 +583,7 @@ namespace Presentacion.ProcesosCompras
         {
             if (this.EsValidoEnvio() == false) { return; }
             if (this.EsValidaSolicitudPedidoAprobado() == false) { return; }
-            this.ListarProveedores();
-            this.ActualizarVentana();
+            this.MostrarItemParaGenerarOC();
         }
 
         public bool EsValidaMarcadasConCorreoElectronico()
@@ -1015,23 +1014,13 @@ namespace Presentacion.ProcesosCompras
             Mensaje.OperacionSatisfactoria("Se desaprobó la solicitud de pedido correctamente", this.eTitulo);
             this.ActualizarVentana();
         }
-        public void EscogerRequerimientosParaOrdenDeCompra()
-        {
 
-        }
-        public void ListarProveedores()
+        public void MostrarItemParaGenerarOC()
         {
-            //si es de lectura , entonces no lista
-            //if (this.txtCodAux.ReadOnly == true) { return; }
-
-            //instanciar
-            wLisAuxGenerarCompra win = new wLisAuxGenerarCompra();
-            win.eVentana = this;
-            win.eTituloVentana = "Proveedores";
-            //win.eCtrlValor = this.codAux;
-            win.codAux = this.codAux;
-            //win.eCtrlFoco = this.tstBuscar;
-            win.eCondicionLista = wLisAuxGenerarCompra.Condicion.ProveedoresActivos;
+            wGenerarOrdenCompraPorItemDeRequerimiento win = new wGenerarOrdenCompraPorItemDeRequerimiento();
+            win.wFrm = this;
+            win.eTituloVentana = "Requerimientos";
+            win.eCondicionLista = wGenerarOrdenCompraPorItemDeRequerimiento.Condicion.Generar;
             TabCtrl.InsertarVentana(this, win);
             win.NuevaVentana(this.eLisMovCab);
         }

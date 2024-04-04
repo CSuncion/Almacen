@@ -50,8 +50,6 @@ D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\bin\x86\Debug\Newt
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\bin\x86\Debug\Microsoft.VisualStudio.RemoteControl.dll
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\bin\x86\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\bin\x86\Debug\System.Numerics.Vectors.dll
-D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\bin\x86\Debug\System.IO.Pipelines.dll
-D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\bin\x86\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\bin\x86\Debug\Entidades.pdb
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\bin\x86\Debug\Negocio.pdb
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\bin\x86\Debug\Datos.pdb
@@ -348,6 +346,7 @@ D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Pres
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.csproj.CoreCompileInputs.cache
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.exe.manifest
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.application
-D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.csproj.CopyComplete
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.exe
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.pdb
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presentacion.ProcesosCompras.wGenerarOrdenCompraPorItemDeRequerimiento.resources
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Presentacion\obj\x86\Debug\Presenta.BC77CD05.Up2Date

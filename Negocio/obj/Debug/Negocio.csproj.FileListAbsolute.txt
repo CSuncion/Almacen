@@ -8,6 +8,6 @@ D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Negocio\bin\Debug\Datos.pdb
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Negocio\bin\Debug\Entidades.pdb
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
-D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Negocio\obj\Debug\Negocio.dll
 D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Negocio\obj\Debug\Negocio.pdb
+D:\Perú Ticcs\Gabriel\Orden Compra\Almacen 2022\Negocio\obj\Debug\Negocio.csproj.Up2Date
